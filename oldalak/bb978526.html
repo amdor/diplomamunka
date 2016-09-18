@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><link rel="canonical" href="https://technet.microsoft.com/en-us/library/bb978526.aspx" />
+    <title>Scripting with Windows PowerShell</title>
+
+
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/bb978526(d=default,l=en-us,v=technet.10).aspx" />
+
+<meta name="NormalizedUrl" content="https://technet.microsoft.com/en-us/library/bb978526(d=default,l=en-us,v=technet.10).aspx" />
+
+<meta name="ms.normalizedurl" content="https://technet.microsoft.com/en-us/library/bb978526(d=default,l=en-us,v=technet.10).aspx" />
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:false,&quot;AmbientContextId&quot;:&quot;64613555-FB77-4B46-886F-29D0649A54DB&quot;,&quot;display.use_large_font&quot;:true,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}" />
+
+<meta name="VotingContextUrl" content="https://technet.microsoft.com/en-us/library/bb978526(d=default,l=en-us,v=technet.10).aspx" />
+
+<meta name="MN" content="61C41DD0-6:01:20 AM" />
+
+<meta name="Search.ShortId" content="bb978526" />
+
+<meta name="ms.shortidmsdn" content="bb978526" />
+
+<meta name="ms.locale" content="en-us" />
+
+<meta name="ms.prodver" content="TechNet.10" />
+
+<meta name="ms.contentlang" content="EN" />
+
+<meta name="ms.lang" content="EN" />
+
+<meta name="ms.loc" content="US" />
+
+<meta name="ms.sitever" content="2016.06.23.2" />
+
+<meta name="ms.assetid" content="c425d27a-bb41-4947-8d73-ba5480bc8ee0" />
+
+<meta name="ms.auth" content="0" />
+    
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+<link rel="stylesheet" type="text/css" href="https://i-technet.sec.s-msft.com/Combined.css?resources=0:Topic,0:CodeSnippet,0:ProgrammingSelector,0:ExpandableCollapsibleArea,1:CommunityContent,0:TopicNotInScope,0:FeedViewerBasic,0:ImageSprite,2:Header,2:HeaderFooterSprite,3:PrintExportButton,1:Toc,1:NavigationResize,1:LibraryMemberFilter,4:StandardRating,2:Footer,2:Footer.Static,5:LinkList,5:Base,6:TechNet,6:SkinnyRatingResponsive,6:SkinnyRatingV2,6:Msdn;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Themes/Base/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/TechNet/Content:6&amp;amp;v=0B3BF3FA55274163D1C7FD4CD78E9080" /></head>
+<body class="library Chrome">
+    <div id="page">
+
+        
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+    <input type="hidden" id="isHeaderBleeding" value="true" />
+    <div id="ux-header" dir="ltr" class="ltr powershell">
+        
+
+      <header>
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" title="MSDN home">
+                  <div id="msft-logo" class="msft-logo"></div>
+                </a>
+                <div class="GrayPipe"></div>
+                  <div class="MegaBladeNavigation">
+                        <div class="megaBladeToc">
+      <nav>
+        <ul class="navL1">
+          <li class="toggle inactive">
+            <a href="javascript:void(0)" title="Developer Network">Developer Network</a>
+            <ul class="navL2">
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Technologies">Technologies</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/app-development-msdn" title="App Development">App Development</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//web-app-development-msdn" title="Web">Web</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/big-data-development-msdn" title="Data">Data</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//games-development-msdn" title="Gaming">Gaming</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//internetofthings" title="Internet of Things">Internet of Things</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" title="Visual Studio">Visual Studio</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//subscriptions" title="MSDN subscription access">MSDN subscription access</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/evalcenter" title="Trial software">Trial software</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Programs">Programs</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" title="MSDN subscriptions">MSDN subscriptions</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/students-overview-msdn" title="Students">Students</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/architects-overview-msdn" title="Architects">Architects</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/applicationbuilder" title="ISV">ISV</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://www.microsoft.com/bizspark" title="Startups">Startups</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://rewards.msdn.microsoft.com/" title="TechRewards">TechRewards</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://events.msdn.microsoft.com/" title="Events">Events</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Community">Community</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/magazine/dd767791" title="Magazine">Magazine</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://blogs.msdn.microsoft.com/" title="Blogs">Blogs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/library" title="APIs and reference">APIs and reference</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/developer-centers-msdn" title="Dev centers">Dev centers</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive">
+                  <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+                  </div>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">Developer</a>
+              </div>
+              <div class="right">
+                <div id="signIn">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=12&amp;ct=1467637280&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=technet%24technet%24technet&amp;wreply=https%3a%2f%2ftechnet.microsoft.com%2fen-us%2flibrary%2fbb978526.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">Sign in</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentName="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>
+                    <div data-fragmentName="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                  </div>
+                        <div>
+                            <div data-fragmentName="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml"></div>
+                        </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_gray1">
+          <div class="row buttomRow bg_gray1">
+            <div class="bottom">
+              <div class="left">
+                <a id="grip" class="menu-icon" href="javascript:void(0)"></a>
+                <div data-fragmentName="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage leftImage">
+    <a id="SiteLogo_15502_1" href="https://msdn.microsoft.com/powershell">
+      <img id="Powershell_32" alt="PowerShell" src="https://i-technet.sec.s-msft.com/en-us/Powershell/ux/library/dn966235.Powershell_32.png?isResponsive=false&amp;Segments=http%3a%2f%2ftechnet.microsoft.com%2flibrary&amp;isLibrary=true&amp;OverwriteHostBase=https%3a%2f%2fmsdn.microsoft.com%2f&amp;isMtpsRequest=true&amp;ThemeBranding=Powershell&amp;HideProfileLink=true&amp;HideProfileText=true" title="PowerShell" xmlns="" />
+      <span>PowerShell</span>
+    </a>
+  </div>
+</div>
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive current toggle">
+                            <a href="javascript:void(0)">Documentation</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/powershell-scripting" title="Windows PowerShell">Windows PowerShell</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/dsc/overview" title="Desired State Configuration (DSC)">Desired State Configuration (DSC)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/powershell/jea/readme" title="Just Enough Administration (JEA)">Just Enough Administration (JEA)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive current">
+                                            <a href="https://technet.microsoft.com/library/bb978526.aspx" title="PowerShell Modules Reference">PowerShell Modules Reference</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive current">
+                                            <a href="https://msdn.microsoft.com/library/dd835506.aspx" title="Windows PowerShell SDK">Windows PowerShell SDK</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="http://www.powershellgallery.com/gettingstarted" title="PowerShell Gallery">PowerShell Gallery</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/library/azure/jj156055.aspx" title="Azure PowerShell">Azure PowerShell</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive">
+                            <a href="http://windowsserver.uservoice.com/forums/301869-powershell">Feedback</a>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div data-fragmentName="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button">
+        <div id="search-finder" class="search-finder"></div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIcon" class="search-clear-x"></div>
+      <div id="searchTextContainer" style="width: 0;">
+        <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" />
+      </div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    </div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.</div>
+
+    
+    <div class="printExportMenus ltr">
+        <a id="isd_printABook" href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fbb978526.aspx">
+            Export (<span class="count">0</span>)
+        </a>
+        <a id="isd_print" href="https://technet.microsoft.com/en-us/library/bb978526(d=printer).aspx" rel="nofollow">
+            Print 
+        </a>
+        <a id="isd_archiveControl" style="display:none;" data-include-archive="Show Archived Versions" data-exclude-archive="Hide Archived Versions">
+        </a>
+    </div>
+    
+    
+
+    <div class="printExportMenus ltr">
+        <a id="expandCollapseAll" accesskey="e" href="javascript:void(0)" title="Expand/Collapse all sections by pressing Ctrl + Shift + e">Expand All</a>
+    </div>
+
+    
+
+
+        <div id="body" ms.pgarea="body" class="">
+            <span id="tabletView_large"></span>
+            <span id="tabletView_small"></span>
+            <span id="mobileView"></span>
+            
+
+
+
+
+        <div id="leftNav">
+
+
+
+
+<div id="tocnav" class="hide-archive">
+            <div class="toclevel0 " data-toclevel="0">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/aa991542.aspx" id="bb126093_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="7fb9516e-5f92-4e34-8e32-4307b6091e4f_TechNet.10_en-us" mtpsshortid="aa991542_MSDN.10_en-us" title="TechNet Library">TechNet Library</a>            </div>
+            <div class="toclevel1 current " data-toclevel="1">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/bb978526.aspx" id="bb977902_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="c425d27a-bb41-4947-8d73-ba5480bc8ee0_TechNet.10_en-us" mtpsshortid="bb978526_TechNet.10_en-us" title="Scripting with Windows PowerShell">Scripting with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/dn425048.aspx" id="mt156956_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Using Windows PowerShell">Using Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/mt156967.aspx" id="mt604818_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Core Modules in Windows PowerShell">Core Modules in Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/mt156946.aspx" id="mt156948_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Windows and Windows Server Automation with Windows PowerShell">Windows and Windows Server Automation with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/mt156962.aspx" id="mt156945_TechNet.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="System Center Automation with Windows PowerShell">System Center Automation with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/dn520245.aspx" id="mt219379_MDOP.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Microsoft Desktop Optimization Pack Automation with Windows PowerShell">Microsoft Desktop Optimization Pack Automation with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/dn521028(v=sc.20).aspx" id="mt283702_SC.20_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Windows Azure Pack for Windows Server Automation with Windows PowerShell">Windows Azure Pack for Windows Server Automation with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/mt604076.aspx" id="mt604070_MIM.10_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Identity and Access Automation with Windows PowerShell">Identity and Access Automation with Windows PowerShell</a>            </div>
+            <div class="toclevel2 " data-toclevel="2">
+<a data-tochassubtree="true" href="https://technet.microsoft.com/en-us/library/mt658656.aspx" id="mt658655_SQL.130_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="SQL Server with Windows Powershell">SQL Server with Windows Powershell</a>            </div>
+</div>                <div style="display:none">
+                    <div id="CollapseLocalizeString">Collapse the table of content</div>
+                    <div id="ExpandLocalizeString">Expand the table of content</div>
+                </div>
+
+            
+
+            
+
+            
+
+            <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+            
+
+<a id="NavigationResize" href="javascript:void(0)">
+    <img class="cl_nav_resize_open" src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=636022417336427020" title="Expand" alt="Expand" />
+    <img class="cl_nav_resize_close" src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=636022417336427020" title="Minimize" alt="Minimize" />
+</a>
+
+
+
+        </div>
+    <div id="content" class="content">
+
+
+
+
+
+
+
+
+    <div id="archiveDisclaimerText" style="display:none">The document is archived and information here might be outdated</div>
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+  <h1 class="title">Scripting with Windows PowerShell</h1>
+  
+  <p>Updated: August 4, 2014</p><p>Applies To: Windows PowerShell 2.0, Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0</p><div id="mainSection">
+    <div id="mainBody">
+      <p>
+					Windows PowerShell® is a task-based command-line shell and scripting language designed especially for system administration. Built on the .NET Framework, Windows PowerShell helps IT professionals and power users control and automate the administration of the Windows operating system and applications that run on Windows.</p>
+      <p>
+					Windows PowerShell commands, called <em>cmdlets</em>, let you manage the computers from the command line. Windows PowerShell <em>providers</em> let you access data stores, such as the registry and certificate store, as easily as you access the file system. In addition, Windows PowerShell has a rich expression parser and a fully developed scripting language.</p>
+      <p>
+					Windows PowerShell includes the following features: </p>
+      <ul>
+        <li class="unordered">
+						Cmdlets for performing common system administration tasks, such as managing the registry, services, processes, and event logs, and using Windows Management Instrumentation (WMI).<br /><br /></li>
+        <li class="unordered">
+						A task-based scripting language and support for existing scripts and command-line tools.<br /><br /></li>
+        <li class="unordered">
+						Consistent design. Because cmdlets and system data stores use common syntax and naming conventions, data can be shared easily and the output from one cmdlet can be used as the input to another cmdlet without reformatting or manipulation.<br /><br /></li>
+        <li class="unordered">
+						Simplified, command-based navigation of the operating system, which lets users navigate the registry and other data stores by using the same techniques that they use to navigate the file system.<br /><br /></li>
+        <li class="unordered">
+						Powerful object manipulation capabilities. Objects can be directly manipulated or sent to other tools or databases.<br /><br /></li>
+        <li class="unordered">
+						Extensible interface. Independent software vendors and enterprise developers can build custom tools and utilities to administer their software. <br /><br /></li>
+      </ul>
+      <h2 class="heading">Content in this section</h2>
+      <div id="sectionSection0" class="section">
+        <p>The following content is available in Scripting with Windows PowerShell.</p>
+        <ul>
+          <li class="unordered">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell">Getting started with Windows PowerShell</a>. Learn how to get started scripting and automating Windows environments by using Windows PowerShell. This section includes a user’s guide, information about features that are included with Windows PowerShell (such as Windows PowerShell Desired State Configuration), information about Windows PowerShell prerequisites and installation, and information about how to use Windows PowerShell Integrated Scripting Environment (ISE), a graphical editor for Windows PowerShell.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/library/hh847741(v=wps.640).aspx">Windows PowerShell Core Module Reference</a>. This section includes reference Help topics for all cmdlets in the core modules that are included as part of Windows PowerShell. The section also includes About topics that illustrate Windows PowerShell concepts and examples in greater detail.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/mt156917.aspx">Windows and Windows Server Automation with Windows PowerShell</a>. This section includes reference Help topics for all Windows PowerShell cmdlets that are available as part of Windows and Windows Server roles, role services, and features.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/library/dn507037.aspx">System Center Automation with Windows PowerShell</a>. This section includes reference Help topics for all System Center cmdlets that are available when you install System Center in your environment.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/library/dn521028.aspx">Microsoft Azure Pack for Windows Server Automation with Windows PowerShell</a>. This section includes reference Help topics for the cmdlets that are available when you install the Windows Azure Pack for Windows Server.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/mt156946.aspx">Previous Versions of Windows PowerShell Module Help</a>. This section includes cmdlet reference and About Help topics for Windows PowerShell 3.0 and earlier releases of Windows PowerShell.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/mt604076.aspx">Identity and Access Automation with Windows PowerShell</a>. This section includes cmdlet reference topics for cmdlets included with Microsoft Identity Manager 2016 for Privileged Access Management (PAM).<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/mt604078.aspx">Microsoft Identity Manager 2016</a>. This section includes cmdlet reference topics for Microsoft Identity Manager 2016.<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/dn520245.aspx">Microsoft Desktop Optimization Pack Automation with Windows PowerShell</a>. This section includes cmdlet reference topics for Microsoft Desktop Optimization Pack (MDOP).<br /><br /></li>
+          <li class="unordered">
+            <a href="https://technet.microsoft.com/en-us/library/mt658656.aspx">SQL Server with Windows Powershell</a>. This section includes cmdlet reference topics for Microsoft SQL Server with Windows PowerShell.<br /><br /></li>
+        </ul>
+      </div>
+      <h2 class="heading">Related Resources</h2>
+      <div id="sectionSection1" class="section">
+        <h3 class="subHeading">Resources for Windows PowerShell users</h3>
+        <div class="subSection">
+          <p>In addition to the Help available at the command line, the following resources provide more information for users who want to run Windows PowerShell.</p>
+          <ul>
+            <li class="unordered">
+              <a href="http://blogs.msdn.com/b/powershell/">Windows PowerShell Team Blog</a>. The best resource for learning directly from the Windows PowerShell product team.<br /><br /></li>
+            <li class="unordered">
+              <a href="http://Connect.Microsoft.com/PowerShell">Windows PowerShell Customer Connection</a>. Make a suggestion, send feedback, or file a bug for the Windows PowerShell team. You can file a code bug, a documentation bug, or a localization (language translation) bug.<br /><br /></li>
+            <li class="unordered">
+              <a href="http://www.scriptingguys.com/blog">The Hey, Scripting Guy! Blog</a> publishes new content seven days a week, and is consistently ranked in the top five of all Microsoft blogs. The articles are scenario-driven, and written in an engaging and lively manner.<br /><br /></li>
+            <li class="unordered">
+              <a href="http://www.scriptingguys.com/learnpowershell">The Learn PowerShell page</a> is the Windows PowerShell hub on the TechNet Script Center. This page hosts a series of beginner video sessions conducted by the Microsoft Scripting Guy Ed Wilson. It also contains Windows PowerShell quizzes, links to community content, and more.<br /><br /></li>
+            <li class="unordered">
+									Have questions about using Windows PowerShell? Connect with hundreds of other people who have similar interests on the <a href="http://social.technet.microsoft.com/forums/itcg/threads/">Official Scripting Guys forum</a>.<br /><br /></li>
+            <li class="unordered">
+              <a href="https://technet.microsoft.com/scriptcenter">The Microsoft Script Center</a>. A portal to many useful Windows PowerShell resources, including the <a href="http://gallery.technet.microsoft.com/scriptcenter/">Script Center Repository</a>. One of the best ways to learn scripting is to see examples in action. Search through thousands of Windows PowerShell scripts, all ready for you to evaluate and adapt to meet your needs.<br /><br /></li>
+            <li class="unordered">Get involved in the Windows PowerShell user community. See the <a href="https://technet.microsoft.com/scriptcenter/hh182567.aspx">Script Center Community page</a> for locations of dozens of Windows PowerShell user groups – there is probably one near you. Also keep current with the community activities of the Microsoft Scripting Guy.<br /><br /></li>
+          </ul>
+        </div>
+        <h3 class="subHeading">Other Windows PowerShell documentation for Microsoft technologies</h3>
+        <div class="subSection">
+          <p>The following links can help you find Windows PowerShell documentation that is not available as part of this section.</p>
+          <ul>
+            <li class="unordered">
+									Find help about the Windows PowerShell cmdlets for Microsoft Dynamics CRM in the <a href="http://go.microsoft.com/fwlink/?LinkId=403369">Microsoft Dynamics CRM PowerShell Reference</a>. For more information about Microsoft Dynamics CRM, see <a href="http://go.microsoft.com/fwlink/?LinkID=270870">Microsoft Dynamics CRM IT Pro Center</a>.<br /><br /></li>
+            <li class="unordered">
+									For information about how to use the Windows PowerShell-based Exchange Management Shell to manage Microsoft Exchange Server 2013, see <a href="https://technet.microsoft.com/library/bb123778(v=exchg.150).aspx">Exchange Management Shell</a>. For more information about managing Exchange Server 2013, see <a href="https://technet.microsoft.com/library/bb124558(v=exchg.150).aspx">Exchange Server 2013</a>.<br /><br /></li>
+          </ul>
+        </div>
+        <h3 class="subHeading">Resources for Windows PowerShell Developers</h3>
+        <div class="subSection">
+          <p>The following resources provide resources to help developers create their own Windows PowerShell modules, functions, cmdlets, providers, and hosting applications. </p>
+          <ul>
+            <li class="unordered">
+              <a href="http://go.microsoft.com/fwlink/p/?LinkID=89595">Windows PowerShell SDK</a>. Provides reference content. <br /><br /></li>
+            <li class="unordered">
+              <a href="http://go.microsoft.com/fwlink/p/?LinkID=89596">Windows PowerShell Programmer's Guide</a>. Provides tutorials. Also contains information about fundamental Windows PowerShell concepts.<br /><br /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p>
+      
+    </p>
+  </div>
+</div></div>
+
+
+
+
+
+<script id="CommentTemplate" type="text/x-jquery-tmpl">
+    <div class="communityContentAnnotation">
+        <a name="${Index}"></a>
+        <h3>
+            ${Title}
+        </h3>
+        <div class="communityContentAnnotationBody">
+            {{html Body}}
+        </div>
+        <div class="communityContentAnnotationInfo">
+            <div class="communityContentAnnotationAvatarContainer">
+                <a href="${UserAvatar.Href}" title="${UserAvatar.ToolTip}" class="communityContentAnnotationAvatar"><img src="${UserAvatar.ImageUrl}" alt="${UserAvatar.ImageAltText}" width="34" height="34" /></a>
+            </div>
+            <div class="communityContentAnnotationUserDateContainer">
+                <div class="communityContentAnnotationUserContainer">
+                    <a href="${UserAvatar.Href}">
+                        ${User}
+                    </a>
+                </div>
+                <div class="communityContentAnnotationDateContainer">
+                    <span>${Date}</span>
+                    
+                    {{if EditLink}}
+                        <span>
+                            <a href="${EditLink.Href}" title="${EditLink.ToolTip}" class="communityContentCommentEditLink">${EditLink.Title}</a>
+                        </span>
+                    {{/if}}
+
+                    {{if DeleteLink}}
+                        <span>
+                            <a href="${DeleteLink.Href}" title="${DeleteLink.ToolTip}" class="communityContentDeleteLink">${DeleteLink.Title}</a>
+                        </span>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="communityContentContainer" ms.cmpgrp="community">
+    <div id="CommunityContentHeader" class="communityContentHeader">
+        <div class="communityContentHeaderTitleContainer">
+            <h2>Community Additions</h2>
+                <a class="communityContentAddLink" href="https://technet.microsoft.com/en-us/library/community/add/bb978526.aspx">
+                    <span class="communityContentAddButton" title="Add">
+                        ADD
+                    </span>
+                </a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    
+    <div id="CommunityComments" data-url="/en-us/library/community/comments/bb978526.aspx"></div>
+</div>
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit" />Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected" />Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings." />
+
+
+
+    </div>
+
+
+        </div>
+        <div class="clear"></div>
+
+        
+    
+
+<input name="__RequestVerificationToken" type="hidden" value="XFa9Uyj79urZciGjNEhtAFNY7ka5rLCFSMTs0geSgwoPOPE4NlxwY2fKF-Hc_VVEK8BX9H8bVc9qiWAMlar79hgbx3Q1" />
+<input id="ratingValueSubmitUrl" type="hidden" value="https://technet.microsoft.com/en-us/library/feedback/rate/bb978526.aspx" />
+<input id="ratingAdditionalSubmitUrl" type="hidden" value="https://technet.microsoft.com/en-us/library/feedback/additional/bb978526.aspx" />
+<input id="isTopicRated" type="hidden" value="false" />
+
+
+
+        <div id="lib-footer">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container" ms.pgarea="body">
+        <div class="stdr-close"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Is this page helpful?</span>
+                <button class="stdr-yes" aria-label="Yes, this page was helpful">Yes</button>
+                <button class="stdr-no" aria-label="No, this page was not helpful">No</button>
+                <input id="s_ratingValue" type="hidden" value="" />
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Additional feedback?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Submit my additional feedback">Submit</button>
+                        <button class="stdr-skip" aria-label="Skip additional feedback">Skip this</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Thank you!</span>
+                <span class="stdr-appreciate">We appreciate your feedback.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="display: none"></div>
+    
+            
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container" ms.pgarea="body">
+        <div class="stdr-close"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Is this page helpful?</span>
+                <button class="stdr-yes" aria-label="Yes, this page was helpful">Yes</button>
+                <button class="stdr-no" aria-label="No, this page was not helpful">No</button>
+                <input id="s_ratingValue" type="hidden" value="" />
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Additional feedback?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Submit my additional feedback">Submit</button>
+                        <button class="stdr-skip" aria-label="Skip additional feedback">Skip this</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Thank you!</span>
+                <span class="stdr-appreciate">We appreciate your feedback.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="display: none"></div>
+    
+
+        <footer class="top">
+            <div data-fragmentName="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                <div data-fragmentName="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml"></div>
+                <div data-fragmentName="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml"></div>
+                <div data-fragmentName="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml"></div>
+                <div data-fragmentName="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml"></div>
+            </div>
+        </footer>
+
+        <footer class="bottom">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://technet.microsoft.com/en-us/selectlocale">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2ftechnet.microsoft.com%2fen-us%2flibrary%2fbb978526.aspx" />
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentName="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logo"></span>
+                <span class="copyright">© 2016 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+        </div>
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2016 Microsoft</div>
+        </div>
+
+        
+        
+        
+        
+
+        
+            
+
+        
+
+
+    <input id="tocPaddingPerLevel" type="hidden" value="17" />
+
+
+
+        <input id="MtpsDevice" type="hidden" value="Default" />
+
+
+<![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+
+        
+        
+        
+            
+        
+
+<![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="yLpePNXuQyDjzP4ENZ7kL8JcxJP7cn31pTgQNFBZkEMEb8J1fqGXX_3bB6dSRCWfPRyinQJf_ToZJNLCiNsxr_Rq7Pw1" />
+</div>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-technet.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-technet.sec.s-msft.com\", \r\n\t\"css\": \"https://i-technet.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-technet.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u0027c48d7639-e2ae-45e0-b536-c9b172c95e44\u0027;\n        //" },
+	{ url: "https://i2-technet.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:StandardRating,2:Footer,0:Topic,0:AppInsightsPerf,4:Toc,0:ABTestControl,5:WEDCS,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Global/Content:3,/Areas/Library/Content:4,/Areas/Library/Themes/Base/Content:5\u0026amp;hashKey=6260F03632651C8368DE6A025EE46D73\u0026amp;v=1C04F568F06CC27367AC9D600EB2ED92" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=TechNet\u0026loc=en-us\u0026Refinement=248\u0026focusOnInit=false\u0026iroot=Powershell\u0026emptyWatermark=true" },
+	{ url: "https://i2-technet.sec.s-msft.com/Combined.js?resources=0:JumpRedirect,1:PrintExportButton,2:AnySuggestion,3:NavigationResize;/Areas/Epx/Themes/Base/Content:0,/Areas/Library/Themes/Base/Content:1,/Areas/Library/Themes/Technet/Content:2,/Areas/Library/Content:3\u0026amp;hashKey=E72CA054AD48777F4CCA7AF1FB852DF7\u0026amp;v=1C04F568F06CC27367AC9D600EB2ED92" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" },
+	{ url: "https://i2-technet.sec.s-msft.com/Combined.js?resources=0:CommunityContent,0:LibraryMemberFilter,1:CodeSnippet,1:TopicNotInScope,1:CollapsibleArea,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=5454818A47E9508798A9C327FD7BB15F\u0026amp;v=1C04F568F06CC27367AC9D600EB2ED92" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script></body>
+</html>

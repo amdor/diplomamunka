@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+
+
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><link rel="canonical" href="https://technet.microsoft.com/en-us/library/hh847734.aspx" />
+    <title>about_Variables</title>
+
+
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/hh847734(d=default,l=en-us,v=wps.640).aspx" />
+
+<meta name="NormalizedUrl" content="https://technet.microsoft.com/en-us/library/hh847734(d=default,l=en-us,v=wps.640).aspx" />
+
+<meta name="ms.normalizedurl" content="https://technet.microsoft.com/en-us/library/hh847734(d=default,l=en-us,v=wps.640).aspx" />
+
+<meta name="DCS.AppliesToProduct" content="Windows PowerShell 4.0" />
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:true,&quot;AmbientContextId&quot;:&quot;777B3BA4-F95A-4833-B066-EC36E5ECC17D&quot;,&quot;display.use_large_font&quot;:true,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{&quot;LogTrace&quot;:false},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}" />
+
+<meta name="VotingContextUrl" content="https://technet.microsoft.com/en-us/library/hh847734(d=default,l=en-us,v=wps.640).aspx" />
+
+<meta name="MN" content="BF1CA93C-12:29:13 PM" />
+
+<meta name="Search.ShortId" content="hh847734" />
+
+<meta name="ms.shortidmsdn" content="hh847734" />
+
+<meta name="ms.locale" content="en-us" />
+
+<meta name="ms.prodver" content="WPS.640" />
+
+<meta name="ms.contentlang" content="EN" />
+
+<meta name="ms.lang" content="EN" />
+
+<meta name="ms.loc" content="US" />
+
+<meta name="ms.sitever" content="2016.08.26.1" />
+
+<meta name="ms.assetid" content="0cb2aa2b-508a-4d25-999b-e066e99a9312" />
+
+<meta name="ms.auth" content="0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+        
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+<link rel="stylesheet" type="text/css" href="https://i-technet.sec.s-msft.com/Combined.css?resources=0:ImageSprite,0:TopicResponsive,0:TopicResponsive.MediaQueries,1:CodeSnippet,1:ProgrammingSelector,1:ExpandableCollapsibleArea,0:CommunityContent,1:TopicNotInScope,1:FeedViewerBasic,1:ImageSprite,2:Header,2:HeaderFooterSprite,2:Header.MediaQueries,3:Banner.MediaQueries,0:Breadcrumbs,0:Breadcrumbs.MediaQueries,0:ResponsiveToc,0:ResponsiveToc.MediaQueries,1:VersionSelector,0:LibraryMemberFilter,4:StandardRating,2:Footer,2:Footer.MediaQueries,5:LinkList,0:BaseResponsive,6:MsdnResponsive,0:Tables.MediaQueries,7:SkinnyRatingResponsive,7:SkinnyRatingV2,7:Msdn;/Areas/Library/Content:0,/Areas/Epx/Content/Css:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Epx/Shared/Content:3,/Areas/Global/Content:4,/Areas/Epx/Themes/Base/Content:5,/Areas/Library/Themes/Msdn/Content:6,/Areas/Library/Themes/TechNet/Content:7&amp;amp;v=77E551516476584DD90041080D0E72EC" /></head>
+<body class="library Chrome">
+    <div id="page">
+
+        
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+        
+    <input type="hidden" id="isHeaderBleeding" value="true" />
+    <div id="ux-header" dir="ltr" class="ltr powershell" ms.pgarea="header">
+        
+
+      <header>
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow" role="banner">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" title="MSDN home" ms.cmpgrp="mslogo">
+                  <div class="clip70x15">
+                    <img alt="Microsoft Logo" id="msft-logo" class="msft-logo" src="https://i-technet.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                  </div>
+                </a>
+                <div class="GrayPipeDiv clip1x18">
+                  <img alt="Gray Pipe" class="GrayPipe" src="https://i-technet.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                </div>
+                  <div class="MegaBladeNavigation">
+                        <div class="megaBladeToc">
+      <nav>
+        <ul class="navL1">
+          <li class="toggle inactive">
+            <a href="javascript:void(0)" title="Developer Network">Developer Network</a>
+            <ul class="navL2">
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Technologies">Technologies</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/app-development-msdn" title="App Development">App Development</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//web-app-development-msdn" title="Web">Web</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//data-and-devices" title="Data">Data</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//games-development-msdn" title="Gaming">Gaming</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//internetofthings" title="Internet of Things">Internet of Things</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" title="Visual Studio">Visual Studio</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com//subscriptions" title="MSDN subscription access">MSDN subscription access</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/evalcenter" title="Trial software">Trial software</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Programs">Programs</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" title="MSDN subscriptions">MSDN subscriptions</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/students-overview-msdn" title="Students">Students</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/applicationbuilder" title="ISV">ISV</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://www.microsoft.com/bizspark" title="Startups">Startups</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://rewards.msdn.microsoft.com/" title="TechRewards">TechRewards</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://events.msdn.microsoft.com/" title="Events">Events</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Community">Community</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/magazine/dd767791" title="Magazine">Magazine</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://blogs.msdn.microsoft.com/" title="Blogs">Blogs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/library" title="APIs and reference">APIs and reference</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/developer-centers-msdn" title="Dev centers">Dev centers</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/retiredcontent" title="Retired content">Retired content</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive">
+                  <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+                  </div>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">Developer</a>
+              </div>
+              <div class="right" ms.cmpgrp="aux nav">
+                <div id="signIn">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1473362953&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=technet%24technet%24technet&amp;wreply=https%3a%2f%2ftechnet.microsoft.com%2fen-us%2flibrary%2fhh847734.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">Sign in</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentName="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>
+                    <div data-fragmentName="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                  </div>
+                        <div>
+                            <div data-fragmentName="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml"></div>
+                        </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_gray1">
+          <div class="row buttomRow bg_gray1">
+            <div class="bottom">
+              <div class="left" role="navigation" ms.cmpgrp="main nav">
+                <a id="grip" class="menu-icon" href="javascript:void(0)"></a>
+                <div data-fragmentName="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage leftImage">
+    <a id="SiteLogo_15502_1" href="https://msdn.microsoft.com/powershell">
+      <img id="Powershell_32" alt="PowerShell" src="https://i-technet.sec.s-msft.com/en-us/Powershell/ux/library/dn966235.Powershell_32.png?isResponsive=true&amp;Segments=http%3a%2f%2ftechnet.microsoft.com%2flibrary&amp;isLibrary=true&amp;OverwriteHostBase=https%3a%2f%2fmsdn.microsoft.com%2f&amp;isMtpsRequest=true&amp;ThemeBranding=Powershell&amp;HideProfileLink=true&amp;HideProfileText=true" title="PowerShell" xmlns="" />
+      <span>PowerShell</span>
+    </a>
+  </div>
+</div>
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive">
+                            <a href="https://www.powershellgallery.com/">Gallery</a>
+                        </li>
+                        <li class="inactive current toggle">
+                            <a href="javascript:void(0)">Documentation</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/powershell-scripting" title="Windows PowerShell">Windows PowerShell</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/dsc/overview" title="Desired State Configuration (DSC)">Desired State Configuration (DSC)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/powershell/jea/readme" title="Just Enough Administration (JEA)">Just Enough Administration (JEA)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive current">
+                                            <a href="https://technet.microsoft.com/library/bb978526.aspx" title="PowerShell Modules Reference">PowerShell Modules Reference</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive current">
+                                            <a href="https://msdn.microsoft.com/library/dd835506.aspx" title="Windows PowerShell SDK">Windows PowerShell SDK</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/gallery" title="PowerShell Gallery">PowerShell Gallery</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/library/azure/jj156055.aspx" title="Azure PowerShell">Azure PowerShell</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)">Community</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com//powershell/mt757324" title="Announcements">Announcements</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com//powershell/mt270381" title="Community Links">Community Links</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)">Feedback</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="http://windowsserver.uservoice.com/forums/301869-powershell" title="UserVoice">UserVoice</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://www.surveymonkey.com/r/wcq7hf9" title="Q&amp;A Submissions">Q&amp;A Submissions</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right" ms.title="search" role="search">
+                <div data-fragmentName="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button">
+        <div id="search-finder-div" class="clip16x20">
+          <img alt="search finder" id="search-finder" class="search-finder" src="https://i-technet.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+        </div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIconDiv" class="clip16x20">
+        <img alt="search clear" id="searchCloseIcon" class="search-clear-x" src="https://i-technet.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+      </div>
+      <div id="searchTextContainer" style="width: 0;">
+        <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" />
+      </div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    </div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.</div>
+
+
+
+
+
+<link type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" />
+
+
+    <div id="breadcrumbs" ms.pgarea="body" ms.cmpgrp="breadcrumbs">
+        <div id="breadcrumbDesktop" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://technet.microsoft.com/en-us/library/mt156967.aspx" title="Core Modules in Windows PowerShell"></a></span>
+                        <span><a href="https://technet.microsoft.com/en-us/library/hh847741.aspx" title="Windows PowerShell 5.0"><span>Windows PowerShell 5.0</span></a></span>
+                        <span><a href="https://technet.microsoft.com/en-us/library/hh847840.aspx" title="Microsoft.PowerShell.Core Module"><span>Microsoft.PowerShell.Core Module</span></a></span>
+                        <span class="breadcrumbDropSmall">
+                            <a id="breadcrumbDropDownButton" href="#" targethref="https://technet.microsoft.com/en-us/library/hh847840.aspx" title="Core About Topics"><span>Core About Topics</span></a>
+                        </span>
+        </div>
+        <div id="breadcrumbDropDownMenu"></div>
+        <div id="tocDropDownMenu"></div>
+
+        <div id="breadcrumbTablet" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://technet.microsoft.com/en-us/library/hh847840.aspx" title="Microsoft.PowerShell.Core Module"></a></span>
+                    <span><a href="https://technet.microsoft.com/en-us/library/hh847856.aspx" title="Core About Topics"><span>Core About Topics</span></a></span>
+                <span class="breadcrumbDropSmall"><a id="tocDropDownButton" href="#" title="about_Variables"><span>about_Variables</span></a></span>
+        </div>
+        <div id="breadcrumbMobile" class="breadCrumb">
+                <span class="breadcrumbEllipsis"><a href="https://technet.microsoft.com/en-us/library/hh847856.aspx" title="Core About Topics"></a></span>
+            <span class="breadcrumbDropSmall"><a id="tocPopupButton" href="#" title="about_Variables"><span>about_Variables</span></a></span>
+        </div>
+    </div>
+    <div id="tocPopupMenu">
+        <div id="tocPopMenuClose" class="tocCloseLarge"></div>
+        <div id="tocTitle">about_Variables</div>        
+    </div>
+
+    
+
+
+        <div id="body" ms.pgarea="body" class="">
+            <span id="tabletView_large"></span>
+            <span id="tabletView_small"></span>
+            <span id="mobileView"></span>
+            
+
+
+
+
+    <div id="leftNav" ms.cmpgrp="left toc">
+
+    
+
+
+<div id="tocnav" class="ArchiveV2">
+    <div class="tocunselected">
+        <div id="tocExpandArea">
+            <span class="toc_empty"></span>
+            <span id="tocExpandButton"><a href="#"></a></span>
+        </div>
+        <div id="tocExpand"></div>
+    </div>
+    <div class="tocselected"></div>
+    <div class="tocunselected">
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847830.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Aliases">about_Aliases</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh848303.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Arithmetic_Operators">about_Arithmetic_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847882.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Arrays">about_Arrays</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847875.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Assignment_Operators">about_Assignment_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847768.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Automatic_Variables">about_Automatic_Variables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847873.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Break">about_Break</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn820211.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Classes">about_Classes</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh848304.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Command_Precedence">about_Command_Precedence</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847867.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Command_Syntax">about_Command_Syntax</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847834.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Comment_Based_Help">about_Comment_Based_Help</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847884.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_CommonParameters">about_CommonParameters</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847759.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Comparison_Operators">about_Comparison_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847821.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Continue">about_Continue</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847787.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Core_Commands">about_Core_Commands</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh848302.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Data_Sections">about_Data_Sections</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847790.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Debuggers">about_Debuggers</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn313042.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_DesiredStateConfiguration">about_DesiredStateConfiguration</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847887.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Do">about_Do</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847808.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Environment_Variables">about_Environment_Variables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847755.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Escape_Characters">about_Escape_Characters</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847797.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Eventlogs">about_Eventlogs</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847748.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Execution_Policies">about_Execution_Policies</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847870.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_For">about_For</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847816.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_ForEach">about_ForEach</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847831.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Format.ps1xml">about_Format.ps1xml</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847829.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions">about_Functions</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847806.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions_Advanced">about_Functions_Advanced</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847781.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions_Advanced_Methods">about_Functions_Advanced_Methods</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847743.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions_Advanced_Parameters">about_Functions_Advanced_Parameters</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847872.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions_CmdletBindingAttribute">about_Functions_CmdletBindingAttribute</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847785.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Functions_OutputTypeAttribute">about_Functions_OutputTypeAttribute</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj149004.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Group_Policy_Settings">about_Group_Policy_Settings</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847780.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Hash_Tables">about_Hash_Tables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847753.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_History">about_History</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/mt124987.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Hidden">about_Hidden</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847876.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_If">about_If</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847783.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Jobs">about_Jobs</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847853.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Job_Details">about_Job_Details</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847757.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Join">about_Join</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847744.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Language_Keywords">about_Language_Keywords</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn433292.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Language_Modes">about_Language_Modes</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847825.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Line_Editing">about_Line_Editing</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847786.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Locations">about_Locations</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847789.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Logical_Operators">about_Logical_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847878.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Methods">about_Methods</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847804.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Modules">about_Modules</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847810.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Objects">about_Objects</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj159398.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Object_Creation">about_Object_Creation</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn927162.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PackageManagement">about_PackageManagement</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847732.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Operators">about_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847842.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Operator_Precedence">about_Operator_Precedence</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847824.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Parameters">about_Parameters</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847819.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Parameters_Default_Values">about_Parameters_Default_Values</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847892.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Parsing">about_Parsing</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847752.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Path_Syntax">about_Path_Syntax</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847902.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Pipelines">about_Pipelines</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj553275.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PowerShell.exe">about_PowerShell.exe</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj553276.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PowerShell_Ise.exe">about_PowerShell_Ise.exe</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847796.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Preference_Variables">about_Preference_Variables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847857.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Profiles">about_Profiles</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847739.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Prompts">about_Prompts</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847751.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Properties">about_Properties</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847791.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Providers">about_Providers</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn936294.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PSConsoleHostReadLine">about_PSConsoleHostReadLine</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847839.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PSSessions">about_PSSessions</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847846.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PSSession_Details">about_PSSession_Details</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847795.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_PSSnapins">about_PSSnapins</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847740.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Quoting_Rules">about_Quoting_Rules</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847746.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Redirection">about_Redirection</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847792.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Ref">about_Ref</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847880.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Regular_Expressions">about_Regular_Expressions</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847900.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote">about_Remote</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj149006.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Disconnected_Sessions">about_Remote_Disconnected_Sessions</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847845.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_FAQ">about_Remote_FAQ</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847805.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Jobs">about_Remote_Jobs</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847891.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Output">about_Remote_Output</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847859.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Requirements">about_Remote_Requirements</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847850.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Troubleshooting">about_Remote_Troubleshooting</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj149005.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Remote_Variables">about_Remote_Variables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847765.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Requires">about_Requires</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847868.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Reserved_Words">about_Reserved_Words</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847760.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Return">about_Return</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj554779.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Run_With_PowerShell">about_Run_With_PowerShell</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847849.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Scopes">about_Scopes</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847893.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Script_Blocks">about_Script_Blocks</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847854.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Script_Internationalization">about_Script_Internationalization</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847841.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Scripts">about_Scripts</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847817.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Session_Configurations">about_Session_Configurations</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847838.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Session_Configuration_Files">about_Session_Configuration_Files</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847874.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Signing">about_Signing</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847835.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Special_Characters">about_Special_Characters</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj672955.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Splatting">about_Splatting</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847811.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Split">about_Split</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847750.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Switch">about_Switch</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847766.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Throw">about_Throw</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847861.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Transactions">about_Transactions</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847742.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Trap">about_Trap</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847793.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Try_Catch_Finally">about_Try_Catch_Finally</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847763.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Type_Operators">about_Type_Operators</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847881.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Types.ps1xml">about_Types.ps1xml</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847735.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Updatable_Help">about_Updatable_Help</a>                </div>
+                <div class="toclevel current" data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847734.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Variables">about_Variables</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847745.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_While">about_While</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847812.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Wildcards">about_Wildcards</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847833.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Windows_PowerShell_5.0">about_Windows_PowerShell_5.0</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847890.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Windows_PowerShell_ISE">about_Windows_PowerShell_ISE</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/dn456934.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_Windows_RT">about_Windows_RT</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj651664.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_WMI">about_WMI</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/hh847864.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_WMI_Cmdlets">about_WMI_Cmdlets</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj679341.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_WQL">about_WQL</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://technet.microsoft.com/en-us/library/jj556331.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="about_WS-Management_Cmdlets">about_WS-Management_Cmdlets</a>                </div>
+    </div>
+    <a id="tocMenuToggler" href="#">
+        <span id="tocMenuTogglerIcon" class="tocMenuCollapse"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>            <div style="display:none">
+                <div id="CollapseLocalizeString">Collapse the table of content</div>
+                <div id="ExpandLocalizeString">Expand the table of content</div>
+            </div>
+        <div>
+            <a id="isd_archiveControlResponsive" style="display:none;" data-include-archive="Show Archived Versions" data-exclude-archive="Hide Archived Versions">
+            </a>
+            <div id="isd_archiveInstrument" style="display:none">This documentation is archived and is not being maintained.</div>
+        </div>
+    </div>
+     <div id="content" class="content" ms.cmpgrp="content body" role="main">
+
+
+
+
+
+
+
+
+    <div id="archiveDisclaimerText" style="display:none">This documentation is archived and is not being maintained.</div>
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+  <h1 class="title">about_Variables</h1><div class="lw_vs"><div id="curversion"><strong>
+                Windows PowerShell 5.0
+            </strong></div><div id="versionclick"><div id="vsseperator" class="cl_lw_vs_seperator"></div><div><div><a id="vsLink" href="javascript:;">
+                        Other Versions
+                    </a></div><div class="cl_vs_arrow clip10x10"><img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=636077909241100353" /></div></div><ul id="vsPanel"><li class=""><a href="/en-us/library/hh847734(v=wps.630).aspx">Windows PowerShell 4.0</a></li><li class=""><a href="/en-us/library/hh847734(v=wps.620).aspx">Windows PowerShell 3.0</a></li></ul></div></div><div style="clear:both;"></div>
+  
+  <p>Updated: May 8, 2014</p><p>Applies To: Windows PowerShell 2.0, Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0</p><div id="mainSection">
+    <div id="mainBody">
+      <p>
+        
+      </p>
+      <div id="sectionSection0" class="section">
+        
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_41b40004-af21-4274-8425-6932e33d18cb');" ms.cmptyp="CodeSnippet">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_41b40004-af21-4274-8425-6932e33d18cb" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>
+TOPIC
+    about_Variables
+
+SHORT DESCRIPTION
+    Describes how variables store values that can be used in Windows 
+    PowerShell.    
+
+LONG DESCRIPTION
+    You can store all types of values in Windows PowerShell variables. 
+    They are typically used to store the results of commands and to 
+    store elements that are used in commands and expressions, such as
+    names, paths, settings, and values.
+
+    A variable is a unit of memory in which values are stored. In Windows
+    PowerShell, variables are represented by text strings that begin 
+    with a dollar sign ($), such as $a, $process, or $my_var. 
+
+    Variable names are not case-sensitive. Variable names can include
+    spaces and special characters, but these are difficult to use and
+    should be avoided.
+
+    There are several different types of variables in Windows PowerShell.
+
+    -- User-created variables: User-created variables are created and 
+       maintained by the user. By default, the variables that you create at
+       the Windows PowerShell command line exist only while the Windows 
+       PowerShell window is open, and they are lost when you close the window.
+       To save a variable, add it to your Windows PowerShell profile. You can 
+       also create variables in scripts with global, script, or local scope.    
+
+    -- Automatic variables: Automatic variables store the state of 
+       Windows PowerShell. These variables are created by Windows PowerShell, 
+       and Windows PowerShell changes their values as required to maintain 
+       their accuracy. Users cannot change the value of these variables.
+       For example, the $PSHome variable stores the path to the Windows 
+       PowerShell installation directory. 
+
+       For more information, a list, and a description of the automatic
+       variables, see about_Automatic_Variables.
+
+    -- Preference variables: Preference variables store user preferences for
+       Windows PowerShell. These variables are created by Windows PowerShell
+       and are populated with default values. Users can change the values of 
+       these variables. For example, the $MaximumHistoryCount variable 
+       determines the maximum number of entries in the session history. 
+ 
+       For more information, a list, and a description of the preference
+       variables, see about_Preference_Variables.
+
+
+  WORKING WITH VARIABLES
+
+    To create a new variable, use an assignment statement to assign
+    a value to the variable. You do not have to declare the variable
+    before using it. The default value of all variables is $null.
+    
+    For example:
+
+        PS&gt; $MyVariable = 1, 2, 3
+
+        PS&gt; $path = "C:\Windows\System32"
+
+        
+    Variables are very useful for storing the results of commands. 
+
+    For example:
+          
+        PS&gt; $processes = Get-Process         
+     
+        PS&gt; $Today = (Get-Date).date
+
+
+    To display the value of a variable, type the variable name, preceded
+    by a dollar sign ($). 
+
+    For example:
+
+        PS&gt; $MyVariable
+        1
+        2
+        3 
+
+        PS&gt; $Today
+        Thursday, September 03, 2009 12:00:00 AM
+
+
+    To change the value of a variable, assign a new value to the variable.
+
+    The following examples displays the value of the $MyVariable variable,
+    changes the value of the variable, and then displays the new value.
+
+
+        PS&gt; $MyVariable
+        1
+        2
+        3
+
+        PS&gt; $MyVariable = "The green cat."
+
+        PS&gt; $MyVariable
+        The green cat.
+
+
+    To delete the value of a variable, use the Clear-Variable cmdlet or 
+    change the value to $null.
+
+        PS&gt; Clear-Variable -name MyVariable  
+
+        -or-
+
+        PS&gt; $MyVariable = $null
+
+
+    
+    To delete the variable, use the Remove-Variable or Remove-Item
+    cmdlets. (These cmdlets are discussed later in this topic.)
+
+       PS&gt; remove-variable -name MyVariable
+
+       PS&gt; remove-item -path variable:\myvariable
+
+
+    To get a list of all of the variables in your Windows PowerShell
+    session, type:
+
+       get-variable
+
+
+  TYPES OF VARIABLES
+    You can store any type of object in a variable, including integers, 
+    strings, arrays, hash tables, and objects that represent processes, 
+    services, event logs, and computers. 
+
+    Windows PowerShell variables are "loosely typed," which means that
+    they are not limited to a particular type of object. A single variable
+    can even contain a collection (an "array") of different types of objects
+    at the same time.
+
+    The data type of a variable, which is a .NET Framework type, is
+    determined by the .NET types of the values of the variable. 
+
+    For example:
+
+        PS&gt; $a = 12     (System.Int32)
+        
+        PS&gt; $a = "Word" (System.String)
+
+        PS&gt; $a = 12, "Word" (System.Int32, System.String)
+
+        PS&gt; $a = dir C:\Windows\System32  (Files and folders)
+
+
+    You can use a type attribute and cast notation to ensure that a 
+    variable can contain only objects of the specified type or objects 
+    that can be converted to that type. If you try to assign a value
+    of another type, Windows PowerShell tries to convert the value to
+    its type. If it cannot, the assignment statement fails.
+
+    To use cast notation, enter a type name, enclosed in brackets, before
+    the variable name (on the left side of the assignment statement).
+    The following example creates an $number variable that can contain
+    only integers, a $words variable that can contain only strings, and
+    a $dates variable that can contain only DateTime objects.
+  
+        PS&gt; [int]$number = 8
+
+        PS&gt; $a = "12345" (The string is converted to an integer.)
+
+        PS&gt; $a = "Hello"
+        Cannot convert value "Hello" to type "System.Int32". Error: "Input string was not in a correct format."
+        At line:1 char:3
+        + $a &lt;&lt;&lt;&lt;  = "Hello"
+            + CategoryInfo          : MetadataError: (:) [], ArgumentTransformationMetadataException
+            + FullyQualifiedErrorId : RuntimeException
+
+
+        PS&gt; [string]$words = "Hello"
+
+        PS&gt; $words = 2   (The integer is converted to a string.)
+
+        PS&gt; $words + 10  (The strings are concatenated.)
+        210              
+
+
+        PS&gt; [datetime] $dates = "09/12/91" (The string is converted to a DateTime object.)
+
+        PS&gt; $dates
+        Thursday, September 12, 1991 12:00:00 AM
+
+        PS&gt; $dates = 10  (The integer is converted to a DateTime object.)
+        PS&gt; $dates
+        Monday, January 01, 0001 12:00:00 AM
+                
+       
+  USING VARIABLES IN COMMANDS AND EXPRESSIONS 
+
+    To use a variable in a command or expression, type the variable name, 
+    preceded by the dollar sign ($). 
+
+    If the variable name (and dollar sign) are not enclosed in quotation marks,
+    or if they are enclosed in double quotation marks ("), the value of the
+    variable is used in the command or expression. 
+
+    If the variable name (and dollar sign) are enclosed in single quotation
+    marks, ('), the variable name is used in the expression. 
+
+    For example, the first command gets the value of the $profile variable,
+    which is the path to the Windows PowerShell user profile file in the Windows
+    PowerShell console. The second command opens the file in Notepad, and the
+    third and fourth commands use the name of the variable in an expression.
+
+
+        PS&gt; $profile
+        C:\Documents and Settings\User01\My Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
+        PS&gt; notepad $profile 
+        - or -
+        PS&gt; notepad "$profile"
+        C:\Documents and Settings\User01\My Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
+        PS&gt; '$profile'
+        $profile
+
+        PS&gt; 'Use the $profile variable.'
+        Use the $profile variable. 
+
+    For more information about using quotation marks in Windows PowerShell, see
+    about_Quoting_Rules.
+
+
+  VARIABLE NAMES THAT INCLUDE SPECIAL CHARACTERS
+
+      Variable names begin with a dollar sign. They can include 
+      alphanumeric characters and special characters. The length
+      of the variable name is limited only by available memory.
+
+      Whenever possible, variable names should include only
+      alphanumeric characters and the underscore character (_). 
+      Variable names that include spaces and other special characters,
+      are difficult to use and should be avoided.
+ 
+      To create or display a variable name that includes spaces or
+      special characters, enclose the variable name in braces. This directs
+      Windows PowerShell to interpret the characters in the variable name
+      literally.
+
+      For example, the following command creates and then displays a variable
+      named "save-items".
+
+          C:\PS&gt; ${save-items} = "a", "b", "c"
+          C:\PS&gt; ${save-items}
+          a
+          b
+          c
+
+      The following command gets the child items in the directory that is 
+      represented by the "ProgramFiles(x86)" environment variable.
+
+          C:\PS&gt; Get-childitem ${env:ProgramFiles(x86)}
+
+
+      To refer to a variable name that includes braces, enclose the
+      variable name in braces, and use the backtick (escape) character
+      to escape the braces. For example, to create a variable
+      named "this{value}is" with a value of 1, type: 
+
+          C:\PS&gt; ${this`{value`}is} = 1
+          C:\PS&gt; ${this`{value`}is}
+          1
+
+
+  VARIABLES AND SCOPE
+      By default, variables are available only in the scope in which
+      they are created.  
+
+      For example, a variable that you create in a function is 
+      available only within the function. A variable that you
+      create in a script is available only within the script (unless
+      you dot-source the script, which adds it to the current scope).
+
+      You can use a scope modifier to change the default scope of the
+      variable. The following expression creates a variable named 
+      "Computers". The variable has a global scope, even when it is
+      created in a script or function.
+
+            $global:computers = "Server01"
+
+      For more information, see about_Scopes.       
+  
+
+  SAVING VARIABLES
+      Variables that you create are available only in the session in which
+      you create them. They are lost when you close your session.
+     
+      To create the in every Windows PowerShell session that you start, 
+      add the variable to your Windows PowerShell profile. 
+
+      For example, to change the value of the $VerbosePreference variable in
+      every Windows PowerShell session, add the following command to your Windows
+      PowerShell profile.
+
+  $VerbosePreference = "Continue"
+
+      You can add this command to your profile by opening the profile file in a
+      text editor, such as Notepad. For more information about Windows PowerShell
+      profiles, see about_profiles.
+
+
+
+  THE VARIABLE: DRIVE
+
+     Windows PowerShell Variable provider creates a Variable: drive that
+     looks and acts like a file system drive, but it contains the variables
+     in your session and their values.
+
+     To change to the variable: drive, type:
+
+        set-location variable:
+        
+         (or "cd variable:")
+
+     
+     To list the items (variables) in the Variable: drive, use the
+     Get-Item or Get-ChildItem cmdlets. For example:
+
+         get-childitem variable:
+         (or "dir" or "ls")
+
+
+     To get the value of a particular variable, use file system notation
+     to specify the name of the drive and the name of the variable. For
+     example, to get the $PSCulture automatic variable, use the following
+     command.
+     
+         get-item variable:\PSCulture      
+
+         Name                           Value
+         ----                           -----
+         PSCulture                      en-US        
+
+
+     For more information about the Variable: drive and the Windows
+     PowerShell Variable provider, type "get-help variable".
+
+
+  THE VARIABLE CMDLETS
+
+     Windows PowerShell includes a set of cmdlets that are designed to 
+     manage variables.
+
+         Cmdlet Name           Description
+         -----------           -----------
+
+         Clear-Variable        Deletes the value of a variable.
+         Get-Variable          Gets the variables in the current console.
+         New-Variable          Creates a new variable.
+         Remove-Variable       Deletes a variable and its value.
+         Set-Variable          Changes the value of a variable.
+
+     To get help for these cmdlets, type: "Get-Help &lt;cmdlet-hame&gt;".
+
+
+  VARIABLE SQUEEZING
+     
+     Windows PowerShell supports a simplified syntax for showing the
+     contents of variables during variable assignment. To do this, wrap
+     the variable assignment statement in parentheses.
+     
+     Typically, assigning and then displaying variable output requires
+     two separate Windows PowerShell commands. But you can consolidate
+     the two processes into one statement by using the variable squeezing
+     technique. The following examples show the difference.
+     
+         # Assign the variable
+         $ProcessList = Get-Process;
+         # Display the variable’s contents
+         $ProcessList;
+        
+         # Use variable squeezing to assign and output the variable
+         ($ProcessList = Get-Process); 
+
+SEE ALSO
+    about_Automatic_Variables
+    about_Environment_Variables
+    about_Preference_Variables
+    about_Profiles
+    about_Quoting_Rules
+    about_Scopes
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+    <p>
+      
+    </p>
+  </div>
+</div></div>
+
+
+
+
+
+<script id="CommentTemplate" type="text/x-jquery-tmpl">
+    <div class="communityContentAnnotation">
+        <a name="${Index}"></a>
+        <h3>
+            ${Title}
+        </h3>
+        <div class="communityContentAnnotationBody">
+            {{html Body}}
+        </div>
+        <div class="communityContentAnnotationInfo">
+            <div class="communityContentAnnotationAvatarContainer">
+                <a href="${UserAvatar.Href}" title="${UserAvatar.ToolTip}" class="communityContentAnnotationAvatar"><img src="${UserAvatar.ImageUrl}" alt="${UserAvatar.ImageAltText}" width="34" height="34" /></a>
+            </div>
+            <div class="communityContentAnnotationUserDateContainer">
+                <div class="communityContentAnnotationUserContainer">
+                    <a href="${UserAvatar.Href}">
+                        ${User}
+                    </a>
+                </div>
+                <div class="communityContentAnnotationDateContainer">
+                    <span>${Date}</span>
+                    
+                    {{if EditLink}}
+                        <span>
+                            <a href="${EditLink.Href}" title="${EditLink.ToolTip}" class="communityContentCommentEditLink">${EditLink.Title}</a>
+                        </span>
+                    {{/if}}
+
+                    {{if DeleteLink}}
+                        <span>
+                            <a href="${DeleteLink.Href}" title="${DeleteLink.ToolTip}" class="communityContentDeleteLink">${DeleteLink.Title}</a>
+                        </span>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="communityContentContainer" ms.cmpgrp="community">
+    <div id="CommunityContentHeader" class="communityContentHeader">
+        <div class="communityContentHeaderTitleContainer">
+            <h2>Community Additions</h2>
+                <a class="communityContentAddLink" href="https://technet.microsoft.com/en-us/library/community/add/hh847734.aspx">
+                    <span class="communityContentAddButton" title="Add">
+                        ADD
+                    </span>
+                </a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    
+    <div id="CommunityComments" data-url="/en-us/library/community/comments/hh847734.aspx"></div>
+</div>
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit" />Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected" />Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings." />
+
+
+
+    </div>
+<div id="rightNavigationMenu" ms.cmpgrp="right nav">
+    <div id="mobileButtons">
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://technet.microsoft.com/en-us/library/hh847734(d=printer).aspx" rel="nofollow"><ins class="print"></ins>Print </a>
+            <a id="isd_printABook" href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fhh847734.aspx">
+                <ins class="export"></ins>Export (<span class="count">0</span>)
+            </a>
+        </div>
+    </div>
+    <div id="navMain">
+        <div id="closeNavigation">
+            <a class="tocCloseSmall" id="closeButton"></a>
+        </div>
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://technet.microsoft.com/en-us/library/hh847734(d=printer).aspx" rel="nofollow"><ins class="print"></ins>Print </a>
+            <a id="isd_printABook2" href="/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fhh847734.aspx">
+                <ins class="export"></ins>Export (<span class="count">0</span>)
+            </a>
+            <a id="isdShare" href="#">
+                <ins class="share"></ins>Share
+            </a>
+            <div id="socials" style="display: none">
+                <a class="isdFacebook" href="#">
+                    <ins class="facebook"></ins>
+                </a>
+                <a class="isdTwitter" href="#">
+                    <ins class="twitter"></ins>
+                </a>
+                <a class="isdGooglePlus" href="#">
+                    <ins class="googlePlus"></ins>
+                </a>
+            </div>
+        </div>
+        <div id="indoc_toc" style="display: none" ms.cmpgrp="indoc toc">
+            <div id="indoc_title">IN THIS ARTICLE</div>
+            <ul id="indoc_toclist"></ul>
+        </div>
+    </div>
+</div>
+<div id="rightNavigationMenuThumbnail" class="rightNavigationMenuThumbnail">
+</div>
+
+
+
+
+        </div>
+        <div class="clear"></div>
+
+        
+    
+
+<input name="__RequestVerificationToken" type="hidden" value="NGi83Tskwgjxk69Hq_lQYHhiqLHcQerrETMci1KIofbQHssyPCCG_jKpoSuQf5OOaQINBL2fXSiBl5o6Q0ygAnyKPVE1" />
+<input id="ratingValueSubmitUrl" type="hidden" value="https://technet.microsoft.com/en-us/library/feedback/rate/hh847734.aspx" />
+<input id="ratingAdditionalSubmitUrl" type="hidden" value="https://technet.microsoft.com/en-us/library/feedback/additional/hh847734.aspx" />
+<input id="isTopicRated" type="hidden" value="false" />
+
+
+
+        <div id="lib-footer">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container" ms.pgarea="body">
+        <div class="stdr-close"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Is this page helpful?</span>
+                <button class="stdr-yes" aria-label="Yes, this page was helpful">Yes</button>
+                <button class="stdr-no" aria-label="No, this page was not helpful">No</button>
+                <input id="s_ratingValue" type="hidden" value="" />
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Additional feedback?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Submit my additional feedback">Submit</button>
+                        <button class="stdr-skip" aria-label="Skip additional feedback">Skip this</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Thank you!</span>
+                <span class="stdr-appreciate">We appreciate your feedback.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="display: none"></div>
+    
+            
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr" ms.pgarea="footer">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container" ms.pgarea="body">
+        <div class="stdr-close"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Is this page helpful?</span>
+                <button class="stdr-yes" aria-label="Yes, this page was helpful">Yes</button>
+                <button class="stdr-no" aria-label="No, this page was not helpful">No</button>
+                <input id="s_ratingValue" type="hidden" value="" />
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Additional feedback?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Submit my additional feedback">Submit</button>
+                        <button class="stdr-skip" aria-label="Skip additional feedback">Skip this</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Thank you!</span>
+                <span class="stdr-appreciate">We appreciate your feedback.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="display: none"></div>
+    
+
+        <footer class="top">
+            <div data-fragmentName="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                
+                <div data-fragmentName="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Top PowerShell Sites</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.powershellgallery.com/" id="CenterLinks2_15503_14" xmlns="http://www.w3.org/1999/xhtml">PowerShell Gallery</a>
+      </li>
+      <li>
+        <a href="https://technet.microsoft.com/en-us/powershell/ux/library/mt757324" id="CenterLinks2_15503_15" xmlns="http://www.w3.org/1999/xhtml">Announcements</a>
+      </li>
+      <li>
+        <a href="http://aka.ms/wmf" id="CenterLinks2_15503_16" xmlns="http://www.w3.org/1999/xhtml">Latest WMF Download</a>
+      </li>
+      <li>
+        <a href="https://github.com/powershell" id="CenterLinks2_15503_17" xmlns="http://www.w3.org/1999/xhtml">PowerShell on Github</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Related Microsoft Sites</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.microsoft.com/oms" id="CenterLinks3_15503_23" xmlns="http://www.w3.org/1999/xhtml">Microsoft Operations Management Suite (OMS)</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/cloud-platform/automation-and-control" id="CenterLinks3_15503_24" xmlns="http://www.w3.org/1999/xhtml">OMS Automation</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/library/dn636873(v=vs.85).aspx" id="CenterLinks3_15503_19" xmlns="http://www.w3.org/1999/xhtml">Windows Server Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts" id="CenterLinks3_15503_20" xmlns="http://www.w3.org/1999/xhtml">Office Deployment Scripts</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Feedback</div>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com" id="CenterLinks4_15503_21" xmlns="http://www.w3.org/1999/xhtml">PowerShell UserVoice</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com" id="CenterLinks4_15503_22" xmlns="http://www.w3.org/1999/xhtml">Windows Server UserVoice</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </footer>
+
+        <footer class="bottom" role="contentinfo">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://technet.microsoft.com/en-us/selectlocale">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2ftechnet.microsoft.com%2fen-us%2flibrary%2fhh847734.aspx" />
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentName="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logoSpan clip68x14">
+                    <img alt="logo" class="logo" src="https://i-technet.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                </span>
+                <span class="copyright">© 2016 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+        </div>
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2016 Microsoft</div>
+        </div>
+
+        
+        
+        
+        
+        
+        
+
+        
+            
+
+        
+
+
+    <input id="tocPaddingPerLevel" type="hidden" value="17" />
+
+
+
+        <input id="MtpsDevice" type="hidden" value="Default" />
+
+
+<![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+
+        
+        
+        
+            
+        
+
+<![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="vc4z7O46CspXm_hkfXjtLHy8fzG1ezCc6P89IFiafSiYrsW662hwcyTUUY7-FcCjfE54mguQj3c_GLDIgqbMm5fDOvw1" />
+</div>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-technet.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-technet.sec.s-msft.com\", \r\n\t\"css\": \"https://i-technet.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-technet.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u0027c48d7639-e2ae-45e0-b536-c9b172c95e44\u0027;\n        //" },
+	{ url: "https://i2-technet.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=9BCF242605796A0F8BC7DE2AB3DF9A56\u0026amp;v=F0B3E0D3E50148DE1EA46E268C109DF6" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=TechNet\u0026loc=en-us\u0026Refinement=248\u0026focusOnInit=false\u0026iroot=Powershell\u0026emptyWatermark=true" },
+	{ url: "https://i2-technet.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" },
+	{ url: "https://i2-technet.sec.s-msft.com/Combined.js?resources=0:CommunityContent,0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=8551982B26FC1249F603607350AF4935\u0026amp;v=F0B3E0D3E50148DE1EA46E268C109DF6" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script></body>
+</html>

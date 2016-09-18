@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="ROBOTS" content="INDEX, FOLLOW" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="description" content="" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="manager" content="dongill" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="keywords" content="powershell,cmdlet" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="version" content="0" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.contentlang" content="en-us" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.sitename" content="MSDN" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.depotname" content="PowerShell.PowerShell_PowerShell-docs_scripting" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.publishtime" content="2016-08-23 08:53 PM" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.gitcommit" content="https://github.com/PowerShell/PowerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.giturl" content="https://github.com/PowerShell/PowerShell-Docs/blob/live/scripting/getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.documentid" content="122e32b2-484d-88ea-f365-c92f1909a480" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.opspagetype" content="Conceptual" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="content_type" content="text/html" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="content_uri" content="https://opdhsblobprod02.blob.core.windows.net/contents/1a40a2e449b34d71bc13d006c9e76afe/e2c8168bd05a45f9a6343c86e470f4b8" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.contentsource" content="OP" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta><link rel="canonical" href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-" />
+    <title>Creating .NET and COM Objects  New Object</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:true,&quot;AmbientContextId&quot;:&quot;2D1D5F2C-45E5-4C8E-9BC7-B40B68D7FD89&quot;,&quot;display.use_large_font&quot;:false,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{&quot;LogTrace&quot;:false},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}" />
+
+<meta name="MN" content="61C41DCF-10:37:56 AM" />
+
+<meta name="ms.locale" content="en-us" />
+
+<meta name="ms.lang" content="EN" />
+
+<meta name="ms.loc" content="US" />
+
+<meta name="ms.assetid" content="2057b113-efeb-465e-8b44-da2f20dbf603" />
+
+<meta name="ms.auth" content="0" />
+
+<meta name="ms.author" content="JPJofre" />
+
+<meta name="ms.topic" content="article" />
+
+<meta name="ms.date" content="2016-05-11" />
+
+<meta name="ms.prod" content="powershell" />
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function () {
+            var root = (function () { return this; }).call(null);
+
+            var GetCookie = function (name) {
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos))) {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function (content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch (ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+    
+    
+<link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:MSDNOP,0:OverridesForBootstrap,0:vs,0:OverridesForHighlightJs,1:Tables.MediaQueries,2:OALayout,3:OP_Msdn,4:Header,4:HeaderFooterSprite,4:Header.MediaQueries,5:Banner.MediaQueries,0:OpenPublishingMobileMenu,2:OpenPublishingTopic,0:ImageSprite,4:Footer,4:Footer.MediaQueries,2:NewFooterSock,2:NewFooterSock.MediaQueries,2:LinkList,2:OpenPublishingTopic.MediaQueries;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Epx/Themes/Base/Content:2,/Areas/Library/Themes/Msdn/Content:3,/Areas/Centers/Themes/StandardDevCenter/Content:4,/Areas/Epx/Shared/Content:5&amp;amp;v=660B37CBD5017D2D27BF465833A2A7B3" /></head>
+<body class="Chrome">
+    <div id="page">
+
+        
+
+        
+    
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+        
+    <input type="hidden" id="isHeaderBleeding" value="true" />
+    <div id="ux-header" dir="ltr" class="ltr powershell" ms.pgarea="header">
+        
+
+      <header>
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow" role="banner">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" title="MSDN home" ms.cmpgrp="mslogo">
+                  <div class="clip70x15">
+                    <img alt="Microsoft Logo" id="msft-logo" class="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                  </div>
+                </a>
+                <div class="GrayPipeDiv clip1x18">
+                  <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                </div>
+                  <div class="MegaBladeNavigation">
+                        <div class="megaBladeToc">
+      <nav>
+        <ul class="navL1">
+          <li class="toggle inactive">
+            <a href="javascript:void(0)" title="Developer Network">Developer Network</a>
+            <ul class="navL2">
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Technologies">Technologies</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/app-development-msdn" title="App Development">App Development</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/cloud-app-development-msdn" title="Cloud">Cloud</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/web-app-development-msdn" title="Web">Web</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/data-and-devices" title="Data">Data</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/games-development-msdn" title="Gaming">Gaming</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/internetofthings" title="Internet of Things">Internet of Things</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" title="Visual Studio">Visual Studio</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/subscriptions" title="MSDN subscription access">MSDN subscription access</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" title="SDKs">SDKs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/evalcenter" title="Trial software">Trial software</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Programs">Programs</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" title="MSDN subscriptions">MSDN subscriptions</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/students-overview-msdn" title="Students">Students</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/applicationbuilder" title="ISV">ISV</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://www.microsoft.com/bizspark" title="Startups">Startups</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://rewards.msdn.microsoft.com/" title="TechRewards">TechRewards</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://events.msdn.microsoft.com/" title="Events">Events</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Community">Community</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/magazine/dd767791" title="Magazine">Magazine</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://social.msdn.microsoft.com/forums/" title="Forums">Forums</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://blogs.msdn.microsoft.com/" title="Blogs">Blogs</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://tech-advisors.msdn.microsoft.com/en-us" title="Tech Advisors">Tech Advisors</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="http://channel9.msdn.com/" title="Channel 9">Channel 9</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive toggle">
+                  <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                    <ul class="navL3">
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/library" title="APIs and reference">APIs and reference</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/developer-centers-msdn" title="Dev centers">Dev centers</a>
+                        </li>
+                        <li class="inactive">
+                          <a href="https://msdn.microsoft.com/retiredcontent" title="Retired content">Retired content</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="inactive">
+                  <a href="https://code.msdn.microsoft.com/" title="Samples">Samples</a>
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+                  </div>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">Developer</a>
+              </div>
+              <div class="right" ms.cmpgrp="aux nav">
+                <div id="signIn">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1473874676&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fpowershell%2fscripting%2fgetting-started%2fcookbooks%2fcreating-.net-and-com-objects--new-object-&amp;lc=1033&amp;id=254354&amp;mkt=en-us">Sign in</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentName="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>
+                    <div data-fragmentName="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_gray1">
+          <div class="row buttomRow bg_gray1">
+            <div class="bottom">
+              <div class="left" role="navigation" ms.cmpgrp="main nav">
+                <a id="grip" class="menu-icon" href="javascript:void(0)"></a>
+                <div data-fragmentName="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="LinkWithImage leftImage">
+    <a id="SiteLogo_15502_1" href="https://msdn.microsoft.com/powershell">
+      <img id="Powershell_32" alt="PowerShell" src="https://i-msdn.sec.s-msft.com/en-us/powershell/ux/dn966235.Powershell_32.png?isResponsive=true&amp;isMtpsRequest=true&amp;HideProfileLink=true&amp;HideProfileText=true" title="PowerShell" xmlns="" />
+      <span>PowerShell</span>
+    </a>
+  </div>
+</div>
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive">
+                            <a href="https://www.powershellgallery.com/">Gallery</a>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)">Documentation</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/powershell-scripting" title="Windows PowerShell">Windows PowerShell</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/dsc/overview" title="Desired State Configuration (DSC)">Desired State Configuration (DSC)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/powershell/jea/readme" title="Just Enough Administration (JEA)">Just Enough Administration (JEA)</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://technet.microsoft.com/library/bb978526.aspx" title="PowerShell Modules Reference">PowerShell Modules Reference</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/library/dd835506.aspx" title="Windows PowerShell SDK">Windows PowerShell SDK</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/powershell/gallery" title="PowerShell Gallery">PowerShell Gallery</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/en-us/library/azure/jj156055.aspx" title="Azure PowerShell">Azure PowerShell</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)">Community</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/powershell/mt757324" title="Announcements">Announcements</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://msdn.microsoft.com/powershell/mt270381" title="Community Links">Community Links</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)">Feedback</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+                                            <a href="http://windowsserver.uservoice.com/forums/301869-powershell" title="UserVoice">UserVoice</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://www.surveymonkey.com/r/wcq7hf9" title="Q&amp;A Submissions">Q&amp;A Submissions</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right" ms.title="search" role="search">
+                <div data-fragmentName="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button">
+        <div id="search-finder-div" class="clip16x20">
+          <img alt="search finder" id="search-finder" class="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+        </div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIconDiv" class="clip16x20">
+        <img alt="search clear" id="searchCloseIcon" class="search-clear-x" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+      </div>
+      <div id="searchTextContainer" style="width: 0;">
+        <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" />
+      </div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    </div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.</div>
+
+
+
+
+
+
+<div id="mobileMenu" data-spy="affix">
+    <div id="tocDropdownMenuButton">
+        <div class="tocLabel">Table of contents<div class="dropDownIcon"></div></div>
+        <div id="tocDropdownMenu">
+        </div>
+    </div>
+    <div id="functionDropdownMenuButton">
+        <div class="moreToolIcon"></div>
+        <div id="functionDropdownMenu">
+        </div>
+    </div>
+</div>
+<div id="mobileMenuSpaceHolder"></div>
+<div class="modal fade" id="mobileSocialShareModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h2 class="modal-title">Shared to</h2>
+            <div class="modal-body" id="mobileSocialShare">
+            </div>
+            <div class="mobileSocialShareModalDialogFooter">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mobileBranchSelectorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="mobileBranchSelector">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="tabletContainerWithoutBreadcrumbs"></div>
+
+        <div id="body" ms.pgarea="body">
+            
+
+
+
+
+
+
+<div id="threeColumns">
+    <div id="leftColumn" class="left" ms.cmpgrp="left toc">
+        <div id="tocNav">
+    <div class="tocRootContainer">
+        <a href="#" class="tocRoot" title="Table of contents">Table of contents</a> 
+        <a href="#" class="tocRootIcon" title="Table of contents">+</a>
+    </div>
+    <div class="tocData">
+                <div class="tocSelected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocExpanded" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/powershell-scripting" title="PowerShell Scripting" class="">PowerShell Scripting</a>
+        </div>
+        <div class="tocPadding">
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-with-powershell" title="What's new with PowerShell" class="">What's new with PowerShell</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-windows-powershell-50" title="PowerShell v5.0">PowerShell v5.0</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-the-powershell-50-ise" title="PowerShell 5.0 ISE">PowerShell 5.0 ISE</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/setup-reference" title="Setup" class="">Setup</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/windows-powershell-system-requirements" title="PowerShell System Requirements">PowerShell System Requirements</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell" title="Installing  PowerShell">Installing  PowerShell</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/starting-windows-powershell" title="Starting PowerShell" class="">Starting PowerShell</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/starting-the-32-bit-version-of-windows-powershell" title="Starting the 32-Bit Version of PowerShell">Starting the 32-Bit Version of PowerShell</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/starting-windows-powershell-on-earlier-versions-of-windows" title="Starting PowerShell on Earlier Versions of Windows">Starting PowerShell on Earlier Versions of Windows</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/installing-the-windows-powershell-2.0-engine" title="Installing the Windows PowerShell 2.0 Engine">Installing the Windows PowerShell 2.0 Engine</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/starting-the-windows-powershell-2.0-engine" title="Starting the Windows PowerShell 2.0 Engine">Starting the Windows PowerShell 2.0 Engine</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/library/ff458115.aspx" title="Installing the Windows PowerShell SDK">Installing the Windows PowerShell SDK</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/security" title="Security" class="">Security</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity" title="PowerShell Remoting Security Considerations">PowerShell Remoting Security Considerations</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/setup/accessibility-in-windows-powershell-ise" title="Accessibility">Accessibility</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocExpanded" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/getting-started-with-windows-powershell" title="Getting Started" class="">Getting Started</a>
+        </div>
+        <div class="tocPadding">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/getting-ready-to-use-windows-powershell" title="Basic setup for learning PowerShell">Basic setup for learning PowerShell</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental-concepts" title="Fundamental Concepts" class="">Fundamental Concepts</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/windows-powershell-basics" title="PowerShell Basics">PowerShell Basics</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/getting-detailed-help-information" title="Getting Detailed Help Information">Getting Detailed Help Information</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/exploring-the-windows-powershell-ise" title="Exploring the Windows PowerShell ISE">Exploring the Windows PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/getting-information-about-commands" title="Getting Information About Commands">Getting Information About Commands</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/learning-windows-powershell-names" title="Learning  PowerShell Names">Learning  PowerShell Names</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-windows-powershell-for-administration" title="Using Windows PowerShell for Administration">Using Windows PowerShell for Administration</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-variables-to-store-objects" title="Using Variables to Store Objects">Using Variables to Store Objects</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/about-windows-powershell" title="About Windows PowerShell">About Windows PowerShell</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-" title="Windows PowerShell Integrated Scripting Environment -ISE-">Windows PowerShell Integrated Scripting Environment -ISE-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/understanding-important-windows-powershell-concepts" title="Understanding Important Windows PowerShell Concepts -ISE-">Understanding Important Windows PowerShell Concepts -ISE-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/understanding-the-windows-powershell-pipeline" title="Understanding the  PowerShell Pipeline">Understanding the  PowerShell Pipeline</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-familiar-command-names" title="Using Familiar Command Names">Using Familiar Command Names</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/object-pipeline" title="Object Pipeline">Object Pipeline</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/scripting-with-windows-powershell" title="Scripting with Windows PowerShell">Scripting with Windows PowerShell</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-windows-powershell" title="Using Windows PowerShell">Using Windows PowerShell</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocExpanded" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/basic-cookbooks" title="Basic Cookbooks" class="">Basic Cookbooks</a>
+        </div>
+        <div class="tocPadding">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/changing-computer-state" title="Changing Computer State">Changing Computer State</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/collecting-information-about-computers" title="Collecting Information About Computers">Collecting Information About Computers</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/appendix-1---compatibility-aliases" title="Compatibility Aliases">Compatibility Aliases</a>
+        </div>
+        <div class="tocLevel current">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/creating-.net-and-com-objects--new-object-" title="Creating .NET and COM Objects -New-Object-">Creating .NET and COM Objects -New-Object-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/creating-a-custom-input-box" title="Creating a Custom Input Box">Creating a Custom Input Box</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut" title="Creating a Custom PowerShell Shortcut">Creating a Custom PowerShell Shortcut</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/creating-a-graphical-date-picker" title="Creating a Graphical Date Picker">Creating a Graphical Date Picker</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/getting-wmi-objects--get-wmiobject-" title="Getting WMI Objects -Get-WmiObject-">Getting WMI Objects -Get-WmiObject-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-processes-with-process-cmdlets" title="Managing Processes with Process Cmdlets">Managing Processes with Process Cmdlets</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-services" title="Managing Services">Managing Services</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives" title="Managing Windows PowerShell Drives">Managing Windows PowerShell Drives</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-current-location" title="Managing-Current-Location">Managing-Current-Location</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/manipulating-items-directly" title="Manipulating Items Directly">Manipulating Items Directly</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/multiple-selection-list-boxes" title="Multiple selection List Boxes">Multiple selection List Boxes</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/other-useful-scripting-objects" title="Other Useful Scripting Objects">Other Useful Scripting Objects</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/performing-networking-tasks" title="Performing Networking Tasks">Performing Networking Tasks</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/powershellget-module" title="PowerShell Get Module">PowerShell Get Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/redirecting-data-with-out---cmdlets" title="Redirecting Data with Out-* Cmdlets">Redirecting Data with Out-* Cmdlets</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-" title="Removing Objects from the Pipeline -Where-Object-">Removing Objects from the Pipeline -Where-Object-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-" title="Repeating a Task for Multiple Objects -ForEach-Object-">Repeating a Task for Multiple Objects -ForEach-Object-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/selecting-items-from-a-list-box" title="Selecting Items from a List Box">Selecting Items from a List Box</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/selecting-parts-of-objects--select-object-" title="Selecting Parts of Objects -Select-Object-">Selecting Parts of Objects -Select-Object-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/sorting-objects" title="Sorting Objects">Sorting Objects</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view" title="Using Format Commands to Change Output View">Using Format Commands to Change Output View</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/using-static-classes-and-methods" title="Using Static Classes and Methods">Using Static Classes and Methods</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/viewing-object-structure--get-member-" title="Viewing Object Structure -Get-Member-">Viewing Object Structure -Get-Member-</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-files-folders-and-registry-keys" title="Working With Files Folders and Registry Keys">Working With Files Folders and Registry Keys</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-files-and-folders" title="Working with Files and Folders">Working with Files and Folders</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-objects" title="Working with Objects">Working with Objects</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-printers" title="Working with Printers">Working with Printers</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-registry-entries" title="Working with Registry Entries">Working with Registry Entries</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-registry-keys" title="Working with Registry Keys">Working with Registry Keys</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-software-installations" title="Working with Software Installations">Working with Software Installations</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/more-powershell-learning" title="Where can I go for more learning?">Where can I go for more learning?</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-powershell" title="Common PowerShell" class="">Common PowerShell</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules" title="Common Modules" class="">Common Modules</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.archive-module" title="Archive Module">Archive Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.core-module" title="Core Module">Core Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/windows-powershell-5.0" title="Core Modules Reference list">Core Modules Reference list</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.diagnostics-module" title="Diagnostics Module">Diagnostics Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.host-module" title="Host Module">Host Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/pslocalaccount5-module" title="Local Account Module">Local Account Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.management-module" title="Management Module">Management Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.odatautils-module" title="OData Utils Module">OData Utils Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/packagemanagement-module" title="Package Management Module">Package Management Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/windows-powershell-core-about-topics" title="PowerShell Core About Topics">PowerShell Core About Topics</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/psreadline-module" title="Readline Module">Readline Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/psscheduledjob-module" title="Scheduled Job Module">Scheduled Job Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/psscriptanalyzer-module" title="Script Analyzer Module">Script Analyzer Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.powershell.utility-module" title="Utility Module">Utility Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/microsoft.wsman.management-module" title="WSMan Protocol Management Module">WSMan Protocol Management Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/core-modules/windows-powershell-core-providers" title="Windows PowerShell Core Providers">Windows PowerShell Core Providers</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise-guide" title="Integrated Scripting Environment -ISE-" class="">Integrated Scripting Environment -ISE-</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/windows-powershell-ise-object-model-reference" title="ISE Object Model Reference">ISE Object Model Reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-windows-powershell-ise-scripting-object-model" title="ISE Scripting Object Model">ISE Scripting Object Model</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/using-the-windows-powershell-ise" title="Using the Windows PowerShell ISE">Using the Windows PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isefile-object" title="The ISE File Object">The ISE File Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-iseoptions-object" title="The ISE Options Object">The ISE Options Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isesnippetcollection-object" title="The ISE Snippet Collection Object">The ISE Snippet Collection Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isesnippetobject" title="The ISE Snippet Object">The ISE Snippet Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-objectmodelroot-object" title="The ISO Object Model Root-Object">The ISO Object Model Root-Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise" title="How to Create a PowerShell Tab in  PowerShell ISE">How to Create a PowerShell Tab in  PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise" title="How to Debug Scripts in PowerShell ISE">How to Debug Scripts in PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise" title="How to Use Profiles in  PowerShell ISE">How to Use Profiles in  PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise" title="How to Use the Console Pane in the  PowerShell ISE">How to Use the Console Pane in the  PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise" title="How to Write and Run Scripts in the Windows PowerShell ISE">How to Write and Run Scripts in the Windows PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/introducing-the-windows-powershell-ise" title="Introducing the  PowerShell ISE">Introducing the  PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/ise-module" title="ISE Module">ISE Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise" title="Keyboard Shortcuts for the  PowerShell ISE">Keyboard Shortcuts for the  PowerShell ISE</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-powershelltab-object" title="The PowerShell Tab Object">The PowerShell Tab Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-powershelltabcollection-object" title="The PowerShell Tab Collection Object">The PowerShell Tab Collection Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model" title="Purpose of the PowerShell ISE Scripting Object Model">Purpose of the PowerShell ISE Scripting Object Model</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-ise-object-model-hierarchy" title="The ISE Object Model Hierarchy">The ISE Object Model Hierarchy</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-iseaddontool-object" title="The ISE Add On Tool Object">The ISE Add On Tool Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-iseaddontoolcollection-object" title="The ISE Add On Tool Collection Object">The ISE Add On Tool Collection Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-iseeditor-object" title="The ISE Editor Object">The ISE Editor Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isefilecollection-object" title="The-ISE File Collection Object">The-ISE File Collection Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isemenuitem-object" title="The ISE Menu Item Object">The ISE Menu Item Object</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/the-isemenuitemcollection-object" title="The ISE Menu Item Collection bject">The ISE Menu Item Collection bject</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/console-guide" title="Console" class="">Console</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/console/powershell.exe-command-line-help" title="Console Command Line Reference">Console Command Line Reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane" title="How to Use Tab Completion in the Script Pane and Console Pane">How to Use Tab Completion in the Script Pane and Console Pane</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/console/using-tab-expansion" title="Using Tab Expansion">Using Tab Expansion</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/running-remote-commands" title="Running Remote Commands">Running Remote Commands</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/workflows-guide" title="Workflows" class="">Workflows</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/workflows/psworkflow-module" title="Workflow-Module">Workflow-Module</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/workflows/psworkflowutility-module" title="Workflow Utility Module">Workflow Utility Module</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="#"></a>
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access" title="Web Access" class="">Web Access</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access" title="Authorization rules and security features of windows powershell web access">Authorization rules and security features of windows powershell web access</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access" title="Install and use windows powershell web access">Install and use windows powershell web access</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access" title="Troubleshooting access problems in windows powershell web access">Troubleshooting access problems in windows powershell web access</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access" title="Uninstall windows powershell web access">Uninstall windows powershell web access</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console" title="Use the web based windows powershell console">Use the web based windows powershell console</a>
+        </div>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/powershell/scripting/windows-powershell-glossary" title="PowerShell Glossary">PowerShell Glossary</a>
+        </div>
+        </div>
+
+        </div>
+
+    </div>
+    <a id="tocMenuToggler" href="javascript:void(0);">
+        <span id="tocMenuTogglerIcon"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>
+
+
+
+        <div style="display:none">
+            <div id="CollapseLocalizeString">Collapse the table of content</div>
+            <div id="ExpandLocalizeString">Expand the table of content</div>
+        </div>
+    </div>
+    <div class="main" ms.cmpgrp="content body">
+        <div id="oaContent" class="row"><div class="col-md-9" id="api-doc-contents"><h1 id="creating-net-and-com-objects-new-object" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="13" sourceendlinenumber="13">Creating .NET and COM Objects (New-Object)</h1><span><div class="gitContributors"><span class="author-bio"><a target="_blank" href="https://github.com/JPJofre" aria-label="JuanPablo Jofre"><span class="author-img" style="background-image:url('https://avatars.githubusercontent.com/u/1279045?v=3&amp;s=50')"></span></a></span><span class="username"><a target="_blank" href="https://github.com/JPJofre">JuanPablo Jofre</a></span><span class="contributorSplitter">|</span><span class="contributorsLabel">Last Updated: 8/23/2016</span><div id="contributorList"><span class="contributorSplitter">|</span><div class="contributors"><span class="contributorsLabel">1 Contributor</span><ul><li><a target="_blank" href="https://github.com/juanpablojofre" aria-label="JuanPablo Jofre"><span class="contributor-img" style="background-image:url('https://avatars.githubusercontent.com/u/17914685?v=3&amp;s=25')"></span></a></li></ul></div></div></div></span><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="14" sourceendlinenumber="14">There are software components with .NET Framework and COM interfaces that enable you to perform many system administration tasks. Windows PowerShell lets you use these components, so you are not limited to the tasks that can be performed by using cmdlets. Many of the cmdlets in the initial release of Windows PowerShell do not work against remote computers. We will demonstrate how to get around this limitation when managing event logs by using the .NET Framework <strong>System.Diagnostics.EventLog</strong> class directly from Windows PowerShell.</p><h3 id="using-new-object-for-event-log-access" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="16" sourceendlinenumber="16">Using New-Object for Event Log Access</h3><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="17" sourceendlinenumber="17">The .NET Framework Class Library includes a class named <strong>System.Diagnostics.EventLog</strong> that can be used to manage event logs. You can create a new instance of a .NET Framework class by using the <strong>New-Object</strong> cmdlet with the <strong>TypeName</strong> parameter. For example, the following command creates an event log reference:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="19" sourceendlinenumber="24"><code>PS&gt; New-Object -TypeName System.Diagnostics.EventLog
+
+  Max(K) Retain OverflowAction        Entries Name
+  ------ ------ --------------        ------- ----
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="26" sourceendlinenumber="26">Although the command has created an instance of the EventLog class, the instance does not include any data. That is because we did not specify a particular event log. How do you get a real event log?</p><h4 id="using-constructors-with-new-object" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="28" sourceendlinenumber="28">Using Constructors with New-Object</h4><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="29" sourceendlinenumber="29">To refer to a specific event log, you need to specify the name of the log. <strong>New-Object</strong> has an <strong>ArgumentList</strong> parameter. The arguments you pass as values to this parameter are used by a special startup method of the object. The method is called a <em>constructor</em> because it is used to construct the object. For example, to get a reference to the Application log, you specify the string 'Application' as an argument:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="31" sourceendlinenumber="37"><code>PS&gt; New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
+
+Max(K) Retain OverflowAction        Entries Name
+------ ------ --------------        ------- ----
+16,384      7 OverwriteOlder          2,160 Application
+</code></pre><div class="NOTE sourceFile=" _getting-started2f_cookbooks2f_creating-.net-and-com-objects--new-object-.md22_="" sourcestartlinenumber="39" sourceendlinenumber="39" _22_=""><h5>Note</h5><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="40" sourceendlinenumber="40">Since most of the .NET Framework core classes are contained in the System namespace, Windows PowerShell will automatically attempt to find classes you specify in the System namespace if it cannot find a match for the typename you specify. This means that you can specify Diagnostics.EventLog instead of System.Diagnostics.EventLog.</p></div><h4 id="storing-objects-in-variables" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="42" sourceendlinenumber="42">Storing Objects in Variables</h4><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="43" sourceendlinenumber="43">You might want to store a reference to an object, so you can use it in the current shell. Although Windows PowerShell lets you do a lot of work with pipelines, lessening the need for variables, sometimes storing references to objects in variables makes it more convenient to manipulate those objects.</p><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="45" sourceendlinenumber="45">Windows PowerShell lets you create variables that are essentially named objects. The output from any valid Windows PowerShell command can be stored in a variable. Variable names always begin with $. If you want to store the Application log reference in a variable named $AppLog, type the name of the variable, followed by an equal sign and then type the command used to create the Application log object:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="47" sourceendlinenumber="49"><code>PS&gt; $AppLog = New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="51" sourceendlinenumber="51">If you then type $AppLog, you can see that it contains the Application log:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="53" sourceendlinenumber="59"><code>PS&gt; $AppLog
+
+  Max(K) Retain OverflowAction        Entries Name
+  ------ ------ --------------        ------- ----
+  16,384      7 OverwriteOlder          2,160 Application
+</code></pre><h4 id="accessing-a-remote-event-log-with-new-object" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="61" sourceendlinenumber="61">Accessing a Remote Event Log with New-Object</h4><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="62" sourceendlinenumber="62">The commands used in the preceding section target the local computer; the <strong>Get-EventLog</strong> cmdlet can do that. To access the Application log on a remote computer, you must supply both the log name and a computer name (or IP address) as arguments.</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="64" sourceendlinenumber="71"><code>PS&gt; $RemoteAppLog = New-Object -TypeName System.Diagnostics.EventLog Application,192.168.1.81
+PS&gt; $RemoteAppLog
+
+  Max(K) Retain OverflowAction        Entries Name
+  ------ ------ --------------        ------- ----
+     512      7 OverwriteOlder            262 Application
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="73" sourceendlinenumber="73">Now that we have a reference to an event log stored in the $RemoteAppLog variable, what tasks can we perform on it?</p><h4 id="clearing-an-event-log-with-object-methods" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="75" sourceendlinenumber="75">Clearing an Event Log with Object Methods</h4><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="76" sourceendlinenumber="76">Objects often have methods that can be called to perform tasks. You can use <strong>Get-Member</strong> to display the methods associated with an object. The following command and selected output show some the methods of the EventLog class:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="78" sourceendlinenumber="97"><code>PS&gt; $RemoteAppLog | Get-Member -MemberType Method
+
+   TypeName: System.Diagnostics.EventLog
+
+Name                      MemberType Definition
+----                      ---------- ----------
+...
+Clear                     Method     System.Void Clear()
+Close                     Method     System.Void Close()
+...
+GetType                   Method     System.Type GetType()
+...
+ModifyOverflowPolicy      Method     System.Void ModifyOverflowPolicy(Overfl...
+RegisterDisplayName       Method     System.Void RegisterDisplayName(String ...
+...
+ToString                  Method     System.String ToString()
+WriteEntry                Method     System.Void WriteEntry(String message),...
+WriteEvent                Method     System.Void WriteEvent(EventInstance in...
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="99" sourceendlinenumber="99">The <strong>Clear()</strong> method can be used to clear the event log. When calling a method, you must always follow the method name by parentheses, even if the method does not require arguments. This lets Windows PowerShell distinguish between the method and a potential property with the same name. Type the following to call the <strong>Clear</strong> method:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="101" sourceendlinenumber="103"><code>PS&gt; $RemoteAppLog.Clear()
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="105" sourceendlinenumber="105">Type the following to display the log. You will see that the event log was cleared, and now has 0 entries instead of 262:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="107" sourceendlinenumber="113"><code>PS&gt; $RemoteAppLog
+
+  Max(K) Retain OverflowAction        Entries Name
+  ------ ------ --------------        ------- ----
+     512      7 OverwriteOlder              0 Application
+</code></pre><h3 id="creating-com-objects-with-new-object" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="115" sourceendlinenumber="115">Creating COM Objects with New-Object</h3><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="116" sourceendlinenumber="116">You can use <strong>New-Object</strong> to work with Component Object Model (COM) components. Components range from the various libraries included with Windows Script Host (WSH) to ActiveX applications such as Internet Explorer that are installed on most systems.</p><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="118" sourceendlinenumber="118"><strong>New-Object</strong> uses .NET Framework Runtime-Callable Wrappers to create COM objects, so it has the same limitations that .NET Framework does when calling COM objects. To create a COM object, you need to specify the <strong>ComObject</strong> parameter with the Programmatic Identifier or <em>ProgId</em> of the COM class you want to use. A complete discussion of the limitations of COM use and determining what ProgIds are available on a system is beyond the scope of this user's guide, but most well-known objects from environments such as WSH can be used within Windows PowerShell.</p><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="120" sourceendlinenumber="120">You can create the WSH objects by specifying these progids: <strong>WScript.Shell</strong>, <strong>WScript.Network</strong>, <strong>Scripting.Dictionary</strong>, and <strong>Scripting.FileSystemObject</strong>. The following commands create these objects:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="122" sourceendlinenumber="127"><code>New-Object -ComObject WScript.Shell
+New-Object -ComObject WScript.Network
+New-Object -ComObject Scripting.Dictionary
+New-Object -ComObject Scripting.FileSystemObject
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="129" sourceendlinenumber="129">Although most of the functionality of these classes is made available in other ways in Windows PowerShell, a few tasks such as shortcut creation are still easier to do using the WSH classes.</p><h3 id="creating-a-desktop-shortcut-with-wscriptshell" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="131" sourceendlinenumber="131">Creating a Desktop Shortcut with WScript.Shell</h3><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="132" sourceendlinenumber="132">One task that can be performed quickly with a COM object is creating a shortcut. Suppose you want to create a shortcut on your desktop that links to the home folder for Windows PowerShell. You first need to create a reference to <strong>WScript.Shell</strong>, which we will store in a variable named <strong>$WshShell</strong>:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="134" sourceendlinenumber="136"><code>$WshShell = New-Object -ComObject WScript.Shell
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="138" sourceendlinenumber="138">Get-Member works with COM objects, so you can explore the members of the object by typing:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="140" sourceendlinenumber="150"><code>PS&gt; $WshShell | Get-Member
+
+   TypeName: System.__ComObject#{41904400-be18-11d3-a28b-00104bd35090}
+
+Name                     MemberType            Definition
+----                     ----------            ----------
+AppActivate              Method                bool AppActivate (Variant, Va...
+CreateShortcut           Method                IDispatch CreateShortcut (str...
+...
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="152" sourceendlinenumber="152"><strong>Get-Member</strong> has an optional <strong>InputObject</strong> parameter you can use instead of piping to provide input to <strong>Get-Member</strong>. You would get the same output as shown above if you instead used the command <strong>Get-Member -InputObject $WshShell</strong>. If you use <strong>InputObject</strong>, it treats its argument as a single item. This means that if you have several objects in a variable, <strong>Get-Member</strong> treats them as an array of objects. For example:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="154" sourceendlinenumber="162"><code>PS&gt; $a = 1,2,"three"
+PS&gt; Get-Member -InputObject $a
+TypeName: System.Object[]
+Name               MemberType    Definition
+----               ----------    ----------
+Count              AliasProperty Count = Length
+...
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="164" sourceendlinenumber="164">The <strong>WScript.Shell CreateShortcut</strong> method accepts a single argument, the path to the shortcut file to create. We could type in the full path to the desktop, but there is an easier way. The desktop is normally represented by a folder named Desktop inside the home folder of the current user. Windows PowerShell has a variable <strong>$Home</strong> that contains the path to this folder. We can specify the path to the home folder by using this variable, and then add the name of the Desktop folder and the name for the shortcut to create by typing:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="166" sourceendlinenumber="168"><code>$lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="170" sourceendlinenumber="170">When you use something that looks like a variable name inside double-quotes, Windows PowerShell tries to substitute a matching value. If you use single-quotes, Windows PowerShell does not try to substitute the variable value. For example, try typing the following commands:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="172" sourceendlinenumber="177"><code>PS&gt; "$Home\Desktop\PSHome.lnk"
+C:\Documents and Settings\aka\Desktop\PSHome.lnk
+PS&gt; '$Home\Desktop\PSHome.lnk'
+$Home\Desktop\PSHome.lnk
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="179" sourceendlinenumber="179">We now have a variable named <strong>$lnk</strong> that contains a new shortcut reference. If you want to see its members, you can pipe it to <strong>Get-Member</strong>. The output below shows the members we need to use to finish creating our shortcut:</p><pre>PS&gt; $lnk | Get-Member
+TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
+Name             MemberType   Definition
+----             ----------   ----------
+...
+Save             Method       void Save ()
+...
+TargetPath       Property     string TargetPath () {get} {set}
+...</pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="191" sourceendlinenumber="191">We need to specify the <strong>TargetPath</strong>, which is the application folder for Windows PowerShell, and then save the shortcut <strong>$lnk</strong> by calling the <strong>Save</strong> method. The Windows PowerShell application folder path is stored in the variable <strong>$PSHome</strong>, so we can do this by typing:</p><pre>$lnk.TargetPath = $PSHome
+$lnk.Save()</pre><h3 id="using-internet-explorer-from-windows-powershell" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="196" sourceendlinenumber="196">Using Internet Explorer from Windows PowerShell</h3><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="197" sourceendlinenumber="197">Many applications (including the Microsoft Office family of applications and Internet Explorer) can be automated by using COM. Internet Explorer illustrates some of the typical techniques and issues involved in working with COM-based applications.</p><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="199" sourceendlinenumber="199">You create an Internet Explorer instance by specifying the Internet Explorer ProgId, <strong>InternetExplorer.Application</strong>:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="201" sourceendlinenumber="203"><code>$ie = New-Object -ComObject InternetExplorer.Application
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="205" sourceendlinenumber="205">This command starts Internet Explorer, but does not make it visible. If you type Get-Process, you can see that a process named iexplore is running. In fact, if you exit Windows PowerShell, the process will continue to run. You must reboot the computer or use a tool like Task Manager to end the iexplore process.</p><div class="NOTE sourceFile=" _getting-started2f_cookbooks2f_creating-.net-and-com-objects--new-object-.md22_="" sourcestartlinenumber="207" sourceendlinenumber="207" _22_=""><h5>Note</h5><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="208" sourceendlinenumber="208">COM objects that start as separate processes, commonly called <em>ActiveX executables</em>, may or may not display a user interface window when they start up. If they create a window but do not make it visible, like Internet Explorer, the focus will generally move to the Windows desktop and you must make the window visible to interact with it.</p></div><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="210" sourceendlinenumber="210">By typing <strong>$ie | Get-Member</strong>, you can view properties and methods for Internet Explorer. To see the Internet Explorer window, set the Visible property to $true by typing:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="212" sourceendlinenumber="214"><code>$ie.Visible = $true
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="216" sourceendlinenumber="216">You can then navigate to a specific Web address by using the Navigate method:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="218" sourceendlinenumber="220"><code>$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="222" sourceendlinenumber="222">Using other members of the Internet Explorer object model, it is possible to retrieve text content from the Web page. The following command will display the HTML text in the body of the current Web page:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="224" sourceendlinenumber="226"><code>$ie.Document.Body.InnerText
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="228" sourceendlinenumber="228">To close Internet Explorer from within PowerShell, call its Quit() method:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="230" sourceendlinenumber="232"><code>$ie.Quit()
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="234" sourceendlinenumber="234">This will force it to close. The $ie variable no longer contains a valid reference even though it still appears to be a COM object. If you attempt to use it, you will get an automation error:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="236" sourceendlinenumber="243"><code>PS&gt; $ie | Get-Member
+Get-Member : Exception retrieving the string representation for property "Appli
+cation" : "The object invoked has disconnected from its clients. (Exception fro
+m HRESULT: 0x80010108 (RPC_E_DISCONNECTED))"
+At line:1 char:16
++ $ie | Get-Member &lt;&lt;&lt;&lt;
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="245" sourceendlinenumber="245">You can either remove the remaining reference with a command like $ie = $null, or completely remove the variable by typing:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="247" sourceendlinenumber="249"><code>Remove-Variable ie
+</code></pre><div class="NOTE sourceFile=" _getting-started2f_cookbooks2f_creating-.net-and-com-objects--new-object-.md22_="" sourcestartlinenumber="251" sourceendlinenumber="251" _22_=""><h5>Note</h5><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="252" sourceendlinenumber="252">There is no common standard for whether ActiveX executables exit or continue to run when you remove a reference to one. Depending on circumstances such as whether the application is visible, whether an edited document is running in it, and even whether Windows PowerShell is still running, the application may or may not exit. For this reason, you should test termination behavior for each ActiveX executable you want to use in Windows PowerShell.</p></div><h3 id="getting-warnings-about-net-framework-wrapped-com-objects" sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="254" sourceendlinenumber="254">Getting Warnings About .NET Framework-Wrapped COM Objects</h3><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="255" sourceendlinenumber="255">In some cases, a COM object might have an associated .NET Framework <em>Runtime-Callable Wrapper</em> or RCW, and this will be used by <strong>New-Object</strong>. Since the behavior of the RCW may be different from the behavior of the normal COM object, <strong>New-Object</strong> has a <strong>Strict</strong> parameter to warn you about RCW access. If you specify the <strong>Strict</strong> parameter and then create a COM object that uses an RCW, you get a warning message:</p><pre sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="257" sourceendlinenumber="266"><code>PS&gt; $xl = New-Object -ComObject Excel.Application -Strict
+New-Object : The object written to the pipeline is an instance of the type "Mic
+rosoft.Office.Interop.Excel.ApplicationClass" from the component's primary inte
+rop assembly. If this type exposes different members than the IDispatch members
+, scripts written to work with this object might not work if the primary intero
+p assembly is not installed.
+At line:1 char:17
++ $xl = New-Object  &lt;&lt;&lt;&lt; -ComObject Excel.Application -Strict
+</code></pre><p sourcefile="getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md" sourcestartlinenumber="268" sourceendlinenumber="268">Although the object is still created, you are warned that it is not a standard COM object.</p></div><div id="right-nav-wrapper" class="col-md-3"><div id="right-nav-area" class="bs-sidebar affix"><ul id="task-nav-list" class="nav bs-sidenav" ms.cmpgrp="indoc toc"><li class="nav-header">IN THIS ARTICLE</li><li><a class="sub-task" href="#using-new-object-for-event-log-access">Using New-Object for Event Log Access</a></li><li><a class="sub-task" href="#creating-com-objects-with-new-object">Creating COM Objects with New-Object</a></li><li><a class="sub-task" href="#creating-a-desktop-shortcut-with-wscriptshell">Creating a Desktop Shortcut with WScript.Shell</a></li><li><a class="sub-task" href="#using-internet-explorer-from-windows-powershell">Using Internet Explorer from Windows PowerShell</a></li><li><a class="sub-task" href="#getting-warnings-about-net-framework-wrapped-com-objects">Getting Warnings About .NET Framework-Wrapped COM Objects</a></li></ul></div></div></div>
+        
+
+<input type="hidden" id="proxyUrl" value="https://apiexproxy.azurewebsites.net/svc" />
+<input type="hidden" id="playgroundUrl" value="https://apisandbox.msdn.microsoft.com/" />
+<input type="hidden" id="ajaxTimeout" value="10000" />
+<input type="hidden" id="supportedLanguagesForPlayground" value="javascript;c#" />
+<input type="hidden" id="authorizationHeader" value="Bearer {token:{resourceName}}" />
+
+
+
+
+    </div>
+    <div id="rightColumn" class="right" ms.cmpgrp="right nav">
+            <div id="right-nav-wrapper">
+        <div id="right-nav-area" class="bs-sidebar affix">
+            <div id="navigationButtons">
+                <a id="isdSmile" title="Feedback" href="#">
+                    <ins class="smile"></ins>
+                    Feedback
+                </a>
+
+                    <a id="isdContribute" target="_blank" title="Contribute" href="https://github.com/PowerShell/PowerShell-Docs/blob/staging/scripting/getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md">
+                        <ins class="contribute"></ins>
+                        Contribute
+                    </a>
+
+                <a id="isdShare" title="Share" href="#">
+                    <ins class="share"></ins>
+                    Share
+                </a>
+                <div id="socials" style="display: none">
+                    <a class="isdFacebook" title="Share on Facebook" href="#" data-sitename="Facebook">
+                        <ins class="facebook"></ins>
+                    </a>
+                    <a class="isdTwitter" title="Share on Twitter" href="#" data-sitename="Twitter">
+                        <ins class="twitter"></ins>
+                    </a>
+                    <a class="isdGooglePlus" title="Share on Google+" href="#" data-sitename="Google+">
+                        <ins class="googlePlus"></ins>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+
+                
+               <div id="openFeedbackContainer" style="z-index:220; position:relative;" ms.pgarea="body" ms.cmpgrp="feedbackform"></div>
+               
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr" ms.pgarea="footer">
+            
+                
+            <div id="footerSock" class="">
+                <div id="footerSockInner">
+
+                        <div class="footerSockLeft"><div data-fragmentName="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml"></div></div>
+
+                    <div class="footerSockCenter">
+                            <a name="feedback"></a>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Is this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br />Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes" aria-label="Yes, this page was helpful">Yes</button>
+            <button class="button" id="ratingNo" aria-label="No, this page was not helpful">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="" />
+    </div>
+    <div id="ratingSection2">
+        <div class="title left">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="right">
+            <div class="counter">
+                <span id="feedbackTextCounter">1500</span> characters remaining
+            </div>
+            <div class="buttons">
+                <button class="button" id="ratingSubmit" aria-label="Submit my additional feedback">Submit</button>
+                <button class="button" id="ratingSkipThis" aria-label="Skip additional feedback">Skip this</button>
+            </div>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                                            </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        <footer class="top">
+            <div data-fragmentName="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Dev centers</div>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                
+                <div data-fragmentName="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Top PowerShell Sites</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.powershellgallery.com/" id="CenterLinks2_15503_14" xmlns="http://www.w3.org/1999/xhtml">PowerShell Gallery</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/powershell/ux/mt757324" id="CenterLinks2_15503_15" xmlns="http://www.w3.org/1999/xhtml">Announcements</a>
+      </li>
+      <li>
+        <a href="http://aka.ms/wmf" id="CenterLinks2_15503_16" xmlns="http://www.w3.org/1999/xhtml">Latest WMF Download</a>
+      </li>
+      <li>
+        <a href="https://github.com/powershell" id="CenterLinks2_15503_17" xmlns="http://www.w3.org/1999/xhtml">PowerShell on Github</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Related Microsoft Sites</div>
+    <ul class="links">
+      <li>
+        <a href="https://www.microsoft.com/oms" id="CenterLinks3_15503_23" xmlns="http://www.w3.org/1999/xhtml">Microsoft Operations Management Suite (OMS)</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/cloud-platform/automation-and-control" id="CenterLinks3_15503_24" xmlns="http://www.w3.org/1999/xhtml">OMS Automation</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/library/dn636873(v=vs.85).aspx" id="CenterLinks3_15503_19" xmlns="http://www.w3.org/1999/xhtml">Windows Server Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts" id="CenterLinks3_15503_20" xmlns="http://www.w3.org/1999/xhtml">Office Deployment Scripts</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Feedback</div>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com" id="CenterLinks4_15503_21" xmlns="http://www.w3.org/1999/xhtml">PowerShell UserVoice</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com" id="CenterLinks4_15503_22" xmlns="http://www.w3.org/1999/xhtml">Windows Server UserVoice</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </footer>
+
+        <footer class="bottom" role="contentinfo">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/en-us/selectlocale-dmc">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fpowershell%2fscripting%2fgetting-started%2fcookbooks%2fcreating-.net-and-com-objects--new-object-" />
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentName="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logoSpan clip68x14">
+                    <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636077909203131227" />
+                </span>
+                <span class="copyright">© 2016 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2016 Microsoft</div>
+        </div>
+
+        
+    
+
+
+<![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+
+
+    </div>
+
+    
+    
+
+    
+    
+
+<![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ url: "https://open-rating.azureedge.net/open-rating.entry.min.js" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:OpenPublishingResponsiveTable,0:OpenPublishingResponsiveVideo,1:Layout,2:Header,2:Footer,3:ResponsiveSupport,0:AppInsightsPerf,0:Telemetry,0:InteractionTracker,0:ABTestControl,4:WEDCS;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4\u0026amp;hashKey=00A0ED6D72B1BA83B710573D0FDE35D2\u0026amp;v=A04FE119A4582675AF3FB0A6BC7D2395" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,0:highlight.min,0:OACodeSnippet,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1\u0026amp;hashKey=C7F72D22C1493509C08A2EF882BC5CFB\u0026amp;v=A04FE119A4582675AF3FB0A6BC7D2395" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026Refinement=248\u0026focusOnInit=false\u0026iroot=Powershell\u0026emptyWatermark=true" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:JumpRedirect,1:OpenPublishingMobileMenu,1:apiRunner,1:OpenPublishingTopic,0:API.1;/Areas/Epx/Themes/Base/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=1984C4FBCF8907251EE9766F49E29AA2\u0026amp;v=A04FE119A4582675AF3FB0A6BC7D2395" },
+	{ txt: "//\n                    // Load metadata into map to speed up reading later.\n                    var metadataMap = {};\n                    var metadataElements = document.getElementsByTagName(\"meta\");\n                    for (var i = 0; i \u003c metadataElements.length; ++i)\n                    {\n                        var meta = metadataElements[i];\n                        var name = meta.getAttribute(\"name\");\n                        if (name)\n                        {\n                            metadataMap[name.toLowerCase()] = meta.getAttribute(\"content\");\n                        }\n                    }\n\n                    window.openFeedbackOptions =\n                    {\n                        environment: \"prod\",\n                        anonUserCookieName:\"A\",\n                        documentMetaName: \"ms.documentid\",\n                        documentSnapIdMetaName: \"ms.gitcommit\",\n                        localeMetaName: \"ms.locale\",\n                        propertyBag:\n                        {\n                            \"ms.depotname\": metadataMap[\"ms.depotname\"],\n                            \"ms.contentsource\": metadataMap[\"ms.contentsource\"]\n                        }\n                    };\n                //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Rating,1:Breadcrumbs;/Areas/Epx/Themes/Base/Content:0,/Areas/Library/Content:1\u0026amp;hashKey=F2CBDC21553B184F0BA2E8B52B0FBBBA\u0026amp;v=A04FE119A4582675AF3FB0A6BC7D2395" }
+]);
+
+/*]]>*/
+</script></body>
+</html>
