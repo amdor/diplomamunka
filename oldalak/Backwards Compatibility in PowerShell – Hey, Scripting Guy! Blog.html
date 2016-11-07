@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="pingback" href="https://blogs.technet.microsoft.com/heyscriptingguy/xmlrpc.php">
+		<!--[if lt IE 9]>
+	<script src="https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/js/html5.js"></script>
+	<![endif]-->
+	<title>Backwards Compatibility in PowerShell &#8211; Hey, Scripting Guy! Blog</title>
+		<script type="text/javascript">
+		var ajaxurl = 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-admin/admin-ajax.php';
+		</script>
+		<link rel='dns-prefetch' href='//ajax.aspnetcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Hey, Scripting Guy! Blog &raquo; Backwards Compatibility in PowerShell Comments Feed" href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.technet.microsoft.com\/heyscriptingguy\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wds-ratings-css'  href='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/wds-ratings/wds-ratings.css?ver=20161014' type='text/css' media='all' />
+<link rel='stylesheet' id='microsoft-parent-style-css'  href='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/style.css?ver=10122016' type='text/css' media='all' />
+<link rel='stylesheet' id='microsoft-child-style-css'  href='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft-technet/style.css?ver=04152016' type='text/css' media='all' />
+<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.1.min.js'></script>
+<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js'></script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/js/single.js?ver=10122016'></script>
+<link rel='https://api.w.org/' href='https://blogs.technet.microsoft.com/heyscriptingguy/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.technet.microsoft.com/heyscriptingguy/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.technet.microsoft.com/heyscriptingguy/wp-includes/wlwmanifest.xml" /> 
+
+<link rel="canonical" href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/" />
+<link rel='shortlink' href='https://blogs.technet.microsoft.com/heyscriptingguy/?p=73361' />
+<link rel="alternate" type="application/json+oembed" href="https://blogs.technet.microsoft.com/heyscriptingguy/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://blogs.technet.microsoft.com/heyscriptingguy/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F&#038;format=xml" />
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('require', 'linkid');
+        ga('create', 'UA-65691138-1', 'auto');
+        ga('send', 'pageview');
+    } );
+</script>
+			<!-- Begin Custom CSS --><style type="text/css" id="wds-custom-css">
+			.home .blog-title {
+  margin: 10px 0 20px;
+  font-size: 29px;
+}
+
+.network-home-highlights-wrapper {
+  font-size: 14px;
+  font-family: WOL_Reg, 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+.network-home-highlights-wrapper .entry-title {
+  font-size: 16px;
+}
+.network-home-highlights-wrapper .blog-source {
+  font-size: 12px;
+}
+
+.widget .widget-title {
+  color: #2a2a2a;
+  font-size: 16px;
+}
+
+.widget-link-list {
+  list-style-type: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.widget-link-list li {
+  margin: 0 0 7px 0;
+  padding: 0;
+}
+
+.widget-link-list img {
+	margin: 0; 
+	padding: 0;
+}
+
+.widget .widget-rss-link {
+  position: relative;
+}
+.widget .widget-rss-link a {
+  display: block;
+  position: absolute;
+  top: -39px;
+  right: 0;
+  width: 14px;
+  height: 14px;
+}
+.widget .widget-rss-link a img {
+  padding: 0;
+}
+
+/*Main Navigation*/
+.main-navigation {
+	font-size: 13px;
+}
+.main-navigation ul {
+	/* subnav adjacent item gap - allows subnav to not appear connected to adjacent menu items */
+	display: block;
+	table-layout: auto;
+}
+
+.main-navigation ul li {
+	display: block; /* subnav adjacent item gap */
+}
+
+.main-navigation ul,
+.main-navigation li {
+	background: #00368a;
+	margin: 0;
+}
+.main-navigation ul li {
+	padding: 0;
+}
+.main-navigation li a {
+	height: 60px;
+	padding: 5px 30px 6px 10px;
+}
+
+.main-navigation .menu > .menu-item {
+	border-bottom: 1px solid #fff; /* subnav adjacent item gap */
+}
+.main-navigation .menu > .menu-item.active {
+	background: #01265f;
+	border-bottom-color: #01265f;
+}
+
+.main-navigation li:hover {
+  background: #01265f;
+}
+
+.main-navigation ul .sub-menu {
+	margin-top: 1px; /* subnav adjacent item gap */
+}
+
+.main-navigation li .sub-menu li a {
+	line-height: 1.3em;
+}
+
+.sub-menu.active li {
+	background: #01265f;
+}
+
+.sub-menu.active li:hover{
+  background: #00368a;
+}
+/*End Main Navigation*/
+
+.child-level-below-nav .blog-title a {
+  color: #00368a;
+}
+
+a:visited,
+h2.entry-title a:visited {
+  color: #969696;
+}
+
+a:hover,
+h2.entry-title a:hover {
+  color: #004185;
+}
+
+.child-level-below-nav .blog-title {
+  font-size: 3.9rem;
+}
+
+h1.entry-title {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+h2.entry-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+h2.entry-title a {
+  color: #0072c6;
+}
+
+.entry-meta {
+  margin-bottom: 8px;
+}
+
+.post-info {
+  margin-bottom: 0;
+}
+
+.entry-summary {
+  margin-top: 0;
+}
+
+.social-icons-wrap ul {
+  margin-top: 12px;
+}
+
+.wds-ratings-stars.current-rating,
+.wds-ratings-stars.current-rating.wds-ratings-active,
+.wds-ratings-stars.wds-ratings-active {
+  color: #f4b93f;
+}
+
+/* Begin tabs and container for sxp */
+	.layout-region.content .sxp-title {font-size: 1.333em/*16px*/;}
+	.sxp-feed p.sxp-time-author-comments {margin: 4px 0 -8px;}
+	.sxp-feed {margin-top: 30px;}
+  .right-sidebar .sxp-feed {margin: 0 0 15px 0;}
+	.sxp-feed:first-child {margin-top: 0;}
+	.sxp-feed p {margin: 12px 0 0;}
+  .right-sidebar .sxp-feed p {margin: 0;}
+	.sxp-feed .sxp-time {color: #707070;}
+	.sxp-feed .sxp-comments {margin-left: 21px; padding-left: 16px; background: url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/7282.icon-comments.png') 0 4px no-repeat;}
+	.sxp-container {padding: 0 20px;}
+  .right-sidebar .sxp-container {padding: 0;}
+	#sxp-feed-container-all {}
+	#sxp-feed-container-news {display: none;}  
+	#sxp-feed-container ul {padding: 0 0 0 15px;}
+	#sxp-feed-container-parent {position: relative; border: solid 1px #ccc; border-width: 0 1px 1px; padding: 0 0 20px;}
+	#sxp-tabs {margin: 0 0 30px; width: 100%; background: #00368a; height: 32px; padding: 0 !important; border-bottom: solid 1px #ccc; font-size: 14px;}
+	#sxp-tabs li {list-style-type: none; height: 32px; position: relative; float: left; border: solid #CCC; border-width: 0 1px 1px 0;}
+	#sxp-tabs a {color: #fff; background: #00368a; height: 100%; line-height: 34px; padding: 0 20px; display: block; margin-left: 0;}
+	#sxp-tabs a:hover {text-decoration: none;}
+	#sxp-tabs a:first-child + a {left: -3px;}
+	#sxp-tabs a:hover {background: #01265f;}
+	#sxp-tabs .selected {margin-top: -4px; height: 36px;}
+	#sxp-tabs .selected a, #sxp-tabs .selected a:hover {background: #01265f;}
+	#sxp-tabs .selected span {z-index: 805; position: absolute; bottom: -7px; width: 100%; height: 7px; background: transparent url('https://msdnshared.blob.core.windows.net/media/2015/11/jj157208.server-management-selected-tail(en-us,MSDN.10).png') no-repeat 50% 0;}
+	#all-rss-link {float: right; margin: 0 15px 0 0; padding: 0 15px 0 0; position: relative; top: -21px; }
+	#all-rss-link span {margin: 0 0 0 4px; display: inline-block; background: url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/2110.metroRSS.png') 0 0; height: 14px; width: 14px;}
+  #all-rss-link a { font-size: 13px; color: #00749e; }
+  #all-rss-link a:hover { text-decoration: underline; }
+  #all-rss-link a:visited { color: #707070; }
+	.feedPager {border-top: solid 1px #ccc; margin: 30px 0 20px; padding: 12px 0;}
+	.feedPager a.pagerLink.currentPage {font-weight: bold; color: #000;}
+	.feedPager a.pagerLink.currentPage:hover {cursor: default;}
+	.feedPager a.pagerLink {margin-left: 15px;}
+	.feedPager a.pagerLink:first-child {margin-left: 0;}
+	.content-fragment.raw-html:first-child .user-defined-markup {overflow: visible;}
+/* End tabs and container for sxp */
+
+/*Social Tile links*/
+.sidebar-tiles {
+  clear: both;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0
+}
+.sidebar-tiles li {
+  float: left;
+  margin: 0 5px 5px 0;
+  padding: 0;
+}
+.sidebar-tiles a {
+    background: #424242;
+    color: #fff;
+    display: block;
+    font-size: 11px;
+    margin: 0;
+    padding: 54px 10px 0 5px;
+    width: 70px;
+    height: 70px;
+    text-decoration: none;
+    line-height: 13px;
+    width: 65px;
+}
+.sidebar-tiles a.sidebar-tile-subscribe {
+  background: #ea700d url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/0045.icon-tile-rss.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a.sidebar-tile-twitter {
+  background: #55acee url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/twitter-tile.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a.sidebar-tile-facebook {
+  background: #3b5998 url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/2055.facebook.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a.sidebar-tile-comments {
+  background: #006bc2 url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/5415.icon-comments-large.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a.sidebar-tile-contact {
+  background: #00368a url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/5340.icon-email-large.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a.sidebar-tile-home {
+  background: #00368a url('https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/5417.home.png') 50% 50% no-repeat;
+}
+.sidebar-tiles a:hover {
+  color: #fff;
+  background-color: #01265f;
+}
+
+@media (min-width:37.5em){ /*medium*/
+  .home .blog-title {
+    margin: -10px 0 20px;
+    font-size: 39px;
+  }
+  .main-navigation ul {
+  	height: 121px;
+  }
+}
+@media (min-width:60em){ /*large*/
+  .main-navigation ul {
+  	height: 58px;
+  }
+}	
+
+/*Child specific styles*/
+
+.child-level-below-nav h2.blog-title {
+  margin: 10px 0 8px;
+  padding: 0;
+  font-size: 29px;
+}
+
+.child-level-below-nav .child-below-nav-right img {
+  float: none;
+  top: auto;
+  margin: 23px 0 0;
+}
+.site-content {
+  margin: 2rem auto 0; /* need space after site logo */
+}
+
+.sidebar-btn {
+  margin: 0 0 13px 0;
+  color: #fff;
+}
+.sidebar-btn-purple {
+  background-color: #68217a;
+}
+.sidebar-btn-green {
+  background-color: #009E49;
+}
+.sidebar-btn-cyan {
+  background-color: #0072C6;
+}
+.sidebar-btn a {
+  line-height: 34px; 
+  font-family: 'Segoe UI Semibold','Segoe UI',Tahoma,Helvetica,Sans-Serif;
+  padding: 0 30px 0 35px;
+  display: table-cell;
+  vertical-align: middle;
+  background: url('http://cdn3.visualstudio.com/Areas/VisualStudio/Themes/VStudio/Content/Images/arrowWhite.png') no-repeat right center;
+  border-right: 10px solid transparent; 
+  color: #fff;
+}
+.sidebar-btn a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+
+@media (min-width:37.5em){ 
+  .child-level-below-nav h2.blog-title {
+    margin: 10px 0 8px;
+    padding: 0;
+    font-size: 39px;
+  }
+}
+@media (min-width:48.125em){
+  .child-level-below-nav .child-below-nav-right img {
+    float: none;
+    top: auto;
+    margin: 23px 0 0;
+  }
+  #secondary {
+      float: right;
+      width: 23.5492%;
+  }
+  #tag-wrap,
+  .comments-area {
+      clear: left;
+      width: 74.5164%;
+  }
+  .comments-area .comment-list {
+      clear: left;
+  }
+}
+@media (min-width:60em){ 
+
+}			</style><!-- End Custom CSS -->
+			    <link rel="shortcut icon" href="https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft-technet/images/favicon-technet.png">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Backwards Compatibility in PowerShell" />
+<meta property="og:url" content="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/" />
+<meta property="og:site_name" content="Hey, Scripting Guy! Blog" />
+<meta property="og:description" content="Summary: Ed Wilson, Microsoft Scripting Guy, talks about backwards compatibility in Windows PowerShell. &nbsp;Hey, Scripting Guy! I wrote a script on a system with Windows PowerShell&nbsp;4.0 installed. Is there an easy way to find out the earliest version of Windows PowerShell on which it will run? &mdash;DH &nbsp;Hello DH, Microsoft Scripting Guy, Ed Wilson, is..." />
+<meta property="og:image" content="http://img.microsoft.com/library/media/1033/technet/images/scriptcenter/qanda/q-sm.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Backwards Compatibility in PowerShell" />
+<meta name="twitter:url" content="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/" />
+<meta name="twitter:description" content="Summary: Ed Wilson, Microsoft Scripting Guy, talks about backwards compatibility in Windows PowerShell. &nbsp;Hey, Scripting Guy! I wrote a script on a system with Windows PowerShell&nbsp;4.0 installed. Is there an easy way to find out the earliest version of Windows PowerShell on which it will run? &mdash;DH &nbsp;Hello DH, Microsoft Scripting Guy, Ed Wilson, is..." />
+<meta name="twitter:image" content="http://img.microsoft.com/library/media/1033/technet/images/scriptcenter/qanda/q-sm.jpg" />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="single single-post postid-73361 single-format-standard">
+<div id="page" class="site container-fluid">
+
+	<header id="site-header" class="site-header row" role="banner">
+		<div id="site-header-global-wrapper" class="site-header-global-wrapper">
+			<div id="site-header-global" class="site-header-global">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-profile-menu" aria-label="menu" tabindex="2" aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div id="site-logo" class="col-sm-5 row navbar-header">
+					<div id="header-microsoft-logo">
+						<a id="home-link" href="https://www.microsoft.com/" tabindex="1">
+							<img id="header-microsoft-logo-svg" src="https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/images/ms-logo-gray.svg" alt="Microsoft logo">
+							<span id="brand">
+								<span id="brand-separator">|</span>
+								<span id="brand-name"></span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div id="site-header-global-right" class="col-sm-7">
+					<div id="site-profile-menu" class="navbar-collapse collapse">
+						<div id="search-form-wrapper">
+														<form id="search-form" role="search" action="https://social.msdn.microsoft.com/search/en-US" home-url="https://blogs.technet.microsoft.com/heyscriptingguy" autocomplete="off">
+								<div class="input-group">
+																			<input name="rq" value="site:blogs.technet.microsoft.com/heyscriptingguy" type="hidden">
+										<input name="rn" value="heyscriptingguy" type="hidden">
+																		<input type="hidden" name="ral" value="1">
+									<input type="text" class="form-control" placeholder="Search" name="query" id="srch-term" tabindex="0" aria-label="Search box with search options">
+									<div class="input-group-btn">
+										<button aria-label="Search" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+									</div>
+								</div>
+							</form>
+							<div id="search-option">
+								<div class="search-filter" id="search-filter-site" tabindex="0" aria-label="Search MSDN">
+									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+									<span class="search-text">Search MSDN</span>
+								</div>
+								<div class="search-filter" tabindex="0" aria-label="Search all blogs" id="search-filter-all-blogs">
+									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+									<span class="search-text">Search all blogs</span>
+								</div>
+																	<div class="search-filter selected" tabindex="0" aria-label="Search this blog" id="search-filter-this-blog">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+										<span class="search-text">Search this blog</span>
+									</div>
+															</div>
+						</div>
+						<div id="me-control">
+															<a href="https://blogs.technet.microsoft.com/wp-login.php?aadsso_action=login">Sign in</a>
+													</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div id="site-header-blog-wrapper" class="site-header-blog-wrapper ms-blog-header clear-both">
+			<div id="site-header-blog" class="site-header-blog">
+				<nav class="navbar navbar-inverse">
+					<div id="blog-logo-area" class="navbar-header">
+						<div id="blog-logo" data-toggle="collapse" data-target="#blog-menu">
+														<div id="blog-logo-text">
+				<h1 class="site-title ms-blog-title">
+					<a href="https://blogs.technet.microsoft.com/heyscriptingguy" class="for-desktop">
+						Hey, Scripting Guy! Blog					</a>
+					<a href="https://blogs.technet.microsoft.com/heyscriptingguy" class="for-mobile">
+						Hey, Scripting Guy! Blog					</a>
+				</h1>
+				<p class="site-description ms-blog-description">Learn about Windows PowerShell</p>
+			</div>
+									</div>
+					</div>
+									</nav>
+			</div>
+		</div>
+		<div id="site-header-image-wrapper" class="ms-blog-banner">
+			<div id="site-header-image">
+											</div>
+		</div>
+	</header>
+
+	<div id="site-content" class="site-content row">
+
+	<div id="primary" class="content-area col-sm-9">
+		<div id="single-content" class="div-content">
+
+			
+				
+<article id="post-73361" class="post-73361 post type-post status-publish format-standard hentry category-uncategorized tag-getting-started tag-powershell-5 tag-scripting-guy tag-scripting-techniques tag-windows-powershell">
+
+	<header class="entry-header single">
+		<h1 class="entry-title">Backwards Compatibility in PowerShell</h1>		<div class="rating-wrap">
+		<div id="star-rating-73361" class="wds-ratings" data-rating="0" data-userrating="0" data-postid="73361" data-container="body" data-toggle="tooltip" title="0 user(s) rated">
+			<div class="wds-ratings-inner-wrap">
+				<div>
+					<div aria-label="5 star rating" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="5"><span class="star-1">&#x2605;</span><span class="star-2">&#x2605;</span><span class="star-3">&#x2605;</span><span class="star-4">&#x2605;</span><span class="star-5">&#x2605;</span></div><div aria-label="4 star rating" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="4"><span class="star-1">&#x2605;</span><span class="star-2">&#x2605;</span><span class="star-3">&#x2605;</span><span class="star-4">&#x2605;</span></div><div aria-label="3 star rating" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="3"><span class="star-1">&#x2605;</span><span class="star-2">&#x2605;</span><span class="star-3">&#x2605;</span></div><div aria-label="2 star rating" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="2"><span class="star-1">&#x2605;</span><span class="star-2">&#x2605;</span></div><div aria-label="1 star rating" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="1"><span class="star-1">&#x2605;</span></div>
+				</div>
+			</div>
+		</div>
+		</div>		<div class="clear-both"></div>
+		<div class="entry-meta">
+			<img alt='' src='https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=The+Scripting+Guys&size=extralarge&version=eb9010b7-868f-4d48-84d6-e51569a41902'  class='avatar avatar-22 photo' height='22' width='22' /><span class="byline"><span class="author vcard"><a class="url fn n profile-usercard-hover" data-profile-userid="caf498a5064149ba9f72939d8b8b1ae5" href="https://social.technet.microsoft.com/profile/The+Scripting+Guys">The Scripting Guys</a></span></span><span class="posted-on posted-on-margin"><span class="screen-reader-text"></span><time class="entry-date published updated" datetime="2015-09-14T00:01:00+00:00">September 14, 2015</time></span><span class="comments-link"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comments">5</a></span>				<span class="social-icons-wrap">
+		<ul class="social-icons">
+			<li><div class="fb-share-button" data-href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/&amp;src=sdkpreparse">Share</a></div></li>
+			<div id="fb-root" style="display:none"></div>
+
+			<li class="social-icon twitter"><a data-social='{"type":"twitter", "url":"https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/", "text": "Backwards Compatibility in PowerShell"}' href="#" id="post_tweet_count">0</a></li>
+			<li class="social-icon linkedin"><a data-social='{"type":"linkedin", "url":"https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/", "text": "Backwards Compatibility in PowerShell"}' href="#" id="get_post_linkedin_count">0</a></li>
+		</ul>
+	</span><!-- .social-icons-wrap -->
+	<script type="text/javascript">
+		// Get social counts
+		jQuery( window ).load(function () {
+			jQuery.getScript('https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/js/social-counts.js?ver=10122016')
+				.done(function(script,textStatus) {
+					window.msdnsocial.ajax('https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/');
+				});
+		});
+	</script>
+		</div>
+		<hr>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content single">
+		<p><b style="font-size:12px;">Summary</b><span style="font-size:12px;">: Ed Wilson, Microsoft Scripting Guy, talks about backwards compatibility in Windows PowerShell.</span>
+<p><img src="http://img.microsoft.com/library/media/1033/technet/images/scriptcenter/qanda/q-sm.jpg" alt="Hey, Scripting Guy! Question">&nbsp;Hey, Scripting Guy! I wrote a script on a system with Windows PowerShell&nbsp;4.0 installed. Is there an easy way to find out the earliest version of Windows PowerShell on which it will run?</p>
+<p>&mdash;DH</p>
+<p><img src="http://img.microsoft.com/library/media/1033/technet/images/scriptcenter/qanda/a-sm.jpg" alt="Hey, Scripting Guy! Answer">&nbsp;Hello DH,</p>
+<p>Microsoft Scripting Guy, Ed Wilson, is here. This question did not come in via the <a href="mailto:scripter@microsoft.com">scripter@microsoft.com</a> email alias. Instead, it came via Twitter to @ScriptingGuys. It doesn&rsquo;t matter if the question is about Windows PowerShell 5.0, 4.0, 3.0, or even Windows PowerShell 2.0. The answer is the same.</p>
+<h2>PowerShell is forward compatible</h2>
+<p>Windows PowerShell is forward compatible. This means a script that I wrote in Windows PowerShell&nbsp;1.0 will run without problems in Windows PowerShell&nbsp;5.0. Well, there actually can be problems, but not with Windows PowerShell.</p>
+<p>The reason is the ecosystem. For example, I could install Windows PowerShell&nbsp;1.0 on Windows XP. There were several WMI classes and other COM objects that were available in Windows XP that did not make it to Windows Vista or Windows Server 2008. There were also WMI classes in Windows Server 2003 that were not available in Windows XP.</p>
+<p>It is really important to keep in mind that there is a difference between the Windows PowerShell core and Windows PowerShell classes that are created by different product groups at Microsoft (and our partners) that provide the capability to manage their technologies via Windows PowerShell. This really gets confusing&mdash;especially since Windows PowerShell automatically loads a module that it finds that provides Windows PowerShell cmdlets. (It even loads various Windows PowerShell providers.)</p>
+<p>So if I have a Windows PowerShell script that I wrote in Windows XP by using Windows PowerShell&nbsp;1.0, and it calls a WMI class named <b>NetDiagnostics</b>, it does not matter what version of Windows PowerShell I am running, it will ONLY run on Windows XP because that was the only version of the operating system that contained that particular WMI class.</p>
+<p>There is clearly a difference between core Windows PowerShell and the capability provided by the operating system. There were different packages of Windows PowerShell that I could have installed on Windows XP, and all of them could have used that <b>NetDiagnostics</b> WMI class. But it would be a mistake to believe that was a Windows PowerShell compatibility issue.</p>
+<p>From a Windows PowerShell perspective, newer versions of Windows PowerShell add the following:</p>
+<ul>
+<li>Language statements (such as <b>Switch</b>, <b>Function</b>, and <b>Class</b>)</li>
+<li>Type accelerators (such as <b>[wmi]</b> and <b>[wmiclass]</b>)</li>
+<li>Providers (such as the Registry provider and the Certificate provider)</li>
+<li>Modules (such as PSReadLine and CimCmdlets)</li>
+<li>Cmdlets (such as <b>Get-Random</b> and <b>Get-Guid</b>)</li>
+<li>Aliases (such as <b>Dir</b> and <b>Ls</b>)</li>
+<li>New capabilities (such as workflow, DSC, and modules)</li>
+<li>New features (such as the Windows PowerShell ISE)</li>
+</ul>
+<p>When I am using something new from the Windows PowerShell core that was introduced in the latest version of Windows PowerShell, it will not work on a previous version of Windows PowerShell that does not include that capability or feature. This much is obvious.</p>
+<p>But if I am using a new feature, such as Windows PowerShell modules, which was introduced in Windows PowerShell&nbsp;2.0, that feature will work even in Windows PowerShell&nbsp;5.0 (even though we continue to add new capabilities to the modules). This is because we maintained the essential nature of the original feature, and this is the forward compatibility nature of Windows PowerShell.</p>
+<h2>It comes down to the version of the operating system</h2>
+<p>I might be running Windows PowerShell 4.0 on Windows 8.1, and I might have Windows PowerShell&nbsp;4.0 installed on Windows&nbsp;7, but that does not mean that scripts I write in Windows&nbsp;8.1 will work in Windows&nbsp;7. The reason? Because Windows&nbsp;8.1 has a lot more modules than Windows&nbsp;7, such as storage modules, firewall modules, and networking modules. Beginning with Windows&nbsp;8, the number of modules has exploded.</p>
+<p>Am I going to remember what cmdlets are installed on Windows&nbsp;7 and what cmdlets are installed on Windows&nbsp;8.1? Not me. Am I going to remember what is part of the Windows PowerShell core and what is part of the operating system? Probably not. The best thing to do is this: If your target is Windows&nbsp;7, fire up a virtual machine with Windows&nbsp;7 on it and write the script there. That way you will know it will work.</p>
+<h2>It also depends on what features are installed</h2>
+<p>Depending on what features and roles you have installed, you will get a lot (sometimes way more) cmdlets available to you. This is true on the client operating systems (Windows&nbsp;10 and Windows&nbsp;8.1), but it is even more true on the server side (Windows 2012&nbsp;R2 and Windows 2012). For example, adding the AD&nbsp;DS role will get you hundreds of Active Directory cmdlets.</p>
+<p>This is also true when you install the Remote Server Administration Tools (RSAT) tools on your client workstation&mdash;the features installation adds the appropriate cmdlets for you.</p>
+<p style="margin-left:30px;"><b>Note&nbsp;</b> The <b>#Requires</b> statement also has a <b>#Requires &ndash;Modules</b> parameter that permits you to specify required modules.</p>
+<h2>Backwards compatibility</h2>
+<p>It is possible that when I write a script in Windows PowerShell&nbsp;5.0, the script will work if I run it on a computer with Windows PowerShell&nbsp;1.0 installed. Here is an example of such a script:</p>
+<p style="margin-left:30px;">Get-WmiObject &ndash;class Win32_Bios</p>
+<p>This script will work in any installation of Windows PowerShell, and on any Windows computer. In fact, I could even run it remotely against a Windows NT 4 computer, and it would probably work (depending on the settings, such as NTLM). Why? Because it uses WMI, and the <b>Win32_Bios</b> class has been around ever since the first version of WMI.</p>
+<p>How do I know all this? Well, in my case, it is because I wrote a book about WMI. But the essential answer is that you don&rsquo;t. Unless you happen to remember, or you have run across a particular edge case, or you have an intuition or feeling about something, you really can&rsquo;t know.</p>
+<p>I will give another example&#8230;</p>
+<p>I was writing an article for TechNet Magazine, and I happened to have a beta build of some version of Windows PowerShell. I was not doing anything new&mdash;I was, in fact, simply working with files&mdash;it was something that Windows PowerShell had been able to do since the earliest betas. It worked fine for me, and my coworker, but the tech reviewer reported issues.</p>
+<p>Come to find out, the build I was using had introduced an overload on one of the methods of one of the classes. It was not anything I could have anticipated or anything that I would have noticed if I hadn&rsquo;t been writing the article at the time. It made an interesting sidebar. But the lesson is this:</p>
+<p style="margin-left:30px;"><b>Caution</b>&nbsp;&nbsp;Write in the version of Windows PowerShell that you target. If you want to really be sure, use <b>#Requires &ndash;Version 5.0</b> (or whatever version of Windows PowerShell you are using on your computer).</p>
+<p>It may not be the answer you are looking for, DH, but there are too many new things added in the new versions of Windows PowerShell to take a chance on remembering esoteric details. I use Windows PowerShell every day, nearly eight hours a day, and I can&rsquo;t remember when a particular thing was introduced in which version of Windows PowerShell.</p>
+<p>You can test and try to fail gracefully. You can take the easy way out, and require a specific version of Windows PowerShell. Or you can hope for the best, and trust your luck. I have done all three, and I can tell you the best way is to use the <b>#Requires</b> statement.</p>
+<p>DH, that is all there is to looking at backwards compatibility in Windows PowerShell. Join me tomorrow when I will talk about more cool Windows PowerShell stuff.</p>
+<p>I invite you to follow me on <a href="http://bit.ly/scriptingguystwitter" target="_blank">Twitter</a> and <a href="http://bit.ly/scriptingguysfacebook" target="_blank">Facebook</a>. If you have any questions, send email to me at <a href="mailto:scripter@microsoft.com" target="_blank">scripter@microsoft.com</a>, or post your questions on the <a href="http://bit.ly/scriptingforum" target="_blank">Official Scripting Guys Forum</a>. See you tomorrow. Until then, peace.</p>
+<p><b>Ed Wilson, Microsoft Scripting Guy</b></p></p>
+	</div><!-- .entry-content -->
+
+
+	<footer class="entry-footer single">
+					<div class="tags">
+				<span>Tags </span>
+				<span>
+					<a href="https://blogs.technet.microsoft.com/heyscriptingguy/tag/getting-started/" rel="tag">getting started</a> <a href="https://blogs.technet.microsoft.com/heyscriptingguy/tag/powershell-5/" rel="tag">Powershell 5</a> <a href="https://blogs.technet.microsoft.com/heyscriptingguy/tag/scripting-guy/" rel="tag">Scripting Guy!</a> <a href="https://blogs.technet.microsoft.com/heyscriptingguy/tag/scripting-techniques/" rel="tag">scripting techniques</a> <a href="https://blogs.technet.microsoft.com/heyscriptingguy/tag/windows-powershell/" rel="tag">Windows PowerShell</a>				</span>
+			</div>
+				<hr>
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+			
+		</div><!-- #single-content -->
+
+		
+<div id="comments" class="comments-area">
+	<div class="comments-title">
+		Comments (5)	</div>
+
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="https://blogs.technet.microsoft.com/heyscriptingguy/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="4" aria-required="true"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='73361' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="af119278cf" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="207"/></p>				</form>
+					</div><!-- #respond -->
+		
+			<div class="navigation pagination clear-both">
+					</div>
+
+		<ol class="comment-list">
+					<li class="comment byuser comment-author-hpotsirhc even thread-even depth-1" id="comment-145821">
+				<div id="div-comment-145821" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=hpotsirhc&size=extralarge&version=00000000-0000-0000-0000-000000000000'  class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn"><a href='https://social.technet.microsoft.com/profile/hpotsirhc' rel='external nofollow' class='url'>hpotsirhc</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comment-145821">
+			September 14, 2015 at 12:30 pm</a>		</div>
+
+		<p>Hey, Scripting Guy! This is a very nice and informative article, but I have a similar problem and don&#8217;t see the solution. I am using PowerShell 4.0, but there are some computers still using PowerShell 2.0 in my company. When I write script for those users,<br />
+ I have to be carefull with PowerShell 4.0-stuff, e.g. the -encoding parameter of Import-CSV. Is there a way to run my PowerShell 4.0 in a 2.0 mode?</p>
+<p>Thanks, <br />
+Christoph</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/?replytocom=145821#respond' onclick='return addComment.moveForm( "div-comment-145821", "145821", "respond", "73361" )' aria-label='Reply to hpotsirhc'>Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-145801">
+				<div id="div-comment-145801" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&amp;d=mm&amp;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Kim Oppalfens (TheWMIGuy)</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comment-145801">
+			September 14, 2015 at 1:30 pm</a>		</div>
+
+		<p>Hey Scripting guys, have a look at isesteroids/CompatAware.<br />
+<a href="http://www.powertheshell.com/isesteroids2/feature-overview/compataware/">http://www.powertheshell.com/isesteroids2/feature-overview/compataware/</a></p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/?replytocom=145801#respond' onclick='return addComment.moveForm( "div-comment-145801", "145801", "respond", "73361" )' aria-label='Reply to Kim Oppalfens (TheWMIGuy)'>Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-145771">
+				<div id="div-comment-145771" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&amp;d=mm&amp;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Ed Wilson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comment-145771">
+			September 14, 2015 at 5:29 pm</a>		</div>
+
+		<p>@Hpotsirhc the only way out of the box to ensure backwards compatibility is to actually write on that version &#8212; unfortunately, that is the answer.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/?replytocom=145771#respond' onclick='return addComment.moveForm( "div-comment-145771", "145771", "respond", "73361" )' aria-label='Reply to Ed Wilson'>Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-145761">
+				<div id="div-comment-145761" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&amp;d=mm&amp;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">ed Wilson</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comment-145761">
+			September 14, 2015 at 5:30 pm</a>		</div>
+
+		<p>@Kim Oppalfens that is indeed a great feature of ISE Steroids. Thank you for sharing the link.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/?replytocom=145761#respond' onclick='return addComment.moveForm( "div-comment-145761", "145761", "respond", "73361" )' aria-label='Reply to ed Wilson'>Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-hpotsirhc even thread-even depth-1" id="comment-145721">
+				<div id="div-comment-145721" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=hpotsirhc&size=extralarge&version=00000000-0000-0000-0000-000000000000'  class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn"><a href='https://social.technet.microsoft.com/profile/hpotsirhc' rel='external nofollow' class='url'>hpotsirhc</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/#comment-145721">
+			September 15, 2015 at 6:43 am</a>		</div>
+
+		<p>@Ed and Kim Oppalfens: Thank you very much. Seems like I have to dope with steroids now.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/?replytocom=145721#respond' onclick='return addComment.moveForm( "div-comment-145721", "145721", "respond", "73361" )' aria-label='Reply to hpotsirhc'>Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		<div class="navigation pagination">
+					</div>
+
+	
+	
+</div><!-- .comments-area -->
+	</div><!-- #primary -->
+
+
+<div id="secondary" class="sidebar col-sm-3">
+	<div id="sidebar-widget-area" class="sidebar-widget-area" role="complementary">
+		<div class="widget sfmsb_widget"><div class="sfmsb-follow-social-buttons sfmsb-under sfmsb-circle 40 sfmsb-horizontal"><h2 class="widget-title">Follow Us</h2><a title="RSS Feed" aria-label="RSS Feed" target="_blank" href="https://blogs.technet.microsoft.com/heyscriptingguy/feed/"><span class="sfmsb-icon-feed sfmsb-circle" style="color:#ffa500;font-size:40px;" data-color="#ffa500"></span></a><div class="sfmsb-clearfix"></div></div></div><aside id="msdn_bing_social_search-5" class="widget msdn_bing_social_search">		<div class="-widget-msdn-blogs-social-search msdn-blogs-social-search">
+			<div class="field-item search">
+								<form id="-widget-search-allblogs-container">
+					<span class="field-item-input">
+						<input id="-widget-search-textbox-allblogs" name="search-textbox-allblogs" type="search" class="search-field" maxlength="64" size="45" autocomplete="off" title="">
+						<input id="-widget-search-button-allblogs" name="search-button-allblogs" type="submit" class="search-submit" title="">
+					</span>
+				</form>
+												<form id="-widget-search-thisblog-container">
+					<span class="field-item-input">
+						<input id="-widget-search-textbox-thisblog" name="search-textbox-thisblog" type="search" class="search-field" maxlength="64" size="45" autocomplete="off" title="Search this blog with Bing">
+						<input id="-widget-search-button-thisblog" name="search-button-thisblog" type="submit" class="search-submit" title="Search this blog with Bing">
+					</span>
+				</form>
+							</div>
+						<div class="bing-social-search-option">
+				<span class="bing-social-search-thisblog">
+				<input type="radio" name="SearchTypeRadio" value="thisblog" id="-widget-thisblog"><label for="-widget-thisblog" id="-widget-thisblog-text">Search this blog</label></span>
+				<span class="bing-social-search-allblogs">
+				<input type="radio" name="SearchTypeRadio" value="allblogs" id="-widget-allblogs" checked="checked"><label for="-widget-allblogs" id="-widget-allblogs-text">Search all blogs</label></span>
+			</div>
+			<script type="text/javascript">
+			jQuery(document).ready(function( $ ) {
+				var $elmSearchAll = $('#-widget-search-allblogs-container').hide();
+				var $elmSearchThis = $('#-widget-search-thisblog-container');
+
+				// try to get the blog id, if we fail, then we aren't on a blog and just use the regular search approach
+
+					$('#-widget-thisblog').click(function () {
+						var self = $(this);
+						if (self.is(':checked')) {
+							$elmSearchAll.hide();
+							$elmSearchThis.show();
+						}
+					});
+
+					$('#-widget-allblogs').click(function () {
+						var self = $(this);
+						if (self.is(':checked')) {
+							$elmSearchThis.hide();
+							$elmSearchAll.show();
+						}
+					});
+			});
+			</script>
+			
+			<script type="text/javascript">window.$ = window.jQuery;</script>
+							<script src="https://i4.services.social.microsoft.com/Search/Widgets/SearchBox.jss?boxid=-widget-search-textbox-allblogs&btnid=-widget-search-button-allblogs&brand=msdn&refinement=109&resref&addEnglish&watermark&focusOnInit=false&beta=0&iroot&overrideWatermark=false&rn&rq" type="text/javascript" language="javascript"></script>
+										<script src="https://i4.services.social.microsoft.com/Search/Widgets/SearchBox.jss?boxid=-widget-search-textbox-thisblog&btnid=-widget-search-button-thisblog&brand=msdn&refinement&resref&addEnglish&watermark&focusOnInit=false&beta=0&iroot&overrideWatermark=false&rn=Hey%252C%2BScripting%2BGuy%2521%2BBlog&rq=site%3Ahttps%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy" type="text/javascript" language="javascript"></script>
+				
+		</div>
+		</aside><aside id="text-2" class="widget widget_text"><h2 class="widget-title">Top Server &#038; Tools Blogs</h2>			<div class="textwidget"><div class="widget-rss-link">
+	<a href="http://sxp.microsoft.com/feeds/3.0/ServerTools/ServerToolsTopPosts" target="_blank"><img src="https://msdnshared.blob.core.windows.net/media/TNBlogsFS/prod.evol.blogs.technet.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/94/25/2110.metroRSS.png" /></a></div>
+
+<ul class="widget-link-list">
+    <li><a href="http://weblogs.asp.net/scottgu">ScottGu's Blog</a></li>
+    <li><a href="https://blogs.technet.microsoft.com/in_the_cloud/">Brad Anderson&rsquo;s "In the Cloud" Blog</a></li>
+    <li><a href="http://blogs.msdn.microsoft.com/bharry/">Brian Harry's Blog</a></li>
+    <li><a href="https://blogs.msdn.microsoft.com/stevengu/">Steve "Guggs" Guggenheimer's Blog</a></li>
+</ul></div>
+		</aside><aside id="text-9" class="widget widget_text">			<div class="textwidget"><ul class="sidebar-tiles">
+  <li class="first">
+    <a href="/heyscriptingguy/feed/" class="sidebar-tile-subscribe">Subscribe</a>
+  </li>
+  <!--<li class="mid">
+    <a href="#" class="sidebar-tile-contact">Contact</a>  </li>
+  <li class="last">
+    <a href="#" class="sidebar-tile-facebook">Facebook</a>
+  </li>-->
+</ul></div>
+		</aside><aside id="msdn-sharing-3" class="widget msdn-sharing"><h2 class="widget-title">Share This Post</h2><div class='social-share-icons-wrap'><a onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=400, left=400, width=600, height=300' ); return false;" class="social-sharing social-sharing-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F">Share</a><a onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=400, left=400, width=600, height=300' ); return false;" class="social-sharing social-sharing-twitter twitter" href="https://twitter.com/intent/tweet/?text=Backwards+Compatibility+in+PowerShell&url=https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F">Share</a><a onclick="window.open(this.href, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=400, left=400, width=600, height=300' ); return false;" class="social-sharing social-sharing-linkedin linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F&title=Backwards+Compatibility+in+PowerShell&source=https://blogs.technet.microsoft.com/heyscriptingguy">Share</a><a onclick="" class="social-sharing social-sharing-email email" href="mailto:?subject=Backwards Compatibility in PowerShell&body=Backwards Compatibility in PowerShell https%3A%2F%2Fblogs.technet.microsoft.com%2Fheyscriptingguy%2F2015%2F09%2F14%2Fbackwards-compatibility-in-powershell%2F">Share</a><a onclick="" class="social-sharing social-sharing-rss rss" href="https://blogs.technet.microsoft.com/heyscriptingguy/feed/">Share</a></div></aside>		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<li>
+				<a href="https://blogs.technet.microsoft.com/heyscriptingguy/2016/11/04/powertip-capture-error-code-of-a-powershell-session-in-linux-or-macos/">PowerTip:  Capture error code of a PowerShell session in Linux or macOS</a>
+							<span class="post-date">November 4, 2016</span>
+						</li>
+					<li>
+				<a href="https://blogs.technet.microsoft.com/heyscriptingguy/2016/11/04/open-source-powershell-part-1/">Open Source PowerShell – Part 1</a>
+							<span class="post-date">November 4, 2016</span>
+						</li>
+					<li>
+				<a href="https://blogs.technet.microsoft.com/heyscriptingguy/2016/10/28/powertip-know-the-difference-between-the-split-method-and-split/">PowerTip: Know the difference between the .split() method and ‘-split’</a>
+							<span class="post-date">October 28, 2016</span>
+						</li>
+					<li>
+				<a href="https://blogs.technet.microsoft.com/heyscriptingguy/2016/10/28/powershell-regex-crash-course-part-5-of-5/">PowerShell regex crash course – Part 5 of 5</a>
+							<span class="post-date">October 28, 2016</span>
+						</li>
+				</ul>
+		</aside>		<aside id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widget-title">Tags</h2><div class="tagcloud"><a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/scripting-guy/' class='tag-link-3 tag-link-position-1' title='4,555 topics' style='font-size: 14px;'>Scripting Guy!</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/windows-powershell/' class='tag-link-2 tag-link-position-2' title='4,040 topics' style='font-size: 14px;'>Windows PowerShell</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/scripting-techniques/' class='tag-link-8 tag-link-position-3' title='1,616 topics' style='font-size: 14px;'>scripting techniques</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/powertip/' class='tag-link-4 tag-link-position-4' title='1,310 topics' style='font-size: 14px;'>PowerTip</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/guest-blogger/' class='tag-link-5 tag-link-position-5' title='1,137 topics' style='font-size: 14px;'>guest blogger</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/vbscript/' class='tag-link-471 tag-link-position-6' title='1,049 topics' style='font-size: 14px;'>VBScript</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/getting-started/' class='tag-link-24 tag-link-position-7' title='542 topics' style='font-size: 14px;'>getting started</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/weekend-scripter/' class='tag-link-19 tag-link-position-8' title='538 topics' style='font-size: 14px;'>Weekend Scripter</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/sean-kearney/' class='tag-link-83 tag-link-position-9' title='394 topics' style='font-size: 14px;'>Sean Kearney</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/office/' class='tag-link-63 tag-link-position-10' title='314 topics' style='font-size: 14px;'>Office</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/active-directory/' class='tag-link-7 tag-link-position-11' title='311 topics' style='font-size: 14px;'>Active Directory</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/operating-system/' class='tag-link-39 tag-link-position-12' title='301 topics' style='font-size: 14px;'>operating system</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/storage/' class='tag-link-52 tag-link-position-13' title='268 topics' style='font-size: 14px;'>storage</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/wmi/' class='tag-link-45 tag-link-position-14' title='231 topics' style='font-size: 14px;'>WMI</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/files/' class='tag-link-51 tag-link-position-15' title='183 topics' style='font-size: 14px;'>files</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/text-files/' class='tag-link-204 tag-link-position-16' title='150 topics' style='font-size: 14px;'>text files</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/community/' class='tag-link-9 tag-link-position-17' title='142 topics' style='font-size: 14px;'>community</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/desktop-management/' class='tag-link-67 tag-link-position-18' title='133 topics' style='font-size: 14px;'>desktop management</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/2011-scripting-games/' class='tag-link-1401 tag-link-position-19' title='132 topics' style='font-size: 14px;'>2011 Scripting Games</a>
+<a href='https://blogs.technet.microsoft.com/heyscriptingguy/tag/2012-scripting-games/' class='tag-link-511 tag-link-position-20' title='128 topics' style='font-size: 14px;'>2012 Scripting Games</a></div>
+</aside><aside id="text-8" class="widget widget_text"><h2 class="widget-title">Related Resources</h2>			<div class="textwidget"><ul class="widget-link-list">
+    <li><a href="http://technet.microsoft.com/en-us/scriptcenter/default.aspx" target="Blank">Script Center Home</a></li>
+    <li><a href="http://technet.microsoft.com/en-us/library/cc498722.aspx" target="Blank">Scripting Library</a></li>
+    <li><a href="http://technet.microsoft.com/en-us/scriptcenter/dd793612.aspx" target="Blank">Learn to Script</a></li>
+    <li><a href="http://www.microsoft.com/technet/scriptcenter/scripts/default.mspx?mfr=true" target="Blank">Script Repository</a></li>
+    <li><a href="http://social.technet.microsoft.com/Forums/en-US/ITCG/threads" target="Blank">Scripting Forum</a></li>
+    <li><a href="http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/04/the-2012-windows-powershell-scripting-games-all-links-on-one-page.aspx" target="Blank">2012 Scripting Games</a></li>
+</ul>
+</div>
+		</aside><aside id="msdn-archive-widget-3" class="widget msdn-archive-widget"><h2 class="widget-title">Archives</h2>	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/11/'>November 2016</a>&nbsp;(2)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/10/'>October 2016</a>&nbsp;(11)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/09/'>September 2016</a>&nbsp;(6)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/08/'>August 2016</a>&nbsp;(5)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/07/'>July 2016</a>&nbsp;(8)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/06/'>June 2016</a>&nbsp;(34)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/05/'>May 2016</a>&nbsp;(16)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/04/'>April 2016</a>&nbsp;(15)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/03/'>March 2016</a>&nbsp;(9)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/02/'>February 2016</a>&nbsp;(55)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/01/'>January 2016</a>&nbsp;(62)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2016/'>All of 2016</a>&nbsp;(223)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2015/'>All of 2015</a>&nbsp;(726)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2014/'>All of 2014</a>&nbsp;(740)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2013/'>All of 2013</a>&nbsp;(757)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2012/'>All of 2012</a>&nbsp;(624)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2011/'>All of 2011</a>&nbsp;(442)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2010/'>All of 2010</a>&nbsp;(432)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2009/'>All of 2009</a>&nbsp;(285)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2008/'>All of 2008</a>&nbsp;(181)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2007/'>All of 2007</a>&nbsp;(243)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2006/'>All of 2006</a>&nbsp;(244)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2005/'>All of 2005</a>&nbsp;(248)</li>
+	<li><a href='https://blogs.technet.microsoft.com/heyscriptingguy/2004/'>All of 2004</a>&nbsp;(100)</li>
+</aside>	</div>
+</div><!-- #secondary -->
+</div><!-- .site-content -->
+
+<footer id="site-footer" class="site-footer row" role="contentinfo">
+	<div id="site-info" class="site-info">
+		<div id="footer-text" class="col-sm-4 col-sm-offset-6">
+			<span>
+				<a href="https://msdn.microsoft.com/dn529288">Privacy & Cookies</a>
+			</span>
+			<span>
+				<a href="https://msdn.microsoft.com/cc300389">Terms of Use</a>
+			</span>
+			<span>
+				<a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx">Trademarks</a>
+			</span>
+		</div>
+		<div id="footer-far" class="col-sm-2">
+			<div id="footer-microsoft-logo">
+				<a href="https://www.microsoft.com">
+					<img id="footer-microsoft-logo-svg" src="https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/images/ms-logo-white-text.svg" alt="Microsoft logo">
+				</a>
+			</div>
+			<div id="copyright">
+				© 2016 Microsoft
+			</div>
+		</div>
+	</div><!-- .site-info -->
+</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$login_link = $( 'a[href*="wp-login.php?"]' );
+				$login_link.on( 'click', function( evt ) {
+			// evt.preventDefault();
+						// console.log( 'cookie-set', '/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/' );
+			$.cookie( 'aadsso-redirect', '/heyscriptingguy/2015/09/14/backwards-compatibility-in-powershell/', { expires: 1, path: '/' });
+		});
+	});
+	</script>
+		<script>
+		jQuery(window).load(function () {
+			// Fix Bug #644092:MAS36: Page number
+			jQuery('div.nav-links>a.page-numbers').each(function(){
+				jQuery(this).attr('aria-label', 'Page ' + jQuery(this).html());
+			});
+
+			// Fix Bug #633981:MAS20B:  Talkback: Talkback announces link for Number of Comments as 'Number link'
+			jQuery('span.comments-link>a').each(function () {
+				var num = parseInt(jQuery(this).html());
+				if (isNaN(num)) {
+					return false;
+				}
+				var content = num + (num === 1 ? 'comment' : 'comments');
+				jQuery(this).attr('aria-label', content);
+			});
+
+			jQuery('#search-option>div').each(function () {
+				jQuery(this).attr('aria-label',jQuery('span.search-text',this).html());
+			});
+		});
+	</script>
+		<!--ADD WEDCS SCRIPT-->
+	<div id="_WEDCSInsertedData" style="display: none;"></div>
+	<script type="text/javascript">
+		jQuery( window ).load(
+			function() {
+				window.varSegmentation = 0;
+				window.varClickTracking = 1;
+				window.varCustomerTracking = 1;
+				window.varAutoFirePV = 1;
+				window.Route = ""; // was 23470 in the windows theme framework
+				window.Ctrl = "";
+				var wedcs_script = document.createElement('script');
+				wedcs_script.type = 'text/javascript';
+				wedcs_script.async = true;
+				wedcs_script.src = 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/mu-plugins/wedcs-script/ms2_blogs.js';
+				document.getElementsByTagName('body')[0].appendChild(wedcs_script);
+			});
+	</script>
+	<!--
+	<script src="//c.microsoft.com/ms.js" type="text/javascript"></script>
+	<noscript><img alt="" width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx"/></noscript>
+	-->
+		<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var stylesheet = document.createElement('link');
+					stylesheet.href = 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/style.css?ver=3.3.3';
+					stylesheet.rel = 'stylesheet';
+					stylesheet.type = 'text/css';
+					document.getElementsByTagName('head')[0].appendChild(stylesheet);
+				});
+		</script>
+				<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var stylesheet = document.createElement('link');
+					stylesheet.href = 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/icons.css?ver=3.3.3';
+					stylesheet.rel = 'stylesheet';
+					stylesheet.type = 'text/css';
+					document.getElementsByTagName('head')[0].appendChild(stylesheet);
+				});
+		</script>
+				<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var script = document.createElement('script');
+					script.src = 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/js/front-widget.js?ver=3.3.3';
+					script.type = 'text/javascript';
+					script.async = true;
+					document.getElementsByTagName('body')[0].appendChild(script);
+				});
+		</script>
+		
+		<span id='page-view-tracking-info' blog-id='2185' post-id='73361'></span>
+		<script type="text/javascript">
+			// Check for compatibility before IE8
+			if (!Date.now) {
+ 				 Date.now = function() { return new Date().getTime(); };
+			}
+			jQuery( window ).load( function() {
+				jQuery.ajax({
+					url: 'https://blogs.technet.microsoft.com/heyscriptingguy/wp-admin/admin-ajax.php',
+					type: 'get',
+					data: {
+						action: 'track_page_view',
+						track_page_view_post_id: jQuery('#page-view-tracking-info').attr('post-id'),
+						track_page_view_blog_id: jQuery('#page-view-tracking-info').attr('blog-id'),
+						track_page_view_post_url: window.location.href.split('?')[0],
+						timestamp: Date.now()
+						}
+				});
+			});
+		</script>
+<script>
+dataLayer = [[]];
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLR87W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>jQuery(window).load(function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLR87W')});</script>
+<!-- End Google Tag Manager -->	<script type="text/javascript">
+		jQuery( window ).load(
+			function(i) {
+				var n = window,
+					t = document,
+					e = n.console,
+					f, u, r, o;
+				typeof e == "undefined" && (f = function() {}, e = {
+					log: f,
+					warn: f,
+					assert: f,
+					clear: f,
+					dir: f,
+					error: f,
+					info: f,
+					profile: f,
+					profileEnd: f
+				}), u = {
+					appendToHead: function(n) {
+						if (t.getElementsByTagName("head").length > 0) t.getElementsByTagName("head")[0].appendChild(n);
+						else throw "bootstrapper: no head element found.";
+					},
+					appendToBody: function(n) {
+						if (t.getElementsByTagName("body").length > 0) t.getElementsByTagName("body")[0].appendChild(n);
+						else throw "bootstrapper: no body element found.";
+					},
+					addStyleElement: function(n) {
+						var i = t.createElement("link");
+						i.setAttribute("href", n), i.setAttribute("rel", "stylesheet"), i.setAttribute("type", "text/css"), u.appendToHead(i)
+					},
+					loadFiles: function(n, t) {
+						if (t !== i && u.recursiveScriptLoad(0, t), n !== i)
+							for (var r = 0, r = 0; r < n.length; r++) u.addStyleElement(n[r])
+					},
+					recursiveScriptLoad: function(n, t) {
+						t[n] && u.addScriptElement(t[n], function() {
+							u.recursiveScriptLoad(n + 1, t)
+						})
+					},
+					isCompatible: function(n, t) {
+						var r, u, i;
+						return (r = n.split("."), u = t.split("."), i = function(n) {
+							return isNaN(n) ? 0 : n
+						}, i(r[0]) > i(u[0]) || i(r[0]) === i(u[0]) && i(r[1]) > i(u[1]) || i(r[0]) === i(u[0]) && i(r[1]) === i(u[1]) && i(r[2]) >= i(u[2])) ? !0 : !1
+					},
+					addScriptElement: function(i, r) {
+						var f, e;
+						f = t.createElement("script"), f.setAttribute("type", "text/javascript"), f.async = true, f.setAttribute("src", i), f.attachEvent ? (e = function() {
+							setTimeout(function() {
+								typeof n.jQuery != "undefined" && r ? r() : e()
+							}, 10)
+						}, e()) : f.onload = r, u.appendToBody(f)
+					},
+					load: function(n, t) {
+						setTimeout(function() {
+							if (typeof n == "undefined") try {
+								u.addScriptElement(t.defaultPath, function() {
+									u.loadFiles(t.cssFiles, t.jsFiles)
+								});
+								return
+							} catch (i) {
+								e.warn("bootstrapper: failed to load default jQuery")
+							} else if (!u.isCompatible(n.fn.jquery, t.minimumVersion)) {
+								e.warn("bootstrapper: jQuery version is too old to load UserCard. Use v1.4.2 or later.");
+								return
+							}
+							u.loadFiles(t.cssFiles, t.jsFiles)
+						}, 0)
+					}
+				}, r = {
+					host: n.location.host,
+					search: "",
+					protocol: "https"
+				}, r.host = "widgets.services.microsoft.com", r.search = "?brand=msdn&lang=en&ver=4.9.0.0", r.protocol = "https:", o = {
+					minimumVersion: "1.1.2",
+					defaultPath: "https://code.jquery.com/jquery-1.4.2.min.js",
+					cssFiles: [r.protocol + "//" + r.host + "/v1/UnifiedBaseballCard.css" + r.search, r.protocol + "//" + r.host + "/v1/usercard.css" + r.search],
+					jsFiles: ["https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js", r.protocol + "//" + r.host + "/v1/jquery.timeago.js" + r.search, r.protocol + "//" + r.host + "/v1/jquery.textfill.js" + r.search, r.protocol + "//" + r.host + "/v1/widgets.js" + r.search]
+				}, typeof n.jQuery == "undefined" ? u.load(i, o) : u.load(n.jQuery, o)
+			}
+		);
+	</script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/akismet/_inc/form.js?ver=3.1.11'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wds_ratings_config = {"ajaxurl":"https:\/\/blogs.technet.microsoft.com\/heyscriptingguy\/wp-admin\/admin-ajax.php","user_id":"0","nonce":"8e69083fbd","debug":"","no_auth_alert":"You must be logged in to rate an article."};
+var wds_ratings_config = {"ajaxurl":"https:\/\/blogs.technet.microsoft.com\/heyscriptingguy\/wp-admin\/admin-ajax.php","user_id":"0","nonce":"8e69083fbd","debug":"","no_auth_alert":"You must be logged in to rate an article."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/plugins/wds-ratings/wds-ratings.js?ver=20161014'></script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/js/theme-merged.js?ver=10122016'></script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://blogs.technet.microsoft.com/heyscriptingguy/wp-content/themes/microsoft/js/vendor/jquery.cookie.js?ver=11092015'></script>
+
+</body>
+</html>
