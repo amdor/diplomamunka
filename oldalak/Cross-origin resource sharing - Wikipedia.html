@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Cross-origin resource sharing - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Cross-origin_resource_sharing","wgTitle":"Cross-origin resource sharing","wgCurRevisionId":752980378,"wgRevisionId":752980378,"wgArticleId":27711475,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Ajax (programming)","World Wide Web Consortium standards"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Cross-origin_resource_sharing","wgRelevantArticleId":27711475,"wgRequestId":"WEQgDgpAMFwAAI@FPCAAAAEU","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q1141085","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.29.0-wmf.4"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Cross-origin_resource_sharing"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Cross-origin_resource_sharing rootpage-Cross-origin_resource_sharing skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Cross-origin resource sharing</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><script>function mfTempOpenSection(id){var block=document.getElementById("mf-section-"+id);block.className+=" open-block";block.previousSibling.className+=" open-block";}</script><p><b>Cross-origin resource sharing</b> (<b>CORS</b>) is a mechanism that allows restricted resources (e.g. fonts) on a <a href="/wiki/Web_page" title="Web page">web page</a> to be requested from another <a href="/wiki/Domain_name" title="Domain name">domain</a> outside the domain from which the resource originated.<sup id="cite_ref-mozhacks_cors_1-0" class="reference"><a href="#cite_note-mozhacks_cors-1">[1]</a></sup> A web page may freely embed images, <a href="/wiki/Style_sheet_(web_development)" title="Style sheet (web development)">stylesheets</a>, scripts, <a href="/wiki/HTML_element" title="HTML element">iframes</a>, videos.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup> Certain "cross-domain" requests, notably <a href="/wiki/Ajax_(programming)" title="Ajax (programming)">AJAX</a> requests, however are forbidden by default by the <a href="/wiki/Same-origin_policy" title="Same-origin policy">same-origin security policy</a>.</p>
+<p>CORS defines a way in which a browser and server can interact to determine whether or not it is safe to allow the cross-origin request.<sup id="cite_ref-nczonline1_3-0" class="reference"><a href="#cite_note-nczonline1-3">[3]</a></sup> It allows for more freedom and functionality than purely same-origin requests, but is more secure than simply allowing all cross-origin requests. It is a recommended standard of the <a href="/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">W3C</a>.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_CORS_works"><span class="tocnumber">1</span> <span class="toctext">How CORS works</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Simple_example"><span class="tocnumber">2</span> <span class="toctext">Simple example</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Preflight_example"><span class="tocnumber">3</span> <span class="toctext">Preflight example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Headers"><span class="tocnumber">4</span> <span class="toctext">Headers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Request_headers"><span class="tocnumber">4.1</span> <span class="toctext">Request headers</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Response_headers"><span class="tocnumber">4.2</span> <span class="toctext">Response headers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Browser_support"><span class="tocnumber">5</span> <span class="toctext">Browser support</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#History"><span class="tocnumber">6</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#CORS_vs_JSONP"><span class="tocnumber">7</span> <span class="toctext">CORS vs JSONP</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#External_links"><span class="tocnumber">10</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="How_CORS_works">How CORS works</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=1" title="Edit section: How CORS works">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The CORS standard describes new HTTP headers which provide browsers and servers a way to request remote URLs only when they have permission. Although some validation and authorization can be performed by the server, it is generally the browser's responsibility to support these headers and honor the restrictions they impose.</p>
+<p>For <a href="/wiki/Ajax_(programming)" title="Ajax (programming)">AJAX</a> and <a href="/wiki/Request_method" class="mw-redirect" title="Request method">HTTP request methods</a> that can modify data (usually HTTP methods other than GET, or for POST usage with certain MIME types), the specification mandates that browsers "preflight" the request, soliciting supported methods from the server with an HTTP OPTIONS request method, and then, upon "approval" from the server, sending the actual request with the actual HTTP request method. Servers can also notify clients whether "credentials" (including Cookies and HTTP Authentication data) should be sent with requests.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup></p>
+<p><a href="/wiki/File:Flowchart_showing_Simple_and_Preflight_XHR.svg" class="image" title="Flowchart showing how a browser decides whether to use a Simple XHR or a Preflighted XHR when making a Cross-Origin XHR call."><img alt="Flowchart showing how a browser decides whether to use a Simple XHR or a Preflighted XHR when making a Cross-Origin XHR call." src="//upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flowchart_showing_Simple_and_Preflight_XHR.svg/512px-Flowchart_showing_Simple_and_Preflight_XHR.svg.png" width="512" height="269" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flowchart_showing_Simple_and_Preflight_XHR.svg/768px-Flowchart_showing_Simple_and_Preflight_XHR.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flowchart_showing_Simple_and_Preflight_XHR.svg/1024px-Flowchart_showing_Simple_and_Preflight_XHR.svg.png 2x" data-file-width="512" data-file-height="269" /></a></p>
+<h2><span class="mw-headline" id="Simple_example">Simple example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=2" title="Edit section: Simple example">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This is generally not appropriate when using the <a href="/wiki/Same-origin_policy" title="Same-origin policy">same-origin security policy</a>. When a CORS-compatible browser attempts to make a cross-origin request:</p>
+<ol>
+<li>The browser sends the OPTIONS request with an <code>Origin</code> <a href="/wiki/HTTP_header" class="mw-redirect" title="HTTP header">HTTP header</a>. The value of this header is the domain that served the parent page. When a page from http://www.example.com attempts to access a user's data in service.example.com, the following request header would be sent to service.example.com:
+<pre>
+Origin: http://www.example.com
+</pre></li>
+<li>The server at service.example.com may respond with:
+<ul>
+<li>An <code>Access-Control-Allow-Origin</code> (ACAO) header in its response indicating which origin sites are allowed. For example:
+<pre>
+Access-Control-Allow-Origin: http://www.example.com
+</pre></li>
+<li>An error page if the server does not allow the cross-origin request</li>
+<li>An <code>Access-Control-Allow-Origin</code> (ACAO) header with a wildcard that allows all domains:
+<pre>
+Access-Control-Allow-Origin: *
+</pre></li>
+</ul>
+</li>
+</ol>
+<p>A wildcard same-origin policy is appropriate when a page or API response is considered completely public content and it is intended to be accessible to everyone, including any code on any site. For example, a freely-available <a href="/wiki/Web_font" class="mw-redirect" title="Web font">web font</a> on a public hosting service like <a href="/wiki/Google_Fonts" title="Google Fonts">Google Fonts</a>.</p>
+<p>A wildcard same-origin policy is also widely and appropriately used in the <a href="/wiki/Object-capability_model" title="Object-capability model">object-capability model</a>, where pages have unguessable URLs and are meant to be accessible to anyone who knows the secret.</p>
+<p>The value of "*" is special in that it does not allow requests to supply credentials, meaning HTTP authentication, client-side SSL certificates, nor does it allow cookies to be sent.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup></p>
+<p>Note that in the CORS architecture, the ACAO header is being set by the external web service (<i>service.example.com</i>), not the original web application server (<i>www.example.com</i>). CORS allows the external web service to authorise the web application to use its services and does not control external services accessed by the web application. For the latter, <a href="/wiki/Content_Security_Policy" title="Content Security Policy">Content Security Policy</a> should be used (<code>connect-src</code> directive).</p>
+<h2><span class="mw-headline" id="Preflight_example">Preflight example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=3" title="Edit section: Preflight example">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>When performing certain types of cross-domain AJAX requests, modern browsers that support CORS will insert an extra "preflight" request to determine whether they have permission to perform the action.</p>
+<pre>
+OPTIONS /
+Host: bar.com
+Origin: http://foo.com
+</pre>
+<p>If bar.com is willing to accept the action, it may respond with the following headers:</p>
+<pre>
+Access-Control-Allow-Origin: http://foo.com
+Access-Control-Allow-Methods: PUT, DELETE
+</pre>
+<h2><span class="mw-headline" id="Headers">Headers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=4" title="Edit section: Headers">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The HTTP headers that relate to CORS are</p>
+<h3><span class="mw-headline" id="Request_headers">Request headers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=5" title="Edit section: Request headers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>Origin</li>
+<li>Access-Control-Request-Method</li>
+<li>Access-Control-Request-Headers</li>
+</ul>
+<h3><span class="mw-headline" id="Response_headers">Response headers</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=6" title="Edit section: Response headers">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>Access-Control-Allow-Origin</li>
+<li>Access-Control-Allow-Credentials</li>
+<li>Access-Control-Expose-Headers</li>
+<li>Access-Control-Max-Age</li>
+<li>Access-Control-Allow-Methods</li>
+<li>Access-Control-Allow-Headers</li>
+</ul>
+<h2><span class="mw-headline" id="Browser_support">Browser support</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=7" title="Edit section: Browser support">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>CORS is supported by all browsers based on the following layout engines:</p>
+<ul>
+<li><a href="/wiki/Blink_(layout_engine)" class="mw-redirect" title="Blink (layout engine)">Blink</a>- and <a href="/wiki/Chromium_(web_browser)#Other_browsers_based_on_Chromium" title="Chromium (web browser)">Chromium</a>-based browsers (<a href="/wiki/Google_Chrome" title="Google Chrome">Chrome</a> 28+,<sup id="cite_ref-quirks_7-0" class="reference"><a href="#cite_note-quirks-7">[7]</a></sup><sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup> <a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a> 15+,<sup id="cite_ref-quirks_7-1" class="reference"><a href="#cite_note-quirks-7">[7]</a></sup> <a href="/wiki/Amazon_Silk" title="Amazon Silk">Amazon Silk</a>, <a href="/wiki/Android_(operating_system)" title="Android (operating system)">Android</a>'s 4.4+ WebView and <a href="/wiki/Qt_(framework)" class="mw-redirect" title="Qt (framework)">Qt's</a> WebEngine)</li>
+<li><a href="/wiki/Gecko_(layout_engine)" class="mw-redirect" title="Gecko (layout engine)">Gecko</a> 1.9.1 (Firefox 3.5,<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup> SeaMonkey 2.0,<sup id="cite_ref-gecko_vers_10-0" class="reference"><a href="#cite_note-gecko_vers-10">[10]</a></sup> Camino 2.1<sup id="cite_ref-11" class="reference"><a href="#cite_note-11">[11]</a></sup>) and above.</li>
+<li><a href="/wiki/Trident_(layout_engine)" title="Trident (layout engine)">MSHTML/Trident</a> 6.0 (Internet Explorer 10) has native support.<sup id="cite_ref-12" class="reference"><a href="#cite_note-12">[12]</a></sup> MSHTML/Trident 4.0 &amp; 5.0 (Internet Explorer 8 &amp; 9) provide partial support via the XDomainRequest object.<sup id="cite_ref-mozhacks_cors_1-1" class="reference"><a href="#cite_note-mozhacks_cors-1">[1]</a></sup></li>
+<li><a href="/wiki/Presto_(layout_engine)" title="Presto (layout engine)">Presto</a>-based browsers (Opera) implement CORS as of <a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a> 12.00<sup id="cite_ref-13" class="reference"><a href="#cite_note-13">[13]</a></sup> and <a href="/wiki/Opera_Mobile" title="Opera Mobile">Opera Mobile</a> 12, but not <a href="/wiki/Opera_Mini" title="Opera Mini">Opera Mini</a>.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14">[14]</a></sup></li>
+<li><a href="/wiki/WebKit" title="WebKit">WebKit</a> (Initial revision uncertain, Safari 4 and above,<sup id="cite_ref-mozhacks_cors_1-2" class="reference"><a href="#cite_note-mozhacks_cors-1">[1]</a></sup> Google Chrome 3 and above, possibly earlier).<sup id="cite_ref-15" class="reference"><a href="#cite_note-15">[15]</a></sup></li>
+</ul>
+<p>The following browsers are also noteworthy in their lack of CORS support:</p>
+<ul>
+<li><a href="/wiki/Camino_(web_browser)" title="Camino (web browser)">Camino</a> does not implement CORS in the 2.0.x release series because these versions are based on Gecko 1.9.0.<sup id="cite_ref-16" class="reference"><a href="#cite_note-16">[16]</a></sup></li>
+<li>As of version 0.10.2, <a href="/wiki/Arora_(web_browser)" title="Arora (web browser)">Arora</a> exposes WebKit's CORS-related APIs, but attempted cross-origin requests will fail.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17">[17]</a></sup></li>
+</ul>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=8" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Cross-origin support was originally proposed by Matt Oshry, Brad Porter, and Michael Bodell of <a href="/wiki/Tellme_Networks" title="Tellme Networks">Tellme Networks</a> in March 2004 for inclusion in <a href="/wiki/VoiceXML" title="VoiceXML">VoiceXML</a> 2.1<sup id="cite_ref-18" class="reference"><a href="#cite_note-18">[18]</a></sup> to allow safe cross-origin data requests by VoiceXML browsers. The mechanism was deemed general in nature and not specific to VoiceXML and was subsequently separated into an implementation NOTE.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19">[19]</a></sup> The WebApps Working Group of the W3C with participation from the major browser vendors began to formalize the NOTE into a <a href="/wiki/W3C_Recommendation#Working_Draft_.28WD.29" class="mw-redirect" title="W3C Recommendation">W3C Working Draft</a> on track toward formal <a href="/wiki/W3C_Recommendation#W3C_Recommendation_.28REC.29" class="mw-redirect" title="W3C Recommendation">W3C Recommendation</a> status.</p>
+<p>In May 2006 the first W3C Working Draft was submitted.<sup id="cite_ref-20" class="reference"><a href="#cite_note-20">[20]</a></sup> In March 2009 the draft was renamed to "Cross-Origin Resource Sharing" <sup id="cite_ref-21" class="reference"><a href="#cite_note-21">[21]</a></sup> and in January 2014 it was accepted as a W3C Recommendation.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22">[22]</a></sup></p>
+<h2><span class="mw-headline" id="CORS_vs_JSONP">CORS vs JSONP</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=9" title="Edit section: CORS vs JSONP">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>CORS can be used as a modern alternative to the <a href="/wiki/JSONP" title="JSONP">JSONP</a> pattern. While JSONP supports only the GET request method, CORS also supports other types of HTTP requests. Using CORS enables a web programmer to use regular <a href="/wiki/XMLHttpRequest" title="XMLHttpRequest">XMLHttpRequest</a>, which supports better error handling than JSONP. On the other hand, JSONP works on legacy browsers which predate CORS support. CORS is supported by most modern web browsers. Also, while JSONP can cause <a href="/wiki/Cross-site_scripting" title="Cross-site scripting">cross-site scripting (XSS)</a> issues where the external site is compromised, CORS allows websites to manually parse responses to ensure security.<sup id="cite_ref-nczonline1_3-1" class="reference"><a href="#cite_note-nczonline1-3">[3]</a></sup><sup id="cite_ref-23" class="reference"><a href="#cite_note-23">[23]</a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=10" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/JSONP" title="JSONP">JSONP</a></li>
+<li><a href="/wiki/Cross-document_messaging" class="mw-redirect" title="Cross-document messaging">Cross-document messaging</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=11" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-mozhacks_cors-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-mozhacks_cors_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-mozhacks_cors_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-mozhacks_cors_1-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">on July 6, 2009 by Arun Ranganathan (2009-07-06). <a rel="nofollow" class="external text" href="http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/">"cross-site xmlhttprequest with CORS ✩ Mozilla Hacks – the Web developer blog"</a>. Hacks.mozilla.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.au=on+July+6%2C+2009+by+Arun+Ranganathan&amp;rft.btitle=cross-site+xmlhttprequest+with+CORS+%9C%A9+Mozilla+Hacks+%93+the+Web+developer+blog&amp;rft.date=2009-07-06&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fhacks.mozilla.org%2F2009%2F07%2Fcross-site-xmlhttprequest-with-cors%2F&amp;rft.pub=Hacks.mozilla.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Cross-origin_network_access">"Same-origin policy / Cross-origin network access"</a>. MDN.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Same-origin+policy+%2F+Cross-origin+network+access&amp;rft.genre=unknown&amp;rft_id=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FSecurity%2FSame-origin_policy%23Cross-origin_network_access&amp;rft.pub=MDN&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-nczonline1-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-nczonline1_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-nczonline1_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">"Cross-domain Ajax with Cross-Origin Resource Sharing"</a>. NCZOnline<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Cross-domain+Ajax+with+Cross-Origin+Resource+Sharing&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.nczonline.net%2Fblog%2F2010%2F05%2F25%2Fcross-domain-ajax-with-cross-origin-resource-sharing%2F&amp;rft.pub=NCZOnline&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.w3.org/TR/cors/">http://www.w3.org/TR/cors/</a></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/">"cross-site xmlhttprequest with CORS"</a>. MOZILLA<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-09-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=cross-site+xmlhttprequest+with+CORS&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fhacks.mozilla.org%2F2009%2F07%2Fcross-site-xmlhttprequest-with-cors%2F&amp;rft.pub=MOZILLA&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/cors/#resource-requests">Cross-Origin Resource Sharing</a>. W3.org. Retrieved on 2014-04-12.</span></li>
+<li id="cite_note-quirks-7"><span class="mw-cite-backlink">^ <a href="#cite_ref-quirks_7-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-quirks_7-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.quirksmode.org/blog/archives/2013/04/blink.html">"Blink"</a>. QuirksBlog. April 2013<span class="reference-accessdate">. Retrieved <span class="nowrap">4 April</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Blink&amp;rft.date=2013-04&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.quirksmode.org%2Fblog%2Farchives%2F2013%2F04%2Fblink.html&amp;rft.pub=QuirksBlog&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><cite class="citation news"><a rel="nofollow" class="external text" href="http://arstechnica.com/information-technology/2013/04/google-going-its-own-way-forking-webkit-rendering-engine/">"Google going its own way, forking WebKit rendering engine"</a>. Ars Technica. April 2013<span class="reference-accessdate">. Retrieved <span class="nowrap">4 April</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.atitle=Google+going+its+own+way%2C+forking+WebKit+rendering+engine&amp;rft.date=2013-04&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Farstechnica.com%2Finformation-technology%2F2013%2F04%2Fgoogle-going-its-own-way-forking-webkit-rendering-engine%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://developer.mozilla.org/En/HTTP_access_control">"HTTP access control (CORS) - MDN"</a>. Developer.mozilla.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=HTTP+access+control+%28CORS%29+-+MDN&amp;rft.genre=unknown&amp;rft_id=https%3A%2F%2Fdeveloper.mozilla.org%2FEn%2FHTTP_access_control&amp;rft.pub=Developer.mozilla.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-gecko_vers-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-gecko_vers_10-0">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/Gecko">"Gecko - MDN"</a>. Developer.mozilla.org. 2012-06-08<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Gecko+-+MDN&amp;rft.date=2012-06-08&amp;rft.genre=unknown&amp;rft_id=https%3A%2F%2Fdeveloper.mozilla.org%2Fen%2FGecko&amp;rft.pub=Developer.mozilla.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://caminobrowser.org/features/">"What makes Camino Special"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2013-02-20</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=What+makes+Camino+Special&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fcaminobrowser.org%2Ffeatures%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><cite class="citation web">Tony Ross; Program Manager; Internet Explorer (2012-02-09). <a rel="nofollow" class="external text" href="http://blogs.msdn.com/b/ie/archive/2012/02/09/cors-for-xhr-in-ie10.aspx">"CORS for XHR in IE10"</a>. MSDN<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-12-14</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.au=Internet+Explorer&amp;rft.au=Program+Manager&amp;rft.au=Tony+Ross&amp;rft.btitle=CORS+for+XHR+in+IE10&amp;rft.date=2012-02-09&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fblogs.msdn.com%2Fb%2Fie%2Farchive%2F2012%2F02%2F09%2Fcors-for-xhr-in-ie10.aspx&amp;rft.pub=MSDN&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><cite class="citation web">David Honneffer, Documentation Specialist (2012-06-14). <a rel="nofollow" class="external text" href="http://www.opera.com/docs/changelogs/unix/1200/">"12.00 for UNIX Changelog"</a>. Opera<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.au=David+Honneffer%2C+Documentation+Specialist&amp;rft.btitle=12.00+for+UNIX+Changelog&amp;rft.date=2012-06-14&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.opera.com%2Fdocs%2Fchangelogs%2Funix%2F1200%2F&amp;rft.pub=Opera&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><cite class="citation web">David Honneffer, Documentation Specialist (2012-04-23). <a rel="nofollow" class="external text" href="http://www.opera.com/docs/specs/presto2.10/#m210-236">"Opera Software: Web specifications support in Opera Presto 2.10"</a>. Opera.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.au=David+Honneffer%2C+Documentation+Specialist&amp;rft.btitle=Opera+Software%3A+Web+specifications+support+in+Opera+Presto+2.10&amp;rft.date=2012-04-23&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.opera.com%2Fdocs%2Fspecs%2Fpresto2.10%2F%23m210-236&amp;rft.pub=Opera.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://osvdb.org/59940">"59940: Apple Safari WebKit Cross-Origin Resource Sharing Bypass"</a>. Osvdb.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=59940%3A+Apple+Safari+WebKit+Cross-Origin+Resource+Sharing+Bypass&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fosvdb.org%2F59940&amp;rft.pub=Osvdb.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://forums-test.mozillazine.org/viewtopic.php?f=12&amp;t=1579855">"HTTP Access Control in Camino • mozillaZine Forums"</a>. Forums-test.mozillazine.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=HTTP+Access+Control+in+Camino+%A2+mozillaZine+Forums&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fforums-test.mozillazine.org%2Fviewtopic.php%3Ff%3D12%26t%3D1579855&amp;rft.pub=Forums-test.mozillazine.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="https://code.google.com/p/arora/issues/detail?id=904">"Issue 904 - arora - Arora providing API for CORS (Cross-Origin Resource Sharing) but fails in actual use - Cross Platform WebKit Browser - Google Project Hosting"</a>. Code.google.com. 2010-09-04<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Issue+904+-+arora+-+Arora+providing+API+for+CORS+%28Cross-Origin+Resource+Sharing%29+but+fails+in+actual+use+-+Cross+Platform+WebKit+Browser+-+Google+Project+Hosting&amp;rft.date=2010-09-04&amp;rft.genre=unknown&amp;rft_id=https%3A%2F%2Fcode.google.com%2Fp%2Farora%2Fissues%2Fdetail%3Fid%3D904&amp;rft.pub=Code.google.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/2004/WD-voicexml21-20040323/">"Voice Extensible Markup Language (VoiceXML) 2.1"</a>. W3.org. 2004-03-23<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Voice+Extensible+Markup+Language+%28VoiceXML%29+2.1&amp;rft.date=2004-03-23&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FTR%2F2004%2FWD-voicexml21-20040323%2F&amp;rft.pub=W3.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/2005/NOTE-access-control-20050613/">"Authorizing Read Access to XML Content Using the &lt;?access-control?&gt; Processing Instruction 1.0"</a>. W3.org<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-05</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Authorizing+Read+Access+to+XML+Content+Using+the+%3C%3Faccess-control%3F%3E+Processing+Instruction+1.0&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FTR%2F2005%2FNOTE-access-control-20050613%2F&amp;rft.pub=W3.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/2006/WD-access-control-20060517/">"Authorizing Read Access to XML Content Using the &lt;?access-control?&gt; Processing Instruction 1.0 W3C - Working Draft 17 May 2006"</a>. W3.org<span class="reference-accessdate">. Retrieved <span class="nowrap">17 August</span> 2015</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Authorizing+Read+Access+to+XML+Content+Using+the+%3C%3Faccess-control%3F%3E+Processing+Instruction+1.0+W3C+-+Working+Draft+17+May+2006&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FTR%2F2006%2FWD-access-control-20060517%2F&amp;rft.pub=W3.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/2009/WD-cors-20090317/">"Cross-Origin Resource Sharing - W3C Working Draft 17 March 2009"</a>. W3.org<span class="reference-accessdate">. Retrieved <span class="nowrap">17 August</span> 2015</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Cross-Origin+Resource+Sharing+-+W3C+Working+Draft+17+March+2009&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FTR%2F2009%2FWD-cors-20090317%2F&amp;rft.pub=W3.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.w3.org/TR/2014/REC-cors-20140116/">"Cross-Origin Resource Sharing - W3C Recommendation 16 January 2014"</a>. W3.org<span class="reference-accessdate">. Retrieved <span class="nowrap">17 August</span> 2015</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=Cross-Origin+Resource+Sharing+-+W3C+Recommendation+16+January+2014&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.w3.org%2FTR%2F2014%2FREC-cors-20140116%2F&amp;rft.pub=W3.org&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://caniuse.com/#feat=cors">"When can I use... Cross Origin Resource Sharing"</a>. caniuse.com<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-07-12</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACross-origin+resource+sharing&amp;rft.btitle=When+can+I+use...+Cross+Origin+Resource+Sharing&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fcaniuse.com%2F%23feat%3Dcors&amp;rft.pub=caniuse.com&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit&amp;section=12" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.w3.org/TR/cors/">W3C Recommendation</a> and <a rel="nofollow" class="external text" href="https://w3c.github.io/webappsec-cors-for-developers/">Guidelines for Developers</a></li>
+<li><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en/HTTP_access_control">Usage guide</a></li>
+<li><a rel="nofollow" class="external text" href="http://enable-cors.org/">enable cross-origin resource sharing</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.html5rocks.com/en/tutorials/cors/"><i>HTML5 Rocks</i> explains how CORS works in detail</a></li>
+<li><a rel="nofollow" class="external text" href="https://test-cors.appspot.com/#technical">Test CORS support</a></li>
+<li><a rel="nofollow" class="external text" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">Mozilla Developer Network on CORS</a></li>
+</ul>
+<div role="navigation" class="navbox" aria-labelledby="Web_interfaces" style="padding:3px">
+<table class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:Web_interfaces" title="Template:Web interfaces"><abbr title="View this template" style=";;background:none transparent;border:none;">v</abbr></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:Web_interfaces" title="Template talk:Web interfaces"><abbr title="Discuss this template" style=";;background:none transparent;border:none;">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Web_interfaces&amp;action=edit"><abbr title="Edit this template" style=";;background:none transparent;border:none;">e</abbr></a></li>
+</ul>
+</div>
+<div id="Web_interfaces" style="font-size:114%"><a href="/wiki/Web_API" title="Web API">Web interfaces</a></div>
+</th>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Server-side" title="Server-side">Server-side</a></th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em"></div>
+<table class="nowraplinks navbox-subgroup" style="border-spacing:0">
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Communications_protocol" title="Communications protocol">Protocols</a></div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Common_Gateway_Interface" title="Common Gateway Interface">CGI</a></li>
+<li><a href="/wiki/Simple_Common_Gateway_Interface" title="Simple Common Gateway Interface">SCGI</a></li>
+<li><a href="/wiki/FastCGI" title="FastCGI">FCGI</a></li>
+<li><a href="/wiki/Apache_JServ_Protocol" title="Apache JServ Protocol">AJP</a></li>
+<li><a href="/wiki/Web_Services_for_Remote_Portlets" title="Web Services for Remote Portlets">WSRP</a></li>
+<li><a href="/wiki/WebSocket" title="WebSocket">WebSocket</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Server_Application_Programming_Interface" title="Server Application Programming Interface">Server APIs</a></div>
+</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Netscape_Server_Application_Programming_Interface" title="Netscape Server Application Programming Interface">C NSAPI</a></li>
+<li><a href="/wiki/Apache_HTTP_Server#Features" title="Apache HTTP Server">C ASAPI</a></li>
+<li><a href="/wiki/Internet_Server_Application_Programming_Interface" title="Internet Server Application Programming Interface">C ISAPI</a></li>
+<li><a href="/wiki/Active_Server_Pages" title="Active Server Pages">COM ASP</a></li>
+<li><a href="/wiki/Java_servlet" title="Java servlet">Java servlet</a>
+<ul>
+<li><a href="/wiki/Web_container" title="Web container">container</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Open_Web_Interface_for_.NET" title="Open Web Interface for .NET">CLI OWIN</a></li>
+<li><a href="/wiki/HTTP_handler" title="HTTP handler">ASP.NET Handler</a></li>
+<li><a href="/wiki/Web_Server_Gateway_Interface" title="Web Server Gateway Interface">Python WSGI</a></li>
+<li><a href="/wiki/Rack_(web_server_interface)" title="Rack (web server interface)">Ruby Rack</a></li>
+<li><a href="/wiki/JSGI" title="JSGI">JavaScript JSGI</a></li>
+<li><a href="/wiki/PSGI" title="PSGI">Perl PSGI</a></li>
+<li><a href="/wiki/Kepler_(software)#Frameworks" title="Kepler (software)">Lua WSAPI</a></li>
+<li><a href="/wiki/Portlet" title="Portlet">Portlet</a>
+<ul>
+<li><a href="/wiki/Portlet_container" title="Portlet container">container</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Category:Apache_httpd_modules" title="Category:Apache httpd modules">Apache modules</a></div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Mod_jk" title="Mod jk">mod_jk</a></li>
+<li><a href="/wiki/Mod_lisp" title="Mod lisp">mod_lisp</a></li>
+<li><a href="/wiki/Mod_mono" title="Mod mono">mod_mono</a></li>
+<li><a href="/wiki/Mod_parrot" title="Mod parrot">mod_parrot</a></li>
+<li><a href="/wiki/Mod_perl" title="Mod perl">mod_perl</a></li>
+<li><a href="/wiki/PHP" title="PHP">mod_php</a></li>
+<li><a href="/wiki/Mod_proxy" title="Mod proxy">mod_proxy</a></li>
+<li><a href="/wiki/Mod_python" title="Mod python">mod_python</a></li>
+<li><a href="/wiki/Mod_wsgi" title="Mod wsgi">mod_wsgi</a></li>
+<li><a href="/wiki/Mod_ruby" title="Mod ruby">mod_ruby</a></li>
+<li><a href="/wiki/Phusion_Passenger" title="Phusion Passenger">Phusion Passenger</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;">Topics</div>
+</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Web_resource" title="Web resource">Web resource</a> vs. <a href="/wiki/Web_service" title="Web service">Web service</a></li>
+<li><a href="/wiki/Open_API" title="Open API">Open API</a></li>
+<li><a href="/wiki/Webhook" title="Webhook">Webhook</a></li>
+<li><a href="/wiki/Application_server" title="Application server">Application server</a>
+<ul>
+<li><a href="/wiki/Comparison_of_application_servers" title="Comparison of application servers">comparison</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Server-side_scripting" title="Server-side scripting">Scripting</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Client-side" title="Client-side">Client-side</a></th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em"></div>
+<table class="nowraplinks navbox-subgroup" style="border-spacing:0">
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Browser_extension" title="Browser extension">Browser APIs</a></div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/NPAPI" title="NPAPI">C NPAPI</a>
+<ul>
+<li><a href="/wiki/NPAPI#LiveConnect" title="NPAPI">LiveConnect</a></li>
+<li><a href="/wiki/NPAPI#XPConnect" title="NPAPI">XPConnect</a></li>
+</ul>
+</li>
+<li><a href="/wiki/NPAPI#NPRuntime" title="NPAPI">C NPRuntime</a></li>
+<li><a href="/wiki/Google_Native_Client#Pepper" title="Google Native Client">C PPAPI</a>
+<ul>
+<li><a href="/wiki/Google_Native_Client" title="Google Native Client">NaCl</a></li>
+</ul>
+</li>
+<li><a href="/wiki/ActiveX" title="ActiveX">ActiveX</a></li>
+<li><a href="/wiki/Browser_Helper_Object" title="Browser Helper Object">BHO</a></li>
+<li><a href="/wiki/XAML_Browser_Applications" title="XAML Browser Applications">XBAP</a></li>
+<li><a href="/wiki/WebAssembly" title="WebAssembly">WebAssembly</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Web_API#Client-side" title="Web API">Web APIs</a></div>
+</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em"></div>
+<table class="nowraplinks navbox-subgroup" style="border-spacing:0">
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">W3C</a></div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/HTML5_Audio" title="HTML5 Audio">Audio</a></li>
+<li><a href="/wiki/Canvas_element" title="Canvas element">Canvas</a></li>
+<li><strong class="selflink">CORS</strong></li>
+<li><a href="/wiki/Document_Object_Model" title="Document Object Model">DOM</a></li>
+<li><a href="/wiki/DOM_events" title="DOM events">DOM events</a></li>
+<li><a href="/wiki/HTML5_File_API" title="HTML5 File API">File</a></li>
+<li><a href="/wiki/W3C_Geolocation_API" title="W3C Geolocation API">Geolocation</a></li>
+<li><a href="/wiki/Indexed_Database_API" title="Indexed Database API">IndexedDB</a></li>
+<li><a href="/wiki/Server-sent_events" title="Server-sent events">SSE</a></li>
+<li><a href="/wiki/Scalable_Vector_Graphics" title="Scalable Vector Graphics">SVG</a></li>
+<li><a href="/wiki/HTML5_video" title="HTML5 video">Video</a></li>
+<li><a href="/wiki/WebRTC" title="WebRTC">WebRTC</a></li>
+<li><a href="/wiki/WebSocket" title="WebSocket">WebSocket</a></li>
+<li><a href="/wiki/Web_Messaging" title="Web Messaging">Web messaging</a></li>
+<li><a href="/wiki/Web_storage" title="Web storage">Web storage</a></li>
+<li><a href="/wiki/Web_worker" title="Web worker">Web worker</a></li>
+<li><a href="/wiki/XMLHttpRequest" title="XMLHttpRequest">XMLHttpRequest</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Khronos_Group" title="Khronos Group">Khronos</a></div>
+</th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/WebCL" title="WebCL">WebCL</a></li>
+<li><a href="/wiki/WebGL" title="WebGL">WebGL</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;">Others</div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Gears_(software)" title="Gears (software)">Gears</a></li>
+<li><a href="/wiki/Web_SQL_Database" title="Web SQL Database">Web SQL Database</a> (formerly W3C)</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group" style="padding-left:0;padding-right:0;">
+<div style="padding:0em 0.75em;">Topics</div>
+</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Ajax_(programming)" title="Ajax (programming)">Ajax</a> vs. <a href="/wiki/Dynamic_HTML" title="Dynamic HTML">DHTML</a></li>
+<li><a href="/wiki/Mashup_(web_application_hybrid)" title="Mashup (web application hybrid)">Mashup</a></li>
+<li><a href="/wiki/Web_IDL" title="Web IDL">Web IDL</a></li>
+<li><a href="/wiki/Client-side_scripting" title="Client-side scripting">Scripting</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Topics</th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Dynamic_web_page" title="Dynamic web page">Dynamic web page</a></li>
+<li><a href="/wiki/Open_Web_Platform" title="Open Web Platform">Open Web Platform</a></li>
+<li><a href="/wiki/Rich_Internet_application" title="Rich Internet application">Rich Internet application</a></li>
+<li><a href="/wiki/Web_application" title="Web application">Web application</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1223
+Cached time: 20161204135342
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.224 seconds
+Real time usage: 0.251 seconds
+Preprocessor visited node count: 2077/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 75934/2097152 bytes
+Template argument size: 4274/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/500
+Lua time usage: 0.110/10.000 seconds
+Lua memory usage: 2.93 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  193.951      1 - -total
+ 78.19%  151.647      1 - Template:Reflist
+ 61.46%  119.200     20 - Template:Cite_web
+ 34.70%   67.309      4 - Template:Navbox
+ 21.76%   42.195      1 - Template:Web_interfaces
+ 17.63%   34.185      3 - Template:Navbox_subgroup
+  2.54%    4.930      1 - Template:Cite_news
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:27711475-0!*!0!!en!4!* and timestamp 20161204135401 and revision id 752980378
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Cross-origin_resource_sharing&amp;oldid=752980378">https://en.wikipedia.org/w/index.php?title=Cross-origin_resource_sharing&amp;oldid=752980378</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Ajax_(programming)" title="Category:Ajax (programming)">Ajax (programming)</a></li><li><a href="/wiki/Category:World_Wide_Web_Consortium_standards" title="Category:World Wide Web Consortium standards">World Wide Web Consortium standards</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Cross-origin+resource+sharing" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Cross-origin+resource+sharing" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Cross-origin_resource_sharing"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Cross-origin_resource_sharing"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Cross-origin_resource_sharing" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Cross-origin_resource_sharing" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Cross-origin_resource_sharing" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;oldid=752980378" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q1141085" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Cross-origin_resource_sharing&amp;id=752980378" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Cross-origin+resource+sharing">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Cross-origin+resource+sharing&amp;returnto=Cross-origin+resource+sharing&amp;oldid=752980378&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Cross-origin_resource_sharing&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/CORS" title="CORS – Czech" lang="cs" hreflang="cs" class="interlanguage-link-target">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Cross-Origin_Resource_Sharing" title="Cross-Origin Resource Sharing – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Cross-Origin_Resource_Sharing" title="Cross-Origin Resource Sharing – Polish" lang="pl" hreflang="pl" class="interlanguage-link-target">Polski</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing – Portuguese" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing – Russian" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/Preuzimanje_resursa_sa_razli%C4%8Ditih_izvora" title="Preuzimanje resursa sa različitih izvora – Serbian" lang="sr" hreflang="sr" class="interlanguage-link-target">Српски / srpski</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/Cross-Origin_Resource_Sharing" title="Cross-Origin Resource Sharing – Ukrainian" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E4%BE%86%E6%BA%90%E8%B3%87%E6%BA%90%E5%85%B1%E4%BA%AB" title="跨來源資源共享 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q1141085#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 4 December 2016, at 13:54.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Cross-origin_resource_sharing&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":55,"wgHostname":"mw1257"});});</script>
+	</body>
+</html>
