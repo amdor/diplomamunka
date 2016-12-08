@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+    <meta http-equiv="Cache-control" content="public"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="csrf-token" content="HnqBnCvKjmwNz5KGcA3UpMNj7ho8ipn0dFD156e6"/>
+
+        <title>User Experience and Experience Design: The Encyclopedia of Human-Computer Interaction, 2nd Ed. &#124; Interaction Design Foundation</title>
+    
+    <link rel="stylesheet" href="/css/app.css?bust=2016101887" />
+    <script> !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '442210029247313'); fbq('track', "PageView");</script> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=442210029247313&ev=PageView&noscript=1" /></noscript>
+
+                
+    <meta name="author" content="" />
+<link rel="image_src" href="https://public-media.interaction-design.org/images/book-covers/the-encyclopedia-of-human-computer-interaction-2nd-ed.png"/>
+
+<meta property="fb:page_id" content="19975077227"/>
+<meta property="og:site_name" content="The Interaction Design Foundation"/>
+<link rel="alternate" type="application/rss+xml" title="Interaction Design Foundation - UX Feed" href="https://www.interaction-design.org/rss/site_news.xml" />
+<link rel="canonical" href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design"/>
+
+
+<meta name="description" content="Marc Hassenzahl explains the fascinating concept of User Experience and Experience Design. Commentaries by Don Norman, Eric Reiss, Mark Blythe, and Whitney Hess"/>
+
+<meta property="og:title" content="User Experience and Experience Design: The Encyclopedia of Human-Computer Interaction, 2nd Ed."/>
+<meta property="og:description" content="Marc Hassenzahl explains the fascinating concept of User Experience and Experience Design. Commentaries by Don Norman, Eric Reiss, Mark Blythe, and Whitney Hess"/>
+<meta property="og:image" content="https://public-media.interaction-design.org/images/book-covers/the-encyclopedia-of-human-computer-interaction-2nd-ed.png"/>
+<meta property="og:url" content="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@interacting" />
+<meta name="twitter:creator" content="@interacting" />
+<meta name="twitter:title" content="User Experience and Experience Design: The Encyclopedia of Human-Computer Interaction, 2nd Ed." />
+<meta name="twitter:description" content="Marc Hassenzahl explains the fascinating concept of User Experience and Experience Design. Commentaries by Don Norman, Eric Reiss, Mark Blythe, and Whitney Hess" />
+<meta name="twitter:image" content="https://public-media.interaction-design.org/images/book-covers/the-encyclopedia-of-human-computer-interaction-2nd-ed.png" />
+
+
+
+    <script>
+    var ajax = ajax || {};
+
+    (function() {
+        ajax.x = function() {
+            if (typeof XMLHttpRequest !== 'undefined') {
+                return new XMLHttpRequest();
+            }
+            var versions = [
+                'MSXML2.XmlHttp.6.0',
+                'MSXML2.XmlHttp.5.0',
+                'MSXML2.XmlHttp.4.0',
+                'MSXML2.XmlHttp.3.0',
+                'MSXML2.XmlHttp.2.0',
+                'Microsoft.XmlHttp'
+            ];
+
+            var xhr;
+            for (var i = 0; i < versions.length; i++) {
+                try {
+                    xhr = new ActiveXObject(versions[i]);
+                    break;
+                } catch (e) {
+                }
+            }
+
+            return xhr;
+        };
+
+        ajax.send = function(url, callback, method, data, async) {
+            if (async === undefined) {
+                async = true;
+            }
+            var x = ajax.x();
+            x.open(method, url, async);
+            x.onreadystatechange = function() {
+                if (x.readyState == 4) {
+                    callback(x.responseText)
+                }
+            };
+            x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            if (method == 'POST') {
+                x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            }
+            x.send(data)
+        };
+
+        ajax.get = function(url, data, callback, async) {
+            var query = [];
+            for (var key in data) {
+                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+            }
+            ajax.send(url + (query.length ? '?' + query.join('&') : ''), callback, 'GET', null, async)
+        };
+
+        ajax.post = function(url, data, callback, async) {
+            var query = [];
+            for (var key in data) {
+                query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+            }
+            ajax.send(url, callback, 'POST', query.join('&'), async)
+        };
+    })();
+
+    function logGlobalError(errorMessage, fileName, lineNumber, columnNumber, errorObject) {
+        var apiUrl = '/api/errors';
+
+        if (errorMessage && typeof errorMessage !== 'string') {             if (errorMessage.type && errorMessage.target) {
+                try {
+                    fileName = errorMessage.target.src;
+                } catch(ex) {
+                    fileName = 'N/A, Event type';
+                }
+                errorMessage = 'Error loading script';
+            }
+        }
+
+        var data = {
+            errorMessage: errorMessage,
+            fileName: fileName,
+            lineNumber: lineNumber,
+            columnNumber: columnNumber,
+            errorType: !(errorObject === null || errorObject === undefined) ? errorObject.name : 'N/A',
+            stack: !(errorObject === null || errorObject === undefined)
+                    ? errorObject.stack
+                    : errorObject
+        };
+
+        var errorContext = getErrorContext();
+
+                for (var key in errorContext) {
+            if (errorContext.hasOwnProperty(key)) {
+                data[key] = errorContext[key];
+            }
+        }
+
+        try {
+            ajax.post(apiUrl, data, function() {}, true);
+        } catch (ex) {
+            console.error(ex);
+        }
+
+        addErrorToLocalStorage(errorMessage, fileName, lineNumber, columnNumber, errorObject);
+
+        return false;     }
+
+    function getErrorContext() {
+        var isLocalStorageAvailable = true;
+        try {
+            localStorage.setItem('idf', 'idf');
+            localStorage.removeItem('idf');
+        } catch (e) {
+            isLocalStorageAvailable = false;
+        }
+
+        return {
+            date: new Date(),
+            idfFrontEndVersion: window.idfVersion || 'N/A',
+            isAdBlockDetected: !window.ga,
+            latestUncaughtJsError: isLocalStorageAvailable ? localStorage.getItem('latestUncaughtJsError') : 'N/A'
+        };
+    }
+
+    function addErrorToLocalStorage(errorMessage, fileName, lineNumber, columnNumber, errorObject) {
+        try {
+            localStorage.setItem('idf', 'idf');
+            localStorage.removeItem('idf');
+        } catch (e) {
+            return false;
+        }
+
+        var errorLogObject = {
+            errorMessage: errorMessage,
+            fileName: fileName,
+            lineNumber: lineNumber,
+            columnNumber: columnNumber,
+            errorObject: errorObject,
+            date: new Date()
+        };
+
+        var lastJsJsonErrors = localStorage.getItem('lastUncaughtJsErrors');
+        try {
+            var lastJsErrors = JSON.parse(lastJsJsonErrors);
+            if (lastJsErrors === null) {
+                lastJsErrors = [];
+            }
+        }
+        catch (exception) {
+            lastJsErrors = [];
+        }
+
+        if (lastJsErrors.length === 10) {
+            lastJsErrors.splice(0, 1);
+        }
+        lastJsErrors.push(errorLogObject);
+        localStorage.setItem('lastUncaughtJsErrors', JSON.stringify(lastJsErrors));
+        localStorage.setItem('latestUncaughtJsError', JSON.stringify(errorLogObject));
+    }
+
+    window.onerror = logGlobalError;
+    window.getErrorContext = getErrorContext;
+</script>
+</head>
+<body>
+<script>
+    dataLayer = [];
+</script>
+
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KJ8XGB"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+        w[l]    = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f   = d.getElementsByTagName(s)[0],
+            j   = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src   = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KJ8XGB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+        <script>
+        /**
+         * Some dataLayer scripts are required to be run as soon as possible (i.e. before DOM ready).
+         * Therefore, these scripts are not a part of resources/assets/js/modules/analytics.js.
+         */
+
+        dataLayer.push({
+            
+            'ecommerce': {
+                'impressions': [
+                                                                        {
+                        'name'    : 'Gestalt Psychology and Web Design: The Ultimate Guide',
+                        'id'      : '9',
+                        'variant' : "open",
+                        'list'    : 'courseCardOnBookChapterPage',
+                        'position': '1'
+                    },
+                                            {
+                        'name'    : 'The Practical Guide to Usability',
+                        'id'      : '15',
+                        'variant' : "open",
+                        'list'    : 'courseCardOnBookChapterPage',
+                        'position': '2'
+                    },
+                                    ]
+            }
+        });
+    </script>
+    
+
+
+
+<div class="off-canvas-wrap" id="off-canvas-wrap" data-offcanvas>
+    <main class="inner-wrap" data-off-canvas-wrapper>
+        <div class="sticky hide-for-print">
+    <nav class="tab-bar">
+        <section class="left-small">
+            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+        </section>
+
+        <section class="middle tab-bar-section">
+            <h1 class="title">
+                <a href="https://www.interaction-design.org" title="Interaction Design Foundation">
+                    <img src="https://public-media.interaction-design.org/images/idf-logo-full.svg"
+                         alt="Interaction Design Foundation"
+                         width="128"/>
+                </a>
+            </h1>
+        </section>
+
+            </nav>
+</div>
+
+<aside id="left-off-canvas-menu" class="left-off-canvas-menu">
+    <div class="user">
+                    <div class="guest">
+                <div class="controls center">
+                    <a href="https://www.interaction-design.org/join" class="button">Join our community</a>
+                    <a href="https://www.interaction-design.org/login">Login</a>
+                </div>
+            </div>
+            </div>
+
+    <div class="divider"></div>
+
+    <ul class="off-canvas-list main">
+        <li><a href="https://www.interaction-design.org/courses" title="User Experience (UX) Courses">UX Courses</a></li>
+<li><a href="https://www.interaction-design.org/community" title="User Experience (UX) Community">Community</a></li>
+<li><a href="https://www.interaction-design.org/literature" title="User Experience (UX) Literature">Literature</a></li>
+<li><a href="https://www.interaction-design.org/about" title="About the Interaction Design Foundation">About IDF</a></li>    </ul>
+
+    <div class="divider"></div>
+
+    <ul class="off-canvas-list">
+        <li><a href="https://www.interaction-design.org/why-join-idf">Reviews / Why join our community?</a></li>
+<li><a href="https://www.interaction-design.org/corporate">Company membership</a></li>
+<li><a href="https://www.interaction-design.org/about#contact">Contact</a></li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <ul class="inline-list social-links">
+        <li>
+            <a href="https://www.facebook.com/interactiondesign.org" target="_blank">
+                <i class="fa fa-fw fa-lg fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://twitter.com/interacting" target="_blank">
+                <i class="fa fa-fw fa-lg fa-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/+InteractionDesignOrg/posts" target="_blank">
+                <i class="fa fa-fw fa-lg fa-google-plus"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.pinterest.com/ixdfoundation/idf-courses/" target="_blank">
+                <i class="fa fa-fw fa-lg fa-pinterest"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/company/interaction-design.org-foundation" target="_blank">
+                <i class="fa fa-fw fa-lg fa-linkedin"></i>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+
+                <header class="navigation large hide-for-small-only hide-for-print">
+    <div class="page-notification">
+    <div class="message"></div>
+</div>
+    <div class="page-width site-navigation">
+        <ul class="static-links">
+            <li><a href="https://www.interaction-design.org/why-join-idf">Reviews / Why join our community?</a></li>
+<li><a href="https://www.interaction-design.org/corporate">Company membership</a></li>
+<li><a href="https://www.interaction-design.org/about#contact">Contact</a></li>
+                                        <li class="right"><a href="https://www.interaction-design.org/login">Login</a></li>
+                    </ul>
+    </div>
+
+    <nav>
+        <div class="nav-item logo-container">
+            <a href="https://www.interaction-design.org" title="Interaction Design Foundation">
+                <img src="https://public-media.interaction-design.org/images/idf-logo-full.svg"
+                     alt="Interaction Design Foundation"
+                     height="72"
+                     width="200"/>
+            </a>
+        </div>
+        <ul class="nav-item menu-items inline-list">
+            <li><a href="https://www.interaction-design.org/courses" title="User Experience (UX) Courses">UX Courses</a></li>
+<li><a href="https://www.interaction-design.org/community" title="User Experience (UX) Community">Community</a></li>
+<li><a href="https://www.interaction-design.org/literature" title="User Experience (UX) Literature">Literature</a></li>
+<li><a href="https://www.interaction-design.org/about" title="About the Interaction Design Foundation">About IDF</a></li>        </ul>
+        <div class="nav-item right user">
+                            <div class="guest">
+                    <ul class="inline-list collapse right">
+                        <li class="login"><a href="https://www.interaction-design.org/login">Login</a></li>
+
+                                                    <li>
+                                <a href="https://www.interaction-design.org/join" class="button join">
+                                    Join our community
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </nav>
+</header>
+
+        <div class="content-wrapper">
+                <div class="publication">
+        <div class="article-content">
+            <div class="article-main-content">
+                <section class="panel book-chapter-content js-courses-ad-area">
+                    <h1 id="chapter_start" class="chapter-start">3. User Experience and Experience Design </h1>
+                    <div class="text-smaller text-idf-darker-gray">by <b>
+                                                    Marc Hassenzahl
+                                            </b></div>
+                    <p></p>
+                    <p>I open my eyes. Lush light floods the room, birds chatter. It is only 6:30 o'clock in the morning, but I feel well-rested and alive; time to get up, to brew some coffee. Are you jealous of my morning routine? Were you startled out of your sleep by a merciless alarm clock? Was it dark outside, no birds around, and did you feel groggy and bleary-eyed?  </p><p>This chapter is about experiences created and shaped through technology (aka <em>User Experience</em>) and how to deliberately <a href="https://www.interaction-design.org/literature/topics/design" title="Design">design</a>  those. The wake-up experience created by an alarm clock substantially differs from the experience created by sunrise and happy birds. The question is whether we can <a href="https://www.interaction-design.org/literature/topics/create" title="Create">create</a>  technology which understands the crucial features of sunrise and birds and which succeeds in delivering a similar experience, even when the sun refuses to shine and the birds have already left for Africa.  </p><p>In fact, the experience I described in the beginning was not created by sun and birds, but by Philips' <em>Wake-Up Light</em>. This is a crossing of an alarm clock and a bedside lamp. Half an hour before the set alarm, the lamp starts to brighten gradually, simulating sunrise. It reaches its maximum at the set wake-up time and then the electronic birds kick in to make sure that you really get up. Admittedly, it is a surrogate experience, but so are love stories and travel novels. It is artificial, but not vulgar. And more importantly, it substantially changes the way one wakes up. It changes the experience. The object itself, its form, is rather unremarkable (see <span class="figureNumber">Figure 1</span>).  </p><p>  	<!-- idf2 platform tags START -->  	<img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/philips_experience_design_technology.jpg" alt="Philips' Wake-Up Light">  	<!-- idf2 platform tags END -->  	  	                          Copyright © Koninklijke Philips Electronics N.V. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   	<a href="#copyrightNotice">copyright terms</a> below.  </p><p class="captionOrLessonItemContents">  	Figure 3.1: Philips' Wake-Up Light  </p><!-- idf2 platform tags END --><p>The Philips <em>Wake-Up Light</em> has nevertheless the power to "transcend its encasing" because its contribution is not one to the <a href="https://www.interaction-design.org/literature/topics/aesthetics" title="Aesthetics">aesthetics</a>  of things, but to the aesthetics of experiences. This is the <a href="https://www.interaction-design.org/literature/topics/challenge" title="Challenge">challenge</a>  designers and vendors of interactive products face: Experience or <a href="https://www.interaction-design.org/literature/topics/user-experience" title="User Experience">User Experience</a>  is not about good <a href="https://www.interaction-design.org/literature/topics/industrial-design" title="Industrial Design">industrial design</a>,  multi-touch, or fancy interfaces. It is about transcending the material. It is about creating an experience through a device.  </p><p class="illustration"><video><source src="https://www.interaction-design.org/tv/1_introduction_to_user_experience_and_experience_design.mp4" type="video/mp4"></video>  	<!-- idf2 platform VIDEO tags START -->  	  	  					Courtesy of Rikke Friis Dam and Mads Soegaard. Copyright: CC-Att-ND (Creative Commons Attribution-NoDerivs 3.0 Unported).  </p><p class="captionOrLessonItemContents">  	Marc's introduction to User Experience and Experience Design  </p><p><video><source src="https://www.interaction-design.org/tv/2_advice_on_designing_with_experience_in_mind.mp4" type="video/mp4"></video>  </p><p class="copyright">  	Courtesy of Rikke Friis Dam and Mads Soegaard. Copyright: CC-Att-ND (Creative Commons Attribution-NoDerivs 3.0 Unported).  </p><p class="captionOrLessonItemContents">  	Marc's advice on designing with experience in mind  </p><!-- idf2 platform VIDEO tags END --><p class="illustration"><video><source src="https://www.interaction-design.org/tv/3_main_guidelines_and_ethical_considerations.mp4" type="video/mp4"></video>  	<!-- idf2 platform VIDEO tags START -->  	  	  					Courtesy of Rikke Friis Dam and Mads Soegaard. Copyright: CC-Att-ND (Creative Commons Attribution-NoDerivs 3.0 Unported).  </p><p class="captionOrLessonItemContents">  	Marc's main guidelines and ethical considerations  </p><!-- idf2 platform VIDEO tags END --><p>	<video><source src="https://www.interaction-design.org/tv/4_future_directions.mp4" type="video/mp4"></video>  </p><!-- idf2 platform VIDEO tags START --><p class="copyright">  	Courtesy of Rikke Friis Dam and Mads Soegaard. Copyright: CC-Att-ND (Creative Commons Attribution-NoDerivs 3.0 Unported).  </p><p class="captionOrLessonItemContents">  	Future directions  </p><!-- idf2 platform VIDEO tags END --><p>I will start this chapter with a discussion of our Western societies' shift from the material to the experiential and the potential problems technology-oriented businesses have in accommodating this shift. <em>User Experience</em> and <em>Experience Design</em> can be a remedy to this by bringing experience to the fore. I then discuss <em>Experience</em> and <em>User Experience</em> to flesh out a view which has the potential to advance the way we will design future technologies. I end with some examples of <em>Experience Design</em> and finally offer a simple model of <em>Why</em>, <em>What</em> and <em>How</em> as a starting point for the enthusiastic <em>Experience Designer</em>.  </p><h1 id="toc_1"><span class="heading_number" style="color:#ababab;">3.1 </span>From the material to the experiential</h1><p>In Roald Dahl's <em>Charlie and the Chocolate Factory, </em>young Charlie faces a tough choice. He just found the last <em>Golden Ticket</em> in a bar of <em>Whipple-Scrumptious Fudgemallow Delight</em>. (<span class="figureNumber">Figure 2</span>). It is one of only five invitations to visit Willy Wonka's legendary chocolate factory. Charlie is promised a day full of "mystic and marvellous surprises that will entrance, delight, intrigue, astonish, and perplex beyond measure. In your wildest dreams you could not imagine that such things happen to you!"  </p><p>  	<!-- idf2 platform tags START -->  	<img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/charlie_from_materialiasm_to_the_experiential.jpg" alt="Charlie Bucket discovers his Golden Ticket">  	<!-- idf2 platform tags END -->  	  	                          Copyright © Warner Bros.. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   	<a href="#copyrightNotice">copyright terms</a> below.  </p><p class="captionOrLessonItemContents">  		Figure 3.2: Charlie Bucket discovers his <i>Golden Ticket</i>  </p><!-- idf2 platform tags END --><p>But Charlie is poor. It is a freezing winter and the whole family of seven is living on not more than cabbagy meals and the occasional boiled potato. People already offered as much as $500 for the ticket. Wouldn't it be more sensible to forfeit Wonka's frivolous offer and to secure the money? In the end, Charlie took the ticket and was awarded with the most extraordinary experience of his life.  </p><p>Charlie chose the experience over the material. He could have had a winter coat or fire wood instead of the experience, but he already knew that only the visit to the chocolate factory has the power to add some meaning to his life. In fact, studies show that <em>experiential</em> purchases (i.e., the acquisition of an event to live through, such as a concert, a dinner, a journey) make people more happy than <em>material</em> purchases (i.e., the acquisition of tangible objects, such as clothing, jewellery, stereo equipment) of the same value (Boven and Gilovich 2003; Carter and Gilovich 2010).  </p><p>In a series of studies, Leaf van Boven and colleagues (2010) further uncovered stigmatizing stereotypes: Participants characterized people with a material orientation as self-centred, insecure, or judgmental, but people with an experiential orientation as humorous, friendly, open-minded, intelligent, caring, or outgoing. The seemingly negative stance towards the materialistic is an indication of a <em>post-materialistic</em> culture. Ronald Inglehart (1997) argued that societies in sustained periods of material wealth become increasingly interested in values such as personal improvement. They transform into highly individual <em>Experience Societies</em> (Schulze 1992; Schulze 2005) whose members equate happiness with the acquisition of positive life events. Decried as superficial and consumerist in the 80ties and 90ties of the last century, we now witness a version of the <em>Experience Society</em> which favours meaningful engagement to earning money and begins to dissociate experience and expenditure. Experiences are no longer supposed to be available at exotic places only. They can be close by: a day out in the sun, working the garden, a barbecue with friends, or a trip to the local flea market. In the foreword to the 2005 edition of his book, Gerhard Schulze (2005, p IX) mentions some signifiers of the new millennium's <em>Experience Society</em>: deceleration instead of acceleration, less instead of more, uniqueness instead of standardisation, concentration instead of diversion, and making instead of consuming. All these are not necessarily associated with material wealth. Admittedly, to develop a post-materialistic (i.e., experiential) orientation may require sufficient food, clothing, and shelter (Inglehart 1997; <a href="https://www.interaction-design.org/literature/topics/maslow" title="Maslow">Maslow</a>  1954). This is the gist of Charlie Bucket's dilemma: choosing a frivolous one-day experience in a chocolate factory over supporting his family with food and clothing seems almost immoral. However, while I agree that an experiential orientation in life requires some food, clothes and shelter as a necessary precondition (Inglehart 1997), I do not believe that it needs caviar, Gucci, and a chateau in the hills of the Cote d'Azur. Most of us in the developed countries have the basis for leading a post-materialistic life.  </p><h1 id="toc_2"><span class="heading_number" style="color:#ababab;">3.2 </span>Experience and business</h1><p>Though the transformation to a post-materialistic experience society has been recognized by business, as indicated by books such as <em>The Experience Economy</em> (Pine & Gilmore, 1999) or <em>Experiential Marketing</em> (Schmitt 1999), it still struggles with making sense of it. A good example is the music industry. While the number of concerts is still rising, record sales dropped considerably from 2000 and onwards. For example, Madonna's <em>Confessions on a Dancefloor</em> sold only 1.6 million copies, but her world tour generated about 200 million dollars. According to <em>Pollstar</em> (Bongiovann 2010), in 2009 the average ticket price for a top 100 act in the US was about $64, a CD made only $13.99. Typically, illegal digital downloads are made responsible for this effect. But the missing willingness to pay for music in the form of a tangible product may also be a consequence of shifting from a materialistic to an experiential orientation. Today the music itself matters, not ownership, argues Arthur Schock (2010), a booker for independent electronic artists, in a recent interview for <em>Spiegel-Online</em>. He reported on record release parties with 800 raving guests but only ten records sold afterwards. "Liking bears no relation to buying the CD," he concluded. On <em>Creative Deconstruction</em> Rich Huxley (2010) mused: "If we can all now make, distribute and sell music, to succeed we've got to differentiate ourselves from the crowd and give people something they can't get elsewhere. If we can give people something that isn't repeatable and isn't copyable then all the better. So, what's unique and not copyable? A feeling, or an experience." Instead of complaining about declining CD sales, the music industry must develop new, more experiential formats.  </p><p>Why aren't they? One of the main reasons why the music industry dislikes the shift away from the material is the limited scalability of experience. Once produced, a CD can be copied and sold in theoretically infinite quantities, while an artist can only play a limited number of concerts a year, with a limited number of paying attendants. As long as most industries and their strategies are still geared towards earning money by mass-producing and selling tangible objects, their take on the experiential is often not more than a feeble marketing strategy. For example, the <em>German Telekom</em> recently made "experiencing" its marketing claim ("Erleben, was verbindet"). The <a href="http://erleben.telekom.de/">companion website</a> promises to be a place for sharing memorable and unique experiences. But a close look reveals hardly more than the occasional sponsored live event interspersed with badly disguised attempts to sell standard products and services. Experience is considered a vehicle for marketing, but not understood as the very product that is sold. The transition from an economy of products and services to one of experience and transformation certainly requires more (Pine and Gilmore 1999). This is the challenge we face: <em>Experience</em> or <em>User Experience</em> is not about technology, industrial design, or interfaces. It is about creating a meaningful experience through a device.  </p><h1 id="toc_3"><span class="heading_number" style="color:#ababab;">3.3 </span>The evasive beast called User Experience</h1><p>Experience is an almost overwhelmingly rich concept, with a long history of debate and many attempts to "define" it (Jay 2004). I primarily focus on experiences as meaningful, personally encountered events (in German: "Erlebnis") and not so much on the knowledge gained through these events (in German: "Erfahrung"). These experiences are <em>memorized</em> stories of use and consumption and distinct from the <em>immediate</em> moment-by-moment experience (e.g., Forlizzi and Battarbee 2004; Kahneman 1999). While the immediate moment-by-moment experience is certainly interesting, memorized experience is of more practical relevance. This is simply because most of our waking time, we are feasting on vivid memories of the past (or anticipations) rather than on immediate pleasures.  </p><p>The construction of experiences as stories from moment-by-moment experience is not straightforward. For example, experiences tend to improve over time. As van Boven (2005, p. 137) puts it: "As one forgets the incidental annoyances and distractions that detract from the online, momentary enjoyment of an experience, one's memory of an experience can be sharpened, levelled, and 'spun' so that the experience seems better in retrospect than it actually was." Who doesn't fall victim to a "rosy view" now and then. We are spinning - not necessarily consciously - our own experiences.  </p><p>But what is <em>in</em> an experience? Psychologically, an experience emerges from the integration of <a href="https://www.interaction-design.org/literature/topics/perception" title="Perception">perception</a>,  action, <a href="https://www.interaction-design.org/literature/topics/motivation" title="Motivation">motivation</a>,  and cognition into an inseparable, meaningful whole. The intimate relation between those single concepts is reflected by, for example, Russell's (2003) model of emotions, which stresses the importance of cognitive processes, such as self-observation, attribution, and categorization, for the experience of emotions. And most action theories (e.g., Kaptelinin & Nardi, 2006; Carver & Scheier, 1989) assume close links between actions, thoughts and emotions. In sum, I argue for understanding experience as "an episode, a chunk of time that one went through [...] sights and sounds, feelings and thoughts, motives and actions [...] closely knitted together, stored in memory, labelled, relived and communicated to others. An experience is a story, emerging from the dialogue of a person with her or his world through action" (Hassenzahl 2010, pp. 8). An experience is subjective, holistic, situated, dynamic, and worthwhile.  </p><p>While an experience is a complex fabric of feelings, thoughts, and actions, I believe emotions and fulfilment of universal psychological needs to have an accentuated role. Although emotions are certainly complex, they all share an inherent <a href="https://www.interaction-design.org/literature/topics/evaluation" title="Evaluation">evaluation</a>,  pleasure and pain, which provide "the yardstick on which qualitatively different possibilities can be compared" (Russell 2003, p. 153). This evaluation is important in shaping future behaviour and - if positive - one source of happiness. But where does the pleasure come from? Sheldon and others (2001) demonstrated the intimate link between the pleasantness of an experience and the fulfilment of universal psychological needs in that experience, such as the need for autonomy or stimulation. A <a href="https://www.interaction-design.org/literature/topics/specific" title="Specific">specific</a>  look at technology-mediated positive experiences revealed stimulation, relatedness, competence, and popularity as the salient sources of pleasure (Hassenzahl et al. 2010). Being asked for a recent positive experience with technology, a young woman provided the following example: "I was on a short trip to Dublin. In the early hours, my mobile phone woke me up. My boyfriend, who stayed at home, had just texted a sweet 'I love you' (<span class="figureNumber">Figure 3</span>). This is an example of a relatedness experience, which gets its positive meaning through fulfilling a need for social relationship and intimacy.  </p><p>  	<!-- idf2 platform tags START -->  	<img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/texting_messaging_emotions_mobile_technology.jpg" alt="A sweet 'I love you'">  </p><p>  	<!-- idf2 platform tags END -->  	  	                          Copyright © Mallory Bwman. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   		<a href="#copyrightNotice">copyright terms</a> below.  </p><p class="captionOrLessonItemContents">  			Figure 3.3: A sweet 'I love you'  </p><!-- idf2 platform tags END --><p class="indent">The mobile phone is instrumental to creating this experience, but the <a href="https://www.interaction-design.org/literature/topics/positive-emotions" title="Positive Emotions">positive emotions</a>  and the meaning are evoked through the fulfilment of a universal psychological need. Need-fulfilment is what makes an experience pleasurable.  </p><p>Usage and consumption always translate into an experience, a story of use, a story of consumption: just like a rollercoaster becomes embedded into a (hopefully) meaningful, emotion-laden story of a rollercoaster ride, full-blown with stimulation, excitement and enjoyment. Seemingly different products and situations are represented in a similar format - that of experience. Thus, as long as we focus on the experiences created and shaped by interactive products, we may not distinguish <em>User Experience</em> from <em>Experience</em> in general. User Experience is just a sub-category of experience, focusing on a particular mediator - namely interactive products. If it comes to actual <em>Experience Design</em>, that is the question of how to deliberately create and shape experiences, a distinction between interactive products and other mediators of experiences may be helpful, but does not seem crucial.  </p><p>The perspective on <em>Experience</em> and <em>User Experience</em> developed here should not be understood as definite. It is a starting point for debate, an attempt to advance a concept of <em>Experience</em> and <em>User Experience</em> that will change the way interactive products are - hopefully to the better.  </p><h1 id="toc_4"><span class="heading_number" style="color:#ababab;">3.4 </span>Experience Design: Designing the post-materialistic</h1><p>With the sharp distinction between the experiential and the material suggested by many authors (e.g., Boven and Gilovich 2003), an "experiential interactive product" appears like a contradiction in terms. While experience is intangible, volatile, an interactive product is tangible, a mass-produced piece of technology. The "electronic gadget" is the very <a href="https://www.interaction-design.org/literature/topics/prototype" title="Prototype">prototype</a>  of a material purchase. The seasoned post-materialist, though, ceases to strive for yet another novel communication device. She will rather enjoy writing a letter (<span class="figureNumber">Figure 4</span>).  </p><img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/letter_writing.jpg" alt="Letters to an English schoolgirl"><!-- idf2 platform tags END --><p>                            Copyright © Penelope Fewster. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   			<a href="#copyrightNotice">copyright terms</a> below.</p><p class="captionOrLessonItemContents">  				Figure 3.4: Letters to an English schoolgirl  </p><!-- idf2 platform tags END --><p class="indent">But even the post-materialist's experience is most of the time mediated. Writing a letter requires a pen, paper, and a messenger, who in turn needs a carriage, a zeppelin, or a plane. This holds for all the typical examples of experiential purchases provided by van Boven (2003): travel requires transportation, dining requires a good kitchen, and a concert requires instruments and amplification. Things are not the opposite of experiences, but create and substantially shape them. The combination of a pen and a piece of paper, and the resulting activity of writing with one's own <a href="https://www.interaction-design.org/literature/topics/hand" title="Hand">hand</a>,  has certain features which in turn shape the resulting experience. It is, for example, relatively slow and, thus, offers time for reflection, not provided by more efficient technologies (Lindley et al 2009). Thus, the post-materialist is not necessarily a "green luddite" (Kozinets 2007) who shuns technology in general. But she is more interested in the experience created than taking pride in the ownership of the product or technology that created it. Once created, the experience is what is owned - an immaterial, personal story. The product is only of interest as it is identified as being crucial in creating the experience (Hassenzahl et al 2010).  </p><p>The challenge of designing interactive products for the post-materialist is to bring the resulting experience to the fore - to design the experience before the product. Or as Buxton (2007, p. 127) puts it: "Despite the technocratic and materialistic <a href="https://www.interaction-design.org/literature/topics/bias" title="Bias">bias</a>  of our [US-American] culture, it is ultimately experiences we are designing, not things." But what does that mean, <em>to design an experience?</em> For Buxton it seems a matter of how it feels to act through a product, in the moment it is used - the moment-by-moment experience. He used different orange squeezers to highlight how different usage can "feel" even if the function remains the same. This addresses the <em>How</em> of product use, the <em>Aesthetics of Interaction</em>. This notion of <em>Experience</em> - as focusing on <em>how</em> something is done - was notably sparked by the success of Apple's iPhone, featuring a so far unique aesthetic of interaction, but basically fulfilling the same tasks as any other mobile phone.  </p><p>While certainly important, reducing experience to the mere "pleasure due to the feel of the action" (Buxton 2007, p. 129) is not doing justice to its multifaceted nature. Conceptually, the broad view of <em>Experience</em> as meaningful stories has much more to offer than a narrow view as pleasurable, moment-by-moment feeling. Take the story of the young woman on a trip to Dublin from the preceding section. The experience gets its positive feel and meaning through the fulfilment of a need for relatedness, a need for feeling close to relevant others. The story speaks of intimacy, expressed, for example, by the liberty to send the message very early in the morning. The man was confident that his girlfriend would not be annoyed by the message. And while receiving love messages is always a wonderful thing, being in a foreign place, far away from home, certainly intensified this experience. In this example, the mobile phone was used as a tool for creating a relatedness experience. But the mobile phone is neither especially adapted to this, nor does it in any way imply the creation of this experience. It is nothing more than an awkward piece of infrastructure: even with the most elegant shell or navigational structure, it does not reflect the love put into the message. To give another example: While a telephone is certainly able to connect distant lovers, it embodies a strictly conversational model. However, feeling close is not about good conversations only, it is a about a feeling of presence and emotional expression. The telephone is not exceptionally good at this - as Peter Robinson observed in <em>All the Colours of Darkness</em> after a late night telephone conversation between Inspector Banks and his Sophia:  </p><p class="illustrationQuote"><span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:left;margin-bottom:-15px;text-indent:0;">“</span>'Goodnight' said Banks. And the last thing he heard was her laughter as she puts down the phone. Banks felt more alone and further away for having just talked to Sophia than he had before the call. But it was always like that - the telephone might bring you together for a few moments, but there's nothing like it for emphasising distance.<span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:right;margin-top: 5px;clear:left;margin-bottom:-15px;">”</span>  </p><p>We have all experienced the awkward silence when we have run out of stories to tell while not wanting to hang up on our loved one. This is the result of a misfit between the conversational model embodied by a telephone and the psychological requirements of a relatedness experience.  </p><p>This must not necessarily be so, as the prevalent research on technology-mediated intimacy demonstrates (e.g., Vetere et al 2005). An unpublished review (Heidecker et al 2010) counted 144 published concepts of alternative communication devices, most of them much better adapted to the requirements of "feeling close" than any commercially available mobile phone. In many cases, the technological <a href="https://www.interaction-design.org/literature/topics/innovation" title="Innovation">innovation</a>  embedded in those novel devices is negligible - they neither feature elaborated new algorithms nor future materials or fancy interface concepts. Their superiority is due to the intimate understanding of certain experiences, feelings, situations, boundary conditions, and how those experiences can be created and shaped through a thing.  </p><p>The post-materialistic interactive product is, thus, not so much a tangible object, but a story transported or told through an object - a "material tale" or "psychosocial narrative". Dunne (2006, p. 69) explains: "[... B]ehavior is a narrative experience arising from the interaction between our desire to act through products and the social and behavioural limitations imposed [...] through [their] <a href="https://www.interaction-design.org/literature/topics/conceptual-models" title="Conceptual Models">conceptual models</a>. " We will inevitably act through products, a story will be told, but the product itself creates and shapes it. The designer becomes an "author" creating rather than representing experiences.  </p><p>So far, there are not many commercially available products, which reflect the notion of <em>Experience Design</em> as the creation of meaningful stories through a product. An exception is FM3's <a href="http://www.fm3buddhamachine.com/">Buddha Machine</a>, dubbed the <em>Anti-iPod</em> by the <em>Wall Street Journal</em> in 2007 (Wagstaff 2007) - see <span class="figureNumber">Figure 5</span>.  </p><img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/buddha_machine_user_experience.jpg" alt="The Buddha Machine II"><!-- idf2 platform tags END --><p>                            Copyright © Zhang Jian. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   				<a href="#copyrightNotice">copyright terms</a> below.</p><p class="captionOrLessonItemContents">  					Figure 3.5: The Buddha Machine II  </p><!-- idf2 platform tags END --><p class="indent">The <em>Buddha Machine</em> is an electronic device loaded with nine ambient loops (Version 2.0) produced by FM3, an experimental music duo from China. It plays back one of those loops in 8-bit quality through an inbuilt speaker, has a button to skip through the loops, a knob to change the pitch of the playback and its volume. That's it. The <em>Buddha Machine</em> is a meditative experience. It tells a story of contemplation rather than restless consumption and suggests a way of doing so.  </p><p>In 2007, the <em>Buddha Machine</em> was an unexpected commercial success with over 50.000 units sold. Joshua  wrote on <em>Resident Advisor</em>: "With the Buddha Machine, FM3 have unwittingly unleashed a real phenomenon: [...] a personal stereo, a musical toy, a Buddhist souvenir, and a conceptual commodity offering valuable lessons for our consumption-obsessed times." He quotes Christiaan Virant, one of the creators of the <em>Buddha Machine</em>: "That's the beauty of the Buddha Machine, it's really ... serendipity." And Rob Walker (2007) noted for the <em>New York Times Magazine</em>:  </p><p class="illustrationQuote"><span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:left;margin-bottom:-15px;text-indent:0;">“</span>And of course there's the anti-iPod factor: the relief of not having to make a choice in a world awash with entertainment and self-expression options. Moreover, at a moment when the unused abilities of feature-loaded computers, cellphones and even microwave ovens pile up faster than we can keep track of them, it's satisfying to know that once you've turned the Buddha Machine on, you are using it to its full capacity.<span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:right;margin-top: 5px;clear:left;margin-bottom:-15px;">”</span>  </p><p>The <em>Buddha Machine</em> is an example of a device, which "manages to transcend the cheap plastic frame in which it's encased" (Heater 2008). It is a technology that offers a meaningful, valuable, and aesthetic experience and not just a bunch of functions, leaving it to the users to figure out how to incorporate them into their daily lives.  </p><p>The <em>Buddha Machine</em> is an excellent example of a full-blown post-materialistic device. However, one may easily view it a representative of a novel product genre, which coexists with more "practical" genres, but does not affect the design of those more practical products. I disagree. A post-materialistic, experiential orientation can potentially be loaded into every product. An example is Swantje Krauß' diploma design project, which I supervised together with Olaf Barski. Krauß set out to design a new type of improved "bucket" for the grape harvest. Typically, grapes are picked by hand, gathered in a bucket, which is then emptied into a larger container. This bucket is clearly a tool; its design a tough exercise in practicality and classical ergonomics. However, Krauß added an interesting feature beyond the obvious: The bucket can be transformed into a seat (see <span class="figureNumber">Figure 6</span>) which allows the vintager to take a rest from her physically demanding work.  </p><img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/workplace_work_analysis.jpg" alt="From a tool to a place to rest"><!-- idf2 platform tags END --><p>                            Copyright © Swantje Krauss. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the   					<a href="#copyrightNotice">copyright terms</a> below.</p><p class="captionOrLessonItemContents">  						Figure 3.6: From a tool to a place to rest  </p><!-- idf2 platform tags END --><p>This seemingly small detail is interesting for at least three reasons. First, the bucket embeds both activities - gathering grapes and taking a rest - on an equal level, making clear that a rest is accepted as an integral part of the overall activity. Second, the bucket has to be empty to be transformed into a seat. This reflects upon the admittedly puritan ideal of "business before pleasure" and functions as a clear signal for the "appropriate" moment for taking a rest. Krauß' design makes sure that its users either pick grapes or rest, but resting and still doing a little bit of cleaning or sorting the grapes is impossible. This implies a clear separation between work and rest - an important psychological requirement for having a truly re-creative break. Third, the bucket suggests a particular way of taking that rest, namely <em>in</em> the vineyard, contemplating and enjoying the views or having a chat with colleagues.  </p><p>Admittedly, a bucket is not a typical exemplar of an interactive product. Nevertheless, Krauß' example shows that understanding grape picking as more than a mere task, as an experience packed with psychological needs, emotions and meaning enables the designer to become an author of stories conveyed through the product.  </p><h1 id="toc_5"><span class="heading_number" style="color:#ababab;">3.5 </span>Why, What and How</h1><p>Let me summarize my thoughts on <em>Experience</em> in a simple conceptual model. I distinguish three different levels, when designing an experience through the interaction with an object: The <em>Why</em>, <em>What</em> and <em>How</em> level.  </p><p>The <em>What</em> addresses the things people can do through an interactive product, such as "making a telephone call," "buying a book," or "listening to a song." Reflected by a products' <a href="https://www.interaction-design.org/literature/topics/functionality" title="Functionality">functionality</a>,  the <em>What</em> is often intimately tied to the technology itself or a certain product genre. The <em>How </em>in turn addresses acting through an object on an operational, sensory-motor level: Buttons pressed, knobs turned, menus navigated, touch screens stroked, or remotes waggled. The <em>How</em> is even more tied to the actual object to be designed and its <a href="https://www.interaction-design.org/literature/topics/context-of-use" title="Context of Use">context of use</a>.   </p><p>The <em>How</em> is the typical realm of the interaction designer: to make given functionality accessible in an aesthetically pleasing way. To give an example: "Making a telephone call" (a <em>What</em>) requires an action to select a conversional partner, as well as to initiate and to end the call. <em>How</em> this is done with - let's say - a mobile phone is specified by the interaction designer. The example of the different orange squeezers, Bill Buxton (2007) provided, addresses possible differences in the quality of the <a href="https://www.interaction-design.org/literature/topics/interaction-design" title="Interaction Design">interaction design</a>,  the <em>How</em>. Even given the same functionality (i.e., squeezing oranges), performing the action "feels" better with some products. Nowadays, the bundle of <em>What</em> and <em>How</em> is typically considered the product, and an especially sensual, aesthetic, novel, or stimulating arrangement of interaction makes this product "experiential."  </p><p>This view ignores peoples' actual motivation to use a product. For the couple being separated, the SMS was not primarily an SMS, it was a love message, a way to fulfil their need for relatedness. This is the <em>Why</em> of product use. Telephone calls are not only - technologically speaking - telephone calls. In reality, they are the glorious beginning or the sad end of a close relationship, a surrogate good-night kiss, an act of support, a way to kill time, or a pizza order. People engage in these activities out of a need to be related, to help, to be stimulated, or to ease their appetites. The telephone just happens to be instrumental, but it does not necessarily reflect upon the underlying needs, emotions, and associated practices.  </p><p><em>Experience Design</em> is a remedy to this. It starts from the <em>Why</em>, tries to clarify the needs and emotions involved in an activity, the meaning, the experience. Only then, it determines functionality that is able to provide the experience (the <em>What</em>) and an appropriate way of putting the functionality to action (the <em>How</em>). Experience Design wants the <em>Why</em>, <em>What</em> and <em>How</em> to chime together, but with the <em>Why</em>, the needs and emotions, setting the tone (see <span class="figureNumber">Figure 7</span>). This leads to products which are sensitive to the particularities of human experience. It leads to products able to tell enjoyable stories through their use or consumption.  </p><img data-original="" src="https://public-media.interaction-design.org/images/encyclopedia/user_experience_and_experience_design/whywhathow.jpg" alt="From the Why to the What and the How: Three levels to consider when designing technology-mediated experiences"><p>  	<!-- idf2 platform tags END -->  	  	                          Copyright status: Unknown (pending investigation). See section "Exceptions" in the   						<a href="#copyrightNotice">copyright terms</a> below.<br>  </p><p class="captionOrLessonItemContents">  							Figure 3.7: From the <em>Why</em> to the <em>What</em> and the <em>How</em>: Three levels to consider when designing technology-mediated experiences  </p><!-- idf2 platform tags END --><h1 id="toc_6"><span class="heading_number" style="color:#ababab;">3.6 </span>Conclusion and future directions</h1><p>The notion of <em>(User) Experience</em> as stories told through products has a potential to change the way we think and design. At the moment, the majority of commercially available interactive devices is either too practical or too open-ended. The practical view results in very obvious and uninspiring stories: how exciting is keeping a calendar on a mobile phone? The open-ended view on the other hand just provides functionality, such as texting, and leaves it to the user to come up with meaningful and inspiring usage scenarios, such as sending "love messages." In this case, the creation of meaningful experiences through appropriating a technology remains the responsibility of the "user". In <a href="https://www.interaction-design.org/literature/topics/contrast" title="Contrast">contrast</a>,  <em>Experience Design</em> stands for technology, which suggests meaningful, engaging, valuable, and aesthetically pleasing experiences in itself. Thinking "communication experiences" rather than "mobile devices" opens up a huge design space for possible devices - even slippers (Chen et al 2006) or pillows (Laschke et al 2010).  </p><p>Don't get me wrong, we still need all the wonderful technologies, dreamt up by engineers and computer scientists all over the world. But they are only materials - canvas, colours, and brushes - for the <em>Experience Designer</em>. From a business perspective, shifting attention from technological to experiential advancement makes sense, as long as the invention of new technologies and their marketing becomes increasingly difficult. Just take 3D television as an example: It is an innovation born out of a frantic need for re-inventing television to ensure future sales. The result is an expensive, hard to sell technology, without much power to impact our lives "The new movie by Darren Aronofsky now in 3D! So what?" Indeed, other technology-mediated innovations, such as improving the social experience of watching television as a family or over a distance, require less effort in terms of resources (both on the vendor and the consumer end), but at the same time offer a profound improvement of current practices and according experiences. We should definitely shift attention (and resources) from the development of new technologies to the conscious design of resulting experiences, from technology-driven innovations to human-driven innovations.  </p><h1 id="toc_7"><span class="heading_number" style="color:#ababab;">3.7 </span>References  </h1><p><a href="http://www.interaction-design.org/references/authors/gary_bongiovann.html" title="Gary Bongiovann: Publications, homepage, mini-biography etc;">Bongiovann</a>, Gary (2010). <i>PollStar 2010 Midyear Business Analysis</i>. Retrieved 9 November 2010 from PollStar Pro: <a href="http://www.pollstarpro.com/specialfeatures2010/2010MidYearBusinessAnalysis.PDF">http://www.pollstarpro.com/specialfeatures2010/201...</a>  </p><p><a href="http://www.interaction-design.org/references/authors/leaf_van_boven.html" rel="nofollow" title="Leaf Van Boven: Publications, homepage, mini-biography etc;">Boven</a>, Leaf Van (2005): <i>Experientialism, Materialism, and the Pursuit of Happiness</i>. In <a href="http://www.interaction-design.org/references/periodicals/review_of_general_psychology.html" title="Info on Review of General Psychology: Description, homepage, etc">Review of General Psychology</a>, 9 (2) pp. 132-142  </p><p><a href="http://www.interaction-design.org/references/authors/leaf_van_boven.html" rel="nofollow" title="Leaf Van Boven: Publications, homepage, mini-biography etc;">Boven</a>, Leaf Van and <a href="http://www.interaction-design.org/references/authors/thomas_gilovich.html" rel="nofollow" title="Thomas Gilovich: Publications, homepage, mini-biography etc;">Gilovich</a>, Thomas (2003): <i>To Do or to Have? That Is the Question</i>. In <a href="http://www.interaction-design.org/references/periodicals/journal_of_personality_and_social_psychology.html" title="Info on Journal of Personality and Social Psychology: Description, homepage, etc">Journal of Personality and Social Psychology</a>, 85 (6) p. 1193–1202  </p><p><a href="http://www.interaction-design.org/references/authors/leaf_van_boven.html" rel="nofollow" title="Leaf Van Boven: Publications, homepage, mini-biography etc;">Boven</a>, Leaf Van, <a href="http://www.interaction-design.org/references/authors/margaret_c__campbell.html" rel="nofollow" title="Margaret C. Campbell: Publications, homepage, mini-biography etc;">Campbell</a>, Margaret C. and <a href="http://www.interaction-design.org/references/authors/thomas_gilovich.html" rel="nofollow" title="Thomas Gilovich: Publications, homepage, mini-biography etc;">Gilovich</a>, Thomas (2010): <i>Stigmatizing Materialism: On Stereotypes and Impressions of Materialistic and Experiential Pursuits</i>. In <a href="http://www.interaction-design.org/references/periodicals/personality_and_social_psychology_bulletin.html" title="Info on Personality and Social Psychology Bulletin: Description, homepage, etc">Personality and Social Psychology Bulletin</a>, 30 (4) pp. 551-563  </p><p><a href="http://www.interaction-design.org/references/authors/bill_buxton.html" rel="nofollow" title="Bill Buxton: Publications, homepage, mini-biography etc;">Buxton</a>, Bill (2007): <i>Sketching User Experiences: Getting the Design Right and the Right Design.</i> Morgan Kaufmann  </p><p><a href="http://www.interaction-design.org/references/authors/travis_j__carter.html" rel="nofollow" title="Travis J. Carter: Publications, homepage, mini-biography etc;">Carter</a>, Travis J. and <a href="http://www.interaction-design.org/references/authors/thomas_d__gilovich.html" rel="nofollow" title="Thomas D. Gilovich: Publications, homepage, mini-biography etc;">Gilovich</a>, Thomas D. (2010): <i>The Relative Relativity of Material and Experiential Purchases</i>. In <a href="http://www.interaction-design.org/references/periodicals/journal_of_personality_and_social_psychology.html" title="Info on Journal of Personality and Social Psychology: Description, homepage, etc">Journal of Personality and Social Psychology</a>, 98 pp. 146-159  </p><p><a href="http://www.interaction-design.org/references/authors/charles_s__carver.html" rel="nofollow" title="Charles S. Carver: Publications, homepage, mini-biography etc;">Carver</a>, Charles S. and <a href="http://www.interaction-design.org/references/authors/michael_f__scheier.html" rel="nofollow" title="Michael F. Scheier: Publications, homepage, mini-biography etc;">Scheier</a>, Michael F. (2001): <i>On the Self-Regulation of Behavior.</i> Cambridge University Press  </p><p><a href="http://www.interaction-design.org/references/authors/chun_y__chen.html" rel="nofollow" title="Chun Y. Chen: Publications, homepage, mini-biography etc;">Chen</a>, Chun Y., <a href="http://www.interaction-design.org/references/authors/jodi_forlizzi.html" rel="nofollow" title="Jodi Forlizzi: Publications, homepage, mini-biography etc;">Forlizzi</a>, Jodi and <a href="http://www.interaction-design.org/references/authors/pamela_jennings.html" rel="nofollow" title="Pamela Jennings: Publications, homepage, mini-biography etc;">Jennings</a>, Pamela (2006): ComSlipper: An expressive design to support awareness and availability. In: <a href="http://www.interaction-design.org/references/conferences/proceedings_of_the_chi_06_conference_on_human_factors_in_computing_systems_-_extended_abstracts_on_human_factors_in_computing_systems.html" title="Info on Proceedings of the CHI 06 Conference on Human Factors in Computing Systems - extended abstracts on Human factors in computing systems: Description, homepage, etc">Proceedings of the CHI 06 Conference on Human Factors in Computing Systems - extended abstracts on Human factors in computing systems</a> 2006. pp. 369-374  </p><p><a href="http://www.interaction-design.org/references/authors/anthony_dunne.html" rel="nofollow" title="Anthony Dunne: Publications, homepage, mini-biography etc;">Dunne</a>, Anthony (2006): <i>Hertzian Tales: Electronic Products, Aesthetic Experience, and Critical Design.</i> MIT Press  </p><p><a href="http://www.interaction-design.org/references/authors/jodi_forlizzi.html" rel="nofollow" title="Jodi Forlizzi: Publications, homepage, mini-biography etc;">Forlizzi</a>, Jodi and <a href="http://www.interaction-design.org/references/authors/katja_battarbee.html" rel="nofollow" title="Katja Battarbee: Publications, homepage, mini-biography etc;">Battarbee</a>, Katja (2004): Understanding experience in interactive systems. In: <a href="http://www.interaction-design.org/references/conferences/proceedings_of_dis04-_designing_interactive_systems-_processes%2C_practices%2C_methods%2C_%26_techniques.html" title="Info on Proceedings of DIS04: Designing Interactive Systems: Processes, Practices, Methods, & Techniques: Description, homepage, etc">Proceedings of DIS04: Designing Interactive Systems: Processes, Practices, Methods, & Techniques</a> 2004. pp. 261-268  </p><p><a href="http://www.interaction-design.org/references/authors/marc_hassenzahl.html" rel="nofollow" title="Marc Hassenzahl: Publications, homepage, mini-biography etc;">Hassenzahl</a>, Marc (2010): <i>Experience Design: Technology for All the Right Reasons.</i> Morgan and Claypool Publishers  </p><p><a href="http://www.interaction-design.org/references/authors/marc_hassenzahl.html" rel="nofollow" title="Marc Hassenzahl: Publications, homepage, mini-biography etc;">Hassenzahl</a>, Marc, <a href="http://www.interaction-design.org/references/authors/sarah_diefenbach.html" rel="nofollow" title="Sarah Diefenbach: Publications, homepage, mini-biography etc;">Diefenbach</a>, Sarah and <a href="http://www.interaction-design.org/references/authors/anja_g%F6ritz.html" rel="nofollow" title="Anja Göritz: Publications, homepage, mini-biography etc;">Göritz</a>, Anja (2010): <i>Needs, affect, and interactive products - Facets of user experience</i>. In <a href="http://www.interaction-design.org/references/periodicals/interacting_with_computers.html" title="Info on Interacting with Computers: Description, homepage, etc">Interacting with Computers</a>, 22 (5) pp. 353-362  </p><p><a href="http://www.interaction-design.org/references/authors/brian_heater.html" rel="nofollow" title="Brian Heater: Publications, homepage, mini-biography etc;">Heater</a>, Brian (2008). <i>Hands On: Buddha Machine 2</i>. Retrieved 9 November 2010 from Gearlog: <a href="http://www.gearlog.com/2008/11/hands_on_buddha_machine_2.php">http://www.gearlog.com/2008/11/hands_on_buddha_mac...</a>  </p><p>Heidecker, S., Hassenzahl, M., Eckoldt, K., & Hillmann, U. (2010). Designing for relatedness experiences: A Review of technologies mediating intimate relationships. in preparation <br>  </p><p><a href="http://www.interaction-design.org/references/authors/rich_huxley.html" rel="nofollow" title="Rich Huxley: Publications, homepage, mini-biography etc;">Huxley</a>, Rich (2010). <i>Music is Not Our Currency</i>. Retrieved 9 November 2010 from Creative Deconstruction: <a href="http://www.creativedeconstruction.com/2010/05/music-is-not-our-currency/">http://www.creativedeconstruction.com/2010/05/musi...</a>  </p><p><a href="http://www.interaction-design.org/references/authors/ronald_inglehart.html" rel="nofollow" title="Ronald Inglehart: Publications, homepage, mini-biography etc;">Inglehart</a>, Ronald (1997): <i>Modernization and Postmodernization: Cultural, Economic, and Political Change in 43 Societies.</i> Princeton University Press  </p><p><a href="http://www.interaction-design.org/references/authors/martin_jay.html" rel="nofollow" title="Martin Jay: Publications, homepage, mini-biography etc;">Jay</a>, Martin (2006): <i>Songs of Experience: Modern American and European Variations on a Universal Theme.</i>University of California Press  </p><p><a href="http://www.interaction-design.org/references/authors/daniel_kahnemann.html" rel="nofollow" title="Daniel Kahnemann: Publications, homepage, mini-biography etc;">Kahnemann</a>, Daniel (2003): Objective happiness. In: <a href="http://www.interaction-design.org/references/authors/daniel_kahneman.html" rel="nofollow" title="Daniel Kahneman: Publications, homepage, mini-biography etc;">Kahneman</a>, Daniel, <a href="http://www.interaction-design.org/references/authors/ed_diener.html" rel="nofollow" title="Ed Diener: Publications, homepage, mini-biography etc;">Diener</a>, Ed and <a href="http://www.interaction-design.org/references/authors/norbert_schwarz.html" rel="nofollow" title="Norbert Schwarz: Publications, homepage, mini-biography etc;">Schwarz</a>, Norbert (eds.). "Well-Being: The Foundations of Hedonic Psychology". Russell Sage Foundation Publicationspp. 3-25  </p><p><a href="http://www.interaction-design.org/references/authors/victor_kaptelinin.html" rel="nofollow" title="Victor Kaptelinin: Publications, homepage, mini-biography etc;">Kaptelinin</a>, Victor and <a href="http://www.interaction-design.org/references/authors/bonnie_a__nardi.html" rel="nofollow" title="Bonnie A. Nardi: Publications, homepage, mini-biography etc;">Nardi</a>, Bonnie A. (2007): <i>Acting with technology: <a href="https://www.interaction-design.org/literature/topics/activity-theory" title="Activity Theory">Activity theory</a>  and interaction design</i>. In<a href="http://www.interaction-design.org/references/periodicals/first_monday.html" title="Info on First Monday: Description, homepage, etc">First Monday</a>, 12 (4)  </p><p><a href="http://www.interaction-design.org/references/authors/robert_v__kozinets.html" rel="nofollow" title="Robert V. Kozinets: Publications, homepage, mini-biography etc;">Kozinets</a>, Robert V. (2008): <i>Technology/Ideology: How Ideological Fields Influence Consumers' Technology Narratives</i>. In <a href="http://www.interaction-design.org/references/periodicals/journal_of_consumer_research.html" title="Info on Journal of Consumer Research: Description, homepage, etc">Journal of Consumer Research</a>, 34 (6) pp. 864-881  </p><p><a href="http://www.interaction-design.org/references/authors/matthias_laschke.html" rel="nofollow" title="Matthias Laschke: Publications, homepage, mini-biography etc;">Laschke</a>, Matthias, <a href="http://www.interaction-design.org/references/authors/marc_hassenzahl.html" rel="nofollow" title="Marc Hassenzahl: Publications, homepage, mini-biography etc;">Hassenzahl</a>, Marc and <a href="http://www.interaction-design.org/references/authors/kurt_mehnert.html" rel="nofollow" title="Kurt Mehnert: Publications, homepage, mini-biography etc;">Mehnert</a>, Kurt (2010): linked.: a relatedness experience for boys. In:<a href="http://www.interaction-design.org/references/conferences/proceedings_of_the_sixth_nordic_conference_on_human-computer_interaction.html" title="Info on Proceedings of the Sixth Nordic Conference on Human-Computer Interaction: Description, homepage, etc">Proceedings of the Sixth Nordic Conference on Human-Computer Interaction</a> 2010. pp. 839-844  </p><p><a href="http://www.interaction-design.org/references/authors/matthew_linderman.html" rel="nofollow" title="Matthew Linderman: Publications, homepage, mini-biography etc;">Linderman</a>, Matthew and <a href="http://www.interaction-design.org/references/authors/jason_fried.html" rel="nofollow" title="Jason Fried: Publications, homepage, mini-biography etc;">Fried</a>, Jason (2004): <i>Defensive Design for the Web: How to improve error messages, help, forms, and other crisis points.</i> New Riders  </p><p><a href="http://www.interaction-design.org/references/authors/sian_e__lindley.html" rel="nofollow" title="Sian E. Lindley: Publications, homepage, mini-biography etc;">Lindley</a>, Sian E., <a href="http://www.interaction-design.org/references/authors/richard_harper.html" rel="nofollow" title="Richard Harper: Publications, homepage, mini-biography etc;">Harper</a>, Richard and <a href="http://www.interaction-design.org/references/authors/abigail_sellen.html" rel="nofollow" title="Abigail Sellen: Publications, homepage, mini-biography etc;">Sellen</a>, Abigail (2009): Desiring to be in touch in a changing communications landscape: attitudes of older adults. In: <a href="http://www.interaction-design.org/references/conferences/proceedings_of_acm_chi_2009_conference_on_human_factors_in_computing_systems.html" title="Info on Proceedings of ACM CHI 2009 Conference on Human Factors in Computing Systems: Description, homepage, etc">Proceedings of ACM CHI 2009 Conference on Human Factors in Computing Systems</a> 2009. pp. 1693-1702  </p><p><a href="http://www.interaction-design.org/references/authors/abraham_h__maslow.html" rel="nofollow" title="Abraham H. Maslow: Publications, homepage, mini-biography etc;">Maslow</a>, Abraham H. (1954): <i>Motivation and Personality.</i> HarperCollins Publishers  </p><p><a href="http://www.interaction-design.org/references/authors/joshua_meggitt.html" rel="nofollow" title="Joshua Meggitt: Publications, homepage, mini-biography etc;">Meggitt</a>, Joshua (2007). <i>FM3: Made in Beijing</i>. Retrieved 9 November 2010 from Residentadvisor.net: <a href="http://www.residentadvisor.net/feature.aspx?836">http://www.residentadvisor.net/feature.aspx?836</a>  </p><p><a href="http://www.interaction-design.org/references/authors/b__joseph_pine.html" rel="nofollow" title="B. Joseph Pine: Publications, homepage, mini-biography etc;">Pine</a>, B. Joseph (1999): <i>The Experience Economy: Work Is Theater & Every Business a Stage.</i> Harvard Business Press  </p><p><a href="http://www.interaction-design.org/references/authors/james_a__russell.html" rel="nofollow" title="James A. Russell: Publications, homepage, mini-biography etc;">Russell</a>, James A. (2003): <i>Core Affect and the Psychological Construction of Emotion</i>. In <a href="http://www.interaction-design.org/references/periodicals/psychological_review.html" title="Info on Psychological Review: Description, homepage, etc">Psychological Review</a>, 110 (1) p. 145–172  </p><p><a href="http://www.interaction-design.org/references/authors/bernd_h__schmitt.html" rel="nofollow" title="Bernd H. Schmitt: Publications, homepage, mini-biography etc;">Schmitt</a>, Bernd H. (1999): <i>Experiential Marketing: How to Get Customers to Sense, Feel, Think, Act, Relate.</i> Free Press  </p><p><a href="http://www.interaction-design.org/references/authors/artur_schock.html" rel="nofollow" title="Artur Schock: Publications, homepage, mini-biography etc;">Schock</a>, Artur (2010). <i>Gut finden und kaufen steht in keinem Verhältnis</i>. Retrieved 9 November 2010 from Spiegel Online: <a href="http://www.spiegel.de/netzwelt/web/0,1518,710269,00.html">http://www.spiegel.de/netzwelt/web/0,1518,710269,0...</a>  </p><p><a href="http://www.interaction-design.org/references/authors/gerhard_schulze.html" rel="nofollow" title="Gerhard Schulze: Publications, homepage, mini-biography etc;">Schulze</a>, Gerhard (2005): <i>Die Erlebnisgesellschaft: Kultursoziologie der Gegenwart.</i>  </p><p><a href="http://www.interaction-design.org/references/authors/gerhard_schulze.html" rel="nofollow" title="Gerhard Schulze: Publications, homepage, mini-biography etc;">Schulze</a>, Gerhard (1992): <i>Die Erlebnisgesellschaft: Kultursoziologie der Gegenwart.</i> Campus Verlag  </p><p><a href="http://www.interaction-design.org/references/authors/kennon_m__sheldon.html" rel="nofollow" title="Kennon M. Sheldon: Publications, homepage, mini-biography etc;">Sheldon</a>, Kennon M., <a href="http://www.interaction-design.org/references/authors/andrew_j__elliot.html" rel="nofollow" title="Andrew J. Elliot: Publications, homepage, mini-biography etc;">Elliot</a>, Andrew J., <a href="http://www.interaction-design.org/references/authors/youngmee_kim.html" rel="nofollow" title="Youngmee Kim: Publications, homepage, mini-biography etc;">Kim</a>, Youngmee and <a href="http://www.interaction-design.org/references/authors/tim_kasser.html" rel="nofollow" title="Tim Kasser: Publications, homepage, mini-biography etc;">Kasser</a>, Tim (2001): <i>What Is Satisfying About Satisfying Events? <a href="https://www.interaction-design.org/literature/topics/testing" title="Testing">Testing</a>  10 Candidate Psychological Needs</i>. In <a href="http://www.interaction-design.org/references/periodicals/journal_of_personality_and_social_psychology.html" title="Info on Journal of Personality and Social Psychology: Description, homepage, etc">Journal of Personality and Social Psychology</a>, 80 (2) pp. 325-339  </p><p><a href="http://www.interaction-design.org/references/authors/frank_vetere.html" rel="nofollow" title="Frank Vetere: Publications, homepage, mini-biography etc;">Vetere</a>, Frank, <a href="http://www.interaction-design.org/references/authors/martin_r__gibbs.html" rel="nofollow" title="Martin R. Gibbs: Publications, homepage, mini-biography etc;">Gibbs</a>, Martin R., <a href="http://www.interaction-design.org/references/authors/jesper_kjeldskov.html" rel="nofollow" title="Jesper Kjeldskov: Publications, homepage, mini-biography etc;">Kjeldskov</a>, Jesper, <a href="http://www.interaction-design.org/references/authors/steve_howard.html" rel="nofollow" title="Steve Howard: Publications, homepage, mini-biography etc;">Howard</a>, Steve, <a href="http://www.interaction-design.org/references/authors/florian_mueller.html" rel="nofollow" title="Florian Mueller: Publications, homepage, mini-biography etc;">Mueller</a>, Florian, <a href="http://www.interaction-design.org/references/authors/sonja_pedell.html" rel="nofollow" title="Sonja Pedell: Publications, homepage, mini-biography etc;">Pedell</a>, Sonja, <a href="http://www.interaction-design.org/references/authors/karen_mecoles.html" rel="nofollow" title="Karen Mecoles: Publications, homepage, mini-biography etc;">Mecoles</a>, Karen and <a href="http://www.interaction-design.org/references/authors/marcus_bunyan.html" rel="nofollow" title="Marcus Bunyan: Publications, homepage, mini-biography etc;">Bunyan</a>, Marcus (2005): Mediating intimacy: designing technologies to support strong-tie relationships. In:<a href="http://www.interaction-design.org/references/conferences/proceedings_of_acm_chi_2005_conference_on_human_factors_in_computing_systems.html" title="Info on Proceedings of ACM CHI 2005 Conference on Human Factors in Computing Systems: Description, homepage, etc">Proceedings of ACM CHI 2005 Conference on Human Factors in Computing Systems</a> 2005. pp. 471-480  </p><p><a href="http://www.interaction-design.org/references/authors/jeremy_wagstaff.html" rel="nofollow" title="Jeremy Wagstaff: Publications, homepage, mini-biography etc;">Wagstaff</a>, Jeremy (2007). <i>The Anti-iPod: The Buddha Machine Shows That Bells and Whistles Aren't Always Better</i>. Retrieved 9 November 2010 from Creative Deconstruction: <a href="http://online.wsj.com/article/SB117712103492177617.html">http://online.wsj.com/article/SB117712103492177617...</a>  </p><p><a href="http://www.interaction-design.org/references/authors/rob_walker.html" rel="nofollow" title="Rob Walker: Publications, homepage, mini-biography etc;">Walker</a>, Rob (2007). <i>Boxed Set</i>. Retrieved 9 November 2010 from The New York Times: <a href="http://www.nytimes.com/2007/07/29/magazine/29wwln-consumed-t.html?_r=1">http://www.nytimes.com/2007/07/29/magazine/29wwln-...</a>  </p>
+
+                                            <p></p>
+                        <h1 id='heading_Commentary_by_Eric_L_Reiss_page_100758'><span style='color:#ababab'>3.7 </span>Commentary by Eric L. Reiss</h1><p>For years, I have struggled to understand the difference between &quot;user experience&quot; and &quot;experience&quot;. I couldn't help but smile as Marc struggled with this same problem. In fact, by the penultimate paragraph, Marc had decided to place the word &quot;user&quot; in parenthesis. This supports the viewpoint that both Marc and I seem to share, that both of these terms mean essentially the same thing, despite the semantic bickering in the professional community. Listen to the first few minutes of Marc's first video for some very succinct remarks on this matter.</p>
+<p>Of course, if one really feels a need to differentiate between &quot;user experience&quot; and &quot;experience&quot;, Marc has some interesting comments and observations. In the introduction, he suggests that &quot;It is about creating an experience through a device.&quot; &quot;It&quot; is the elusive beast in the current debate.</p>
+<p>Later on, Marc states, &quot;Experience or User Experience is not about technology, industrial design, or interfaces. It is about creating a meaningful experience through a device.&quot; I agree 100% with the first statement, but I question the second part; I don't think that experience is necessarily related to a device. Certainly, Charlie's experience with the chocolate factory didn't involve &quot;experience through a device&quot; unless you pedantically define the golden ticket as a &quot;device&quot;. (The presence of a device or lack thereof often lies at the heart of the &quot;user experience vs. experience&quot; debate.) </p>
+<p>But let's take things a step further. If I go out to greet the sunrise - not courtesy of Philips, but standing in my garden on a glorious spring day - my experience does not depend on technology, industrial design, or interfaces. Since I like sunrises, my limbic system is busy distributing dopamine - a reward chemical that affects my mood. And my body is soaking up Vitamin D, which improves my health. There are no devices involved in this interaction between me and the sun (accompanied by soft dew on the grass between my toes, birds chirping, and that undefinable smell released by vegetation as it, too, awakes and greets the sun).</p>
+<p>As a designer, I see user experience (UX) as the perception left in someone's mind following a series of interactions between people, devices, and events - or any combination thereof. &quot;Series&quot; is the operative word.</p>
+<p>Some interactions are active - clicking a button on a website, giving a waiter your order at a restaurant, getting out of the rain at a picnic.</p>
+<p>Some interactions are passive - viewing a beautiful sunrise will trigger the release of reward chemicals in our brain. This applies to any and all of our five senses.</p>
+<p>Some interactions are secondary to the ultimate experience - the food tastes good because the chef chose quality ingredients and prepared them well. The ingredients are good quality because the farmer tended his fields. The crop interacted well with the rain that year.</p>
+<p>Of course, all interactions are open to subjective interpretation - some people don't like celery or sunrises. Remember, a perception is always true in the mind of the perceiver; if you think sunrises are depressing, there's little I can say or do to convince you otherwise. However, this is why designers often fall back on &quot;best practice&quot; - most people react favorably to sunrises.<br />
+ <br />
+ For these reasons, I think that designing a &quot;user experience,&quot; represents the conscious act of:</p>
+<ul>
+ <li>coordinating interactions that are controllable (choosing food ingredients, training waiters, designing and programming buttons)</li>
+ <li>acknowledging interactions that are beyond our control (uncomfortable seats in a 100-year-old theater, lack of fresh produce in winter, low-hanging clouds that hide the sky)</li>
+ <li>reducing negative interactions (providing tents as emergency shelters at outdoor events in case of rain; making sure restaurant seating next to the noisy kitchen door is the last to be filled, putting in an extra intermission so folks can stretch their legs)</li>
+</ul>
+
+<p>A good user-experience designer needs to be able to see both the forest and the trees. That means user experience has implications that go far beyond usability, visual design, and physical affordances. As UX designers, we orchestrate a complex series of interactions and the emotional responses and/or physical responses that these interactions generate. To look at &quot;experience&quot; in terms of individual service or product touchpoints is ultimately too limiting. It is the total sum of that counts.</p>
+
+<p>Another interesting point is contained in Marc's example of the &quot;I love you&quot; SMS. Here, the phone's designer merely facilitated an interaction between two individuals. Facilitating an experience and creating one are two very different things - designers should always consider which role they being asked to play at any given time in the design process. </p>
+<p>Finally, the value of an experience is exceptionally subjective. I was delighted to see Marc's reference to the van Boven and Gilovich work from 2003. This ties in directly to the work of Akerlof, Spence, and Stiglitz on asymmetric information, which won them the Nobel Prize in Economics in 2001. Let me share some thoughts.</p>
+
+<p>Despite any theoretical shift from a materialistic society that covets things, to a post-materialistic culture that nurtures experience, the value of physical items has always increased if they are accompanied by a good story. A vintage watch is worth more if it comes with all its original paperwork, receipts, etc. An antique chair's value can change dramatically depending on its provenance. (A chair previously owned by Winston Churchill is going to be worth more than a chair from my house). Yet neither watches nor wing chairs physically change because they come with a piece of paper.</p>
+
+<p>As designers, dealing with the subjective nature of experience could well be our greatest challenge. This may also explain why experience is so difficult to define - which brings us back full circle to the beginning of this commentary.</p>
+                                            <p></p>
+                        <h1 id='heading_Commentary_by_Donald_A_Norman_page_100758'><span style='color:#ababab'>3.8 </span>Commentary by Donald A. Norman</h1><p>Technologies migrate as they mature. In early childhood, their very existence is a marvel, even as people wonder what can be made of it. In early adolescence, they become more and more able to perform useful functions for us, and for a while, they are judged primarily on their ability to do more and more, better and better. Finally, in maturity, it is the quality of the experience provided by these technologies that matter. Adolescents thrust their technological underpinnings into our consciousness, even as we resisted. But once the technology becomes mature, it recedes into the background, supportive of the total experience it provides.</p>
+
+<p>Design, it has been said (Krippendorff, 1989) is the creation of meaning, and as Hassenzahl points out, the essence of meaning to us people is our experiences.</p>
+
+<p>The chapter by Marc Hassenzahl ought to be required reading in courses of design, and perhaps even more importantly, in engineering and computer science. Do the devices we design and produce work well? Do they do marvelous, mysterious operations, working invisibly across space and time? Yes, they do, but doing that is a means, not the end. The end is the experiences they engender, the stories we tell, and the way that they enriched our lives.</p>
+
+<p>But this creates a problem. We know how to design things that accomplish particular, concrete actions. But how can experiences be designed? As Hassenzahl points out they can’t be: they can only be supported. To use another design term: we can design in the <em>affordances</em> of experiences, but in the end it is up to the people who use our products to have the experiences.</p>
+<p>The product provides the &quot;How&quot; part of an experience. It is up to people to provide the &quot;What&quot; and the &quot;Why.&quot; But designers can help here as well, setting the framework, providing the initiative, providing examples.  </p>
+
+<p>Design has moved from its origins of making things look attractive (styling), to making things that fulfill true needs in an effective understandable way (design studies and interactive design) to the enabling of experiences (experience design). Each step is more difficult than the one before each requires and builds upon what was learned before.</p>
+
+<p>The first step toward experiences was to learn about and embrace emotion and products that were pleasurable. This step has just been taken, with an increasing number of books, journal articles, and conferences attesting to the interest in this topic. But these steps too were in their infancy, addressing primarily the need and desirability along with the technical difficulties of measuring the resulting emotions or pleasure.</p>
+
+<p>Marc Hassenzahl throws down the gauntlet for future designs: to produce products that deliver the Why, What, and How.</p>
+
+<h3>References</h3>
+
+<p>Krippendorff, Klaus (1989). On the Essential Contexts of Artifacts or on the Proposition That &quot;Design Is Making Sense (Of Things)&quot;. Design Issues, 5(2), pp. 9-39. </p>
+<h3>About the Author</h3>
+<p>Don Norman is the author of numerous books including &quot;Emotional Design,&quot; and more recently, &quot;Living with Complexity.&quot; He is co-founder of the Nielsen Norman group, a professor at KAIST (in Korea), and IDEO fellow, and a design theorist, studying the fundamentals of modern design. Although he invented the term &quot;User experience&quot; while an executive at Apple, he is pleased that people like Marc Hassenzhal have moved beyond the phrase to deep substance. Although Norman travels an inordinate amount, he can always be found at <a href="http://www.jnd.org">www.jnd.org</a></p>
+                                            <p></p>
+                        <h1 id='heading_Commentary_by_Mark_Blythe_page_100758'><span style='color:#ababab'>3.9 </span>Commentary by Mark Blythe</h1><h2 style="margin-top:-10px !important;">The Hitch Hiker's Guide to Experience Design</h2>
+
+<p>I like the idea of Marc's alarm clock, but I suspect that with the right sort of hangover, the gentle birdsong might sound like horses galloping over a tin bridge. It is an old point now but perhaps worth repeating: no experience can be guaranteed. In McCarthy and Wright's formulation experiences cannot be designed they can only be designed for (3). It is sometimes countered that, on the contrary, experiences get designed all the time and we only have to look at film, theatre and the other arts to see how. But in some ways there couldn't be a worse example. Consider James Cameron's "Avatar". Incredibly, the person who I was with found it… boring, yes, boring, if you can believe it. As I sat in open mouthed astonishment at the technological and artistic achievement, my friend's jaw dropped only to yawn. Experience cannot be guaranteed even with Hollywood budgets. But conceding that you can't please all of the people all of the time does not necessarily mean that we cannot learn anything from understandings of literature, film and other media. Novelists, dramatists and film directors have, after all, been designing impossible things for a very long time.</p>
+
+<p>Somewhere in the fourth video of the very interesting conversations with Marc he points out that the differences in how we tell stories matter. The way that we tell and understand story is crucial for experience design and for this reason there is as the saying goes "a small but growing body of work" that draws on critical theory (e.g. 1.2.3). Critical theory developed from the study of literature, drama and film. It is a catch all term that covers a very diverse range of perspectives such as psychoanalysis, feminism and deconstruction. Because its subject of study is the everyday - novels, films, TV, it is often dismissed as pretentious. It draws on specialized or high falutin' terms like "dialogical" and can seem unnecessarily abstract and difficult.</p>
+
+<p>The terms "dialogical" and "monological" were key to the thought of the literary critic Mikhail Bakhtin and they are increasingly applied to experience design (e.g. 3). Such concepts can be quite confusing and are perhaps best explained with reference to the kinds of contexts Bakhtin thought about. For Bakhtin a "monological" utterance expects no answer. For instance, the order "Charge!" on a battlefield anticipates action, not debate. For Bakhtin the style of narrative in the novels of Tolstoy is also monological. The narrator of Anna Karenina for example knows the most intimate thoughts and actions of every character. How he knows what everyone is thinking is not at issue. In Dostoevsky on the other hand the narrative is dialogical. In Notes from the Underground the narrator constantly tries to anticipate and guess the reader's responses to what he is saying. "<i>You imagine no doubt, gentlemen, that I want to amuse you. You are mistaken in that, too. I am by no means such a mirthful person as you imagine.</i>" Even where a neutral narrative voice begins the novel with omnipresent authority, as in the Brothers Karamazov, it is later revealed that this voice belongs to one of the characters with a partial perspective and sources which might or might not be reliable. Today monological authority is increasingly undermined by dialogical forms. To find examples today we might look at the anti Mubarak protests in Egypt in 2011, organized in part through Facebook and Twitter.</p>
+
+<p>Unlike a paper based encyclopedia resources such as this are also dialogical in the form of commentaries and invitations for reader responses. Douglas Adams predicted this long ago when he wrote that the Hitch Hiker's Guide to the Galaxy had supplanted the older and more pedestrian Encyclopedia Galactica in many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy. This, he said, was partly because it was slightly cheaper but mostly because it had the words "Don't Panic:" inscribed in large friendly letters on the front cover. The guide's field workers like Ford Prefect, would travel the universe, write about it and send their copy to the editors. Towards the end of his life Adams became less interested in writing novels and more involved in developing new media such as the pioneering game Starship Titanic. The HG2G website which attempted to create a real hitch hiker's guide with user generated content was a precursor to wikipedia. What then might a hitch hiker's guide to experience design look like?</p>
+
+<div style="width:70%;clear:both;margin: 0 auto;">
+<span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:left;margin-bottom:-15px;text-indent:0;">&#147;</span>Experience design is complicated, really complicated. I mean, you may think planning a holiday in Centre Parks is needlessly difficult, but that's just peanuts to experience design<span style="line-height:50% !important;font-family:'Times New Roman', Times, serif !important;font-size: 350%;font-weight:bold;color:#c0c0c0;margin:0px 0px 0px 0px;float:right;margin-top: 5px;clear:left;margin-bottom:-15px;">&#148;</span>
+</div>
+
+<div style="width:100%;height:20px;clear:both">&nbsp;</div>
+
+<p class="noindent" style="marging-top:0px;">The style might settle down after this and go on to note that it draws on many other disciplines - psychology, sociology and yes even literary theory sometimes. Many years ago, as another new field of study formed, Roland Barthes pointed out that interdisciplinary work is not achieved by gathering a number of sciences around a new "subject": "Interdisciplinarity" he said "consists in creating a new object that belongs to no one". Or as Marc Hassenzahl puts it in conversation here, the many relevant disciplines must talk to each other to find what works.</p>
+
+<h3>References</h3>
+<ol>
+ <li>Bardzell J &amp; Bardzell S (2008) Interaction criticism: a proposal and<br />
+ framework for a new discipline of hci Interaction Design CHI '08 extended<br />
+ abstracts on Human factors in computing systems</p>
+ </li>
+ <li>Blythe, M. and Cairns, P. 2009. Critical methods and user generated<br />
+ content: the iPhone on YouTube. CHI '09. (Boston, MA, USA, April 04 - 09,<br />
+ 2009</li>
+ <li>McCarthy J., and Wright P., (2008) Technology as Experience. MIT Press<br />
+ Cambridge Mass.
+ </li>
+</ol>
+                                            <p></p>
+                        <h1 id='heading_Commentary_by_Whitney_Hess_page_100758'><span style='color:#ababab'>3.10 </span>Commentary by Whitney Hess</h1><p>Experience designers make a career out of alleviating people's problems and bringing them joy. To do this we remove barriers to entry; reduce the gap between current knowledge and target knowledge; make information easy to find and share; present content in digestible, understandable formats; adapt to the context of use; and above all else, maximize the potential for people to succeed. </p>
+
+<p>But before we can find the right solution (the &quot;How&quot;), we need to carefully prioritize the features we invest in (the &quot;What&quot;). To determine our priorities, we need to clearly and accurately define the problem (the &quot;Why&quot;). To determine the problem, we need to identify the intended audience (the &quot;Who&quot;). And to determine the audience, we need to listen. At its core, this is the goal of experience design. </p>
+
+<p>The result of a well-defined <em>who</em>, <em>why</em>, and <em>what </em>is an elegant <em>how </em>that can provide people with new dimensions of understanding, productivity, and pleasure. </p>
+
+<p>Products, services and systems should improve the quality of people's lives, reduce stress, and create effeciencies that didn't previously exist. But uninformed design often yields the wrong <em>what </em>for the wrong <em>who </em>with a poorly considered <em>how</em>, causing pain and confusion, adding unnecessary cost, and defeating the purpose of the entire effort. </p>
+<p>Marc Hassenzahl superbly demonstrates the power of a triumphant <em>how</em>, by doing what the best experience designers do: wrapping us up in a story and taking us where we need to go. His opening to this chapter illustrates the vastness of an experience designer's purview - what I am only able to convey with arms stretched wide - by making us feel what we would have felt had we been experiencing the products for ourselves. </p>
+
+<p>Like with writing, just about all digital experiences are a proxy for meatspace, and that is a hurdle we must constantly overcome. Hassenzahl helps us recognize that not only do we have the responsibility to create the closest approximation of the mental, emotional and spiritual experience, but we also have the opportunity to use technology to create fulfilling experiences that would never be materially, logistically, or viably possible in the physical space. </p>
+
+<p>&quot;Experience or User Experience is not about good industrial design, multi-touch, or fancy interfaces,&quot; Hassenzahl states. &quot;It is about transcending the material. It is about creating an experience through a device.&quot; I have chosen to read his use of &quot;device&quot; in its perhaps secondary but broader meaning - &quot;a plan, scheme, or trick with a particular aim,&quot; rather than as a material object. I don't view experience design as contingent upon having an object (digital or material) with which to interact, though I can understand the argument of being device-centric given the implications of there being a <em>user</em>. But a user of a service might engage solely through conversation, with the designed &quot;device&quot; being <em>flow</em>. An experience designer's ultimate output is a plan itself, with all its conditions and contingencies. The success of the experience lies in the thoroughness and thoughtfulness of the plan. </p>
+
+<p>Hassenzahl's guidelines on how to craft experiences as a dialog between designer and participant are insightful and well-articulated. He finally finds the common ground amongst what many practitioners have been preaching for decades: our work is a matter of ethics. We have to live with the choices we make, so let's do whatever it takes to be proud of the stories we tell and experiences we create. </p>
+
+<p>I would like to see experience designers spend less time preoccupied with technology and more time exploring new environments on the hunt for new experiences. If we are bound to our chairs and screens, how will we discover new ways to create connection, meaning and purpose, and promote those learnings to the people we serve - or better yet, discover for ourselves whom we wish to serve in the first place? </p>
+                                            <p></p>
+                        <h1 id='heading_Commentary_by_Paul_Hekkert_page_100758'><span style='color:#ababab'>3.11 </span>Commentary by Paul Hekkert</h1><p>Everything I read in Marc Hassenzahl's chapter sounds so true, so valuable, and so familiar. It comforted me, and it puzzled me. Of course, designers are there to shape experiences. Nokia, or any mobile phone manufacturer, is all about connectedness, not about these mobile devices. All design starts with a 'why', and next comes the 'what', or the 'how'. I will come back to this order in a minute.</p> <p>Recently, I published a new book together with designer and colleague Matthijs van Dijk: "Vision in Design: A guidebook for innovators" (2011). It spends over 300 pages on explaining (future) designers on how to find the WHY of their designs, what we call its 'raison d'être' or 'Daseinsgrund'<em>. </em>The reason of existence is grounded in the future world, as the designer sees it, and reflects what the designer wants to offer people given this world. What do you want people to understand, see, be able to, feel or experience? This goal or ultimate reason is indeed often experiential<sup>1</sup>. A random example from a student: &quot;I want passengers to experience a sense of freedom within the limited space of an aircraft, by stimulating mental travel.&quot; This experiential goal takes into account the context of an aircraft, the mental state people are in during traveling, social anxiety, and people's love of mind wandering. This ultimate experience comes first; the product is (just) instrumental in realizing it. Or as Marc puts it: it's all about bringing &quot;... the resulting experience to the fore - to design the experience before the product.&quot; Hence the familiarity. </p> <p>It is so obvious and logical and yet Marc has managed to phrase it in a way that is crisp and clear and thereby he opens it up to an audience that may not seem so aware of its logic. People who are caught up in technological advancements for their own sake? And here Marc also puzzles me. Why this emphasis on interactive products? All products are – in essence – interactive, they allow for and require interaction, and all products can contribute to, stage, shape, facilitate, or enable experiences. Think of Starck's Juicy Salif, designed to stimulate conversations between a son- and mother-in-law. Or the example of the bucket &quot;... a bucket is not a typical exemplar of an interactive product&quot;, as Marc writes. So what?</p> <p>Somewhere along the line, the 'why' must be transformed in a 'what' and a 'how' and I believe the crux is in changing the order Marc proposed. After the WHY, designers should not immediately follow with a WHAT, but first decide on the HOW. This HOW is the user experience or product experience as we have coined it (Schifferstein and Hekkert, 2008); it captures the way people will interact with and experience the to-be-designed product that is not yet defined. These qualities of the interaction are intangible and not bound to anything, and they determine whether the ultimate experiential goal will be met. The WHAT that is next to be designed is simply a carrier of these qualities and it can be any type of product, an interactive product, a service, or a web application. </p> <p>Let us consider an example of how this works. Years ago, student Sanne Kistemaker defined the experiential goal (the WHY) of her design project as "I want people to experience sarcastic triumph while staring at other people". We all want this, right? Watch other people while on the train, see what habits they have composed, see how they interact each other. She could have easily solved her design goal by some augmented reality type of application on a smart phone. But before she decided on the 'carrier' of her experience, she first defined what the interaction with the product should be. This interaction, as she saw it, should be tricky, reluctant, apprehensive, and straightforward, to make the user feel guilty and hesitating, yet proud and rebellious. She <em>designed</em> this interaction and corresponding user experience without having a clue what product should do this. And she beautifully solved it without any technological means: a newspaper that is offered with a small hole in the middle (see Figure)<sup>2</sup>. You may hesitate to use this paper, it is a little tricky, but once you do, in a train or on a terrace, you will certainly feel guilty and probably experience a sarcastic triumph!</p> <div class='illustration'>
+
+                <!-- idf2 platform tags START -->
+                <div>
+                    
+                <!-- idf2 platform tags START -->
+
+                <img data-original="" src="/images/encyclopedia/user_experience_and_experience_design/product_experience_2.jpg" alt="" />
+
+                <!-- idf2 platform tags END -->
+                
+                    
+                    <div class="copyright">
+                        Copyright &copy; Sanne Kistemaker. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the <a href="#copyrightNotice">copyright terms</a> below.
+                        
+                    </div>
+                 
+                    
+                <div class="captionOrLessonItemContents">
+                    Figure 3.1
+                </div>
+                
+                </div>
+                 <!-- idf2 platform tags END -->
+                </div> <div class='illustration'>
+
+                <!-- idf2 platform tags START -->
+                <div>
+                    
+                <!-- idf2 platform tags START -->
+
+                <img data-original="" src="/images/encyclopedia/user_experience_and_experience_design/product_experience_hekkert.jpg" alt="" />
+
+                <!-- idf2 platform tags END -->
+                
+                    
+                    <div class="copyright">
+                        Copyright &copy; Sanne Kistemaker. All Rights Reserved. Reproduced with permission. See section "Exceptions" in the <a href="#copyrightNotice">copyright terms</a> below.
+                        
+                    </div>
+                 
+                    
+                <div class="captionOrLessonItemContents">
+                    Figure 3.2
+                </div>
+                
+                </div>
+                 <!-- idf2 platform tags END -->
+                </div>  <p>To sum up, Marc importantly stresses that the user experience, the experience of the (interactive) product, should never be an end in itself, but is always instrumental to some life experience. All very true. And since the final design, the product, is again instrumental to the user experience, it seems only logical to make this the order of things: ultimate experience (WHY) &gt; user experience (HOW) &gt; product (WHAT). Designing along these lines is exactly what Verganti (2009) means when he speaks of 'design-driven innovation', where the designer <em>pushes</em> a new meaning, a new experience onto the public. Marc's chapter gives us many clues on how to do this. </p> <h3><strong>References</strong></h3> <p> Hekkert, P. &amp; van Dijk, M. (2011). Vision in Design: A Guidebook for Innovators. Amsterdam: BIS.</p> <p>Schifferstein, H.N.J. &amp; Hekkert, P. (Eds.)(2008). Product Experience. Amsterdam: Elsevier.</p> <p>Verganti, R. (2009). Design Driven Innovation – Changing the Rules of Competition by Radically Innovating what Things Mean. Boston, MA: Harvard Business Press.</p> <h2>Footnotes</h2>   <ol>    <li> When we look at public products for instance, the underlying reason can also be behavioral. Designing for behavioral change is currently a popular topic in design research. </li>    <li>Itis crucial for the design that the whole is already there; the experience would fail if the user had to make his/her own hole. </li>   </ol>
+                                        <p></p>
+                </section>
+
+                <div class="tags-widget">
+	<div class="tags-widget__taglist-container">
+		<div class="tags-widget__taglist-header">Topics in this book chapter:</div>
+		<div class="tags-widget__taglist-items">
+							<a class="button secondary tags-widget__taglist-item"
+					href="https://www.interaction-design.org/literature/topics/ux-design">
+					UX Design
+				</a>
+							<a class="button secondary tags-widget__taglist-item"
+					href="https://www.interaction-design.org/literature/topics/user-experience">
+					User Experience
+				</a>
+							<a class="button secondary tags-widget__taglist-item"
+					href="https://www.interaction-design.org/literature/topics/user-centred-design-1">
+					User Centred Design
+				</a>
+							<a class="button secondary tags-widget__taglist-item"
+					href="https://www.interaction-design.org/literature/topics/emotional-design">
+					Emotional Design
+				</a>
+							<a class="button secondary tags-widget__taglist-item"
+					href="https://www.interaction-design.org/literature/topics/aesthetics">
+					Aesthetics
+				</a>
+					</div>
+	</div>
+	<div class="row">&nbsp;</div>
+
+            </div>
+                <div class="page-navigator">
+                                        <a href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/human-computer-interaction-brief-intro" class="previous">
+                        <span>Human Computer Interaction - brief intro</span>
+                    </a>
+                    
+                                        <a href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/social-computing" class="next">
+                        <span>Social Computing</span>
+                    </a>
+                                    </div>
+                <!-- source: https://github.com/bradvin/social-share-urls -->
+<div class="social-sharing">
+    <div class="message">Learnt something new? Share with your friends:</div>
+    <div class="icons">
+        <a href="http://www.linkedin.com/shareArticle?url=https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design&title=User Experience and Experience Design"><i class="fa fa-fw fa-linkedin"></i></a>
+        <a href="https://twitter.com/share?url=https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design&text=User Experience and Experience Design&hashtags=ux"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="http://www.facebook.com/sharer.php?u=https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design"><i class="fa fa-fw fa-facebook"></i></a>
+        <a href="https://plus.google.com/share?url=https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design"><i class="fa fa-fw fa-google-plus"></i></a>
+        <a href="mailto:?subject=User Experience and Experience Design&body=I%20thought%20you%20might%20be%20interested%20in%20this%20story:%0A%0Ahttps://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design"><i class="fa fa-fw fa-envelope"></i></a>
+            </div>
+</div>
+
+                <section class="panel book-chapter-references">
+                                            <h1 class="section-title underline icon clearfix" id="toc_8">
+                            <span style="color:#ababab">3.8</span>
+                            References
+                        </h1>
+                    
+                    <ul class="no-bullet">
+                                                    <li><a href="https://www.interaction-design.org/literature/author/frank-vetere">Vetere</a>,
+  Frank, 
+  <a href="https://www.interaction-design.org/literature/author/martin-r-gibbs">Gibbs</a>,
+  Martin R., 
+  <a href="https://www.interaction-design.org/literature/author/jesper-kjeldskov">Kjeldskov</a>,
+  Jesper, 
+  <a href="https://www.interaction-design.org/literature/author/steve-howard">Howard</a>,
+  Steve, 
+  <a href="https://www.interaction-design.org/literature/author/florian-mueller">Mueller</a>,
+  Florian, 
+  <a href="https://www.interaction-design.org/literature/author/sonja-pedell">Pedell</a>,
+  Sonja, 
+  <a href="https://www.interaction-design.org/literature/author/karen-mecoles">Mecoles</a>,
+  Karen, 
+  <a href="https://www.interaction-design.org/literature/author/marcus-bunyan">Bunyan</a>,
+  Marcus
+(2005):
+Mediating intimacy: designing technologies to support strong-tie relationships.
+In:
+<a href="https://www.interaction-design.org/literature/conference/proceedings-of-acm-chi-2005-conference-on-human-factors-in-computing-systems">Proceedings of ACM CHI 2005 Conference on Human Factors in Computing Systems</a>
+,
+2005,
+.  pp. 471-480.
+  <a href="http://doi.acm.org/10.1145/1054972.1055038">http://doi.acm.org/10.1145/1054972.1055038</a>
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/victor-kaptelinin">Kaptelinin</a>,
+  Victor, 
+  <a href="https://www.interaction-design.org/literature/author/bonnie-a-nardi">Nardi</a>,
+  Bonnie A.
+(2007):
+Acting with technology: Activity theory and interaction design.
+  In
+  First Monday,
+12
+(4)
+pp. .
+  <a href="http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/1772">http://www.uic.edu/htbin/cgiwrap/bin/ojs/index.php/fm/article/view/1772</a>
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/jodi-forlizzi">Forlizzi</a>,
+  Jodi, 
+  <a href="https://www.interaction-design.org/literature/author/katja-battarbee">Battarbee</a>,
+  Katja
+(2004):
+Understanding experience in interactive systems.
+In:
+<a href="https://www.interaction-design.org/literature/conference/proceedings-of-dis04-designing-interactive-systems-processes-practices-methods-techniques">Proceedings of DIS04: Designing Interactive Systems: Processes, Practices, Methods, &amp; Techniques</a>
+,
+2004,
+.  pp. 261-268.
+  <a href="http://doi.acm.org/10.1145/1013115.1013152">http://doi.acm.org/10.1145/1013115.1013152</a>
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/bill-buxton">Buxton</a>,
+  Bill
+(2007):
+Sketching User Experiences: Getting the Design Right and the Right Design,
+  <a href="https://www.interaction-design.org/literature/publisher/morgan-kaufmann">Morgan Kaufmann</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/leaf-van-boven">Boven</a>,
+  Leaf Van, 
+  <a href="https://www.interaction-design.org/literature/author/thomas-gilovich">Gilovich</a>,
+  Thomas
+(2003):
+To Do or to Have? That Is the Question.
+  In
+  Journal of Personality and Social Psychology,
+85
+(6)
+pp. 1193&ndash;1202.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/travis-j-carter">Carter</a>,
+  Travis J., 
+  <a href="https://www.interaction-design.org/literature/author/thomas-d-gilovich">Gilovich</a>,
+  Thomas D.
+(2010):
+The Relative Relativity of Material and Experiential Purchases.
+  In
+  Journal of Personality and Social Psychology,
+98
+(0)
+pp. 146-159.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/charles-s-carver">Carver</a>,
+  Charles S., 
+  <a href="https://www.interaction-design.org/literature/author/michael-f-scheier">Scheier</a>,
+  Michael F.
+(2001):
+On the Self-Regulation of Behavior,
+  <a href="https://www.interaction-design.org/literature/publisher/cambridge-university-press">Cambridge University Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/chun-y-chen">Chen</a>,
+  Chun Y., 
+  <a href="https://www.interaction-design.org/literature/author/jodi-forlizzi">Forlizzi</a>,
+  Jodi, 
+  <a href="https://www.interaction-design.org/literature/author/pamela-jennings">Jennings</a>,
+  Pamela
+(2006):
+ComSlipper: An expressive design to support awareness and availability.
+In:
+<a href="https://www.interaction-design.org/literature/conference/proceedings-of-the-chi-06-conference-on-human-factors-in-computing-systems-extended-abstracts-on-human-factors-in-computing-systems">Proceedings of the CHI 06 Conference on Human Factors in Computing Systems - extended abstracts on Human factors in computing systems</a>
+,
+2006,
+.  pp. 369-374.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/anthony-dunne">Dunne</a>,
+  Anthony
+(2006):
+Hertzian Tales: Electronic Products, Aesthetic Experience, and Critical Design,
+  <a href="https://www.interaction-design.org/literature/publisher/mit-press">MIT Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/marc-hassenzahl">Hassenzahl</a>,
+  Marc
+(2010):
+Experience Design: Technology for All the Right Reasons,
+  <a href="https://www.interaction-design.org/literature/publisher/morgan-and-claypool-publishers">Morgan and Claypool Publishers</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/marc-hassenzahl">Hassenzahl</a>,
+  Marc, 
+  <a href="https://www.interaction-design.org/literature/author/sarah-diefenbach">Diefenbach</a>,
+  Sarah, 
+  <a href="https://www.interaction-design.org/literature/author/anja-goritz">Goritz</a>,
+  Anja
+(2010):
+Needs, affect, and interactive products - Facets of user experience.
+  In
+  Interacting with Computers,
+22
+(5)
+pp. 353-362.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/ronald-inglehart">Inglehart</a>,
+  Ronald
+(1997):
+Modernization and Postmodernization: Cultural, Economic, and Political Change in 43 Societies,
+  <a href="https://www.interaction-design.org/literature/publisher/princeton-university-press">Princeton University Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/martin-jay">Jay</a>,
+  Martin
+(2006):
+Songs of Experience: Modern American and European Variations on a Universal Theme,
+  <a href="https://www.interaction-design.org/literature/publisher/university-of-california-press">University of California Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/daniel-kahnemann">Kahnemann</a>,
+  Daniel
+  (2003):
+Objective happiness.
+  In:
+    "Well-Being: The Foundations of Hedonic Psychology"
+      <a href="https://www.interaction-design.org/literature/publisher/russell-sage-foundation-publications">Russell Sage Foundation Publications</a>
+  .</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/robert-v-kozinets">Kozinets</a>,
+  Robert V.
+(2008):
+Technology/Ideology: How Ideological Fields Influence Consumers&#039; Technology Narratives.
+  In
+  Journal of Consumer Research,
+34
+(6)
+pp. 864-881.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/sian-e-lindley">Lindley</a>,
+  Sian E., 
+  <a href="https://www.interaction-design.org/literature/author/richard-harper">Harper</a>,
+  Richard, 
+  <a href="https://www.interaction-design.org/literature/author/abigail-sellen">Sellen</a>,
+  Abigail
+(2009):
+Desiring to be in touch in a changing communications landscape: attitudes of older adults.
+In:
+<a href="https://www.interaction-design.org/literature/conference/proceedings-of-acm-chi-2009-conference-on-human-factors-in-computing-systems">Proceedings of ACM CHI 2009 Conference on Human Factors in Computing Systems</a>
+,
+2009,
+.  pp. 1693-1702.
+  <a href="http://doi.acm.org/10.1145/1518701.1518962">http://doi.acm.org/10.1145/1518701.1518962</a>
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/abraham-h-maslow">Maslow</a>,
+  Abraham H.
+(1954):
+Motivation and Personality,
+  <a href="https://www.interaction-design.org/literature/publisher/harpercollins-publishers">HarperCollins Publishers</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/b-joseph-pine">Pine</a>,
+  B. Joseph
+(1999):
+The Experience Economy: Work Is Theater &amp; Every Business a Stage,
+  <a href="https://www.interaction-design.org/literature/publisher/harvard-business-press">Harvard Business Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/james-a-russell">Russell</a>,
+  James A.
+(2003):
+Core Affect and the Psychological Construction of Emotion.
+  In
+  Psychological Review,
+110
+(1)
+pp. 145&ndash;172.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/bernd-h-schmitt">Schmitt</a>,
+  Bernd H.
+(1999):
+Experiential Marketing: How to Get Customers to Sense, Feel, Think, Act, Relate,
+  <a href="https://www.interaction-design.org/literature/publisher/free-press">Free Press</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/gerhard-schulze">Schulze</a>,
+  Gerhard
+(2005):
+Die Erlebnisgesellschaft: Kultursoziologie der Gegenwart,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/gerhard-schulze">Schulze</a>,
+  Gerhard
+(1992):
+Die Erlebnisgesellschaft: Kultursoziologie der Gegenwart,
+  <a href="https://www.interaction-design.org/literature/publisher/campus-verlag">Campus Verlag</a>,
+
+
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/kennon-m-sheldon">Sheldon</a>,
+  Kennon M., 
+  <a href="https://www.interaction-design.org/literature/author/andrew-j-elliot">Elliot</a>,
+  Andrew J., 
+  <a href="https://www.interaction-design.org/literature/author/youngmee-kim">Kim</a>,
+  Youngmee, 
+  <a href="https://www.interaction-design.org/literature/author/tim-kasser">Kasser</a>,
+  Tim
+(2001):
+What Is Satisfying About Satisfying Events? Testing 10 Candidate Psychological Needs.
+  In
+  Journal of Personality and Social Psychology,
+80
+(2)
+pp. 325-339.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/leaf-van-boven">Boven</a>,
+  Leaf Van
+(2005):
+Experientialism, Materialism, and the Pursuit of Happiness.
+  In
+  Review of General Psychology,
+9
+(2)
+pp. 132-142.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/matthias-laschke">Laschke</a>,
+  Matthias, 
+  <a href="https://www.interaction-design.org/literature/author/marc-hassenzahl">Hassenzahl</a>,
+  Marc, 
+  <a href="https://www.interaction-design.org/literature/author/kurt-mehnert">Mehnert</a>,
+  Kurt
+(2010):
+linked.: a relatedness experience for boys.
+In:
+<a href="https://www.interaction-design.org/literature/conference/proceedings-of-the-sixth-nordic-conference-on-human-computer-interaction">Proceedings of the Sixth Nordic Conference on Human-Computer Interaction</a>
+,
+2010,
+.  pp. 839-844.
+  <a href="http://doi.acm.org/10.1145/1868914.1869044">http://doi.acm.org/10.1145/1868914.1869044</a>
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/leaf-van-boven">Boven</a>,
+  Leaf Van, 
+  <a href="https://www.interaction-design.org/literature/author/margaret-c-campbell">Campbell</a>,
+  Margaret C., 
+  <a href="https://www.interaction-design.org/literature/author/thomas-gilovich">Gilovich</a>,
+  Thomas
+(2010):
+Stigmatizing Materialism: On Stereotypes and Impressions of Materialistic and Experiential.
+  In
+  Personality and Social Psychology Bulletin,
+30
+(4)
+pp. 551-563.
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/gary-bongiovann">Bongiovann</a>,
+  Gary
+(-0001).
+PollStar 2010 Midyear Business Analysis.
+Retrieved 2010-11-09 00:00:00 from
+http://www.pollstarpro.com/specialfeatures2010/2010MidYearBusinessAnalysis.PDF
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/artur-schock">Schock</a>,
+  Artur
+(2010).
+Gut finden und kaufen steht in keinem Verh&auml;ltnis.
+Retrieved 2010-11-09 00:00:00 from
+http://www.spiegel.de/netzwelt/web/0,1518,710269,00.html
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/rich-huxley">Huxley</a>,
+  Rich
+(2010).
+Music is Not Our Currency.
+Retrieved 2010-11-09 00:00:00 from
+http://www.creativedeconstruction.com/2010/05/music-is-not-our-currency/
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/jeremy-wagstaff">Wagstaff</a>,
+  Jeremy
+(2007).
+The Anti-iPod: The Buddha Machine Shows That Bells and Whistles Aren&#039;t Always Better.
+Retrieved 2010-11-09 00:00:00 from
+http://online.wsj.com/article/SB117712103492177617.html
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/joshua-meggitt">Meggitt</a>,
+  Joshua
+(2007).
+FM3: Made in Beijing.
+Retrieved 2010-11-09 00:00:00 from
+http://www.residentadvisor.net/feature.aspx?836
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/rob-walker">Walker</a>,
+  Rob
+(2007).
+Boxed Set.
+Retrieved 2010-11-09 00:00:00 from
+http://www.nytimes.com/2007/07/29/magazine/29wwln-consumed-t.html?_r=1
+</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/brian-heater">Heater</a>,
+  Brian
+(2008).
+Hands On: Buddha Machine 2.
+Retrieved 2010-11-09 00:00:00 from
+http://www.gearlog.com/2008/11/hands_on_buddha_machine_2.php
+</li>
+                                                    <li>Heidecker, S., Hassenzahl, M., Eckoldt, K., &amp; Hillmann, U. (2010). Designing for relatedness experiences: A Review of technologies mediating intimate relationships. in preparation</li>
+                                                    <li><a href="https://www.interaction-design.org/literature/author/matthew-linderman">Linderman</a>,
+  Matthew, 
+  <a href="https://www.interaction-design.org/literature/author/jason-fried">Fried</a>,
+  Jason
+(2004):
+Defensive Design for the Web: How to improve error messages, help, forms, and other crisis points,
+  <a href="https://www.interaction-design.org/literature/publisher/new-riders">New Riders</a>,
+
+
+</li>
+                                            </ul>
+                </section>
+            </div>
+            
+            <div class="article-sidebar">
+                <div class="sidebar-top-section">
+                                            <div class="card book-card  has-download-links "
+     data-book-id="120714">
+    <a href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed" title="The Encyclopedia of Human-Computer Interaction, 2nd Ed.">
+        <div class="card-image">
+            <img data-layzr="https://public-media.interaction-design.org/images/book-covers/the-encyclopedia-of-human-computer-interaction-2nd-ed.png"
+                 alt="The Encyclopedia of Human-Computer Interaction, 2nd Ed.">
+        </div>
+        <div class="card-content">
+            <h4 class="card-title truncate-4">The Encyclopedia of Human-Computer Interaction, 2nd Ed.</h4>
+            <span class="author">
+                by
+                                    Mads Soegaard and 
+                                    Rikke Friis Dam
+                                                (eds.)
+                            </span>
+        </div>
+
+            </a>
+</div>
+    <section class="panel read-offline">
+        <h2 class="component-header">Read Offline</h2>
+
+        <ul class="link-strips margin-left-none">
+                                                <li>
+                        <a href="#" data-reveal-id="pdfUrlModal" title="Read The Encyclopedia of Human-Computer Interaction, 2nd Ed. in PDF"><i class="fa fa-fw fa-lg fa-file-pdf-o"></i><span>PDF version</span></a>
+                    </li>
+                            
+                    </ul>
+    </section>
+
+    <div id="pdfUrlModal" class="reveal-modal medium" data-reveal aria-hidden="true" role="dialog">
+    <div class="feature-content">
+        <picture class="feature-icon">
+            <img src="https://public-media.interaction-design.org/images/icon-idf-book.svg"
+                 alt="">
+        </picture>
+        <h1 class="center">Premium literature on UX design</h1>
+
+        <div class="message">
+            <p>Enjoy unlimited downloads of our literature as an IDF member:</p>
+            <ul>
+                <li>iPad/tablet-optimized version and PDF version of all our online textbooks
+                    written by 100+ leading designers, bestselling authors and Ivy League
+                    professors.
+                </li>
+                <li>Self-service export to all popular formats, such as ePub.</li>
+                <li>Pre-publication access to all textbooks - read them before everybody else.</li>
+            </ul>
+
+            <div class="book-cards">
+                <div class="card-wrapper">
+                    <div class="book-card card">
+                        <a href="/literature/book/gamification-at-work-designing-engaging-business-software">
+                            <div class="card-image">
+                                <img src="https://public-media.interaction-design.org/images/book-covers/gamification-at-work-designing-engaging-business-software.png">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title truncate-4">Gamification at Work: Designing Engaging Business
+                                                                  Software</h4>
+                                <span class="author">by Janaki Mythily Kumar and Mario Herger</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="book-card card">
+                        <a href="/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed">
+                            <div class="card-image">
+                                <img src="https://public-media.interaction-design.org/images/book-covers/the-encyclopedia-of-human-computer-interaction-2nd-ed.png">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title truncate-4">The Encyclopedia of Human-Computer Interaction, 2nd
+                                                                  Ed.</h4>
+                                <span class="author">by Mads Soegaard and Rikke Friis Dam</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls center">
+                            <a href="https://www.interaction-design.org/join" class="button large">Join our community</a>
+                <a href="#" class="close-modal">Cancel</a>
+                    </div>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+                                            
+                    <section class="panel book-chapters">
+                        <h2 class="component-header">Table of contents</h2>
+                        <a href="#" data-toggle="toggle-chapters" class="js_toggle_chapters">chapter TOC</a>
+                        <ul class="link-strips no-bullet" id="toggle-chapters" style="display: none;">
+                                                            <li>
+                                    <a href="#chapter_start" title="User Experience and Experience Design">
+                                        3
+                                        User Experience and Experience Design
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_1" title="From the material to the experiential">
+                                        3.1
+                                        From the material to the experiential
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_2" title="Experience and business">
+                                        3.2
+                                        Experience and business
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_3" title="The evasive beast called User Experience">
+                                        3.3
+                                        The evasive beast called User Experience
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_4" title="Experience Design: Designing the post-materialistic">
+                                        3.4
+                                        Experience Design: Designing the post-materialistic
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_5" title="Why, What and How">
+                                        3.5
+                                        Why, What and How
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_6" title="Conclusion and future directions">
+                                        3.6
+                                        Conclusion and future directions
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_7" title="References  ">
+                                        3.7
+                                        References  
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="#toc_8" title="References">
+                                        3.8
+                                        References
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </section>
+
+                    <h3 class="sidebar-header">AUTHOR(S)</h3>
+                                            <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Marc Hassenzahl" src="https://public-media.interaction-design.org/images/authors-idf2/6217.jpg">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/marc-hassenzahl">Marc Hassenzahl</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Marc Hassenzahl is Professor at the Folkwang University in Essen and research manager at MediaCity, &Scaron;bo Akademi University, Vaasa, Finland. He is interested in the positive affective and motivational aspects of interactive technologies - in short: User Experience
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/marc-hassenzahl">View profile</a>
+    </div>
+</div>                        <p></p>
+                    
+                                            <h3 class="sidebar-header">COMMENTARIES BY</h3>
+                                                                                    <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Eric L. Reiss" src="https://public-media.interaction-design.org/images/authors-idf2/1407.gif">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/eric-l-reiss">Eric L. Reiss</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Eric Reiss has been meddling with multimedia and web projects for longer than he cares to remember. Born in San Antonio, Texas, in 1954, Eric Reiss has held a wide range of eclectic jobs including ragtime piano player (in a St. Louis house of ill-repute), senior copywriter (in an ad-house of ill-repute).In November, 2000, his book, Practical Information Architecture was published by Addison-Wesley/Pearson Education. In 2002, it became available in both Japanese and Korean. Eric is also the creator of Web Dogma &#039;06 and is one of the instigators of the IA Slam. He is a former two-term president of the Information Architecture Institute, is Chair of the EuroIA Summit, sits on the Advisory Board of the Copenhagen Business School and is Professor of Usability and Design at IE Business School in Madrid, Spain. Eric is CEO of the FatDUX Group, headquartered in Copenhagen, Denmark, with offices and representatives throughout Europe and North America. 
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/eric-l-reiss">View profile</a>
+    </div>
+</div>                                <p></p>
+                                                                                                                <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Donald A. Norman" src="https://public-media.interaction-design.org/images/authors-idf2/3.jpg">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/donald-a-norman">Donald A. Norman</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Don Norman is the author of numerous books including &quot;Emotional Design,&quot; and more recently, &quot;Living with Complexity.&quot; He is co-founder of the Nielsen Norman group, a professor at KAIST (in Korea), and IDEO fellow, and a design theorist, studying the fundamentals of modern design.Donald A. Norman has a Bachelor of Science in Electrical Engineering from MIT and a Doctor of Philosophy in Psychology from the University of Pennsylvania. He also holds a honorary degree from the University of Padua, Italy. He has been a professor of Computer Science (at Northwestern University), Psychology and Cognitive Science (at University of California, San Diego). He has also worked for Apple Computer at Apple&#039;s Advanced Technology Group and for Hewlett-Packard. He now collaborates with Jakob Nielsen and Bruce &quot;Tog&quot; Tognazzini in the Nielsen Norman Group Recently&nbsp;Norman received the&nbsp;the 2006 recipient of the Benjamin Franklin Medal in Computer and&nbsp;Cognitive Science.
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/donald-a-norman">View profile</a>
+    </div>
+</div>                                <p></p>
+                                                                                                                <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Mark Blythe" src="https://public-media.interaction-design.org/images/authors-idf2/16310.jpg">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/mark-blythe">Mark Blythe</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Mark is Professor of Interdisciplinary Design at Northumbria University. He is a design ethnographer working in the field of Human Computer Interaction. His research interests include the ageing population, looming ecological catastrophe and the messed up world we&#039;re in. Recent projects include collaborations with Goldsmiths&#039; Interaction Research Studio which were based at a residential care home and a nunnery.  He is currently working on a project on banking for the older old. His other work draws on critical theory and YouTube to consider the impacts of new and emerging technologies.
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/mark-blythe">View profile</a>
+    </div>
+</div>                                <p></p>
+                                                                                                                <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Whitney Hess" src="https://public-media.interaction-design.org/images/authors-idf2/118335.jpg">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/whitney-hess">Whitney Hess</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Whitney Hess is an independent user experience designer based in New York City. She helps make stuff easy and pleasurable to use.Whitney is a senior experience design consultant with Happy Cog, an advisor to RedStamp, and consults with a variety of startups and major corporations. She was the UX consultant on Boxee&#039;s beta app, and conducted extensive user research for the United States Holocaust Memorial Museum&#039;s website redesign. Other recent clients include Scientific American, House Party, Reprise Media, Teach for America, and Hearst Corporation.Prior to going independent, Whitney was on the design team at Liquidnet, an international financial software company. Previously, she was an interaction designer at Digitas and Tribal DDB, where her clients included American Express, The New York Times, Allstate, Claritin, Tropicana, and EarthLink. Most notably, she helped to conceive, design, and test an innovative card search tool for American Express, and is named as a co-inventor on its U.S. patent.Whitney received a Master&#039;s degree in Human-Computer Interaction (HCI) and a Bachelor&#039;s degree in Professional Writing and HCI, both from Carnegie Mellon University. She writes about improving the human experience on her blog, Pleasure and Pain, is a frequent speaker on user experience at conferences around the world, and can always be reached on Twitter @whitneyhess.
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/whitney-hess">View profile</a>
+    </div>
+</div>                                <p></p>
+                                                                                                                <div class="member card margin-bottom-medium">
+    <div class="card-header">
+        <div class="profile-image">
+            <picture>
+                <img alt="Paul Hekkert" src="https://public-media.interaction-design.org/images/authors-idf2/65126.jpg">
+            </picture>
+        </div>
+        <div class="name truncate-2">
+            <a href="https://www.interaction-design.org/literature/author/paul-hekkert">Paul Hekkert</a>
+        </div>
+    </div>
+                            <div class="card-description truncate-8">
+        Paul Hekkert is professor of Form Theory at the department of Industrial Design of Delft University of Technology. His main research interest is product experience, including product aesthetics, emotion, expressiveness, and attachment. Next, he is involved in design methodology and has co-developed an interaction-centred design approach, called ViP (Vision in Product design).
+    </div>
+    <div class="card-footer">
+        <a href="https://www.interaction-design.org/literature/author/paul-hekkert">View profile</a>
+    </div>
+</div>                                <p></p>
+                                                                                        </div>
+                <div class="sidebar-bottom-section">
+                                            <div class="upcoming-courses" id="upcoming-courses">
+                            <h3 class="sidebar-header">UPCOMING COURSE</h3>
+                                                            <a href="https://www.interaction-design.org/courses/gestalt-psychology-and-web-design-the-ultimate-guide" title="Gestalt Psychology and Web Design: The Ultimate Guide">
+    <div class="course card  "
+         data-course-id="9"
+         data-schedule-id="790"
+         data-start-date="2016-12-09 00:02:29"
+         data-percentage-booked="95"
+         data-location-pathname="https://www.interaction-design.org/courses/gestalt-psychology-and-web-design-the-ultimate-guide">
+        
+        <div class="card-content ">
+            <div class="card-hero">
+                <img src="https://public-media.interaction-design.org/images/idf-logo-clear.svg"
+                     data-layzr="https://public-media.interaction-design.org/images/courses/course_cover_image_courseseriesID_9.jpg"
+                     alt="Gestalt Psychology and Web Design: The Ultimate Guide"/>
+            </div>
+
+            <h6 class="card-title">Gestalt Psychology and Web Design: The Ultimate Guide</h6>
+
+            <div class="stats">
+                                <div class="countdown">
+                    <div class="title font-stack-condensed">
+                        Starts In
+                    </div>
+                    <div id="countdown-clock-9"></div>
+                </div>
+                <div class="progress-ring-wrapper">
+                    <!-- stroke-dasharray = 2*PI*r -->
+                    <svg class="progress-ring"
+                         width="100%"
+                         height="69.734"
+                         viewPort="0 0 100 100"
+                         version="1.1"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle r="25"
+                                cx="50%"
+                                cy="50%"
+                                fill="transparent"
+                                stroke-dasharray="157.14"
+                                stroke-dashoffset="0"></circle>
+                        <circle class="bar"
+                                r="25"
+                                cx="50%"
+                                cy="50%"
+                                fill="transparent"
+                                stroke-dasharray="157.14"
+                                stroke-dashoffset="0"></circle>
+                    </svg>
+                    <div class="percentage-text">
+                        <div class="number" data-percentage="95"></div>
+                        <div class="unit">booked</div>
+                    </div>
+                </div>
+                            </div>
+
+            <div class="cta ">
+                <button class="button boxed">
+                </button>
+            </div>
+        </div>
+    </div>
+
+</a>
+
+                                                            <a href="https://www.interaction-design.org/courses/the-practical-guide-to-usability" title="The Practical Guide to Usability">
+    <div class="course card  "
+         data-course-id="15"
+         data-schedule-id="794"
+         data-start-date="2016-12-10 00:01:49"
+         data-percentage-booked="90"
+         data-location-pathname="https://www.interaction-design.org/courses/the-practical-guide-to-usability">
+        
+        <div class="card-content ">
+            <div class="card-hero">
+                <img src="https://public-media.interaction-design.org/images/idf-logo-clear.svg"
+                     data-layzr="https://public-media.interaction-design.org/images/courses/course_cover_image_courseseriesID_15.jpg"
+                     alt="The Practical Guide to Usability"/>
+            </div>
+
+            <h6 class="card-title">The Practical Guide to Usability</h6>
+
+            <div class="stats">
+                                <div class="countdown">
+                    <div class="title font-stack-condensed">
+                        Starts In
+                    </div>
+                    <div id="countdown-clock-15"></div>
+                </div>
+                <div class="progress-ring-wrapper">
+                    <!-- stroke-dasharray = 2*PI*r -->
+                    <svg class="progress-ring"
+                         width="100%"
+                         height="69.734"
+                         viewPort="0 0 100 100"
+                         version="1.1"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle r="25"
+                                cx="50%"
+                                cy="50%"
+                                fill="transparent"
+                                stroke-dasharray="157.14"
+                                stroke-dashoffset="0"></circle>
+                        <circle class="bar"
+                                r="25"
+                                cx="50%"
+                                cy="50%"
+                                fill="transparent"
+                                stroke-dasharray="157.14"
+                                stroke-dashoffset="0"></circle>
+                    </svg>
+                    <div class="percentage-text">
+                        <div class="number" data-percentage="90"></div>
+                        <div class="unit">booked</div>
+                    </div>
+                </div>
+                            </div>
+
+            <div class="cta ">
+                <button class="button boxed">
+                </button>
+            </div>
+        </div>
+    </div>
+
+</a>
+
+                                                    </div>
+                                    </div>
+            </div>
+        </div>
+
+        <p></p>
+    </div>
+
+    <div id="roadblockModal"
+     class="reveal-modal tiny roadblock-modal"
+     data-reveal
+     data-options="animation_speed: 100;"
+     aria-labelledby="modalTitle"
+     aria-hidden="true"
+     role="dialog">
+    <div class="modal-title">
+        <div class="logo"></div>
+    </div>
+
+    <h1 class="title">Fresh design news and insights, straight to your inbox.</h1>
+    <p>Plus a <strong>free copy</strong> of our upcoming textbook!</p>
+
+    <form id="roadblockSubscription" method="post" action="https://www.interaction-design.org/newsletter/subscribe-ajax" data-abide>
+        <input type="hidden" name="_token" id="csrf-token-for-roadblock" value="HnqBnCvKjmwNz5KGcA3UpMNj7ho8ipn0dFD156e6"/>
+
+        <div>
+            <label>
+                <input id="roadblockEmail"
+                       name="email"
+                       type="email"
+                       data-abide-validator="email"
+                       placeholder="Enter your email address"
+                       required/>
+            </label>
+            <small class="error">A valid email address is required.</small>
+        </div>
+
+        <div class="controls center">
+            <button type="submit">Yes, please!</button>
+            <a href="#" class="cancel close-modal">Close</a>
+        </div>
+    </form>
+
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+	        </div>
+
+        <footer class="hide-for-print">
+    <div class="mega-menu">
+        <div class="mega-menu-section">
+            <h4>About Us</h4>
+
+            <p>
+                The Interaction Design Foundation is a 14-year old
+                non-profit community founded in Denmark.
+            </p>
+
+            <div>
+                Learn <a href="https://www.interaction-design.org/about" title="About the Interaction Design Foundation">more about our community</a>,
+                become <a href="https://www.interaction-design.org/design-league-coach" title="Get a Design Coach for Design Coaching">a personal coach</a>,
+                or <a href="https://www.interaction-design.org/careers" title="Careers and Jobs at the Interaction Design Foundation">come work with us</a>.
+            </div>
+        </div>
+        <div class="mega-menu-section">
+            <h4>Connect With Us!</h4>
+
+            <p>
+                Send us an email at <a href="mailto:hello@interaction-design.org">hello@interaction-design.org</a>
+                or through our <a href="https://www.interaction-design.org/about#contact" title="Contact the Interaction Design Foundation">online contact form</a>.
+            </p>
+
+            <div>
+                Or find us on:
+            </div>
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.facebook.com/interactiondesign.org" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/interacting" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/+InteractionDesignOrg/posts" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.pinterest.com/ixdfoundation/idf-courses/" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/grp/home?gid=2529386" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mega-menu-section">
+            <h4>Stay In Touch</h4>
+
+            <p>Join 60,634 designers and get our <a href="https://www.interaction-design.org/newsletter#contact" title="Design Tips">weekly design tips</a> in your inbox</p>
+
+            <form action="https://www.interaction-design.org/newsletter/subscribe" method="post" data-abide>
+                <input type="hidden" name="_token" id="csrf-token" value="HnqBnCvKjmwNz5KGcA3UpMNj7ho8ipn0dFD156e6"/>
+
+                <div class="row collapse">
+                    <div class="columns small-9">
+                        <div class="field">
+                            <label>
+                                <input name="email" type="email" data-abide-validator="email" placeholder="Your email" required aria-invalid="false"/>
+                                <small class="error">Please write a valid email address.</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns small-3">
+                        <button type="submit" class="postfix">Sign up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <ul class="static-links">
+    <li><a href="https://www.interaction-design.org/about/copyright" id="copyrightNotice">Copyright / IP Policy</a></li>
+    <li><a href="https://www.interaction-design.org/about/terms-of-use">General Terms of use</a></li>
+    <li><a href="https://www.interaction-design.org/about/privacy">Privacy policy</a></li>
+    <li>
+        <a href="https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/user-experience-and-experience-design">
+            Definition of User Experience
+        </a>
+    </li>
+</ul>
+    <div class="background">
+        <img src="https://public-media.interaction-design.org/images/idf-logo-inverse.svg" alt="IDF"/>
+    </div>
+</footer>
+
+        <a class="exit-off-canvas"></a>
+    </main>
+</div>
+
+
+<div id="verifyModalDialog"
+     class="reveal-modal medium"
+     data-reveal
+     aria-hidden="true"
+     role="dialog">
+    <h1 class="center">Please re-enter your password</h1>
+
+    <p>
+        For your security, you must re-enter your password to continue
+    </p>
+
+    <form id="verifyModalForm" action="https://www.interaction-design.org/verify" method="post">
+        <div class="errors">
+
+        </div>
+        <div class="error-container">
+            <label>
+                Password
+                <input type="password" name="password" value="" class="verifyModalInput">
+            </label>
+            <small class="error" style="display: none;">
+                Sorry. Wrong password. Did you
+                <a id="forget_password_link"
+                   href="https://www.interaction-design.org/password/email">
+                    forget your password
+                </a>?
+            </small>
+        </div>
+
+        <div class="controls center modal-controls">
+            <button type="submit" class="button modal-success margin-bottom-medium">Submit</button>
+            <a href="#" class="cancel button close-modal modal-cancel">Cancel</a>
+            <a id="forgot_password"
+               class="cancel button"
+               href="https://www.interaction-design.org/password/email">Forgot Your Password ?</a>
+        </div>
+
+    </form>
+
+    <a class="close-reveal-modal" aria-label="Close">×</a>
+</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Roboto+Condensed:400,300,700|Roboto+Slab:400,300,700|Press+Start+2P"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/vendors.css?bust=2016101887" />
+
+<script src="/js/app.config.bust.js?bust=2016101887"></script>
+<script src="/bower_components/requirejs/require.js" data-main="/js/all"></script>
+
+		<script>
+			/**
+			 * TODO: Using section('content') to contain hidden fields for values and moving this into resources/assets/js/roadblock.js break the page.
+			 */
+
+			var submitLink = "https://www.interaction-design.org/newsletter/subscribe-ajax";
+			var goToLink = "https://www.interaction-design.org/communication/subscription-confirmation";
+		</script>
+        <script src="/js/roadblock.js?bust=2016101887"></script>
+	    <script src="/js/book-chapter.js?bust=2016101887"></script>
+<script type="text/javascript">
+	    /* <![CDATA[ */
+	    var google_conversion_id = 985705368;
+	    var google_custom_params = window.google_tag_params;
+	    var google_remarketing_only = true;
+	    /* ]]> */
+	</script>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+	    <div style="display:inline;">
+	        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/985705368/?value=0&amp;guid=ON&amp;script=0"/>
+	    </div>
+	</noscript>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"74db9a8928","applicationID":"21973063","transactionName":"YFwGY0tYCkdYWxEMWlkWJVRNUAtaFk0LDltYTgo=","queueTime":0,"applicationTime":40,"atts":"TBsFFQNCGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,593 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class=" home-minimal-html ">
+<head>
+  <script src="https://cdn.optimizely.com/js/7932184713.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Zapier" />
+  <meta name="keywords" content="zapier, web apps, automation, syncing, integrations" />
+
+
+  <meta name="robots" content="all" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=IE8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"c342879a4c","agent":"","transactionName":"M1ZRYEQCXktZUkNdCgocdUFYAERRV18YWAAFQV0aQApVT0sLQV0AE2xQW0MRQ10=","applicationID":"17152027","errorBeacon":"bam.nr-data.net","applicationTime":55}</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+  <meta name="google-site-verification" content="Mplw0unXm1SQzihRuuBFgiBxjBXgfRw64bSZCfEUhlw" />
+  <meta name="pocket-site-verification" content="e3616a9b06fea1f1ec3cc8180f2a68" />
+  
+  <title>An Introduction to APIs - Zapier</title>
+  <meta name="description" content="Zapier makes it easy to automate tasks between web apps."></meta>
+
+  <link rel="mask-icon" href="https://cdn.zapier.com/static/1CeHVJ/images/logo_zapier_black.svg" color="#FF4A00" />
+  
+    <link rel="icon" href="https://cdn.zapier.com/static/1CeHVJ/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://cdn.zapier.com/static/1CeHVJ/images/favicon.ico" type="image/x-icon" />
+  
+  
+
+  <script type="text/javascript">
+    var DEBUG = false;
+
+    var preload = {};
+    var BASE_CONFIG = BASE_CONFIG || {};
+
+    BASE_CONFIG.path = '/learn/apis/';
+    BASE_CONFIG.mediaUrl = 'https://cdn.zapier.com/static/1CeHVJ/';
+    BASE_CONFIG.stripePubApiKey = 'pk_phnG9Y3BlUIYXVpH1gkMOJ25RGbsI';
+    BASE_CONFIG.pusherAppKey = 'dc30b79cf9b16933060a';
+    
+    BASE_CONFIG.titleAppend = ' - Zapier';
+    
+    BASE_CONFIG.partnerEnvironment = null;
+    BASE_CONFIG.personas = ["Contractor", "Customer Support", "Designer", "Developer", "Education", "Freelancer", "Government", "Human Resource", "Information Technology", "Journalist", "Lawyer", "Marketer", "Non-Profit", "Real Estate", "Sales", "Small Business Owner", "Other"];
+    
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  window.tests = window.tests || {};
+  
+  window.tests.aatest = false;
+  window.tests.promptUpgradeEditor = true;
+</script>
+
+
+  
+    <link href="https://cdn.zapier.com/static/1CeHVJ/build/app.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.zapier.com/static/1CeHVJ/build/view.css" rel="stylesheet" type="text/css" />
+    
+      <link href="https://cdn.zapier.com/static/1CeHVJ/build/app-bundle.css" rel="stylesheet" type="text/css" />
+    
+  
+
+  
+</head>
+
+<body id="">
+
+  
+
+
+<div class="topbar hide">
+   <div class="message"></div>
+</div>
+
+<div id="header">
+  <div class="page-header-wrapper">
+    <div class="container">
+      
+        <div class="logo logged-out">
+          <a href="/"></a>
+        </div>
+      
+
+     
+       <span class="hiring">
+         <a href="/jobs">we're hiring!</a>
+       </span>
+     
+
+      
+        
+          <div class="links-container">
+  <ul class="links logged-out">
+    <li><a href="/app/explore">Explore</a></li>
+    <li><a href="/zapbook/">App Directory</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/app/login">Log In</a></li>
+    <li><a href="/sign-up/" class="signup button">Sign Up</a></li>
+  </ul>
+</div>
+
+        
+      
+    </div>
+  </div>
+  <div id="app-nav-inject-point"></div>
+</div>
+
+
+
+  <div id="static-content"></div>
+  <div id="react-root-app">
+    <div id="app" class="app">
+      
+<div class="content-base learning-center">
+
+  <div class="row breadcrumbs dark-text">
+    <div class="container">
+      <a href="/learn/">Learning Center</a><span class="bread-arrow">→</span>
+      <span><h1>An Introduction to APIs</h1></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container course">
+      <div class="column one-third">
+        <div class="course-cover"><img src="https://cdn.zapier.com/storage/learn_courses/57edd2e8145ecf07f89328d58a133fce.600x780.png" /></div>
+      </div>
+      <div class="column two-thirds content">
+        <h2>About This Course</h2>
+<p>Have you ever wondered how Facebook is able to automatically display your Instagram photos? How about how Evernote syncs notes between your computer and smartphone? If so, then it’s time to get excited!</p>
+<p>In this course, we walk you through what it takes for companies to link their systems together. We start off easy, defining some of the tech lingo you may have heard before, but didn’t fully understand. From there, each lesson introduces something new, slowly building up to the point where you are confident about what an API is and, for the brave, could actually take a stab at using one.</p>
+<h2>Who Is This Course For?</h2>
+<p>If you are a non-technical person, you should feel right at home with the lesson structure. For software developers, the first lesson or two may feel like a mandatory new employee orientation, but stick with it &ndash; you'll get your fill of useful information, too.</p>
+        
+        <hr />
+        <a name="toc"></a>
+        <h2 class="haircut">Table of Contents</h2>
+        <ul class="table-of-contents">
+          
+            <li><a href="/learn/apis/chapter-1-introduction-to-apis/">Chapter 1: Introduction</a></li>
+          
+            <li><a href="/learn/apis/chapter-2-protocols/">Chapter 2: Protocols</a></li>
+          
+            <li><a href="/learn/apis/chapter-3-data-formats/">Chapter 3: Data Formats</a></li>
+          
+            <li><a href="/learn/apis/chapter-4-authentication-part-1/">Chapter 4: Authentication, Part 1</a></li>
+          
+            <li><a href="/learn/apis/chapter-5-authentication-part-2/">Chapter 5: Authentication, Part 2</a></li>
+          
+            <li><a href="/learn/apis/chapter-6-api-design/">Chapter 6: API Design</a></li>
+          
+            <li><a href="/learn/apis/chapter-7-real-time-communication/">Chapter 7: Real-Time Communication</a></li>
+          
+            <li><a href="/learn/apis/chapter-8-implementation/">Chapter 8: Implementation</a></li>
+          
+        </ul>
+        
+          
+            <div class="learn-download">
+              <h2 id="download" class="haircut">Download this Course</h2>
+              <p>
+                
+                  Get this book in a variety of formats, plus other great content from Zapier!
+                
+              </p>
+              
+                <p>We're offering this course as a free ebook download if you subscribe to the <a href="/blog/">Zapier blog</a>.</p>
+                <form id="ajaxform" enctype="multipart/form-data" method="post" action="#download">
+                  <input type='hidden' name='csrfmiddlewaretoken' value='Ngi3xv3tl1nx8MjiQDVbAOGiICL1wvxJ' />
+                  <input type="hidden" name="source" value="learn-footer-cta" />
+                  
+                    <input type="text" placeholder="Your email..." name="email">
+                  
+                  <button type="submit" class="big orange">Subscribe + Get a Free Ebook</button>
+                </form>
+              
+            </div>
+          
+        
+<div class="footnotes">
+<h4>Credits</h4>
+<p>Written by Brian Cooksey. Edited by Bryan Landers and Danny Schreiber.<br>
+Cover art by Stephanie Briones. Clipart images from <a href="http://etc.usf.edu/clipart/" rel="nofollow">FCIT</a>.</p>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+<div class="row learn-more-cta">
+  <div class="container">
+    <img class="learn-more-cta__image" src="https://cdn.zapier.com/static/1CeHVJ/images/learn-more-cta/workflow.png" alt="Workflow">
+    <h1 class="learn-more-cta__title">Take the Work out of Workflow</h1>
+    <p class="learn-more-cta__description">Zapier is the easiest way to automate powerful workflows with more than 750 apps.</p>
+
+    <div class="sign-up-form learn-more-cta__form">
+      <h3 class="learn-more-cta__subtitle">Try Zapier Free</h3>
+      <form id="signUpForm" method="post" action="/sign-up/">
+        <input class="form-input-half" id="id_first_name" maxlength="30" name="first_name" placeholder="First Name" type="text" style="">
+        <input class="form-input-half" id="id_last_name" maxlength="30" name="last_name" placeholder="Last Name" type="text">
+        <input id="id_email" name="email" placeholder="Email" type="text">
+        <input id="id_password1" name="password1" placeholder="Password" type="password" style="">
+        <p>
+          <label>
+            <input checked="checked" id="id_updates" name="updates" type="checkbox">
+            Email me about <a href="/zapbook/updates/" class="learn-more-cta__link" target="_blank">new features</a>.
+          </label>
+        </p>
+        <input type="submit" class="button primary large" value="Sign Up">
+        <p class="sign-up-terms">By signing up, you agree to Zapier's
+        <a href="/terms/" class="learn-more-cta__link">Terms of Service</a>.</p>
+        <input type='hidden' name='csrfmiddlewaretoken' value='Ngi3xv3tl1nx8MjiQDVbAOGiICL1wvxJ' />
+      </form>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div id="hello-pop-up" class="hello-pop-up">
+  <button class="hello-pop-up__close"><i class="zapier icon-delete"></i></button>
+  
+
+    
+        
+            <img class="hello-pop-up__image" src="https://cdn.zapier.com/static/1CeHVJ/images/hello-pop-up-cta/nir-eya.png" />
+            <blockquote>
+              <p class="hello-pop-up__quote">“I was wasting hours each week doing data entry. Now Zapier handles it seamlessly.”</p>
+              <p class="hello-pop-up__author">Nir Eyal, bestselling author</p>
+            </blockquote>
+            <a class="button secondary hello-pop-up__button" href="/sign-up/?utm_source=blog&utm_medium=hello%20popup%20nir&utm_campaign=Blog%20Hello%20Popup">Try Zapier Today</a>
+        
+    
+
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdn.zapier.com/static/1CeHVJ/build/vendor.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://cdn.zapier.com/static/1CeHVJ/build/external.js" charset="utf-8"></script>
+
+
+  <script type="text/javascript" src="https://cdn.zapier.com/static/1CeHVJ/build/common.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://cdn.zapier.com/static/1CeHVJ/build/app.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://cdn.zapier.com/static/1CeHVJ/build/templates.js" charset="utf-8"></script>
+
+
+
+
+<script type="text/javascript">
+BASE_CONFIG.loadPrivateResources = function () {
+  if (BASE_CONFIG.privateStyleSheetLogos) {
+    document.getElementsByTagName('head')[0].removeChild(BASE_CONFIG.privateStyleSheetLogos);
+  }
+  BASE_CONFIG.privateStyleSheetLogos = document.createElement('link');
+  BASE_CONFIG.privateStyleSheetLogos.href = '/generated/private-logos.css';
+  BASE_CONFIG.privateStyleSheetLogos.rel = 'stylesheet';
+  BASE_CONFIG.privateStyleSheetLogos.type = 'text/css';
+  document.getElementsByTagName('head')[0].appendChild(BASE_CONFIG.privateStyleSheetLogos);
+};
+setTimeout(function() {
+  
+
+  var globalStyleSheetLogos = document.createElement('link');
+  globalStyleSheetLogos.href = '/generated/global-logos.css';
+  globalStyleSheetLogos.rel = 'stylesheet';
+  globalStyleSheetLogos.type = 'text/css';
+  document.getElementsByTagName('head')[0].appendChild(globalStyleSheetLogos);
+}, 0);
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27002928-1']);
+  _gaq.push(['_setDomainName', 'zapier.com']);
+  // _gaq.push(['_trackPageview']); dont track pageload
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-27002928-2', {'clientId': 'P5TRQA0KpDHBg6Kc', 'cookieDomain': 'zapier.com'});
+  // ga('send', 'pageview'); dont track page load
+</script>
+    
+  
+    
+      <!-- Google Code for Visited Zapier -->
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 1002491550;
+      var google_conversion_label = "pz-iCPqG7QIQnp2D3gM";
+      var google_custom_params = window.google_tag_params;
+      var google_remarketing_only = true;
+      /* ]]> */
+      </script>
+      <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+      </script>
+      <noscript>
+      <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1002491550/?value=0&amp;label=pz-iCPqG7QIQnp2D3gM&amp;guid=ON&amp;script=0"/>
+      </div>
+      </noscript>
+    
+  
+
+    <!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/
+/* This function wraps the integration code provided by Olark in
+order to allow it to be loaded on demand. It must be called after
+the body onload even was dispatched.*/
+function loadOlark(onReady) {
+    window.olark || (function (c) {
+        var f = window, d = document, l = f.location.protocol == "https:" ? "https:" : "http:", z = c.name, r = "load";
+        var nt = function () {
+            f[z] = function () {
+                (a.s = a.s || []).push(arguments)
+            };
+            var a = f[z]._ = {}, q = c.methods.length;
+            while (q--) {
+                (function (n) {
+                    f[z][n] = function () {
+                        f[z]("call", n, arguments)
+                    }
+                })(c.methods[q])
+            }
+            a.l = c.loader;
+            a.i = nt;
+            a.p = {
+                0: +new Date
+            };
+            a.P = function (u) {
+                a.p[u] = new Date - a.p[0]
+            };
+            function s() {
+                a.P(r);
+                f[z](r)
+            }
+            var ld = function () {
+                function p(hd) {
+                    hd = "head";
+                    return ["<", hd, "></", hd, "><", i, ' onl' + 'oad="var d=', g, ";d.getElementsByTagName('head')[0].", j, "(d.", h, "('script')).", k, "='", l, "//", a.l, "'", '"', "></", i, ">"].join("")
+                }
+
+                var i = "body", m = d[i];
+                if (!m) {
+                    return setTimeout(ld, 100)
+                }
+                a.P(1);
+                var j = "appendChild", h = "createElement", k = "src", n = d[h]("div"), v = n[j](d[h](z)), b = d[h]("iframe"), g = "document", e = "domain", o;
+                n.style.display = "none";
+                m.insertBefore(n, m.firstChild).id = z;
+                b.frameBorder = "0";
+                b.id = z + "-loader";
+                if (/MSIE[ ]+6/.test(navigator.userAgent)) {
+                    b.src = "javascript:false"
+                }
+                b.allowTransparency = "true";
+                v[j](b);
+                try {
+                    b.contentWindow[g].open()
+                } catch (w) {
+                    c[e] = d[e];
+                    o = "javascript:var d=" + g + ".open();d.domain='" + d.domain + "';";
+                    b[k] = o + "void(0);"
+                }
+                try {
+                    var t = b.contentWindow[g];
+                    t.write(p());
+                    t.close()
+                } catch (x) {
+                    b[k] = o + 'd.write("' + p().replace(/"/g, String.fromCharCode(92) + '"') + '");d.close();'
+                }
+                a.P(2)
+            };
+            ld()
+            // This function was originally attached as a body onload
+            // listener but we call it directly here as loadOlark is
+            // meant to be called only when the original event was already
+            // dispatched.
+            s()
+        };
+        nt()
+    })({
+        loader: "static.olark.com/jsclient/loader0.js",
+        name: "olark",
+        methods: ["configure", "extend", "declare", "identify"]
+    });
+    /* custom configuration goes here (www.olark.com/documentation) */
+    olark.identify('4249-795-10-7418');
+    olark('api.chat.onReady', onReady);
+    return olark;
+}
+/*]]>*/</script>
+<!-- end olark code -->
+    
+      
+
+
+      
+
+
+
+    
+  
+
+  <script type='text/javascript'>
+(function(){
+    var body = document.body,
+        html = document.documentElement;
+
+    var viewportHeight = function(){
+        var b=window,
+            d=document.documentElement,
+            e=document.body,
+            height=b.innerHeight||d.clientHeight||e.clientHeight;
+        return height;
+    };
+
+    var bodyHeight = function(){
+        var height = Math.max( body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight );
+        return height;
+    };
+
+    var totalHeight = bodyHeight();
+    var screenHeight = viewportHeight();
+
+    // top bar
+    var topbar = document.querySelector('#topbar-animate');
+    if(topbar){
+        var headroom  = new Headroom(topbar, {
+            offset: 600,
+            tolerance: 30,
+            classes: {
+                initial: 'animated',
+                pinned: 'slideDown',
+                unpinned: 'slideUp'
+            }
+        });
+        headroom.init();
+    }
+
+    // hello popup
+    var hellopopup = document.querySelector('#hello-pop-up');
+    if(hellopopup){
+        var offset = 0;
+
+        // use various percentages of the total height based on the ratio
+        // of total height to viewport height
+        if(totalHeight / screenHeight < 3){
+            offset = (totalHeight-screenHeight) * 0.3;
+        } else if(totalHeight / screenHeight < 4){
+            offset = (totalHeight-screenHeight) * 0.5;
+        } else {
+            offset = (totalHeight-screenHeight) * 0.7;
+        }
+
+        var headroom  = new Headroom(hellopopup, {
+            offset: offset,
+            tolerance: 30,
+            classes: {
+                top:'hello-pop-up--top',
+                notTop:'hello-pop-up--not-top',
+                initial: 'hello-pop-up--initial',
+                pinned: 'hello-pop-up--pinned',
+                unpinned: 'hello-pop-up--unpinned'
+            }
+        });
+        headroom.init();
+
+        // hide the hellopopup 'forever' if the x is clicked
+        // but don't let an exception bomb out the page...
+        try{
+            var $hellopopup = $(hellopopup);
+            var key = ['zapier', 'shouldShowHelloPopup'].join('-');
+            $hellopopup.find('.hello-pop-up__close').click(function(e){
+                if(e){
+                    e.preventDefault();
+                }
+                z.store.set(key, false);
+                $hellopopup.remove();
+            });
+            if(z.store.get(key) === false){
+                $hellopopup.remove();
+            }
+        }catch(e){}
+    }
+
+    // try zapier cta
+    var try_zapier_cta = document.querySelector('.try-zapier-cta');
+    if(try_zapier_cta){
+        var offset = (totalHeight-screenHeight) * 0.2;
+
+        var headroom  = new Headroom(try_zapier_cta, {
+            offset: offset,
+            tolerance: 30,
+            classes: {
+                top:'try-zapier-cta--top',
+                notTop:'try-zapier-cta--not-top',
+                initial: 'try-zapier-cta--initial',
+                pinned: 'try-zapier-cta--pinned',
+                unpinned: 'try-zapier-cta--unpinned'
+            }
+        });
+        headroom.init();
+
+        // hide the try_zapier_cta 'forever' if the x is clicked
+        // but don't let an exception bomb out the page...
+        try{
+            var $try_zapier_cta = $(try_zapier_cta);
+            var key = ['zapier', 'shouldShowTryZapierCta', $try_zapier_cta.data('slug')].join('-');
+            $try_zapier_cta.find('.try-zapier-cta__button--close').click(function(e){
+                if(e){
+                    e.preventDefault();
+                }
+                z.store.set(key, false);
+                $try_zapier_cta.remove();
+            });
+            if(z.store.get(key) === false){
+                $try_zapier_cta.remove();
+            }
+        }catch(e){}
+    }
+
+    // sidebar ctas
+    $(".hello-pop-up--narrow").map(function(i, cta) {
+        var offset = Math.ceil((totalHeight-screenHeight) * (0.4 * i + 0.2));
+        var $cta = $(cta);
+        $cta.css({top:offset}).addClass('hello-pop-up--not-top');
+
+        // hide the cta 'forever' if the x is clicked
+        // but don't let an exception bomb out the page...
+        try{
+            var key = ['zapier', 'shouldShowTryZapierCta', $cta.data('slug')].join('-');
+            // z.store.remove(key); // cache bust
+            $cta.find('.hello-pop-up__close').click(function(e) {
+                if(e){
+                    e.preventDefault();
+                }
+                z.store.set(key, false);
+                $cta.remove();
+            });
+            if(z.store.get(key) === false){
+                $cta.remove();
+            }
+        }catch(e){}
+    });
+
+}());
+</script>
+
+
+</body>
+</html>

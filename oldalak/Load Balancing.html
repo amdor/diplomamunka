@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<TITLE>Load Balancing  </TITLE>
+<META Name=keywords content=", ">
+</HEAD>
+<BODY bgcolor=#CCCCff background=/fachbereich/AG/monien/PICTURES/balken2.gif>
+
+<TABLE border=0 width=100%>
+<TR>
+<TD width=250 valign=top>
+<A HREF="http://www.uni-paderborn.de/">
+<IMG SRC=/fachbereich/AG/monien/PICTURES/kralle_small.gif  border=0 ALT="Logo Uni"></A></TD>
+<TD valign=bottom align=right width=75%>
+<A HREF="/fachbereich/AG/monien/">
+<IMG SRC=/fachbereich/AG/monien/PICTURES/ag-stamp-logo-small.gif width=103 height=23 border=0 ALT="AG Logo-Small"></A></TD>
+</TR></TABLE><HR><P>
+
+<TABLE border=0 width=100%>
+<TR>
+<!-- Rand -->
+<TD width=250 valign=top>
+
+<TABLE border=0>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="http://www.uni-paderborn.de/">University of Paderborn</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="http://www.uni-paderborn.de/fb17/informatik_engl.html">Computer Science</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/fachbereich/AG/monien/">Home AG-Monien</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/fachbereich/AG/monien/RESEARCH/">Research</A><BR></TD></TR>
+<TR><TD colspan=2>&nbsp;<BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballred.gif  width=12 height=12 ALT="*"></TD><TD><FONT color=#FF0000>Load Balancing</FONT><BR></TD></TR>
+<TR><TD colspan=2>&nbsp;<BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/cs/ag-monien/RESEARCH/LOADBAL/basics.html">Basics</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/cs/ag-monien/RESEARCH/LOADBAL/synchr.html">Synchronous Algorithms</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/cs/ag-monien/RESEARCH/LOADBAL/asynchr.html">Asynchronous Algorithms</A><BR></TD></TR>
+<TR><TD valign=top><IMG SRC=/cs/ag-monien/PICTURES/ballblue.gif  width=12 height=12 ALT="#"></TD><TD><A HREF="/cs/ag-monien/RESEARCH/LOADBAL/appl.html">Applications</A><BR></TD></TR>
+</TABLE>
+<P>
+</TD>
+<!-- Zwischenraum -->
+<TD width=20>&nbsp;</TD>
+<!-- Maintext / Begin -->
+<TD valign=top width=75%>
+
+
+
+<P>
+
+<H1>
+<FONT COLOR="#FF0000">Dynamic Load Balancing and Scheduling</FONT></H1>
+Load balancing for a parallel system is one of the most important problems
+which has to be solved in order to enable the efficient use of&nbsp; parallel
+computer systems. This problem can be compared to problems arising in natural
+work distribution processes like that of scheduling all activities (tasks)
+needed to construct a large building. Several objectives have to be taken
+into consideration:
+<UL>
+<LI>
+The whole work should be completed as fast as possible.</LI>
+</UL>
+
+<UL>
+<LI>
+As workers are very expensive, they should be kept busy. If there is only
+little work to do, the distribution of the tasks has to be planed very
+well. On the other hand, at other time periods the distribution can be
+done straight ahead because there is enough work to do.</LI>
+</UL>
+
+<UL>
+<LI>
+The work should be distributed fairly. About the same amount of work should
+be assigned to every worker.</LI>
+</UL>
+
+<UL>
+<LI>
+There are precedence contstraints between different tasks (we can start
+building the roof only after finishing the walls). Thus we also have to
+find a clever processing order of the different jobs.</LI>
+</UL>
+Our working team has been dealing with load balancing and scheduling problems
+since several years. The activities include a wide area of topics ranging
+from purely theoretical questions to real applications.
+<BR>&nbsp;
+<UL>
+<LI>
+<FONT SIZE=+2><A HREF="/fachbereich/AG/monien/RESEARCH/LOADBAL/basics.html">Basics</A></FONT></LI>
+
+<BR>The reasearch in this area focusses on the analysis of different load
+balancing strategies. We are interested in the behavior of randomized algorithms
+and investigate simple "balls-into-bins-games" as well as more complex
+settings.
+<BR>&nbsp;
+<LI>
+<U><FONT COLOR="#0000FF"><FONT SIZE=+2>Algorithms</FONT></FONT></U></LI>
+
+<BR>In this area we develop and evaluate load balancing algorithms. In
+order to ensure their practical applicability we evaluate them using simulations
+or&nbsp; implementations on parallel systems. We distinguish between synchronous
+and asynchronous algorithms. In the first case we assume alternating calculation-
+and load balancing- phases. In the second case the load balancing activities
+are performed at the same time as the calculation.
+<BR>&nbsp;
+<UL>
+<LI>
+<FONT SIZE=+1><A HREF="/fachbereich/AG/monien/RESEARCH/LOADBAL/synchr.html">Synchronous
+algorithms</A></FONT></LI>
+</UL>
+&nbsp;
+<UL>
+<LI>
+<FONT SIZE=+1><A HREF="/fachbereich/AG/monien/RESEARCH/LOADBAL/asynchr.html">Asynchronous
+algorithms</A></FONT></LI>
+</UL>
+&nbsp;
+<LI>
+<FONT SIZE=+2><A HREF="/fachbereich/AG/monien/RESEARCH/LOADBAL/appl.html">Applications</A></FONT></LI>
+
+<BR>The load balancing algorithms are integrated into real applications
+like distributed computer chess, finite element methods, and image generation.
+The resulting feedback leeds to a further improvement of our methods.</UL>
+
+<P>
+
+If you are interested, please contact
+<A HREF="/fachbereich/AG/monien/PERSONAL/DECKER"><B>Thomas Decker</B></A> or
+<A HREF="/fachbereich/AG/monien/PERSONAL/PEBE"><B>Petra Berenbrink</B></A>.
+
+
+<P>
+
+<!-- Maintext / End -->
+
+<HR WIDTH="100%">
+&nbsp; <FONT size=-1> updated by <A HREF=/fachbereich/AG/monien/PERSONAL/DECKER/>Thomas Decker</A> Jan/28/1998</FONT>
+<ADDRESS>
+</ADDRESS>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

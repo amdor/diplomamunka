@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html  >
+<head id="head"><title>
+	Spikes and the Effort-to-Grief Ratio - Scrum Alliance
+</title><meta name="description" content="When do you need a spike?" /> 
+<meta charset="UTF-8" /> 
+<meta name="msvalidate.01" content="22543A6006B11FA79F320F3449654BF6" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!--[if lt IE 9]>
+   <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<link href="/CMSPages/GetResource.ashx?stylesheetname=BootStrap" type="text/css" rel="stylesheet"/> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=BootstrapResponsive" type="text/css" rel="stylesheet"/>
+<link href="/CMSPages/GetResource.ashx?stylesheetname=ScrumMainCSS" type="text/css" rel="stylesheet"/> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=ScrumMainResponsive" type="text/css" rel="stylesheet"/>
+<link href="/CMSPages/GetResource.ashx?stylesheetname=raccordion" rel="stylesheet" type="text/css"  />
+<link href="/assets/css/main-no-foundation.css" type="text/css" rel="stylesheet"/> 
+<link href="/assets/css/jquery-ui.min.css" type="text/css" rel="stylesheet"/> 
+<link href="/CMSPages/GetResource.ashx?stylesheetname=Edits" type="text/css" rel="stylesheet"/> 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.2.1.min.js"></script>
+
+<!--script src="/assets/js/jquery.easing.1.3.js" type="text/javascript"></script-->
+<!--script src="/assets/js/jquery.animation.easing.js" type="text/javascript"></script-->
+<script src="/assets/js/jquery.raccordion.js" type="text/javascript"></script>
+
+
+<script src="/assets/js/scrum.js" type="text/javascript"></script>
+
+<!-- Nivo Slider -->
+<script type="text/javascript" src="/assets/js/jquery.nivo.slider.js"></script>
+
+<!--- share this --->
+<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "ur-f1176adf-b3a9-61f9-8e9-fdd9248f5ccc", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-11470949-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+<!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
+    <script src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script><meta name="google-site-verification" content="wQi0KfDbGyrBTU5LWg1IgvkJc0RlE80atpxIVpMYJ84" /> 
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/> 
+<link href="/favicon.ico" type="image/x-icon" rel="icon"/> 
+<link href="/CMSPages/GetResource.ashx?_webparts=1131" type="text/css" rel="stylesheet"/> 
+</head>
+<body class="LTR Safari Chrome Safari54 Chrome54 ENUS ContentBody" >
+    <form method="post" action="/community/articles/2013/march/spikes-and-the-effort-to-grief-ratio.aspx" id="form">
+<div>
+<input type="hidden" name="manScript_HiddenField" id="manScript_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyMTY0MTExOTEPFgIeE1ZhbGlkYXRlUmVxdWVzdE1vZGUCARYCAgEPFgIeBmFjdGlvbgVIL2NvbW11bml0eS9hcnRpY2xlcy8yMDEzL21hcmNoL3NwaWtlcy1hbmQtdGhlLWVmZm9ydC10by1ncmllZi1yYXRpby5hc3B4FgICBQ9kFgJmDw8WBB4IQ3NzQ2xhc3MFD1BhZ2VQbGFjZWhvbGRlch4EXyFTQgICZBYCZg9kFgYCAw9kFgRmDw8WAh4HVmlzaWJsZWhkZAIGDxYCHwRoZAIHD2QWAmYPZBYCAgIPZBYCZg8PFgQfAgUPUGFnZVBsYWNlaG9sZGVyHwMCAmQWAmYPZBYIAgEPZBYEZg9kFgICAQ8WAh4EVGV4dAUJQ29tbXVuaXR5ZAIBDw8WAh4IQmFubmVySUQCUmQWAmYPDxYIHwIFEENNU0Jhbm5lciBCYW5uZXIeBlRhcmdldAUGX2JsYW5rHwMCAh8EZxYGHgRocmVmBSBodHRwczovL3d3dy5jcHJpbWUuY29tL3RyYWluaW5nLx4Hb25jbGljawVSdGhpcy5ocmVmPScvQ01TTW9kdWxlcy9CYW5uZXJNYW5hZ2VtZW50L0NNU1BhZ2VzL0Jhbm5lclJlZGlyZWN0LmFzaHg/YmFubmVySUQ9ODInOx4Jb25tb3VzZXVwBVJ0aGlzLmhyZWY9Jy9DTVNNb2R1bGVzL0Jhbm5lck1hbmFnZW1lbnQvQ01TUGFnZXMvQmFubmVyUmVkaXJlY3QuYXNoeD9iYW5uZXJJRD04Mic7FgICAQ8PFgweDUFsdGVybmF0ZVRleHRlHgdUb29sVGlwBQZjUHJpbWUfAmUeCEltYWdlVXJsBWMvc2NydW0vbWVkaWEvU2NydW1BbGxpYW5jZU1lZGlhL0Jhbm5lciUyMEFkdmVydGlzaW5nL1RvcF9Gb2xkX0Jhbm5lcl9BZHMvQmFubmVyMTIweDYwMC10cmFpbmluZy5wbmcfAwICHwRnFgIeBXN0eWxlZWQCAw9kFgwCAQ8PFgIfBGhkZAICDw8WAh8EaGRkAgQPZBYCAgIPFhQeDFplcm9Sb3dzVGV4dAUNTm8gZGF0YSBmb3VuZB4ORGF0YVNvdXJjZU5hbWVlHgxFbmFibGVQYWdpbmdoHhBOZXN0ZWRDb250cm9sc0lEZR4QU2hvd0RlbGV0ZUJ1dHRvbmgeHUFsdGVybmF0aW5nVHJhbnNmb3JtYXRpb25OYW1lZR4OU2hvd0VkaXRCdXR0b25oHgtfIUl0ZW1Db3VudAIBHhJUcmFuc2Zvcm1hdGlvbk5hbWUFEWNtcy5hcnRpY2xlLnNjcnVtHhZIaWRlQ29udHJvbEZvclplcm9Sb3dzZxYCZg9kFgJmD2QWBmYPFQMkU3Bpa2VzIGFuZCB0aGUgRWZmb3J0LXRvLUdyaWVmIFJhdGlvAA0xMSBNYXJjaCAyMDEzZAIBD2QWBmYPDxYCHwRoZGQCAg8WCB8WAgEfGGcfD2UeEURhdGFCaW5kQnlEZWZhdWx0aBYCZg9kFgJmD2QWAmYPFQWBATxpbWcgc3JjPSIvL2NlcnRpZmljYXRpb24uc2NydW1hbGxpYW5jZS5vcmcvc3lzdGVtL21lbWJlcnMvcGhvdG9zLzAwMC8xMDcvOTMxLzIwMHgyMDAvQmlsbF9BbWJyb3NpbmlfSG9yc2VUYWlsRmFsbHNfQ3JvcHBlZC5KUEciPh4vY29tbXVuaXR5L3Byb2ZpbGUvYmFtYnJvc2luaS8OQmlsbCBBbWJyb3NpbmkOQmlsbCBBbWJyb3NpbmkDVlNQZAIGDw8WFh4IUGFnZVNpemUCCh4OUXVlcnlTdHJpbmdLZXkFBFBhZ2UeCkl0ZW1zQ291bnQCAR4dRGlzcGxheUZpcnN0TGFzdEF1dG9tYXRpY2FsbHloHwRoHgtDdXJyZW50UGFnZQIBHglHcm91cFNpemUCBR4URGF0YVNvdXJjZUl0ZW1zQ291bnQCAR4JUGFnZUNvdW50AgEeIERpc3BsYXlQcmV2aW91c05leHRBdXRvbWF0aWNhbGx5aB4JUGFnZXJNb2RlCylqQ01TLkNvbnRyb2xzLlVuaVBhZ2VyTW9kZSwgQ01TLkNvbnRyb2xzLCBWZXJzaW9uPTguMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ODM0YjEyYTI1OGYyMTNmOQFkZAICDxUDAMoxPHA+WW91ciB0ZWFtIGhhcyBiZWVuIHdvcmtpbmcgdG9nZXRoZXIgZm9yIHNldmVyYWwgc3ByaW50cy4gVGhpbmdzIGFyZSBnb2luZyBmYWlybHkgd2VsbC4gWW91J3JlIGRlbGl2ZXJpbmcgc3RvcmllcyBlYWNoIHNwcmludCBhbmQgdGhlIHByb2R1Y3Qgb3duZXIgaXMgY29udGVudC4gQnV0IHRoZXJlJ3MgYWx3YXlzIHRlY2huaWNhbCBkZWJ0IGFjY3VtdWxhdGluZywgb3IgYSBwcm9ibGVtIGx1cmtpbmcgaW4gc29mdHdhcmUuIEhvdyBkbyB5b3Uga25vdyB3aGVuIHlvdXIgdGVhbSBzaG91bGQgdGFja2xlIHNvbWV0aGluZyB0aGF0IHB1cmVseSBmb2N1c2VzIG9uIGFkZHJlc3Npbmcgc29tZSB0ZWNobmljYWwgaXNzdWUsIGluc3RlYWQgb2YgZGVsaXZlcmluZyBhIG1hcmtldC1mYWNpbmcgZmVhdHVyZSB0byB0aGUgdXNlcj8gV2hlbiBkbyB5b3UgbmVlZCBhIDxlbT5zcGlrZTwvZW0+PzwvcD4NCjxwPjxzdHJvbmc+V2hhdCdzIGEgc3Bpa2U/PC9zdHJvbmc+PC9wPg0KPHA+Rmlyc3QgbGV0J3Mgc3RhcnQgd2l0aCBhIGRlZmluaXRpb24gb2YgYSBzcGlrZS4gVGhlcmUgYXJlIG1hbnkgb3V0IHRoZXJlLCBidXQgaGVyZSdzIGEgc2ltcGxlIG9uZSBmcm9tIHRoZSA8YSBocmVmPSJodHRwOi8vYWdpbGVkaWN0aW9uYXJ5LmNvbS8yMDkvc3Bpa2UvIj5BZ2lsZSBEaWN0aW9uYXJ5PC9hPjogPGVtPkEgc3Rvcnkgb3IgdGFzayBhaW1lZCBhdCBhbnN3ZXJpbmcgYSBxdWVzdGlvbiBvciBnYXRoZXJpbmcgaW5mb3JtYXRpb24sIHJhdGhlciB0aGFuIGF0IHByb2R1Y2luZyBzaGlwcGFibGUgcHJvZHVjdC48L2VtPjwvcD4NCjxwPkluIHByYWN0aWNlLCB0aGUgc3Bpa2VzIHRlYW1zIHRha2Ugb24gYXJlIG9mdGVuIHByb29mLW9mLWNvbmNlcHQgdHlwZXMgb2YgYWN0aXZpdGllcy4gVGhlIGRlZmluaXRpb24gYWJvdmUgc2F5cyB0aGF0IHRoZSB3b3JrIGlzIG5vdCBmb2N1c2VkIG9uIHRoZSBmaW5pc2hlZCBwcm9kdWN0LiBJdCBtYXkgZXZlbiBiZSBkZXNpZ25lZCB0byBiZSB0aHJvd24gYXdheSBhdCB0aGUgZW5kLiBUaGlzIGdpdmVzIHlvdXIgcHJvZHVjdCBvd25lciB0aGUgcHJvcGVyIGV4cGVjdGF0aW9uIHRoYXQgeW91IHdpbGwgbW9zdCBsaWtlbHkgbm90IGRpcmVjdGx5IGltcGxlbWVudCB0aGUgc3Bpa2Ugc29sdXRpb24uIER1cmluZyB0aGUgY291cnNlIG9mIHRoZSBzcHJpbnQsIHlvdSBtYXkgZGlzY292ZXIgdGhhdCB3aGF0IHlvdSBsZWFybmVkIGluIHRoZSBzcGlrZSBjYW5ub3QgYmUgaW1wbGVtZW50ZWQgZm9yIGFueSBwcmFjdGljYWwgcHVycG9zZS4gT3IgeW91IG1heSBkaXNjb3ZlciB0aGF0IHRoZSB3b3JrIGNhbiBiZSB1c2VkIGZvciBncmVhdCBiZW5lZml0IG9uIGZ1dHVyZSBzdG9yaWVzLiBFaXRoZXIgd2F5LCB0aGUgaW50ZW50aW9uIG9mIHRoZSBzcGlrZSBpcyBub3QgdG8gaW1wbGVtZW50IHRoZSBjb21wbGV0ZWQgd29yayAiYXMgaXMuIjwvcD4NCjxwPlRoZXJlIGFyZSB0d28gb3RoZXIgY2hhcmFjdGVyaXN0aWNzIHRoYXQgc3Bpa2VzIHNob3VsZCBoYXZlOjwvcD4NCjxvbD4NCjxsaT48c3Ryb25nPkhhdmUgY2xlYXIgb2JqZWN0aXZlcyBhbmQgb3V0Y29tZXMgZm9yIHRoZSBzcGlrZS48L3N0cm9uZz4gQmUgY2xlYXIgb24gdGhlIGtub3dsZWRnZSB5b3UgYXJlIHRyeWluZyB0byBnYWluIGFuZCB0aGUgcHJvYmxlbShzKSB5b3UgYXJlIHRyeWluZyB0byBhZGRyZXNzLiBJdCdzIGVhc3kgZm9yIGEgdGVhbSB0byBzdHJheSBvZmYgaW50byBzb21ldGhpbmcgaW50ZXJlc3RpbmcgYW5kIHJlbGF0ZWQsIGJ1dCBub3QgcmVsZXZhbnQuPC9saT4NCjxsaT48c3Ryb25nPkJlIHRpbWVib3hlZC48L3N0cm9uZz4gU3Bpa2VzIHNob3VsZCBiZSB0aW1lYm94ZWQgc28geW91IGRvIGp1c3QgZW5vdWdoIHdvcmsgdGhhdCdzIGp1c3QgZ29vZCBlbm91Z2ggdG8gZ2V0IHRoZSB2YWx1ZSByZXF1aXJlZC48L2xpPg0KPC9vbD4NCjxwPjxzdHJvbmc+SW5kaWNhdGlvbnMgYSBzcGlrZSBtYXkgYmUgbmVlZGVkPC9zdHJvbmc+PC9wPg0KPHA+SXQgbWF5IG5vdCBhbHdheXMgYmUgb2J2aW91cyB0aGF0IHlvdSBuZWVkIHRvIHRha2Ugb24gYSBzcGlrZS4gSGVyZSBhcmUgc29tZSBpbmRpY2F0aW9ucyB0aGF0IHlvdXIgcHJvamVjdCB0ZWFtIGNvdWxkIGJlbmVmaXQgZnJvbSBzcGlrZSB3b3JrOjwvcD4NCjxvbD4NCjxsaT5Ucm91YmxlIGVzdGltYXRpbmcgICAgICAgIA0KPHVsPg0KPGxpPllvdXIgdGVhbSBpcyBoYXZpbmcgdHJvdWJsZSBlc3RpbWF0aW5nIHN0b3JpZXMgZWZmZWN0aXZlbHkuIExvdHMgb2YgZGlzc2Vuc2lvbiBhbmQgZGlmZmVyaW5nIG9waW5pb25zIG9uIGhvdyBiaWcgY2VydGFpbiBzdG9yaWVzIGFyZS4gVGhpcyBjYW4gbGVhZCB0byAuIC4gLiA8L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+SGlnaCBwb2ludCBlc3RpbWF0ZXMgICAgICAgIA0KPHVsPg0KPGxpPllvdXIgc3RvcnkgcG9pbnQgZXN0aW1hdGVzIGFyZSB2ZXJ5IGhpZ2ggZm9yIHdoYXQgdGhlIHByb2R1Y3Qgb3duZXIgc2VlcyBhcyBlYXN5IGl0ZW1zLiBUaGUgdGVhbSBzZWVzIG11Y2ggbW9yZSB3b3JrIHRoYW4gaXMgaW1tZWRpYXRlbHkgYXBwYXJlbnQuIFRoaXMgY291bGQgYmUgYW4gaW5kaWNhdGlvbiB0aGF0IHRoZXJlJ3MgdGVjaG5pY2FsIGRlYnQgb3Igc29tZXRoaW5nIHRoYXQgdGhlIHRlYW0gaXMgd29ya2luZyBhcm91bmQgdG8gdHJ5IHRvIGRlbGl2ZXIgc3Rvcmllcy48L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+UGF0dGVybnMgb2YgZGlmZmljdWx0eSAgICAgICAgIA0KPHVsPg0KPGxpPlN0b3JpZXMgZnJvbSBzcGVjaWZpYyBhcmVhcyBvZiB0aGUgYXBwbGljYXRpb24gYXJlIGNvbnNpc3RlbnRseSBsYXRlIG9yIGRpZmZpY3VsdCBmb3IgdGhlIHRlYW0gdG8gY29tcGxldGUuPC9saT4NCjxsaT5UaGVyZSBhcmUgbG90cyBvZiBidWdzIGFuZCBRQSBpdGVtcyBmcm9tIGNlcnRhaW4gdHlwZXMgb2Ygc3Rvcmllcy48L2xpPg0KPGxpPlRoZXJlJ3MgYSBwYXR0ZXJuIG9mIGZlZWRiYWNrIGZyb20gcmV0cm9zcGVjdGl2ZXMgaW4gd2hpY2ggdGhlIHRlYW0gcmVmZXJzIHRvIGRpZmZpY3VsdHkgd2l0aCBhIHRlY2hub2xvZ3kgb3IgaW1wbGVtZW50YXRpb24gdXNlZC48L2xpPg0KPC91bD4NCjwvbGk+DQo8bGk+VGhlIHRlYW0gc3BlYWtzIG91dCAgICAgICAgIA0KPHVsPg0KPGxpPllvdXIgdGVhbSBmbGF0LW91dCB0ZWxscyB5b3UgdGhhdCB0aGVyZSdzIGEgcHJvYmxlbSBhbmQgaXQgaGFzIHRvIGJlIGZpeGVkIG9yIGVsc2UuPC9saT4NCjxsaT5Nb3JlIHN1YnRseSwgdGhlIHRlYW0gc2VlbXMgd29ycmllZCBhYm91dCBjcmVlcGluZyB0ZWNobmljYWwgaXNzdWVzLiBZb3UgbWF5IHN0YXJ0IGhlYXJpbmcgcnVtYmxpbmdzIGR1cmluZyBwbGFubmluZyBvciByZXRyb3NwZWN0aXZlIG1lZXRpbmdzLiBJcyB0aGUgcGxhdGZvcm0gc2NhbGVkIHdlbGwgZW5vdWdoPzwvbGk+DQo8L3VsPg0KPC9saT4NCjwvb2w+DQo8cD5TY3J1bSB0ZWFtcyBhcmUgc3VwcG9zZWQgdG8gYmUgc2VsZi1kcml2ZW4uIFNvbWV0aW1lcyB0aGV5IG5lZWQgZW1wb3dlcm1lbnQgYW5kIGd1aWRhbmNlIHdpdGggc3Bpa2VzLiBUaGV5IG1heSBmZWVsIGd1aWx0IHRha2luZyB0aW1lIGF3YXkgZnJvbSBtYXJrZXQtZmFjaW5nIGZlYXR1cmVzIHRvIHdvcmsgb24gc29tZXRoaW5nIHRoYXQgbWF5IG5ldmVyIGJlIGRlbGl2ZXJlZC4gVGhlIHByb2R1Y3Qgb3duZXIgbWF5IGluZGlyZWN0bHkgZGlzY291cmFnZSB0aGlzIHR5cGUgb2Ygd29yay4gWW91LCBhcyB0aGUgU2NydW1NYXN0ZXIsIG5lZWQgdG8gZW1wb3dlciB0aGVtIHRvIGRlY2xhcmUgd2hhdCBuZWVkcyB0byBiZSBkb25lIGFuZCBhc3Npc3QgdGhlbSBpbiBhZHZvY2F0aW5nIGZvciB0aGlzIHdvcmsgd2l0aCB0aGUgcHJvZHVjdCBvd25lci48L3A+DQo8cD48c3Ryb25nPldoZXJlIHRvIGZpbmQgdGhlIHNwaWtlczwvc3Ryb25nPjwvcD4NCjx1bD4NCjxsaT5IYXMgdGhlIHRlYW0gYWxyZWFkeSB0b2xkIHlvdSB3aGF0IG5lZWRzIGF0dGVudGlvbj8gQXJlIHRoZXJlIGJhY2tsb2cgaXRlbXMgdGhhdCBhcmUgbGFiZWxlZCB3aXRoIHRlY2huaWNhbCBkZWJ0PyBNYW55IHRlYW1zIHdpbGwgZXhwcmVzcyB3aGF0IG5lZWRzIHRvIGJlIGRvbmUuPC9saT4NCjxsaT5BcmUgdGhlcmUgYmFja2xvZyBpdGVtcyB0aGF0IGtlZXAgZ2V0dGluZyBwdXNoZWQgdG8gdGhlIGJvdHRvbSBieSB0aGUgcHJvZHVjdCBvd25lciBiZWNhdXNlIGhlIG9yIHNoZSBkb2Vzbid0IHVuZGVyc3RhbmQgdGhlaXIgdmFsdWU/PC9saT4NCjxsaT5XaGF0IGFyZSB5b3VyIHRlYW0ncyBwYWluIHBvaW50cz8gRG8gdGhleSBoYXZlIHRoZSBzYW1lIHByb2JsZW1zIHNwcmludCBhZnRlciBzcHJpbnQgaW4gY29tcGxldGluZyBzdG9yaWVzIG9yIGNlcnRhaW4gdHlwZXMgb2Ygc3Rvcmllcz88L2xpPg0KPGxpPklzIHlvdXIgc29mdHdhcmUgZGVwbG95bWVudCBwcm9jZXNzIGRpZmZpY3VsdD8gSWYgc28sIHdoZXJlIGlzIGl0IGluIG5lZWQgb2YgYXR0ZW50aW9uPzwvbGk+DQo8L3VsPg0KPHA+QWZ0ZXIgeW91J3ZlIGdvbmUgdGhyb3VnaCB0aGlzIGV4ZXJjaXNlLCB5b3UnbGwgcHJvYmFibHkgZmluZCBzZXZlcmFsIGNhbmRpZGF0ZXMgZm9yIHNwaWtlIHdvcmsuIFVubGVzcyB5b3Ugc3RvcCB0aGUgcHJlc3NlcywgeW91IGNhbid0IGRvIHRoZW0gYWxsIGF0IG9uY2UuIFRvIGhlbHAgdGhlIHByb2R1Y3Qgb3duZXIgZmluZCB0aGUgbnVnZ2V0cywgSSBkbyBhbiBleGVyY2lzZSB3aXRoIHRoZSB0ZWFtIHRvIGRldGVybWluZSB0aGUgPGVtPmVmZm9ydC10by1ncmllZiByYXRpbzwvZW0+LjwvcD4NCjxwPkl0ZW1zIGNhdXNpbmcgdGhlIG1vc3QgZ3JpZWYgdG8gdGhlIHRlYW0gc2hvdWxkIGJlIGxvb2tlZCBhdCBhcyB0b3AgY2FuZGlkYXRlcy4gSG9zdCBhIHNlc3Npb24gd2l0aCB0aGUgdGVhbSB0byBnZXQgdGhlbSB0byBleHByZXNzIGlzc3VlcyB0aGF0IGFyZSBjYXVzaW5nIGdyaWVmLiBIYXZlIHRoZW0gcmFuayB0aGUgaXRlbXMgb24gYSBzY2FsZSBvZiAxIHRvIDUgKDE9bG93IHBhaW4sIDUgPSBoaWdoIHBhaW4pLiBGaW5hbGx5LCBnZXQgdGhlIHRlYW0gdG8gc2l6ZSB0aGUgZWZmb3J0IHRvIHdvcmsgb24gYSBzcGlrZSB0aGF0IGNhbiBoZWxwIHRoZW0gbGVhcm4gb3IgdW5kZXJzdGFuZCBob3cgdG8gc29sdmUgdGhlIHByb2JsZW0uIFRoZW4gbGF5IG91dCB0aG9zZSBpdGVtcyBpbiBhIHRhYmxlIHNpbWlsYXIgdG8gdGhlIG9uZSBzaG93biBiZWxvdzo8L3A+DQo8b2w+PGltZyBzcmM9Ii9zeXN0ZW0vcmVzb3VyY2VfZmlsZXMvMDAwMC80MjQwL0JpbGxfQW1icm9zaW5pLlNwaWtlc19JTUFHRS5qcGciIGFsdD0iIiB3aWR0aD0iNTczIiBoZWlnaHQ9IjM4MyIgLz48YnIgLz48L29sPg0KPHA+TG9va2luZyBhdCB0aGUgaXRlbXMgdGhpcyB3YXkgd2lsbCBtYWtlIGl0IGltbWVkaWF0ZWx5IGNsZWFyIHdoaWNoIHNwaWtlIGNhbmRpZGF0ZXMgYXJlIHRoZSBiZXN0IGNob2ljZXMgZm9yIGluY2x1c2lvbiBpbiB5b3VyIHVwY29taW5nIHNwcmludHMuPC9wPg0KPHA+WW91IG1heSBub3RpY2UgdGhhdCB0aGUgZWZmb3J0L3BvaW50IHNjYWxlIGRvZXMgbm90IHNob3cgc3RvcmllcyBpbiB0aGUgMS1wb2ludCByYW5nZS4gU21hbGwgaXNzdWVzIGNhdXNpbmcgeW91ciB0ZWFtIHBhaW4gc2hvdWxkIGJlIHF1aWNrbHkgcmVzZWFyY2hlZCBhbmQgaGFuZGxlZCB3aXRob3V0IHF1ZXN0aW9uLiBQcm9kdWN0IG93bmVycyBzaG91bGQgbm90IHByb3Rlc3Qgc21hbGwgcmVzZWFyY2ggaXRlbXMsIGFuZCB5b3VyIHRlYW0gc2hvdWxkIGJlIGVtcG93ZXJlZCB0byBoYW5kbGUgdGhlbSBvbiB0aGVpciBvd24gZHVyaW5nIHNwcmludHMuPC9wPg0KPHA+U3Bpa2VzIGNhbiBiZSB2ZXJ5IHVzZWZ1bCBkdXJpbmcgdGhlIGxpZmUgb2YgeW91ciBwcm9qZWN0LiBUaGV5IGNhbiBiZSBlc3BlY2lhbGx5IHVzZWZ1bCBlYXJseSBvbiwgd2hlbiB5b3VyIHRlYW0gaXMgc3RpbGwgZ2V0dGluZyBjb21mb3J0YWJsZSB3aXRoIHRoZSB0ZWNobm9sb2d5IGFuZCB3aXRoIGVhY2ggb3RoZXIuIFRlYW1zIG5lZWQgYSB3YXkgdG8gZGV0ZXJtaW5lIGhvdyB0byBjb21lIHVwIHdpdGggcHJvcGVyIHN0b3JpZXMgYW5kIHNvbHV0aW9ucyBmb3IgdGhlIHByb2plY3Qgd2hlcmUgdGhlIHRvb2wgb3IgdGVjaG5vbG9neSBpcyBub3Qgd2VsbCBrbm93bi4gVGhleSBnaXZlIHlvdXIgdGVhbSBwZXJtaXNzaW9uIHRvIHNwZW5kIHRpbWUgb24gdmFsdWUtZHJpdmVuIHJlc2VhcmNoLiBUaGV5J3JlIGEgZ29vZCB0b29sIHRvIGhhdmUgaW4geW91ciBhcnNlbmFsIHRvIGZpbmQgb3V0IGlmIHNvbWV0aGluZyBpcyBwb3NzaWJsZSBvciBub3QuPC9wPgBkAgYPZBYCZg9kFgICBA9kFgJmD2QWAmYPZBYCZg8WCB4JTWF4UmF0aW5nAgUeD1JhdGluZ0RpcmVjdGlvbmYeCkNhbGxiYWNrSUQFV3AkbHQkY3RsMDAkcGFnZXBsYWNlaG9sZGVyJHAkbHQkY3RsMDEkQ29udGVudFJhdGluZyRlbGVtUmF0aW5nJFJhdGluZ0NvbnRyb2wkZWxlbVJhdGluZx4MQXV0b1Bvc3RiYWNrZ2QCBw8PFgIfBGhkZAIID2QWAmYPZBYEAgIPFgYfDwUsQmUgdGhlIGZpcnN0IHRvIGFkZCBhIGNvbW1lbnQuLi48YnIgLz48YnIgLz4fFwUrY29tbXVuaXR5LnRyYW5zZm9ybWF0aW9ucy5tZXNzYWdlYm9hcmRzY3J1bR8WZmQCBA8PFgIfBGgWAh8OBQ5kaXNwbGF5OmJsb2NrOxYEAgMPFgIfBGhkAgUPZBYCAgIPDxYCHwRoZBYIAgMPFgIfBGhkAgUPFgIfBGhkAgcPFgIfBGhkAgkPFgIfBGhkAgUPZBYIAgEPZBYCZg9kFgICAQ8WBh8XBRxzY3J1bS5ldmVudC5zaW1wbGVnYXRoZXJpbmdzHxhnHxYCAxYGZg9kFgJmD2QWAmYPFQEkPGEgaHJlZj0iL3NnY2FsIj5TYW4gRGllZ286IDIwMTc8L2E+ZAIBD2QWAmYPZBYCZg8VASQ8YSBocmVmPSIvc2dzaW4iPlNpbmdhcG9yZTogMjAxNzwvYT5kAgIPZBYCZg9kFgJmDxUBITxhIGhyZWY9Ii9zZ2R1YiI+RHVibGluOiAyMDE3PC9hPmQCAg8PFgIfBGhkFgICAQ8QZGQWAGQCAw8PFgIfBgIYZBYCZg8PFgYfAgUQQ01TQmFubmVyIEJhbm5lch8DAgIfBGcWBh8IBRYvQ29tbXVuaXR5L1VzZXItR3JvdXBzHwkFUnRoaXMuaHJlZj0nL0NNU01vZHVsZXMvQmFubmVyTWFuYWdlbWVudC9DTVNQYWdlcy9CYW5uZXJSZWRpcmVjdC5hc2h4P2Jhbm5lcklEPTI0JzsfCgVSdGhpcy5ocmVmPScvQ01TTW9kdWxlcy9CYW5uZXJNYW5hZ2VtZW50L0NNU1BhZ2VzL0Jhbm5lclJlZGlyZWN0LmFzaHg/YmFubmVySUQ9MjQnOxYCAgEPDxYMHwtlHwwFC1VzZXIgR3JvdXBzHwJlHw0FcC9zY3J1bS9tZWRpYS9TY3J1bUFsbGlhbmNlTWVkaWEvQmFubmVyIEFkdmVydGlzaW5nL0xlZnRTa3lTY3JhcGVyXzEyMF82MDAvU0NSMjAwOTZfU3ByaW50XzEyMHg2MDAtVXNlckdyb3Vwcy5qcGcfAwICHwRnFgIfDmVkAgQPDxYCHwRoZBYCZg8WCh8XBRxjbXMucm9vdC5zY3J1bXJlbGF0ZWRjb250ZW50HxhnHw8FDU5vIGRhdGEgZm91bmQfEWgfFmZkAgcPZBYCZg8PFgIfBgIdZBYCZg8PFggfAgUJQ01TQmFubmVyHwcFBl9ibGFuax8DAgIfBGcWBh8IBXEvc2NydW0vbWVkaWEvU2NydW1BbGxpYW5jZU1lZGlhL0ZpbGVzJTIwYW5kJTIwUERGcy9TdGF0ZSUyMG9mJTIwU2NydW0vMjAxMy1TdGF0ZS1vZi1TY3J1bS1SZXBvcnRfMDYyNzEzX2ZpbmFsLnBkZh8JBVJ0aGlzLmhyZWY9Jy9DTVNNb2R1bGVzL0Jhbm5lck1hbmFnZW1lbnQvQ01TUGFnZXMvQmFubmVyUmVkaXJlY3QuYXNoeD9iYW5uZXJJRD0yOSc7HwoFUnRoaXMuaHJlZj0nL0NNU01vZHVsZXMvQmFubmVyTWFuYWdlbWVudC9DTVNQYWdlcy9CYW5uZXJSZWRpcmVjdC5hc2h4P2Jhbm5lcklEPTI5JzsWAgIBDw8WDB8LZR8MBSBSZWFkIHRoZSAiU3RhdGUgb2YgU2NydW0iIFJlcG9ydB8CZR8NBWovc2NydW0vbWVkaWEvU2NydW1BbGxpYW5jZU1lZGlhL0Jhbm5lciUyMEFkdmVydGlzaW5nL0Zvb3Rlcl83NjhfOTAvU0NSMjAwOTZfU3ByaW50XzcyOHg5MC1TdGF0ZW9mU2NydW0uanBnHwMCAh8EZxYCHw5lZAIJD2QWBGYPZBYCAgIPZBYCZg8PFgQfAgUPUGFnZVBsYWNlaG9sZGVyHwMCAmRkAgEPDxYCHwRoZGRkzTnK5UzKiEtOeEOnJL8UvRA2SID0lrL0y2BAJBipRko=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form'];
+if (!theForm) {
+    theForm = document.form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=_CH6FubvVYJOYXx95NZzY2s3o1vrEBZkkg5_ub6OuKHEWP_RJRYUKt3twEvsNmTnyPEbpPJCy1Kv33j0Z2uOVPaudzdHgQ_TxZU7IxTQAeM1&amp;t=635792838349294682" type="text/javascript"></script>
+
+<input type="hidden" name="lng" id="lng" value="en-US" />
+<script type="text/javascript">
+	//<![CDATA[
+
+function PM_Postback(param) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; }; __doPostBack('m$am',param); }
+function PM_Callback(param, callback, ctx) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus(); };WebForm_DoCallback('m$am',param,callback,ctx,null,true); }
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+function RefreshBoardList(filterParams){__doPostBack('p$lt$ctl00$pageplaceholder$p$lt$ctl01$ScrumComments$msgBoard$btnRefresh','')}
+//]]>
+</script>
+<script src="/ScriptResource.axd?d=TpbwH7Se6ul5WINr4wPN46o4koAJ87hjMOxxZXPy_QglqygiL4PxyQlqNZ4dmSw2zAvdcN0y6SiQ4R9r-uz9FbaeFs5OC4Rf17Pa3EVbD4FUw23IVxuEiOkoi9zzJaKcEe6MriClWEHsdasRSrvxUg2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=h0rbFAOPUbyULFMIxEs82uhguq-v5Mm_FU6xWuU-rQu3tIeaL4J76n6KeZZDtXmPhcJi9zBPyo70oXqwfLl1uTrxyAUaClQWucw8Xex0DomRJhkPKykyLKHQ57euEZRG6qs8qUrkhmx8E_2TdV5UaA2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/CMSPages/PortalTemplate.aspx?_TSM_HiddenField_=manScript_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d4.1.60919.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3aee051b62-9cd6-49a5-87bb-93c07bc43d63%3aeffe2a26%3a68ccaad5" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+var CMS = CMS || {};
+CMS.Application = {
+  "isRTL": "false",
+  "applicationUrl": "/",
+  "imagesUrl": "/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f",
+  "isDialog": false
+};
+
+//]]>
+</script>
+<div>
+
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('manScript', 'form', ['tctxM',''], [], [], 90, '');
+//]]>
+</script>
+
+    <div id="ctxM">
+
+</div>
+    
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5WPQTK"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                            })(window,document,'script','dataLayer','GTM-5WPQTK');</script>
+<!-- End Google Tag Manager -->
+<script>
+  var $ = jQuery.noConflict();
+  if(!$.curCSS){
+    $.curCSS = $.css;
+  }
+</script>
+<script type="text/javascript">
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('510-STH-507', {"cookieAnon":false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+
+<nav id="side-menu">
+    <a href="#" id="bt-side-menu-close">Close</a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/certifications">Get Certified</a>
+            <ul>
+                <li><a href="/certifications/practitioners/certified-scrummaster-csm">Certified ScrumMaster&reg; (CSM)</a></li>
+                <li><a href="/certifications/practitioners/cspo-certification">Certified Scrum Product Owner&reg; (CSPO)</a></li>
+                <li><a href="/certifications/practitioners/csd-certification">Certified Scrum Developer&reg; (CSD)</a></li>
+                <li><a href="/certifications/practitioners/csp-certification">Certified Scrum Professional&reg; (CSP)</a></li>
+                <li><a href="/certifications/sa-ctc-certification">Certified Team Coach (CTC)</a></li>
+                <li><a href="/certifications/practitioners/cec-certification">Certified Enterprise Coach<sup>&reg;</sup> (CEC)</a></li>
+                <li><a href="/certifications/trainers/cst-certification">Certified Scrum Trainer&reg; (CST)</a></li>
+                <li><a href="/agile-leadership">Certified Agile Leadership (CAL)</a></li>                
+                <li><a href="/certifications/renewing-certifications">Renew Certifications</a></li>
+                <li><a href="/community/certificant-directory">Certificant Directory</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="http://membership.scrumalliance.org">Explore Community</a>
+            <ul>
+                <li><a href="http://membership.scrumalliance.org">New Community</a></li>
+                <li><a href="/community/user-groups">User Groups</a></li>
+                <li><a href="/memberships">Become a Member</a></li>
+                <li><a href="/community/member-directory">Member Directory</a></li>
+                <li><a href="http://www.agilecareers.com">AgileCareers</a></li>
+                <li><a href="http://membership.scrumalliance.org/blogpost/1312418/Scrum-Alliance-News">News</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/courses-events/events">Attend an Event</a>
+            <ul>
+                <li><a href="/courses-events/events/global-gatherings">Global Scrum Gathering&reg;</a></li>
+                <li><a href="/gathering-presentations" style="padding-left:20px;">Global SCRUM GATHERING&reg;<br />Presentations</a></li>
+                <li><a href="/courses-events/events/regional-scrum-gatherings">Regional Scrum Gathering&reg;</a></li>
+                <li><a href="/courses-events/events/more-sponsored-events">Great Events Supported by Scrum Alliance</a></li>
+                <li><a href="/courses-events/events/user-group-events">User Group Events</a></li>
+                <li><a href="/courses-events/events/coaches-retreats">Coaching Retreats</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/why-scrum">About Scrum</a>
+            <ul>
+                <li><a href="/why-scrum/scrum-guide">The Scrum Guide</a></li>
+                <li><a href="/why-scrum/who-uses-scrum">Who Uses Scrum?</a></li>
+                <li><a href="/why-scrum/getting-started-with-scrum">Getting Started with Scrum</a></li>
+                <li><a href="/why-scrum/agile-atlas">Agile Atlas</a></li>
+                <li><a href="/why-scrum/core-scrum-values-roles">Scrum Values</a></li>
+                <li><a href="/why-scrum/scrum-for-the-agile-organization">Scrum for the Agile Organization</a></li>
+                <li><a href="/why-scrum/state-of-scrum-report">State of Scrum Report</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/why-scrum/resources">Professional Development</a>
+            <ul>
+                <li><a href="/Success-Stories">Success Stories</a></li>
+                <li><a href="/community/spotlight">Expert Perspectives</a></li>
+                <li><a href="/community/articles">Member Articles</a></li>
+                <li><a href="/Employer-Resources">Agile Resources</a></li>
+                <li><a href="http://membership.scrumalliance.org/events/event_list.asp?show=&group=&start=6%2F6%2F2016&end=&view=&cid=15134">Community Webinars</a></li>
+                <li><a href="http://membership.scrumalliance.org/?page=WebinarReplays">Webinar Replays</a></li>
+                <li><a href="/community/articles/submit-an-article">Submit a Member Article</a></li>
+                <li><a href="/why-scrum/agilevox-magazine" class="nav-banner">AgileVox Magazine</a></li>
+                <li><a href="/certifications/scrum-educational-units">Scrum Educational Units (SEUs)</a></li>
+                <li><a href="/certifications/trainers/become-a-rep">Registered Education Provider&reg; (REP)</a></li>
+                <li><a href="/courses-events/continuing-education?type=Continuing%20Education;">Continuing Education Courses</a></li>
+                <li><a href="/courses-events/virtual-learning">Virtual Learning</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/corporate-partnership">Corporate Sponsorships</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="page-container">
+  <!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+  <header>
+    
+<div id="header-options" class="clearfix">
+    <div id="header-options-content">
+        <div id="p_lt_TopHeader_pnBecomeMember">
+	
+            <p id="bt-member-status"><a href="/certifications" class="left"><strong>Get certified</strong></a>&nbsp;<span class="no-mobile become-a-member">- Transform your world of work today</span></p>
+        
+</div>
+        <div class="right clearfix">
+            <a href="#" id="icon-side-menu"><span class="no-mobile">Menu</span></a>
+            <a id="btSignIn" href="/login">Sign In</a>
+            
+            <a href="#" id="icon-search"></a>
+        </div>
+    </div>
+</div>
+<div id="search-area" class="clearfix">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="fields">
+                <input name="p$lt$TopHeader$tbSearch" type="text" value="Site search" id="tbSearch" class="txt" data-initial-value="Site search" />
+                <input type="submit" name="p$lt$TopHeader$btSearch" value="Search" id="btSearch" />
+                <img id="search-close-icon" src="/scrum/media/ScrumAllianceMedia/icon-close.jpg" alt="Close" />
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="clearfix wrapper">
+      <a href="/" id="logo">
+        <img src="/assets/img/global/logo.png" alt="Scrum Alliance" /></a>
+      <nav id="main-nav" class="clearfix">
+        <ul class="clearfix">
+          <li id="nav-get-certified">
+            <a href="/certifications">Get<br />Certified</a>
+            <span class="sub-arrow"></span>
+            <nav>
+              <div class="subnav-content clearfix">
+                <div class="c2l">
+                  <a href="/certifications/practitioners/certified-scrummaster-csm">Certified ScrumMaster<sup>&reg;</sup> (CSM)</a>
+                  <a href="/certifications/practitioners/cspo-certification">Certified Scrum Product Owner<sup>&reg;</sup> (CSPO)</a>
+                  <a href="/certifications/practitioners/csd-certification">Certified Scrum Developer<sup>&reg;</sup> (CSD)</a>
+                  <a href="/certifications/practitioners/csp-certification">Certified Scrum Professional<sup>&reg;</sup> (CSP)</a>
+                  <a href="/certifications/sa-ctc-certification">Certified Team Coach (CTC)</a>
+                </div>
+                <div class="c2r">
+                  <a href="/certifications/practitioners/cec-certification">Certified Enterprise Coach (CEC)</a>                                            
+                  <a href="/certifications/trainers/cst-certification">Certified Scrum Trainer<sup>&reg;</sup> (CST)</a>
+                  <a href="/agile-leadership">Certified Agile Leadership (CAL)</a>  
+                  <a href="/certifications/renewing-certifications">Renew Certifications</a>
+                  <a href="/community/member-directory">Certificant Directory</a>
+                </div>
+              </div>
+              <a href="/courses-events/course" class="nav-banner">Find A Course</a>
+            </nav>
+          </li>
+          <li id="nav-explore-community">
+            <a href="/memberships" id="p_lt_btCommunities">Explore<br />Community</a>
+            <span class="sub-arrow"></span>
+            <nav class="clearfix">
+              <div class="clearfix subnav-content">
+                <a href="http://membership.scrumalliance.org" target="_blank" >New Community</a>
+                <a href="/community/user-groups" target="_blank">User Groups</a>
+                <a href="http://membership.scrumalliance.org/?page=Memberships" target="_blank">Become a Member</a>
+                <a href="http://www.agilecareers.com">AgileCareers</a>
+                <a href="http://membership.scrumalliance.org/blogpost/1312418/Scrum-Alliance-News" target="_blank">News</a>
+              </div>
+            </nav>
+          </li>
+          <li id="nav-attend-an-event">
+            <a href="/courses-events/events">Attend<br />an Event</a>
+            <span class="sub-arrow"></span>
+            <nav>
+              <div class="clearfix subnav-content">
+                <div class="left">
+                  <a href="/Courses-Events/Global-Gatherings">Global SCRUM GATHERING<sup>&reg;</sup></a>
+                  <a href="/gathering-presentations" style="margin-top:0;padding-top:0;padding-left:1.5em;">Global SCRUM GATHERING<sup>&reg;</sup><br /> Presentations</a>
+                  <a href="/courses-events/events/regional-scrum-gatherings">Regional SCRUM GATHERING<sup>&reg;</sup></a>
+                  <a href="/courses-events/events/more-sponsored-events">Great Events Supported<br />by Scrum Alliance</a>
+                  <a href="/courses-events/events/user-group-events">SCRUM USER GROUP<sup>&reg;</sup> Events</a>
+                  <a href="/courses-events/events/coaches-clinic">Coaches' Clinic</a>
+                  <a href="/courses-events/events/coaches-retreats">Coaching Retreats</a>
+                </div>
+                <a class="image-link" href="/NextGlobalGathering"><img src="/scrum/media/ScrumAllianceMedia/Global%20Scrum%20Gatherings/next_Global_Gathering_thumbnail.png" alt="Bengaluru Scrum Global Gathering 2016" /></a>
+              </div>
+            </nav>
+          </li>
+          <li id="nav-learn-about-scrum">
+            <a href="/why-scrum">About<br />Scrum</a>
+            <span class="sub-arrow"></span>
+            <nav class="clearfix">
+              <div class="subnav-content clearfix">
+                <div class="c2l">
+                  <a href="/why-scrum/scrum-guide">The Scrum Guide</a>
+                  <a href="/Why-scrum/Who-Uses-Scrum">Who Uses Scrum?</a>
+                  <a href="/why-scrum/getting-started-with-scrum">Getting Started with Scrum</a>
+                  <a href="/why-scrum/agile-atlas">Agile Atlas</a>
+                </div>
+                <div class="c2r">
+                  <a href="/why-scrum/core-scrum-values-roles">Scrum Values</a>
+                  <a href="/why-scrum/scrum-for-the-agile-organization">Scrum for the Agile Organization</a>
+                  <a href="/why-scrum/state-of-scrum-report">State of Scrum Report</a>
+                </div>
+              </div>
+            </nav>
+          </li>
+          <li id="nav-resources">
+            <a href="/why-scrum/resources">Professional<br />Development</a>
+            <span class="sub-arrow"></span>
+            <nav>
+              <div class="clearfix subnav-content">
+                <div class="c2l">
+                  <h3>Content Resources</h3>
+                  <a href="/Success-Stories">Success Stories</a>
+                  <a href="/community/spotlight">Expert Perspectives</a>
+                  <a href="/community/articles">Member Articles</a>
+                  <a href="/Employer-Resources">Agile Resources</a>
+                  <a href="http://membership.scrumalliance.org/events/event_list.asp?show=&group=&start=6%2F6%2F2016&end=&view=&cid=15134">Community Webinars</a>
+                  <a href="http://membership.scrumalliance.org/?page=WebinarReplays">Webinar Replays</a>
+                  <a href="/community/articles/submit-an-article">Submit a Member Article</a>
+                </div>
+                <div class="c2r">
+                  <h3>Continuing<br />Education</h3>
+                  <a href="/certifications/scrum-educational-units">Scrum Educational Units (SEUs)</a>
+                  <a href="/certifications/trainers/become-a-rep">Registered Education Provider<sup>&reg;</sup> (REP)</a>
+                  <a href="/courses-events/continuing-education?type=Continuing%20Education;">Continuing Education Courses</a>
+                  <a href="/courses-events/virtual-learning">Virtual Learning</a>
+                </div>
+              </div>
+              <a href="/why-scrum/agilevox-magazine" class="nav-banner">SUBSCRIBE NOW: AgileVox Magazine</a>
+            </nav>
+          </li>
+          <li id="nav-corporate-partnerships">
+            <a href="/corporate-partnership">Corporate<br />Sponsorships</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" id="icon-side-menu-mobile">Menu</a>
+    </div>
+  </header>
+  <div id="wrap">
+    <div class="container">
+      
+
+<div class="primary-content-area">
+        
+        <div class="content-padding">
+        	<div class="row-fluid row-fluid-minitab">
+        		
+                <!-- SIDEBAR NAVIGATION -->
+        		<div class="span2 span3-tablet span3-minitab hidden-phone">
+            		
+
+<div class="accordion" id="accordionSideNav">
+    <div class="accordion-group">
+	    <div class="accordion-heading active-heading">
+	    	<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionSideNav" href="#collapseSideNavMain">Community</a>
+      	</div>
+		<div id="collapseSideNavMain" class="accordion-body collapse in">
+			<div class="accordion-inner">
+                
+	<ul id="menuElem" class="CMSListMenuUL">
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/community/certificant-directory">Certificant Directory</a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/community/spotlight">Expert Perspectives: Spotlight</a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/community/articles">Member Articles </a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/Community/scrum-alliance-news">News</a>
+		</li>
+		<li class="CMSListMenuLI">
+			<a class="CMSListMenuLink" href="/community/sponsorship-application">Sponsorship Application</a>
+		</li>
+
+	</ul>
+
+
+			</div><!-- end .accordion-inner -->
+		</div><!-- end .accordion-body -->
+	</div><!-- end .accordion-group -->
+    
+    <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl00_scrumcsslistmenu_navaboutus" class="accordion-group">
+	    <div class="accordion-heading">
+	    	<a class="accordion-toggle" href="/About-Us">About Us</a>
+      	</div><!-- end .accordion-heading -->
+    </div><!-- end .accordion-group -->
+    
+    <div id="p_lt_ctl00_pageplaceholder_p_lt_ctl00_scrumcsslistmenu_navfaq" class="accordion-group">
+	    <div class="accordion-heading">
+	    	<a class="accordion-toggle" href="https://scrumalliance.zendesk.com/hc/en-us">FAQs</a>
+      	</div><!-- end .accordion-heading -->
+	</div><!-- end .accordion-group -->
+    
+</div><!-- end .accordion -->
+
+<a id="p_lt_ctl00_pageplaceholder_p_lt_ctl00_BannerRotator_lnkBanner" class="CMSBanner Banner" href="https://www.cprime.com/training/" onclick="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=82&#39;;" onmouseup="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=82&#39;;" target="_blank"><img id="p_lt_ctl00_pageplaceholder_p_lt_ctl00_BannerRotator_imgBanner" title="cPrime" src="/scrum/media/ScrumAllianceMedia/Banner%20Advertising/Top_Fold_Banner_Ads/Banner120x600-training.png" style="border-width:0px;" /></a>
+                </div><!-- end .span2 .span2-minitab -->
+            	<!-- END SIDEBAR NAVIGATION -->
+                
+                
+                
+                <!-- PRIMARY CONTENT AND RIGHT SIDEBAR -->
+                <div class="span10 span9-tablet span9-minitab">
+                	
+            
+					<div class="span10 span12-tablet span12-minitab">
+						<div class="row-fluid breadcrumb"><div class="span10"><a href="/" class="CMSBreadCrumbsLink">Home</a> &raquo;<a href="/community" title="Community" class="CMSBreadCrumbsLink">Community</a> &raquo; <a href="/community/articles" title="Member Articles " class="CMSBreadCrumbsLink">Member Articles </a> &raquo; <a href="/community/articles/2013" title="2013" class="CMSBreadCrumbsLink">2013</a> &raquo; <a href="/community/articles/2013/march" title="March" class="CMSBreadCrumbsLink">March</a> &raquo; <span  class="CMSBreadCrumbsCurrentItem">Spikes and the Effort-to-Grief Ratio</span>
+</div><div class="socialicons minitab span2">
+    <span class="st_facebook_large"></span>
+    <span class="st_twitter_large"></span>
+    <span class="st_linkedin_large"></span>
+    <span class="st_googleplus_large"></span>
+</div></div>
+
+
+<div class="course_header article_header">
+	<h1>Spikes and the Effort-to-Grief Ratio</h1>
+	
+	<p>11 March 2013</p>
+</div>
+
+<div class="course_instructor_row row-fluid row-fluid-minitab row-fluid-mobile">
+	 
+
+<div class="course_instructor span3 span4-tablet span4-minitab span6-phone">
+	<img src="//certification.scrumalliance.org/system/members/photos/000/107/931/200x200/Bill_Ambrosini_HorseTailFalls_Cropped.JPG">
+	<p>
+		<strong><a href="/community/profile/bambrosini/" title="Bill Ambrosini">Bill Ambrosini</a></strong><br/>
+		VSP
+	</p>
+</div>
+
+<div class="Pager">
+    
+</div>
+
+	 
+</div>
+
+<div class="socialicons minitab">
+	<span class="st_facebook"></span>
+	<span class="st_twitter"></span>
+	<span class="st_linkedin"></span>
+	<span class="st_googleplus"></span>
+</div>
+
+<div class="article_content"><p>Your team has been working together for several sprints. Things are going fairly well. You're delivering stories each sprint and the product owner is content. But there's always technical debt accumulating, or a problem lurking in software. How do you know when your team should tackle something that purely focuses on addressing some technical issue, instead of delivering a market-facing feature to the user? When do you need a <em>spike</em>?</p>
+<p><strong>What's a spike?</strong></p>
+<p>First let's start with a definition of a spike. There are many out there, but here's a simple one from the <a href="http://agiledictionary.com/209/spike/">Agile Dictionary</a>: <em>A story or task aimed at answering a question or gathering information, rather than at producing shippable product.</em></p>
+<p>In practice, the spikes teams take on are often proof-of-concept types of activities. The definition above says that the work is not focused on the finished product. It may even be designed to be thrown away at the end. This gives your product owner the proper expectation that you will most likely not directly implement the spike solution. During the course of the sprint, you may discover that what you learned in the spike cannot be implemented for any practical purpose. Or you may discover that the work can be used for great benefit on future stories. Either way, the intention of the spike is not to implement the completed work "as is."</p>
+<p>There are two other characteristics that spikes should have:</p>
+<ol>
+<li><strong>Have clear objectives and outcomes for the spike.</strong> Be clear on the knowledge you are trying to gain and the problem(s) you are trying to address. It's easy for a team to stray off into something interesting and related, but not relevant.</li>
+<li><strong>Be timeboxed.</strong> Spikes should be timeboxed so you do just enough work that's just good enough to get the value required.</li>
+</ol>
+<p><strong>Indications a spike may be needed</strong></p>
+<p>It may not always be obvious that you need to take on a spike. Here are some indications that your project team could benefit from spike work:</p>
+<ol>
+<li>Trouble estimating        
+<ul>
+<li>Your team is having trouble estimating stories effectively. Lots of dissension and differing opinions on how big certain stories are. This can lead to . . . </li>
+</ul>
+</li>
+<li>High point estimates        
+<ul>
+<li>Your story point estimates are very high for what the product owner sees as easy items. The team sees much more work than is immediately apparent. This could be an indication that there's technical debt or something that the team is working around to try to deliver stories.</li>
+</ul>
+</li>
+<li>Patterns of difficulty         
+<ul>
+<li>Stories from specific areas of the application are consistently late or difficult for the team to complete.</li>
+<li>There are lots of bugs and QA items from certain types of stories.</li>
+<li>There's a pattern of feedback from retrospectives in which the team refers to difficulty with a technology or implementation used.</li>
+</ul>
+</li>
+<li>The team speaks out         
+<ul>
+<li>Your team flat-out tells you that there's a problem and it has to be fixed or else.</li>
+<li>More subtly, the team seems worried about creeping technical issues. You may start hearing rumblings during planning or retrospective meetings. Is the platform scaled well enough?</li>
+</ul>
+</li>
+</ol>
+<p>Scrum teams are supposed to be self-driven. Sometimes they need empowerment and guidance with spikes. They may feel guilt taking time away from market-facing features to work on something that may never be delivered. The product owner may indirectly discourage this type of work. You, as the ScrumMaster, need to empower them to declare what needs to be done and assist them in advocating for this work with the product owner.</p>
+<p><strong>Where to find the spikes</strong></p>
+<ul>
+<li>Has the team already told you what needs attention? Are there backlog items that are labeled with technical debt? Many teams will express what needs to be done.</li>
+<li>Are there backlog items that keep getting pushed to the bottom by the product owner because he or she doesn't understand their value?</li>
+<li>What are your team's pain points? Do they have the same problems sprint after sprint in completing stories or certain types of stories?</li>
+<li>Is your software deployment process difficult? If so, where is it in need of attention?</li>
+</ul>
+<p>After you've gone through this exercise, you'll probably find several candidates for spike work. Unless you stop the presses, you can't do them all at once. To help the product owner find the nuggets, I do an exercise with the team to determine the <em>effort-to-grief ratio</em>.</p>
+<p>Items causing the most grief to the team should be looked at as top candidates. Host a session with the team to get them to express issues that are causing grief. Have them rank the items on a scale of 1 to 5 (1=low pain, 5 = high pain). Finally, get the team to size the effort to work on a spike that can help them learn or understand how to solve the problem. Then lay out those items in a table similar to the one shown below:</p>
+<ol><img src="/system/resource_files/0000/4240/Bill_Ambrosini.Spikes_IMAGE.jpg" alt="" width="573" height="383" /><br /></ol>
+<p>Looking at the items this way will make it immediately clear which spike candidates are the best choices for inclusion in your upcoming sprints.</p>
+<p>You may notice that the effort/point scale does not show stories in the 1-point range. Small issues causing your team pain should be quickly researched and handled without question. Product owners should not protest small research items, and your team should be empowered to handle them on their own during sprints.</p>
+<p>Spikes can be very useful during the life of your project. They can be especially useful early on, when your team is still getting comfortable with the technology and with each other. Teams need a way to determine how to come up with proper stories and solutions for the project where the tool or technology is not well known. They give your team permission to spend time on value-driven research. They're a good tool to have in your arsenal to find out if something is possible or not.</p></div>
+
+<div class="socialicons minitab">
+	<span class="st_facebook"></span>
+	<span class="st_twitter"></span>
+	<span class="st_linkedin"></span>
+	<span class="st_googleplus"></span>
+</div>
+
+<div class="article_tags"><p>Tags: </p></div>
+<br />
+<em>Opinions represent those of the author and not of Scrum Alliance. The sharing of member-contributed content on this site does not imply endorsement of specific Scrum methods or practices beyond those taught by Scrum Alliance Certified Trainers and Coaches.</em><br />
+<br />
+<br />
+<br />
+
+
+
+
+<h3>Article Rating</h3>
+
+<div id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_pnlRating" class="CntRatingContent">
+	<div id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating">
+		<input type="hidden" name="p$lt$ctl00$pageplaceholder$p$lt$ctl01$ContentRating$elemRating$RatingControl$elemRating_RatingExtender_ClientState" id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_RatingExtender_ClientState" value="0" /><a href="javascript:void(0)" id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_A" title="0" style="text-decoration:none"><span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_Star_1" class="rating-star cms-icon-80 icon-star-empty" style="float:left;">&nbsp;</span><span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_Star_2" class="rating-star cms-icon-80 icon-star-empty" style="float:left;">&nbsp;</span><span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_Star_3" class="rating-star cms-icon-80 icon-star-empty" style="float:left;">&nbsp;</span><span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_Star_4" class="rating-star cms-icon-80 icon-star-empty" style="float:left;">&nbsp;</span><span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_Star_5" class="rating-star cms-icon-80 icon-star-empty" style="float:left;">&nbsp;</span></a>
+	</div>
+
+</div>
+<div id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_pnlResult" class="CntRatingResult">
+	
+    <span id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_lblResult">Current rating: 4.4 (16 ratings)</span>
+
+</div>
+
+
+<h3>Comments</h3>
+<div class="commentscontainer">
+Be the first to add a comment...<br /><br />
+<br />
+<table class="BoardPanel">
+    <tr>
+        <td>
+            
+            
+        </td>
+    </tr>
+</table>
+<input type="hidden" name="p$lt$ctl00$pageplaceholder$p$lt$ctl01$ScrumComments$msgBoard$hdnSelSubsTab" id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ScrumComments_msgBoard_hdnSelSubsTab" />
+<input type="submit" name="p$lt$ctl00$pageplaceholder$p$lt$ctl01$ScrumComments$msgBoard$btnRefresh" value="" id="p_lt_ctl00_pageplaceholder_p_lt_ctl01_ScrumComments_msgBoard_btnRefresh" style="display: none;" />
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    // Switches between edit control and subscription control
+    function ShowSubscription(subs, hdnField, elemEdit, elemSubscr) {
+        if (hdnField && elemEdit && elemSubscr) {
+            var hdnFieldElem = document.getElementById(hdnField);
+            var elemEditElem = document.getElementById(elemEdit);
+            var elemSubscrElem = document.getElementById(elemSubscr);
+            if ((hdnFieldElem != null) && (elemEditElem != null) && (elemSubscrElem != null)) {
+                if (subs == 1) { // Show subscriber control
+                    elemEditElem.style.display = 'none';
+                    elemSubscrElem.style.display = 'block';
+                }
+                else {                // Show edit control
+                    elemEditElem.style.display = 'block';
+                    elemSubscrElem.style.display = 'none';
+                }
+                hdnFieldElem.value = subs;
+            }
+        }
+    }
+
+    // Opens modal dialog with comment edit page
+    function EditBoardMessage(editPageUrl) {
+        modalDialog(editPageUrl, "BoardMessageEdit", 500, 450);
+    }
+    //]]> 
+</script>
+
+
+<p>You must <a href='/login?returnurl=~/community/articles/2013/march/spikes-and-the-effort-to-grief-ratio'>Login</a> or <a href='http://www.scrumalliance.org/signup'>Signup</a> to comment.</p>
+</div><i><span style="font-family: Arial, sans-serif; font-size: 16px; line-height: 22.3999996185303px; background-color: rgb(236, 236, 236);">The community welcomes feedback that is constructive and supportive, in the spirit of better understanding and implementation of Scrum.</span>
+
+
+
+</i>                    
+					</div><!-- end .span8 .span10-tablet .span10-minitab -->
+            
+					<div class="span2 span10-tablet hidden-phone">
+                    	<div class="span12 span4-tablet span4-minitab"><div id="p_lt_ctl00_pageplaceholder_p_lt_ctl02_ScrumCourses_divCourse">
+    <h3><a href="/Courses-Events/Courses">Find a course&nbsp;&raquo;</a></h3>
+    <ul class="course-listing">
+	    <li><a href="/Courses-Events/Course?type=Csm;">Certified ScrumMaster</a></li>
+	    <li><a href="/Courses-Events/Course?type=Cspo;">Certified Scrum Product Owner</a></li>
+	    <li><a href="/Courses-Events/Course?type=Csd;">Certified Scrum Developer</a></li>
+        <li><a href="/Courses-Events/Course?type=Cal1;">Certified Agile Leadership</a></li>
+    </ul>
+    <h3><a href="/Courses-Events/Continuing-Education">Continuing Education&nbsp;&raquo;</a></h3>
+    <h3><a href="/Courses-Events/Virtual-Learning">Virtual Learning&nbsp;&raquo;</a></h3>
+</div>
+<div id="p_lt_ctl00_pageplaceholder_p_lt_ctl02_ScrumCourses_divMember">
+    <h3><a href="/Community/Member-Directory?cst=true&csc=true&rep=true">Find Education Providers&nbsp;&raquo;</a></h3>
+    <ul class="course-listing">
+	    <li><a href="/Community/Member-Directory?cst=true">Certified Scrum Trainer</a></li>
+	    <li><a href="/Community/Certificant-Directory?cec=true">Certified Enterprise Coach</a></li>
+	    <li><a href="/Community/Member-Directory?rep=true">Registered Education Provider</a></li>
+    </ul>
+</div>
+</div><div class="span12 span4-tablet span4-minitab">
+<ul class="course-listing"><div id="p_lt_ctl00_pageplaceholder_p_lt_ctl02_ScrumGatherings_panelScrumGatherings">
+	
+    <div class="gatherings">
+        <h3><a href="/Courses-Events/Global-Gatherings">Global Scrum Gatherings&nbsp;&raquo;</a></h3>
+        <li>
+<a href="/sgcal">San Diego: 2017</a>
+</li><li>
+<a href="/sgsin">Singapore: 2017</a>
+</li><li>
+<a href="/sgdub">Dublin: 2017</a>
+</li>
+    </div>
+
+</div></ul>
+</div><div class="hidden-phone"><a id="p_lt_ctl00_pageplaceholder_p_lt_ctl02_LeftNavBannerRotator_lnkBanner" class="CMSBanner Banner" href="/Community/User-Groups" onclick="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=24&#39;;" onmouseup="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=24&#39;;"><img id="p_lt_ctl00_pageplaceholder_p_lt_ctl02_LeftNavBannerRotator_imgBanner" title="User Groups" src="/scrum/media/ScrumAllianceMedia/Banner%20Advertising/LeftSkyScraper_120_600/SCR20096_Sprint_120x600-UserGroups.jpg" style="border-width:0px;" /></a></div>
+					</div><!-- end .span2 -->
+                            
+                </div>
+                <!-- END PRIMARY CONTENT AND SIDEBAR -->
+                            
+                            
+			</div><!-- end .row -->
+            
+            
+            
+            </div><!-- end .content-padding -->
+		</div><!-- end .primary-content-area -->
+
+        <div id="pre-footer">
+              <div class="row-fluid row-fluid-minitab">
+                   <div class="span10 offset1"><a id="p_lt_ctl00_pageplaceholder_p_lt_ctl03_FooterBannerRotator_lnkBanner" class="CMSBanner" href="/scrum/media/ScrumAllianceMedia/Files%20and%20PDFs/State%20of%20Scrum/2013-State-of-Scrum-Report_062713_final.pdf" onclick="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=29&#39;;" onmouseup="this.href=&#39;/CMSModules/BannerManagement/CMSPages/BannerRedirect.ashx?bannerID=29&#39;;" target="_blank"><img id="p_lt_ctl00_pageplaceholder_p_lt_ctl03_FooterBannerRotator_imgBanner" title="Read the &quot;State of Scrum&quot; Report" src="/scrum/media/ScrumAllianceMedia/Banner%20Advertising/Footer_768_90/SCR20096_Sprint_728x90-StateofScrum.jpg" style="border-width:0px;" /></a></div>
+              </div>
+        </div><!-- end #pre-footer -->
+</div>
+<div class="standard_template">
+	<div id="main_1">
+		<h2>
+			&nbsp;</h2>
+	</div>
+</div>
+
+              </div>
+          </div>
+          <section id="newsletter-signup">
+            <div id="newsletter-signup-content" class="clearfix">
+              <h4>Newsletter Sign-Up</h4>
+              <a class="blue-btn" id="bt-newsletter-signup" href="/newsletter-subscribe-submit">Subscribe</a>
+            </div>
+          </section>
+          
+          <div class="footer-container">
+            <footer>
+              <div class="nav-links clearfix">
+                <div class="footer-col">
+                  <h4>About SCRUM ALLIANCE<sup>&reg;</sup></h4>
+                  <a href="/about-us">About Us</a>
+                  <a href="/about-us/board-and-staff">Board &amp; Staff</a>
+                  <a href="/about-us/tax-forms-and-bylaws">Tax Forms &amp; Bylaws</a>
+                  <a href="/scrum/media/ScrumAllianceMedia/Files%20and%20PDFs/About%20Us/2015-Strategy.pdf" target="_blank">Strategic Plan</a>
+                  <a href="/code-of-ethics">Code of Ethics</a>
+                  <a href="/about-us/press-room">Press &amp; Media</a>
+                </div>
+                <div class="footer-col">
+                  <h4>Membership</h4>
+                  <a href="http://membership.scrumalliance.org/?page=Memberships" target="_blank">Become a Member</a>
+                  <a href="http://www.agilecareers.com">AgileCareers</a>
+                </div>
+                <div class="footer-col">
+                  <h4>Help Center</h4>
+                  <a href="https://scrumalliance.zendesk.com/hc/en-us">FAQs</a>
+                </div>
+                <div class="social-icons footer-col">
+                  <h4>Get Connected</h4>
+                  <a href="http://www.facebook.com/scrumalliance" class="ir facebook" target="_blank">Facebook</a>
+                  <a href="http://twitter.com/ScrumAlliance" class="ir twitter" target="_blank">Twitter</a>
+                  <a href="http://plus.google.com/117075062329893756789" class="ir google" target="_blank">Google+</a>
+                  <a href="http://www.linkedin.com/groups/Scrum-Alliance-Inc-49087/about" class="ir linkedin" target="_blank">LinkedIn</a>
+                </div>
+              </div>
+              <div class="lower-footer">
+                <p>Copyright &copy;2016 SCRUM ALLIANCE<sup>&reg;</sup>, Inc.</p>
+                <p>All rights reserved.</p>
+                <p class="footer-links"><a href="/privacy-policy">Privacy Policy</a> <span class="text-divide">|</span> <a href="/legal">Terms of Use</a></p>
+              </div>
+            </footer>
+          </div>
+          <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>-->
+          
+          <script src="/assets/js/vendor/jquery-1.11.0.min.js"></script>
+          <!-- NOTE:  Added jquery-cookie.js to supress an error on the master template related to Kentico on-page editing -->
+          <script src="/CMSScripts/jquery/jquery-cookie.js"></script>
+          <script src="/assets/js/vendor/jquery-ui.min.js"></script>
+          <script src="/assets/js/main.js"></script>
+          <script src="/assets/js/plugins.js"></script>
+          
+          <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+          <!--<script>
+(function (b, o, i, l, e, r) {
+b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+e.src = '//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e, r)
+}(window, document, 'script', 'ga'));
+ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+</script>-->
+</div>
+
+
+<!-- ***                   END OF CONTENT                   *** -->
+<!-- Placed at the end of the document so the pages load faster --> 
+
+<!--<script src="/assets/js/lite-accordion.js"></script>-->
+<script src="/assets/js/bootstrap-transition.js"></script> 
+<script src="/assets/js/bootstrap-alert.js"></script> 
+<script src="/assets/js/bootstrap-modal.js"></script> 
+<script src="/assets/js/bootstrap-dropdown.js"></script> 
+<script src="/assets/js/bootstrap-scrollspy.js"></script> 
+<script src="/assets/js/bootstrap-tab.js"></script> 
+<script src="/assets/js/bootstrap-tooltip.js"></script> 
+<script src="/assets/js/bootstrap-popover.js"></script> 
+<script src="/assets/js/bootstrap-button.js"></script> 
+<script src="/assets/js/bootstrap-collapse.js"></script> 
+<script src="/assets/js/bootstrap-carousel.js"></script> 
+<script src="/assets/js/bootstrap-typeahead.js"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="//asset0.zendesk.com/external/zenbox/zenbox-2.0.js"></script>
+<style type="text/css" media="screen, projection">
+  @import url(//asset0.zendesk.com/external/zenbox/zenbox-2.0.css);
+</style>
+<script type="text/javascript">
+  if (typeof(Zenbox) !== "undefined") {
+    Zenbox.init({
+      dropboxID:   "12016",
+      url:         "https://scrumalliance.zendesk.com",
+      tabID:       "support",
+      tabColor:    "black",
+      tabPosition: "Right",
+      hide_tab:    "true"
+    });
+  }
+</script>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 981045842;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+</script>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "195b915b-8b1a-477f-b53f-2028fcc2cda6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<div style="display:none">
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+</div>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/981045842/?value=0&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+<script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+                        var b=document.getElementsByTagName("script")[0];
+                        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0023/0808.js?"+Math.floor(new Date().getTime()/3600000);
+                        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- Start of SkyGlue Code -->
+<script type="text/javascript">
+  var _sgq = _sgq || [];
+  _sgq.push(['setSgAccount', 'pwwvysiw']);
+  setTimeout(function() {
+    var sg = document.createElement('script');
+    sg.type = 'text/javascript';
+    sg.async = true;
+    sg.src = ("https:" == document.location.protocol ? "https://dc" : "http://cdn0") + ".skyglue.com/sgtracker.js";
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(sg, s);
+  }
+             , 1);
+</script>
+<!-- End of SkyGlue Code -->
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("manScript_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+
+<script type="text/javascript">
+	//<![CDATA[
+if (typeof(Sys.Browser.WebKit) == 'undefined') {
+    Sys.Browser.WebKit = {};
+}
+if (navigator.userAgent.indexOf('WebKit/') > -1) {
+    Sys.Browser.agent = Sys.Browser.WebKit;
+    Sys.Browser.version = parseFloat(navigator.userAgent.match(/WebKit\/(\d+(\.\d+)?)/)[1]);
+    Sys.Browser.name = 'WebKit';
+}
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/WebResource.axd?d=7XYVjpvokkOYDidQbWv_gkVSaINbG5cnvFqpznIxPZiOSUDy5_9dU0ze0gB7kaOL5g_k2ypJQs4LP1Lsn_r8J6DFD5S1iSQJxW4vJy7bezs1&t=635792838349294682';
+WebForm_InitCallback();
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.RatingBehavior, {"AutoPostBack":true,"CallbackID":"p$lt$ctl00$pageplaceholder$p$lt$ctl01$ContentRating$elemRating$RatingControl$elemRating","ClientStateFieldID":"p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_RatingExtender_ClientState","EmptyStarCssClass":"icon-star-empty","FilledStarCssClass":"icon-star-full","StarCssClass":"rating-star cms-icon-80","WaitingStarCssClass":"icon-star-full saved-rating-star","_isServerControl":true,"id":"p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating_RatingExtender"}, null, null, $get("p_lt_ctl00_pageplaceholder_p_lt_ctl01_ContentRating_elemRating_RatingControl_elemRating"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
